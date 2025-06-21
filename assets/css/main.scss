@@ -20,14 +20,16 @@ $sans-serif-narrow: $sans-serif !default;
 $helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif !default;
 
 /* serif typefaces */
+$cardo: Cardo, serif !default;
+$garamond: Garamond, serif !default;
 $georgia: Georgia, serif !default;
 $times: Times, serif !default;
 $bodoni: "Bodoni MT", serif !default;
 $calisto: "Calisto MT", serif !default;
-$garamond: Garamond, serif !default;
+
 
 $global-font-family           : $serif !default;
-$header-font-family           : $sans-serif !default;
+$header-font-family           : $serif !default;
 $caption-font-family          : $serif !default;
 
 /* type scale */

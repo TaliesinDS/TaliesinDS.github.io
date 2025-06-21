@@ -6,7 +6,7 @@ main:
     url: /soap/
   - title: "Andere projecten"
     url: /projects/
-  - title: "Categories"
-    url: /categories/
+  - title: "Alle posts"
+    url: /posts/
   - title: "Over mij"
     url: /about/

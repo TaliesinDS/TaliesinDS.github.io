@@ -11,3 +11,10 @@ author_profile: true
     </li>
   {% endfor %}
 </ul>
+{%- if page.tags -%}
+    {% for tag in page.tags %}
+        <a href="{{site.baseurl}}/archive.html#{{tag | slugize}}">
+            #{{ tag }}
+        </a>
+    {% endfor %}
+{%- endif -%}

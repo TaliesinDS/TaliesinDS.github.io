@@ -4,7 +4,7 @@ title: "Handgemaakte Zeep"
 layout: single
 author_profile: true
 ---
-
+![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
 informatie over de zeep die ik maak.
 
 {% for tag in site.tags %}

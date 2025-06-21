@@ -1,9 +1,11 @@
 ---
 permalink: /soap/
-title: "soap"
+title: "Handgemaakte Zeep"
 layout: single
 author_profile: true
 ---
+
+informatie over de zeep die ik maak.
 
 {% for tag in site.tags %}
 
@@ -22,3 +24,4 @@ author_profile: true
 {% endif %}
 
 {% endfor %}
+

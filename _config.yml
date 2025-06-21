@@ -21,7 +21,7 @@ title                    : "Portfolio"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Arthur Kortekaas"
-description              : "Portfolio"
+description              : "just a simple website to share some of the things i make"
 url                      : "https://taliesinds.github.io/"
 baseurl                  : #"/TaliesinDS.github.io"
 repository               : "TaliesinDS/TaliesinDS.github.io"

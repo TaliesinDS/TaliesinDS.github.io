@@ -10,4 +10,3 @@ blablabla over zeep enzo
 
 
 ![zeep verpakkingen](/assets/images/zeep2.jpg "verpakking met 4 stuks zeep")
-![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")

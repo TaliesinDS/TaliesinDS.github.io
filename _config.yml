@@ -114,7 +114,7 @@ analytics:
 # Site Author
 author:
   name             : "Arthur Kortekaas"
-  avatar           : "/assets/images/avatar.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/avatar1.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "DIY enthusiast"
   location         : "Netherlands"
   email            :

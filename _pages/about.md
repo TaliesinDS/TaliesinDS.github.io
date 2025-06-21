@@ -1,7 +1,7 @@
 ---
 permalink: /about/
 title: "Over mij"
-layout: archive
+layout: single
 ---
 
 lorem ipsum

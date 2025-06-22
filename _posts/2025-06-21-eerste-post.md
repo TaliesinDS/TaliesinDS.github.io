@@ -4,7 +4,7 @@ layout: single
 author_profile: true
 tags: post
 header:
-image: /assets/images/bull1.png
+ image: /assets/images/bull1.png
 ---
 
 eerste post test.

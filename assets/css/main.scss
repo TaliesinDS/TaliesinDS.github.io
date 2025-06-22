@@ -9,10 +9,17 @@ search: false
 @import "minimal-mistakes"; // main partials
 
 .page__content {
-  p,
-  li,
+  p {
+    font-family: $serif;
+    font-size: 0.8em;
+  }
+  li {
+    font-family: $serif;
+    font-size: 1em;
+  }
   dl {
-     font-family: $serif;
+    font-family: $serif;
+    font-size: 1em;
   }
 }
 h1,
@@ -55,6 +62,4 @@ p {
 .one {
   list-style-type: none;
 }
-.post.excerpt p {
-  font-size: $type-size-4;
-}
+

@@ -8,6 +8,7 @@ author_profile: true
  {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
+      {{ post.excerpt }}
     </li>
   {% endfor %}
 </ul>
@@ -18,3 +19,4 @@ author_profile: true
         </a>
     {% endfor %}
 {%- endif -%}
+

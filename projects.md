@@ -1,6 +1,6 @@
 ---
-permalink: /soap/
-title: "Handgemaakte Zeep"
+permalink: /projects/
+title: "andere dingen"
 layout: single
 author_profile: true
 ---

@@ -55,5 +55,6 @@ p {
 .one {
   list-style-type: none;
 }
- post.excerpt p font-size: $type-size-4
-{}
+.post.excerpt p {
+  font-size: $type-size-4;
+}

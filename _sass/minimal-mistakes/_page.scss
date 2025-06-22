@@ -219,9 +219,11 @@ body {
     }
 
     .page__title {
+      font-family: $serif;
       font-size: $type-size-2;
 
       @include breakpoint($small) {
+        font-family: $serif;
         font-size: $type-size-1;
       }
     }

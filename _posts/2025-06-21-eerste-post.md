@@ -1,6 +1,6 @@
 ---
 title: "eerste post"
-layout: post
+layout: single
 author_profile: true
 tags: post
 image: /assets/images/bull1.png

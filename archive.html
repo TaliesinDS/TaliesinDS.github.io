@@ -23,10 +23,16 @@ permalink: /archive.html
          <a href="{{ post.url | relative_url }}">
            {{ post.title | escape }}
          </a>
-       </b> - <i>{{ post.date | date: date_format }}</i>
+       </b>
+        {% if post.subtitle %}
+    <div class="post-subtitle">{{ post.subtitle }}</div>
+  {% endif %}
+   - <i>{{ post.date | date: date_format }}</i>
      </li>
      {% endfor %}
     </ul>
   </div>
 {% endfor %}
 </div>
+
+ 

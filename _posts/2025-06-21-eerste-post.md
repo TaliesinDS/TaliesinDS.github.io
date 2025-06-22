@@ -7,3 +7,5 @@ image: /assets/images/bull1.png
 ---
 
 eerste post test.
+
+![test image of a bull]({{page.image}})

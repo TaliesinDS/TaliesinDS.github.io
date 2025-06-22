@@ -1,6 +1,6 @@
 ---
 title: "dit is een test post"
-subtitle: werkt dit?
+subtitle: "werkt dit?"
 layout: single
 author_profile: true
 tags: post webdev

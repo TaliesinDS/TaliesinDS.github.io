@@ -94,6 +94,7 @@ body {
 			position: relative;
 			inset-inline-start: 0.5em;
 			opacity: 0;
+      font-family: $serif;
 			font-size: 0.8em;
 			-webkit-transition: opacity 0.2s ease-in-out 0.1s;
 			-moz-transition: opacity 0.2s ease-in-out 0.1s;
@@ -109,6 +110,7 @@ body {
   p,
   li,
   dl {
+    font-family: $serif;
     font-size: 1em;
   }
 
@@ -138,6 +140,7 @@ body {
   :not(pre) > code {
     padding-top: 0.1rem;
     padding-bottom: 0.1rem;
+    font-family: $serif;
     font-size: 0.8em;
     background: $code-background-color;
     border-radius: $border-radius;
@@ -311,6 +314,7 @@ body {
 
 .page__meta-title {
   margin-bottom: 10px;
+  font-family: $serif;
   font-size: $type-size-6;
   text-transform: uppercase;
 }
@@ -386,6 +390,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   margin: 1.414em 0;
   padding: 0;
+  font-family: $serif;
   font-size: 0.75em;
   list-style: none;
 
@@ -411,6 +416,7 @@ body {
   display: block;
   clear: both;
   color: $muted-text-color;
+  font-family: $serif;
   font-size: 0.6em;
   text-transform: uppercase;
   text-align: end;
@@ -542,6 +548,7 @@ body {
 
 .page__related-title {
   margin-bottom: 10px;
+  font-family: $serif;
   font-size: $type-size-6;
   text-transform: uppercase;
 }

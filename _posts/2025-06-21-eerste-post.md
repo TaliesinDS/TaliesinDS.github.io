@@ -6,7 +6,7 @@ tags: post
 excerpt_separator: <!--more-->
 header:
  overlay_image: /assets/images/banner02.png
- overlay_filter: 0.5
+ overlay_filter: 0.2
 ---
 eerste post test. <!--more-->
 

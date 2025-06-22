@@ -6,7 +6,7 @@ tags: post zeep
 excerpt_separator: <!--more-->
 header:
  overlay_image: /assets/images/banner01.png
- overlay_filter: 0.5
+ overlay_filter: 0.2
 ---
 
 tweede  post test.<!--more-->

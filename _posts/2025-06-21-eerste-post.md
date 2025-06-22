@@ -1,5 +1,5 @@
 ---
-title: "eerste post"
+title: "Eerste post"
 layout: single
 author_profile: true
 tags: post

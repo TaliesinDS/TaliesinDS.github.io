@@ -1,5 +1,5 @@
 ---
-title: "dit is een test post"
+title: "Dit is een test post"
 layout: single
 author_profile: true
 tags: post webdev

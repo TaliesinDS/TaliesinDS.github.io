@@ -1,5 +1,5 @@
 ---
-title: "tweede post"
+title: "Tweede post"
 layout: single
 author_profile: true
 tags: post zeep

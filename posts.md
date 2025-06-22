@@ -4,9 +4,8 @@ title: "Alle posts"
 layout: single
 author_profile: true
 ---
-<ul>
-list-style-type: none
-  {% for post in site.posts %}
+<ul style="list-style-type: none;">
+ {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
     </li>

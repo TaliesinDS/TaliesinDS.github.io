@@ -9,7 +9,7 @@ header:
  overlay_filter: 0.5
 ---
 
-tweede  post test.
+tweede  post test.<!--more-->
 blablabla over zeep enzo
 
 

@@ -5,8 +5,8 @@ author_profile: true
 tags: post webdev
 excerpt_separator: <!--more-->
 header:
- overlay_image: /assets/images/header1.png
- overlay_filter: 0.5
+ overlay_image: /assets/images/banner05.png
+ overlay_filter: 0.3
 ---
 
 

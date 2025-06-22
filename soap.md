@@ -11,7 +11,7 @@ informatie over de zeep die ik maak.
 
 {% if tag[0] == "zeep" %}
 
-<ul>
+<ul style="list-style-type: none;">
 
 {% for post in tag[1] %}
 

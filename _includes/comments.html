@@ -188,6 +188,7 @@
   <button type="submit">Submit</button>
   <div id="comment-success" style="display:none;color:green;margin-top:10px;">Thank you for your comment!</div>
 </form>
+{% raw %}
 <script>
 document.getElementById('google-comment-form').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -312,4 +313,5 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
       .catch(error => console.error('Error fetching data:', error)); // Handle any errors
   });
 </script>
+{% endraw %}
 

@@ -230,19 +230,23 @@
             const commentsContainer = document.getElementById('comments');
             // Loop through each row of the data
             rows.forEach(row => {
-                const date = formatDate(row[0]); // Format the date and time
-                const name = row[1]; // Get the name
-                const comment = row[2]; // Get the comment
-                const email = row[4]; // Get the email
-                // Create a new div element for the comment
-                const commentDiv = document.createElement('div');
-                // Set the inner HTML of the div element
-                commentDiv.innerHTML = `<strong><a href="mailto:${email}">${name}</a></strong> <em>${date}</em>: <p>${comment}</p>`;
-                // Append the div element to the comments container
-                commentsContainer.appendChild(commentDiv);
+                // Ensure the row has at least 5 columns to avoid errors
+                if (row.length >= 5) {
+                    const date = formatDate(row[0]); // Format the date and time
+                    const name = row[1]; // Get the name
+                    const comment = row[2]; // Get the comment
+                    const email = row[4]; // Get the email
+                    // Create a new div element for the comment
+                    const commentDiv = document.createElement('div');
+                    // Set the inner HTML of the div element
+                    commentDiv.innerHTML = `<strong><a href="mailto:${email}">${name}</a></strong> <em>${date}</em>: <p>${comment}</p>`;
+                    // Append the div element to the comments container
+                    commentsContainer.appendChild(commentDiv);
+                }
             });
         })
         .catch(error => console.error('Error fetching data:', error)); // Handle any errors
 </script>
   {% endcase %}
 </div>
+

@@ -175,7 +175,7 @@
       <h4 class="page__comments-title">{{ comments_label }}</h4>
       <section id="giscus-comments"></section>
     {% when "custom" %}
-    <form id="google-comment-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd-xZgVsbuQsLumpP_W1u97vPG7RbR9_awZ3XDQTpXegkB1XA/formResponse" method="POST">
+<form id="google-comment-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd-xZgVsbuQsLumpP_W1u97vPG7RbR9_awZ3XDQTpXegkB1XA/formResponse" method="POST">
   <label for="name">Name:</label><br>
   <input type="text" id="name" name="entry.1922964266" required><br><br>
   
@@ -184,15 +184,26 @@
 
  <label for="comment">Comment:</label><br>
   <input type="text" id="comment" name="entry.503498009" required><br><br>
+  
+  <!-- Hidden field for the page URL -->
+  <input type="hidden" id="page-url" name="entry.839437822" value="">
    
   <button type="submit">Submit</button>
   <div id="comment-success" style="display:none;color:green;margin-top:10px;">Thank you for your comment!</div>
 </form>
 {% raw %}
 <script>
+// Set the normalized page URL in the hidden field before submit
+document.addEventListener('DOMContentLoaded', function() {
+  var url = window.location.href.replace(/\/$/, '');
+  document.getElementById('page-url').value = url;
+});
+
 document.getElementById('google-comment-form').addEventListener('submit', function(e) {
   e.preventDefault();
   var form = e.target;
+  // Always update the hidden field before submit
+  form.querySelector('#page-url').value = window.location.href.replace(/\/$/, '');
   var data = new FormData(form);
   fetch(form.action, {
     method: 'POST',
@@ -265,6 +276,7 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
         cell += char;
       }
     }
+    // Add the last cell if any
     if (cell !== '' || row.length > 0) {
       row.push(cell);
       rows.push(row);
@@ -315,6 +327,4 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
   });
 </script>
 {% endraw %}
-{% endcase %}
-<!-- No additional code needed here for displaying comments.
-  The comments are dynamically loaded and rendered by the JavaScript above. -->
+{% endcase %} 

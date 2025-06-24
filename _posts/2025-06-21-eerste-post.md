@@ -1,6 +1,6 @@
 ---
 title: "Eerste post"
-layout: single
+layout: default
 author_profile: true
 tags: post
 excerpt_separator: <!--more-->

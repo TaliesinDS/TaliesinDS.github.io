@@ -287,43 +287,35 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
   document.addEventListener('DOMContentLoaded', function() {
     // Get the current page URL and normalize it (remove trailing slash)
     let thisPageUrl = window.location.href.replace(/\/$/, '');
-    // Escape single quotes for SQL
-    const safeUrl = thisPageUrl.replace(/'/g, "\\'");
-    // Encode the SQL statement to be used in the URL
-    const sqlStatement = encodeURIComponent(`SELECT A, B, C, D WHERE B = '${safeUrl}'`);
-    // Construct the URL for fetching the data
-    // Make sure the sheet name matches exactly (case-sensitive) and the columns exist
-    const csvUrl = `https://docs.google.com/spreadsheets/d/1ZqE6ePnexceUrxq90JD6buZ1Zl3agU11_i_TDaCTCuU/gviz/tq?tqx=out:csv&sheet=Form_Responses1`;
     // Fetch the data from the Google Sheets URL
+    const csvUrl = `https://docs.google.com/spreadsheets/d/1ZqE6ePnexceUrxq90JD6buZ1Zl3agU11_i_TDaCTCuU/gviz/tq?tqx=out:csv&sheet=Form_Responses1`;
     fetch(csvUrl)
-      .then(response => response.text()) // Get the response text (data)
+      .then(response => response.text())
       .then(csvText => {
-        // Parse the CSV data properly
         const rows = parseCSV(csvText.trim());
-        // Get the container element for the comments
         const commentsContainer = document.getElementById('comments');
-        // Clear previous comments if any
         commentsContainer.innerHTML = '';
         // Loop through each row of the data, skipping the header if present
         rows.forEach((row, idx) => {
           // Skip header row if it contains column names
           if (idx === 0 && row[0].toLowerCase().includes('timestamp')) return;
-          // Ensure the row has at least 4 columns to avoid errors
-          if (row.length >= 4) {
-            const date = formatDate(row[0]); // Format the date and time
-            const name = row[2]; // Get the name (adjusted index)
-            const comment = row[3]; // Get the comment (adjusted index)
-            const email = row[1]; // Get the email (adjusted index)
-            // Create a new div element for the comment
-            const commentDiv = document.createElement('div');
-            // Set the inner HTML of the div element
-            commentDiv.innerHTML = `<strong><a href="mailto:${email}">${name}</a></strong> <em>${date}</em>: <p>${comment}</p>`;
-            // Append the div element to the comments container
-            commentsContainer.appendChild(commentDiv);
+          // Ensure the row has at least 5 columns to avoid errors
+          if (row.length >= 5) {
+            const date = formatDate(row[0]); // Timestamp
+            const name = row[1]; // Name
+            const email = row[2]; // Email
+            const comment = row[3]; // Comment
+            const pageUrl = row[4].replace(/\/$/, ''); // Page URL (normalized)
+            // Only show comments for this page
+            if (pageUrl === thisPageUrl) {
+              const commentDiv = document.createElement('div');
+              commentDiv.innerHTML = `<strong><a href="mailto:${email}">${name}</a></strong> <em>${date}</em>: <p>${comment}</p>`;
+              commentsContainer.appendChild(commentDiv);
+            }
           }
         });
       })
-      .catch(error => console.error('Error fetching data:', error)); // Handle any errors
+      .catch(error => console.error('Error fetching data:', error));
   });
 </script>
 {% endraw %}

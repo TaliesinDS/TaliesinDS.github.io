@@ -293,7 +293,7 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
     const sqlStatement = encodeURIComponent(`SELECT A, B, C, D WHERE B = '${safeUrl}'`);
     // Construct the URL for fetching the data
     // Make sure the sheet name matches exactly (case-sensitive) and the columns exist
-    const csvUrl = `https://docs.google.com/spreadsheets/d/1ZqE6ePnexceUrxq90JD6buZ1Zl3agU11_i_TDaCTCuU/gviz/tq?tqx=out:csv&tq=${sqlStatement}&sheet=Form_Responses1`;
+    const csvUrl = `https://docs.google.com/spreadsheets/d/1ZqE6ePnexceUrxq90JD6buZ1Zl3agU11_i_TDaCTCuU/gviz/tq?tqx=out:csv&sheet=Form_Responses1`;
     // Fetch the data from the Google Sheets URL
     fetch(csvUrl)
       .then(response => response.text()) // Get the response text (data)

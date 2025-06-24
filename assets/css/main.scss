@@ -64,3 +64,89 @@ p {
   list-style-type: none;
 }
 
+
+/* Style the comment form */
+#google-comment-form {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 1rem;
+  background: #fafbfc;
+  padding: 1.5em;
+  border-radius: 8px;
+  max-width: 500px;
+  margin-bottom: 2em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+#google-comment-form label {
+  font-size: 1.05em;
+  font-weight: 500;
+  margin-bottom: 0.2em;
+  display: block;
+  color: #333;
+}
+
+#google-comment-form input[type="text"],
+#google-comment-form input[type="email"],
+#google-comment-form input[type="url"] {
+  font-size: 1em;
+  padding: 0.5em;
+  width: 100%;
+  margin-bottom: 1em;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+#google-comment-form button[type="submit"] {
+  font-size: 1.1em;
+  padding: 0.6em 1.5em;
+  background: #0078d4;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#google-comment-form button[type="submit"]:hover {
+  background: #005fa3;
+}
+
+#comment-success {
+  font-size: 1em;
+  font-weight: 500;
+}
+
+/* Style the comments display */
+#comments {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.08em;
+  color: #222;
+  margin-top: 2em;
+}
+
+#comments div {
+  background: #f5f7fa;
+  border-radius: 6px;
+  padding: 1em 1.2em;
+  margin-bottom: 1.2em;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+
+#comments strong {
+  font-size: 1.08em;
+  color: #0078d4;
+}
+
+#comments em {
+  font-size: 0.97em;
+  color: #666;
+  margin-left: 0.5em;
+}
+
+#comments p {
+  margin: 0.5em 0 0 0;
+  font-size: 1em;
+  line-height: 1.6;
+}

@@ -232,3 +232,236 @@ $(document).ready(function () {
       });
   }
 });
+
+function initNotes() {
+  const noteSection = document.getElementById('note-section');
+  if (noteSection) {
+      // Format note timestamp
+      function formatDate(stringDate) {
+          const date = new Date(stringDate);
+          const now = new Date();
+          const diffMs = now - date;
+          const diffSeconds = Math.floor(diffMs / 1000);
+          const diffMinutes = Math.floor(diffSeconds / 60);
+          const diffHours = Math.floor(diffMinutes / 60);
+
+          if (diffHours >= 24) {
+              const options = { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+              return date.toLocaleDateString(undefined, options);
+          } else if (diffHours >= 1) {
+              return `(${diffHours} ${diffHours === 1 ? 'hour' : 'hours'} ago)`;
+          } else if (diffMinutes >= 1) {
+              return `(${diffMinutes} ${diffMinutes === 1 ? 'minute' : 'minutes'} ago)`;
+          } else {
+              return `(just now)`;
+          }
+      }
+
+      // Escape HTML characters
+      function escapeHtml(text) {
+          const map = {
+              '&': '&amp;',
+              '<': '&lt;',
+              '>': '&gt;',
+              '"': '&quot;',
+              "'": '&#039;'
+          };
+          return text.replace(/[&<>"']/g, (m) => map[m]);
+      }
+
+      // Parse CSV to note objects
+      function parseCsv(data) {
+        const rows = [];
+        let insideQuotes = false, field = '', row = [];
+    
+        for (let i = 0; i < data.length; i++) {
+          const char = data[i], next = data[i + 1];
+    
+          if (char === '"' && next === '"' && insideQuotes) {
+            field += '"'; i++;
+          } else if (char === '"') {
+            insideQuotes = !insideQuotes;
+          } else if (char === ',' && !insideQuotes) {
+            row.push(field); field = '';
+          } else if ((char === '\n' || char === '\r') && !insideQuotes) {
+            if (char === '\r' && next === '\n') i++;
+            row.push(field);
+            if (row.length >= 4) {
+              rows.push({ timestamp: row[0], name: row[1], note: row[2], isAuthor: row[3] });
+            }
+            field = ''; row = [];
+          } else {
+            field += char;
+          }
+        }
+    
+        // Final line
+        if (field || row.length > 0) {
+          row.push(field);
+          if (row.length >= 4) {
+            rows.push({ timestamp: row[0], name: row[1], note: row[2], isAuthor: row[3] });
+          }
+        }
+    
+        return rows;
+      }
+
+      // Display notes
+      function displayNotes(notes) {
+          const noNotes = document.getElementById('notes-list');
+          const noteSection = document.getElementById('noteSection');
+
+          if (!notes) {
+              if (visibleNotes.length === 0) {
+                  noNotes.style.display = 'block';
+                  noNotes.textContent = "There are currently no notes on this post. Be the first to add one below.";
+              }
+              return;
+          }
+
+          const noteList = parseCsv(notes);
+
+          noteList.forEach(element => {
+              if (visibleNotes.includes(JSON.stringify(element))) {
+                  return;
+              }
+
+              // Determine the appropriate badge
+              const authorBadge = element.isAuthor === "TRUE" 
+                  ? `<span class="name">${escapeHtml(element.name)} <span class="author-badge">Author</span></span>` 
+                  : `<span class="name">${escapeHtml(element.name)}</span>`;
+
+              const newItem = document.createElement('div');
+              newItem.className = 'note-item';
+              newItem.innerHTML = `
+                  <p class="note-name">
+                      ${authorBadge}
+                      <small>${formatDate(element.timestamp)}</small>
+                  </p>
+                  <div>
+                      <p>${escapeHtml(element.note).replace(/\r?\n/g, '<br />')}</p>
+                  </div>
+              `;
+
+              newItem.style.display = 'none';
+              noteSection.appendChild(newItem);
+              newItem.style.display = 'block';
+              visibleNotes.push(JSON.stringify(element));
+
+              noNotes.style.display = 'none';
+          });
+      }
+
+      // Reload notes
+      function reloadNotes() {
+          const sqlStatement = encodeURIComponent(`SELECT A, C, D, E WHERE B = '${thisPageUrl}'`);
+          fetch(`https://docs.google.com/spreadsheets/d/1hVRP9tYl8f4bsBjJP52hv74DwZ2pYpatxaNMG2rNY_M/gviz/tq?tqx=out:csv&sheet=notes&tq=${sqlStatement}&headers=0`)
+              .then(response => response.text())
+              .then(response => displayNotes(response));
+      }
+
+      // Get cookie by name
+      function getCookie(name) {
+          const value = `; ${document.cookie}`;
+          const parts = value.split(`; ${name}=`);
+          if (parts.length === 2) return parts.pop().split(';').shift();
+      }
+
+      // Set a cookie
+      function setCookie(name, value, days) {
+          const d = new Date();
+          d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+          const expires = `expires=${d.toUTCString()}`;
+          document.cookie = `${name}=${value};${expires};path=/`;
+      }
+
+      // Check for banned words
+      async function checkBannedWords(note) {
+          const bannedWords = await fetch('/assets/js/bannedwords.json').then(res => res.json());
+          const lowerNote = note.toLowerCase();
+          const foundWords = bannedWords.filter(word => lowerNote.includes(word));
+          return foundWords;
+      }
+
+      // Rate limit notes (2 in 5 minutes)
+      function canPostNote() {
+          const noteHistory = JSON.parse(getCookie('noteHistory') || '[]');
+          const now = Date.now();
+          const fiveMinutesAgo = now - 5 * 60 * 1000;
+
+          const recentNotes = noteHistory.filter(time => time > fiveMinutesAgo);
+
+          if (recentNotes.length >= 2) {
+              return false;
+          }
+
+          recentNotes.push(now);
+          setCookie('noteHistory', JSON.stringify(recentNotes), 1);
+
+          return true;
+      }
+
+      // Post a new note
+      async function postNote(event) {
+          event.preventDefault();
+          const username = document.getElementById('note-name').value;
+          const note = document.getElementById('note-content').value;
+
+          const bannedWords = await checkBannedWords(note);
+          if (bannedWords.length > 0) {
+              alert(`Please avoid using the following words: ${bannedWords.join(', ')}. Kindly modify your note and try again.`);
+              return;
+          }
+
+          if (!canPostNote()) {
+              alert("You've reached the limit of 2 notes in 5 minutes. Please wait for 5 minutes before posting again.");
+              return;
+          }
+
+          setCookie('notePosterName', username, 365);
+
+          fetch(`https://docs.google.com/forms/d/e/1FAIpQLSehE6misroMb1QUK57ReR8JeO_eVxztTlojKRcXCbWDwYtHTQ/formResponse`, {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: {
+                  "Content-Type": "application/x-www-form-urlencoded"
+              },
+              body: encodeFormData({
+                  "entry.46315812": thisPageUrl,
+                  "entry.361353560": username,
+                  "entry.1184144290": note
+              })
+          }).then(() => {
+              document.getElementById('note-content').value = '';
+              reloadNotes();
+          }).catch(error => console.log(error));
+      }
+
+      // Encode form data
+      function encodeFormData(data) {
+          return Object.keys(data)
+              .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+              .join('&');
+      }
+
+      // Initialize notes on load
+      const thisPageUrl = window.location.href.split(/[?#]/)[0];
+      let visibleNotes = [];
+
+      reloadNotes();
+
+      document.addEventListener('swup:contentReplaced', () => {
+          reloadNotes();
+      });
+
+      const noteForm = document.getElementById('note-form');
+      if (noteForm) {
+          noteForm.addEventListener('submit', postNote);
+      }
+
+      const notePosterName = getCookie('notePosterName');
+      if (notePosterName) {
+          document.getElementById('note-name').value = notePosterName;
+      }
+  }
+}

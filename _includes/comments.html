@@ -278,7 +278,7 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
     // Escape single quotes for SQL
     const safeUrl = thisPageUrl.replace(/'/g, "\\'");
     // Encode the SQL statement to be used in the URL
-    const sqlStatement = encodeURIComponent(`SELECT A, C, D, E, F WHERE B = '${safeUrl}'`);
+    const sqlStatement = encodeURIComponent(`SELECT A, B, C, D WHERE B = '${safeUrl}'`);
     // Construct the URL for fetching the data
     // The correct format for exporting CSV from Google Sheets is:
     // https://docs.google.com/spreadsheets/d/<sheet_id>/gviz/tq?tqx=out:csv&tq=<QUERY>
@@ -293,14 +293,16 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
         const commentsContainer = document.getElementById('comments');
         // Clear previous comments if any
         commentsContainer.innerHTML = '';
-        // Loop through each row of the data
-        rows.forEach(row => {
-          // Ensure the row has at least 5 columns to avoid errors
-          if (row.length >= 5) {
+        // Loop through each row of the data, skipping the header if present
+        rows.forEach((row, idx) => {
+          // Skip header row if it contains column names
+          if (idx === 0 && row[0].toLowerCase().includes('timestamp')) return;
+          // Ensure the row has at least 4 columns to avoid errors
+          if (row.length >= 4) {
             const date = formatDate(row[0]); // Format the date and time
-            const name = row[1]; // Get the name
-            const comment = row[2]; // Get the comment
-            const email = row[4]; // Get the email
+            const name = row[2]; // Get the name (adjusted index)
+            const comment = row[3]; // Get the comment (adjusted index)
+            const email = row[1]; // Get the email (adjusted index)
             // Create a new div element for the comment
             const commentDiv = document.createElement('div');
             // Set the inner HTML of the div element
@@ -315,3 +317,5 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
 </script>
 {% endraw %}
 {% endcase %}
+<!-- No additional code needed here for displaying comments.
+  The comments are dynamically loaded and rendered by the JavaScript above. -->

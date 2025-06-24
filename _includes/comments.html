@@ -280,9 +280,8 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
     // Encode the SQL statement to be used in the URL
     const sqlStatement = encodeURIComponent(`SELECT A, B, C, D WHERE B = '${safeUrl}'`);
     // Construct the URL for fetching the data
-    // The correct format for exporting CSV from Google Sheets is:
-    // https://docs.google.com/spreadsheets/d/<sheet_id>/gviz/tq?tqx=out:csv&tq=<QUERY>
-    const csvUrl = `https://docs.google.com/spreadsheets/d/1ZqE6ePnexceUrxq90JD6buZ1Zl3agU11_i_TDaCTCuU/gviz/tq?tqx=out:csv&tq=${sqlStatement}&sheet=comments`;
+    // Make sure the sheet name matches exactly (case-sensitive) and the columns exist
+    const csvUrl = `https://docs.google.com/spreadsheets/d/1ZqE6ePnexceUrxq90JD6buZ1Zl3agU11_i_TDaCTCuU/gviz/tq?tqx=out:csv&tq=${sqlStatement}&sheet=Form%20Responses%201`;
     // Fetch the data from the Google Sheets URL
     fetch(csvUrl)
       .then(response => response.text()) // Get the response text (data)

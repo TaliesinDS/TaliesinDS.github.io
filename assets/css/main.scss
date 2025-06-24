@@ -91,13 +91,13 @@ p {
 #google-comment-form input[type="text"],
 #google-comment-form input[type="email"],
 #google-comment-form input[type="url"] {
-  font-size: 1em;
+  font-size: 0.75em;
   padding: 0.5em;
   width: 100%;
   margin-bottom: 1em;
   border: 1px solid #bbb;
   border-radius: 4px;
-  font-family: inherit;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #google-comment-form button[type="submit"] {

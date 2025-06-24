@@ -214,38 +214,81 @@
         // Return the formatted date and time
         return `${datePart} at ${timePart}`;
     }
-    // Get the current page URL
-    const thisPageUrl = window.location.href;
-    // Encode the SQL statement to be used in the URL
-    const sqlStatement = encodeURIComponent(`SELECT A, C, D, E, F WHERE B = '${thisPageUrl}'`);
-    // Construct the URL for fetching the data
-    const csvUrl = `https://docs.google.com/spreadsheets/d/1ZqE6ePnexceUrxq90JD6buZ1Zl3agU11_i_TDaCTCuU/gviz/tq?tqx=out:csv&sheet=comments&tq=${sqlStatement}&headers=0`;
-    // Fetch the data from the Google Sheets URL
-    fetch(csvUrl)
-        .then(response => response.text()) // Get the response text (data)
-        .then(csvText => {
-            // Split the data into rows and then into individual cells
-            const rows = csvText.trim().split('\n').map(row => row.split(','));
-            // Get the container element for the comments
-            const commentsContainer = document.getElementById('comments');
-            // Loop through each row of the data
-            rows.forEach(row => {
-                // Ensure the row has at least 5 columns to avoid errors
-                if (row.length >= 5) {
-                    const date = formatDate(row[0]); // Format the date and time
-                    const name = row[1]; // Get the name
-                    const comment = row[2]; // Get the comment
-                    const email = row[4]; // Get the email
-                    // Create a new div element for the comment
-                    const commentDiv = document.createElement('div');
-                    // Set the inner HTML of the div element
-                    commentDiv.innerHTML = `<strong><a href="mailto:${email}">${name}</a></strong> <em>${date}</em>: <p>${comment}</p>`;
-                    // Append the div element to the comments container
-                    commentsContainer.appendChild(commentDiv);
+
+    // CSV parsing function to handle quoted fields and commas
+    function parseCSV(text) {
+        const rows = [];
+        let row = [];
+        let cell = '';
+        let inQuotes = false;
+        for (let i = 0; i < text.length; i++) {
+            const char = text[i];
+            if (char === '"') {
+                if (inQuotes && text[i + 1] === '"') {
+                    cell += '"';
+                    i++;
+                } else {
+                    inQuotes = !inQuotes;
                 }
-            });
-        })
-        .catch(error => console.error('Error fetching data:', error)); // Handle any errors
+            } else if (char === ',' && !inQuotes) {
+                row.push(cell);
+                cell = '';
+            } else if ((char === '\n' || char === '\r') && !inQuotes) {
+                if (cell !== '' || row.length > 0) {
+                    row.push(cell);
+                    rows.push(row);
+                    row = [];
+                    cell = '';
+                }
+                // Handle \r\n
+                if (char === '\r' && text[i + 1] === '\n') i++;
+            } else {
+                cell += char;
+            }
+        }
+        if (cell !== '' || row.length > 0) {
+            row.push(cell);
+            rows.push(row);
+        }
+        return rows;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the current page URL
+        const thisPageUrl = window.location.href;
+        // Encode the SQL statement to be used in the URL
+        const sqlStatement = encodeURIComponent(`SELECT A, C, D, E, F WHERE B = '${thisPageUrl}'`);
+        // Construct the URL for fetching the data
+        const csvUrl = `https://docs.google.com/spreadsheets/d/1ZqE6ePnexceUrxq90JD6buZ1Zl3agU11_i_TDaCTCuU/gviz/tq?tqx=out:csv&sheet=comments&tq=${sqlStatement}&headers=0`;
+        // Fetch the data from the Google Sheets URL
+        fetch(csvUrl)
+            .then(response => response.text()) // Get the response text (data)
+            .then(csvText => {
+                // Parse the CSV data properly
+                const rows = parseCSV(csvText.trim());
+                // Get the container element for the comments
+                const commentsContainer = document.getElementById('comments');
+                // Clear previous comments if any
+                commentsContainer.innerHTML = '';
+                // Loop through each row of the data
+                rows.forEach(row => {
+                    // Ensure the row has at least 5 columns to avoid errors
+                    if (row.length >= 5) {
+                        const date = formatDate(row[0]); // Format the date and time
+                        const name = row[1]; // Get the name
+                        const comment = row[2]; // Get the comment
+                        const email = row[4]; // Get the email
+                        // Create a new div element for the comment
+                        const commentDiv = document.createElement('div');
+                        // Set the inner HTML of the div element
+                        commentDiv.innerHTML = `<strong><a href="mailto:${email}">${name}</a></strong> <em>${date}</em>: <p>${comment}</p>`;
+                        // Append the div element to the comments container
+                        commentsContainer.appendChild(commentDiv);
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error)); // Handle any errors
+    });
 </script>
   {% endcase %}
 </div>

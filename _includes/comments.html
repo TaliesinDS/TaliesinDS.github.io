@@ -175,7 +175,7 @@
       <h4 class="page__comments-title">{{ comments_label }}</h4>
       <section id="giscus-comments"></section>
     {% when "custom" %}
-<form id="google-comment-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd-xZgVsbuQsLumpP_W1u97vPG7RbR9_awZ3XDQTpXegkB1XA/formResponse" method="POST">
+<form id="google-comment-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd-xZgVsbuQsLumpP_W1u97vPG7RbR9_awZ3XDQTpXegkB1XA/Form_Responses1" method="POST">
   <label for="name">Name:</label><br>
   <input type="text" id="name" name="entry.1922964266" required><br><br>
   
@@ -293,7 +293,7 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
     const sqlStatement = encodeURIComponent(`SELECT A, B, C, D WHERE B = '${safeUrl}'`);
     // Construct the URL for fetching the data
     // Make sure the sheet name matches exactly (case-sensitive) and the columns exist
-    const csvUrl = `https://docs.google.com/spreadsheets/d/1ZqE6ePnexceUrxq90JD6buZ1Zl3agU11_i_TDaCTCuU/gviz/tq?tqx=out:csv&tq=${sqlStatement}&sheet=Form%20Responses%201`;
+    const csvUrl = `https://docs.google.com/spreadsheets/d/1ZqE6ePnexceUrxq90JD6buZ1Zl3agU11_i_TDaCTCuU/gviz/tq?tqx=out:csv&tq=${sqlStatement}&sheet=Form_Responses1`;
     // Fetch the data from the Google Sheets URL
     fetch(csvUrl)
       .then(response => response.text()) // Get the response text (data)

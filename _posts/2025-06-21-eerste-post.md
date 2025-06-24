@@ -58,56 +58,14 @@ eerste post test. <!--more-->
     }
     // Get the current page URL
     const thisPageUrl = window.location.href;
-    // Escape single quotes in the URL for SQL safety
-    const safePageUrl = thisPageUrl.replace(/'/g, "''");
     // Encode the SQL statement to be used in the URL
-    const sqlStatement = encodeURIComponent(`SELECT A, C, D, E, F WHERE B = '${safePageUrl}'`);
+    const sqlStatement = encodeURIComponent(`SELECT A, C, D, E, F WHERE B = '${thisPageUrl}'`);
     // Construct the URL for fetching the data
     const csvUrl = `https://docs.google.com/spreadsheets/d/1ZqE6ePnexceUrxq90JD6buZ1Zl3agU11_i_TDaCTCuU/gviz/tq?tqx=out:csv&sheet=comments&tq=${sqlStatement}&headers=0`;
     // Fetch the data from the Google Sheets URL
     fetch(csvUrl)
         .then(response => response.text()) // Get the response text (data)
-            // Use a simple CSV parser to handle quoted fields and commas inside fields
-                        function parseCSV(text) {
-                            const rows = [];
-                            let row = [];
-                            let cell = '';
-                            let inQuotes = false;
-            rows.forEach(row => {
-                // Ensure the row has at least 5 columns to avoid undefined errors
-                if (row.length >= 5) {
-                    const date = formatDate(row[0]); // Format the date and time
-                    const name = row[1]; // Get the name
-                    const comment = row[2]; // Get the comment
-                    const email = row[4]; // Get the email
-                    // Create a new div element for the comment
-                    const commentDiv = document.createElement('div');
-                    // Set the inner HTML of the div element
-                    commentDiv.innerHTML = `<strong><a href="mailto:${email}">${name}</a></strong> <em>${date}</em>: <p>${comment}</p>`;
-                    // Append the div element to the comments container
-                    commentsContainer.appendChild(commentDiv);
-                }
-            });
-                                } else if ((char === '\n' || char === '\r') && !inQuotes) {
-                                    if (cell !== '' || row.length > 0) {
-                                        row.push(cell);
-                                        rows.push(row);
-                                        row = [];
-                                        cell = '';
-                                    }
-                                    // Handle \r\n
-                                    if (char === '\r' && text[i + 1] === '\n') i++;
-                                } else {
-                                    cell += char;
-                                }
-                            }
-                            if (cell !== '' || row.length > 0) {
-                                row.push(cell);
-                                rows.push(row);
-                            }
-                            return rows;
-                        }
-                        const rows = parseCSV(csvText.trim());
+        .then(csvText => {
             // Split the data into rows and then into individual cells
             const rows = csvText.trim().split('\n').map(row => row.split(','));
             // Get the container element for the comments
@@ -115,12 +73,12 @@ eerste post test. <!--more-->
             // Loop through each row of the data
             rows.forEach(row => {
                 const date = formatDate(row[0]); // Format the date and time
-                // Create a new article element for the comment
-                const commentArticle = document.createElement('article');
-                // Set the inner HTML of the article element
-                commentArticle.innerHTML = `<header><strong><a href="mailto:${email}">${name}</a></strong> <em>${date}</em>:</header> <span class="comment-text">${comment}</span>`;
-                // Append the article element to the comments container
-                commentsContainer.appendChild(commentArticle);
+                const name = row[1]; // Get the name
+                const comment = row[2]; // Get the comment
+                const email = row[4]; // Get the email
+                // Create a new div element for the comment
+                const commentDiv = document.createElement('div');
+                // Set the inner HTML of the div element
                 commentDiv.innerHTML = `<strong><a href="mailto:${email}">${name}</a></strong> <em>${date}</em>: <p>${comment}</p>`;
                 // Append the div element to the comments container
                 commentsContainer.appendChild(commentDiv);

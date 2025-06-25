@@ -87,8 +87,16 @@ p {
   display: block;
   color: #333;
 }
-
 #google-comment-form input[type="text"],
+#google-comment-form textarea {
+  font-size: 0.75em;
+  padding: 0.8em 0.5em; // Increased vertical padding for taller input
+  width: 100%;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 #google-comment-form input[type="email"],
 #google-comment-form input[type="url"] {
   font-size: 0.75em;

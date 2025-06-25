@@ -10,14 +10,18 @@
 
     {%- if site.static_files -%}
       {% if page.overlay_image == "random" %}
-      {% assign header_images = site.static_files | where_exp: "file", "file.path contains 'assets/images/headers/'" %}
+      {% assign header_images = site.static_files | where_exp: "file", "file.path contains '/assets/images/headers/'" %}
       {% assign random_image = header_images | sample %}
       {% if random_image and random_image.path %}
+        {# Debug output: Remove after testing #}
+        <div style="display:none">Random header image path: {{ random_image.path }}</div>
         <style>
         .page__hero--overlay {
           background-image: url('{{ random_image.path | relative_url }}');
         }
         </style>
+      {% else %}
+        <div style="display:none">No header image found in /assets/images/headers/</div>
       {% endif %}
       {% endif %}
     {%- endif -%}

@@ -223,26 +223,30 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
 </script>
 <div id="comments"></div>
 <script>
-  // Function to format the date and time from the data
-  function formatDate(stringDate) {
+  // Format date as <time class="dt-published" datetime="YYYY-MM-DDTHH:mm:ssZ">Month DD, YYYY</time>
+  function formatTimeTag(stringDate) {
     // Split the string into date and time parts
     const dateTimeParts = stringDate.split(' ');
     const datePart = dateTimeParts[0]; // Date part like "7/12/2024"
     const timePart = dateTimeParts[1]; // Time part like "23:32:54"
     // Parse date in MM/DD/YYYY format
     const [month, day, year] = datePart.split('/');
-    // Create a Date object
+    // Create a Date object in local time
     const dateObj = new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${timePart}`);
-    // Format date as "2024 July 12"
+    // Format datetime attribute in ISO 8601 (without milliseconds)
+    const pad = n => n.toString().padStart(2, '0');
+    const offset = -dateObj.getTimezoneOffset();
+    const sign = offset >= 0 ? '+' : '-';
+    const offsetHours = pad(Math.floor(Math.abs(offset) / 60));
+    const offsetMinutes = pad(Math.abs(offset) % 60);
+    const isoDatetime = `${dateObj.getFullYear()}-${pad(dateObj.getMonth() + 1)}-${pad(dateObj.getDate())}T${pad(dateObj.getHours())}:${pad(dateObj.getMinutes())}:${pad(dateObj.getSeconds())}${sign}${offsetHours}:${offsetMinutes}`;
+    // Format visible date as "Month DD, YYYY"
     const months = [
       "January", "February", "March", "April", "May", "June",
       "July", "August", "September", "October", "November", "December"
     ];
-    const formattedDate = `${dateObj.getFullYear()} ${months[dateObj.getMonth()]} ${dateObj.getDate()}`;
-    // Format time as 24-hour "HH:mm:ss"
-    const formattedTime = dateObj.toISOString().substr(11, 8);
-    // Return the formatted date and time
-    return `${formattedDate} at ${formattedTime}`;
+    const formattedDate = `${months[dateObj.getMonth()]} ${dateObj.getDate()}, ${dateObj.getFullYear()}`;
+    return `<time class="dt-published" datetime="${isoDatetime}">${formattedDate}</time>`;
   }
 
   // CSV parsing function to handle quoted fields and commas
@@ -318,7 +322,7 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
         // Render comments
         comments.forEach(({ date, name, email, comment }) => {
           const commentDiv = document.createElement('div');
-          commentDiv.innerHTML = `<strong><a href="mailto:${email}">${name}</a></strong> <em>${formatDate(date)}</em>: <p>${comment}</p>`;
+          commentDiv.innerHTML = `${formatTimeTag(date)}<br><strong><a href="mailto:${email}">${name}</a></strong>: <p>${comment}</p>`;
           commentsContainer.appendChild(commentDiv);
         });
       })

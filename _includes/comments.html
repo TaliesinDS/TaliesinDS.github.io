@@ -302,15 +302,15 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
           if (idx === 0 && row[0].toLowerCase().includes('timestamp')) return;
           // Ensure the row has at least 5 columns to avoid errors
           if (row.length >= 5) {
-        const date = row[0]; // Timestamp
-        const name = row[1]; // Name
-        const email = row[2]; // Email
-        const comment = row[3]; // Comment
-        const pageUrl = row[4].replace(/\/$/, ''); // Page URL (normalized)
-        // Only show comments for this page
-        if (pageUrl === thisPageUrl) {
-          comments.push({ date, name, email, comment });
-        }
+            const date = row[0]; // Timestamp
+            const name = row[1]; // Name
+            const email = row[2]; // Email
+            const comment = row[3]; // Comment
+            const pageUrl = row[4].replace(/\/$/, ''); // Page URL (normalized)
+            // Only show comments for this page
+            if (pageUrl === thisPageUrl) {
+              comments.push({ date, name, email, comment });
+            }
           }
         });
         // Sort comments by date descending (newest first)
@@ -318,8 +318,10 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
         // Render comments
         comments.forEach(({ date, name, email, comment }) => {
           const commentDiv = document.createElement('div');
-          // Use formatDate(date) for the date/time format as defined in line 245
-          commentDiv.innerHTML = `<strong><a href="mailto:${email}">${name}</a></strong> <em>${formatDate(stringDate)}</em>: <p>${comment}</p>`;
+          // Use formatDate(date) for the date/time format
+          const formattedDate = formatDate(date);
+          const nameHtml = email ? `<a href="mailto:${email}">${name}</a>` : name;
+          commentDiv.innerHTML = `<strong>${nameHtml}</strong> <em>${formattedDate}</em>:<p>${comment}</p>`;
           commentsContainer.appendChild(commentDiv);
         });
       })

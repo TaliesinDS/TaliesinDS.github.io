@@ -93,24 +93,24 @@ p {
 #google-comment-form input[type="text"],
 #google-comment-form textarea {
   resize: none;
-  font-size: 0.75em;
+  font-size: 2em;
   padding: 0.5em; // Increased vertical padding for taller input
   width: 100%;
   margin-bottom: 1em;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif; // <--- Change this line to set the input font
   font-weight: bold;
 }
 #google-comment-form input[type="email"],
 #google-comment-form input[type="url"] {
-  font-size: 0.75em;
+  font-size: 1em;
   padding: 0.5em;
   width: 100%;
   margin-bottom: 1em;
   border: 1px solid #bbb;
   border-radius: 4px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif; // <--- Change this line to set the input font
   font-weight: bold;
 }
 

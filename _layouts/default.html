@@ -10,7 +10,13 @@
 
     <style>
       .page__hero--overlay {
-      background-image: url('{{ "assets/images/headers/header001.png" | relative_url }}');
+      {% assign overlay_img = page.overlay_image | default: "assets/images/headers/header001.png" %}
+      {% if overlay_img == "random" %}
+        {% assign random_images = "header001.png,header002.png,header003.png" | split: "," %}
+        {% assign random_index = site.time | date: "%s" | modulo: random_images.size %}
+        {% assign overlay_img = "assets/images/headers/" | append: random_images[random_index] %}
+      {% endif %}
+      background-image: url('{{ overlay_img | relative_url }}');
       }
     </style>
   </head>

@@ -35,20 +35,22 @@
       -->
       <script type="text/javascript">
         // get images from ``header_images`` array to js var
-        var header_images = [{% for image in header_images %}"{{ site.baseurl }}{{ image }}",{% endfor %}];
+        var header_images = [
+          {% for image in header_images %}
+            "{{ site.baseurl }}{{ image }}"{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ];
 
         var randomIndex = Math.floor(Math.random() * header_images.length);
 
         // and the winning ``header_image`` is...
-        var header_image = header_images[randomIndex]
+        var header_image = header_images[randomIndex];
 
         // image without overlay
         {% if page.header.image == 'random' %}
           $(document).ready(function() {
             $(".page__hero-image").attr('src', header_image);
           });
-
-        // image with overlay
         {% elsif page.header.overlay_image == 'random' %}
           // make sure overlay filter is handled correctly
           {% if page.header.overlay_filter contains "rgba" %}
@@ -60,7 +62,6 @@
           $(document).ready(function() {
             $(".page__hero--overlay").attr('style', '{% if page.header.overlay_color %}background-color: {{ page.header.overlay_color | default: "transparent" }};{% endif %} background-image: {% if overlay_filter %}linear-gradient({{ overlay_filter }}, {{ overlay_filter }}), {% endif %}url(' + header_image + ')');
           });
-
         {% endif %}
       </script>
     {% endif %}

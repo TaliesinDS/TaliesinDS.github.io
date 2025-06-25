@@ -5,7 +5,7 @@ permalink: /tags/
 ---
 <div>
   Search through all of my posts by tag!
-</div> </br>
+</div> 
 
 <div id="tags-list">
 {% for tag in site.tags %}

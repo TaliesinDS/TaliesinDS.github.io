@@ -15,7 +15,14 @@
 {% else %}
   {% assign image_description = page.title %}
 {% endif %}
-
+{% if page.header.overlay_image == "random" %}
+  {% assign header_images = site.static_files | where_exp: "file", "file.path contains '/assets/images/headers/'" %}
+  {% assign random_index = "now" | date: "%s" | modulo: header_images.size %}
+  {% assign random_image = header_images[random_index] %}
+  {% if random_image %}
+    {% capture overlay_img_path %}{{ random_image.path | relative_url }}{% endcapture %}
+  {% endif %}
+{% endif %}
 {% assign image_description = image_description | markdownify | strip_html | strip_newlines | escape_once %}
 
 <div class="page__hero{% if page.header.overlay_color or page.header.overlay_image %}--overlay{% endif %}"

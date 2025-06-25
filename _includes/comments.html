@@ -315,6 +315,15 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
         });
         // Sort comments by date descending (newest first)
         comments.sort((a, b) => new Date(b.date) - new Date(a.date));
+        // If there are comments, display the date/time of the latest comment above the comments
+        if (comments.length > 0) {
+          const latest = comments[0];
+          const formatted = formatDate(latest.date);
+          const infoDiv = document.createElement('div');
+          infoDiv.style.marginBottom = '1em';
+          infoDiv.innerHTML = `<strong>Latest comment:</strong> ${formatted}`;
+          commentsContainer.appendChild(infoDiv);
+        }
         // Render comments
         comments.forEach(({ date, name, email, comment }) => {
           const commentDiv = document.createElement('div');

@@ -17,11 +17,22 @@
 {% endif %}
 {% if page.header.overlay_image == "random" %}
   {% assign header_images = site.static_files | where_exp: "file", "file.path contains '/assets/images/headers/'" %}
-  {% assign random_index = "now" | date: "%s" | modulo: header_images.size %}
-  {% assign random_image = header_images[random_index] %}
-  {% if random_image %}
-    {% capture overlay_img_path %}{{ random_image.path | relative_url }}{% endcapture %}
-  {% endif %}
+  <script>
+    (function() {
+      var images = [{% for img in header_images %}"{{ img.path | relative_url }}"{% unless forloop.last %}, {% endunless %}{% endfor %}];
+      var randomImg = images[Math.floor(Math.random() * images.length)];
+      document.addEventListener("DOMContentLoaded", function() {
+        var hero = document.querySelector('.page__hero--overlay');
+        if (hero) {
+          var style = hero.getAttribute('style') || '';
+          style = style.replace(/background-image:[^;]*;/, '');
+          style += "background-image: url('" + randomImg + "');";
+          hero.setAttribute('style', style);
+        }
+      });
+    })();
+  </script>
+{% endif %}
 {% endif %}
 {% assign image_description = image_description | markdownify | strip_html | strip_newlines | escape_once %}
 

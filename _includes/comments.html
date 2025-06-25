@@ -233,12 +233,12 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
     const [month, day, year] = datePart.split('/');
     // Create a Date object
     const dateObj = new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${timePart}`);
-    // Format date as "2024 July 12"
+    // Format date as "25 June, 2025"
     const months = [
       "January", "February", "March", "April", "May", "June",
       "July", "August", "September", "October", "November", "December"
     ];
-    const formattedDate = `${dateObj.getFullYear()} ${months[dateObj.getMonth()]} ${dateObj.getDate()}`;
+    const formattedDate = `${dateObj.getDate()} ${months[dateObj.getMonth()]}, ${dateObj.getFullYear()}`;
     // Format time as 24-hour "HH:mm:ss"
     const formattedTime = dateObj.toISOString().substr(11, 8);
     // Return the formatted date and time

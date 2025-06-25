@@ -6,7 +6,7 @@ tags: post
 excerpt_separator: <!--more-->
 header:
     overlay_image: random
-    overlay_filter: 0.2
+    overlay_filter: 0.3
 comments: true
 ---
 eerste post test. <!--more-->

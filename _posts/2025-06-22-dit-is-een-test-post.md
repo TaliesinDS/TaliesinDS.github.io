@@ -5,7 +5,7 @@ author_profile: true
 tags: post webdev
 excerpt_separator: <!--more-->
 header:
- overlay_image: /assets/images/banner05.png
+ overlay_image: random
  overlay_filter: 0.3
 comments: true
 ---

@@ -319,7 +319,7 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
         comments.forEach(({ date, name, email, comment }) => {
           const commentDiv = document.createElement('div');
           // Use formatDate(date) for the date/time format as defined in line 245
-          commentDiv.innerHTML = `<strong><a href="mailto:${email}">${name}</a></strong> <em>${formatDate(date)}</em>: <p>${comment}</p>`;
+          commentDiv.innerHTML = `<strong><a href="mailto:${email}">${name}</a></strong> <em>${formatDate(stringDate)}</em>: <p>${comment}</p>`;
           commentsContainer.appendChild(commentDiv);
         });
       })

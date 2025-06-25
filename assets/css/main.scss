@@ -87,7 +87,7 @@ p {
   font-weight: 500;
   margin-bottom: 0.2em;
   display: block;
-  color: #333;
+  color: #8e8b82;
   font-weight: bold;
 }
 #google-comment-form input[type="text"],
@@ -100,7 +100,7 @@ p {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-family: Georgia, 'Times New Roman', Times, serif; // <--- Change this line to set the input font
-  font-weight: bold;
+  font-weight: normal;
 }
 #google-comment-form input[type="name"] {
   font-size: 1em;
@@ -110,7 +110,7 @@ p {
   border: 1px solid #bbb;
   border-radius: 4px;
   font-family: Georgia, 'Times New Roman', Times, serif; // <--- Change this line to set the input font
-  font-weight: bold;
+  font-weight: normal;
   height: 2.5em; // Set the height of the input box
 }
 #google-comment-form input[type="email"],
@@ -122,7 +122,7 @@ p {
   border: 1px solid #bbb;
   border-radius: 4px;
   font-family: Georgia, 'Times New Roman', Times, serif; // <--- Change this line to set the input font
-  font-weight: bold;
+  font-weight: normal;
   height: 2.5em; // Set the height of the input box
 }
 

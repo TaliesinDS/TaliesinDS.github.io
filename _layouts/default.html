@@ -8,19 +8,11 @@
     {% include head.html %}
     {% include head/custom.html %}
 
-    {%- if site.static_files -%}
-      {% if page.overlay_image == "random" %}
-      {% assign header_images = site.static_files | where_exp: "file", "file.path contains 'assets/images/headers/'" %}
-      {% assign random_image = header_images | sample %}
-      {% if random_image and random_image.path %}
-        <style>
-        .page__hero--overlay {
-        background-image: url('{{ random_image.path | relative_url }}');
-        }
-        </style>
-      {% endif %}
-      {% endif %}
-    {%- endif -%}
+    <style>
+      .page__hero--overlay {
+      background-image: url('{{ "assets/images/headers/header001.png" | relative_url }}');
+      }
+    </style>
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">

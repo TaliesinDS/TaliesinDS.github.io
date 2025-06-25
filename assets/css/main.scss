@@ -94,7 +94,7 @@ p {
 #google-comment-form textarea {
   resize: none;
   font-size: 1em;
-  padding: 1em; // Increased vertical padding for taller input
+  padding-left: 1em; // Increased vertical padding for taller input
   width: 100%;
   margin-bottom: 1em;
   border: 1px solid #ccc;
@@ -104,7 +104,7 @@ p {
 }
 #google-comment-form input[type="name"] {
   font-size: 1em;
-  padding: 1em;
+  padding-left: 1em;
   width: 100%;
   margin-bottom: 1em;
   border: 1px solid #bbb;
@@ -116,7 +116,7 @@ p {
 #google-comment-form input[type="email"],
 #google-comment-form input[type="url"] {
   font-size: 1em;
-  padding: 1em;
+  padding-left: 1em;
   width: 100%;
   margin-bottom: 1em;
   border: 1px solid #bbb;

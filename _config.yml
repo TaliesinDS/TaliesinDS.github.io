@@ -327,3 +327,8 @@ defaults:
       share: false
       related: true
       show_date: true
+
+# Head scripts
+  head_scripts:
+  - src: "/assets/js/plugins/jquery-3.6.0.min.js"
+

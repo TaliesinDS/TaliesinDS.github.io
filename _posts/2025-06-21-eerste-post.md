@@ -5,7 +5,7 @@ author_profile: true
 tags: post
 excerpt_separator: <!--more-->
 header:
-    overlay_image: random
+    overlay_image: "random"
     overlay_filter: 0.2
 comments: true
 ---

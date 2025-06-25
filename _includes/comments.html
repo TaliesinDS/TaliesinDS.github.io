@@ -190,6 +190,19 @@
     Thank you for your comment!<br>
     Your comment will be visible after you reload this page.
   </div>
+  <script>
+    // Reload the page after showing the success message
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('google-comment-form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          setTimeout(function() {
+            window.location.reload();
+          }, 1200); // Wait 1.2s to show the success message before reload
+        });
+      }
+    });
+  </script>
 </form>
 {% raw %}
 <script>

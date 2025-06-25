@@ -141,7 +141,7 @@ p {
 }
 
 #google-comment-form button[type="submit"]:hover {
-  background: #e9dcbe;
+  background: $footer-background-color;
 }
 
 #comment-success {
@@ -167,7 +167,7 @@ p {
 
 #comments strong {
   font-size: 1.08em;
-  color: #0078d4;
+  color: $muted-text-color;
 }
 
 #comments em {

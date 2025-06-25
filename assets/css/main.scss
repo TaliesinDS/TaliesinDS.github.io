@@ -101,9 +101,20 @@ p {
   border-radius: 4px;
   font-family: Georgia, 'Times New Roman', Times, serif; // <--- Change this line to set the input font
   font-weight: bold;
+  height: 2.5em; // Set the height of the input box
+}
+#google-comment-form input[type="name"] {
+  font-size: 1em;
+  padding: 0.25em;
+  width: 100%;
+  margin-bottom: 1em;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-family: Georgia, 'Times New Roman', Times, serif; // <--- Change this line to set the input font
+  font-weight: bold;
+  height: 2.5em; // Set the height of the input box
 }
 #google-comment-form input[type="email"],
-#google-comment-form input[type="name"],
 #google-comment-form input[type="url"] {
   font-size: 1em;
   padding: 0.25em;

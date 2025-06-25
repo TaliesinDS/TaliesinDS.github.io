@@ -228,25 +228,18 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
     // Split the string into date and time parts
     const dateTimeParts = stringDate.split(' ');
     const datePart = dateTimeParts[0]; // Date part like "7/12/2024"
-    let timePart = dateTimeParts[1]; // Time part like "23:32:54"
-    // Parse hours, minutes, and seconds from the time part
-    const [hours, minutes, seconds] = timePart.split(':');
-    // Convert hours to 12-hour format and determine AM/PM
-    let ampm = 'AM';
-    let formattedHours = parseInt(hours, 10);
-    if (formattedHours >= 12) {
-      ampm = 'PM';
-      if (formattedHours > 12) {
-        formattedHours -= 12;
-      }
-    }
-    if (formattedHours === 0) {
-      formattedHours = 12; // 12 AM case
-    }
-    // Format time in HH:mm:ss AM/PM format
-    timePart = `${formattedHours}:${minutes}:${seconds} ${ampm}`;
+    const timePart = dateTimeParts[1]; // Time part like "23:32:54"
+    // Parse date in MM/DD/YYYY format
+    const [month, day, year] = datePart.split('/');
+    // Create a Date object
+    const dateObj = new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${timePart}`);
+    // Format date as "June 25, 2025"
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = dateObj.toLocaleDateString(undefined, options);
+    // Format time as 24-hour "HH:mm:ss"
+    const formattedTime = dateObj.toTimeString().slice(0, 8);
     // Return the formatted date and time
-    return `${datePart} at ${timePart}`;
+    return `${formattedDate} at ${formattedTime}`;
   }
 
   // CSV parsing function to handle quoted fields and commas

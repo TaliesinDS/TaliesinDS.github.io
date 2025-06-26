@@ -121,7 +121,7 @@ p {
 }
 
 /* Responsive image sizing for smaller screens */
-@media (max-width: 300px) {
+@media (max-width: 600px) {
   .custom-list-container li img {
     max-width: 80%;
     height: auto;

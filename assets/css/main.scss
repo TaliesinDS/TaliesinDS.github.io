@@ -84,11 +84,18 @@ p {
   padding-left: 0;
 }
 
-// For the <li> spacing:
+/* For the <li> spacing: */
 .custom-list-container li {
   margin-bottom: 2em;
   border-radius: 4px;
   border: 1px solid #afa58f;
+  /* Remove default focus outline and set custom focus style */
+  &:focus-within,
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #afa58f; /* Change #afa58f to your desired color */
+    border-color: $footer-background-color; /* Change to match your border color */
+  }
 }
 
 

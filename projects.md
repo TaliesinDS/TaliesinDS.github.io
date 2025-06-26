@@ -6,28 +6,31 @@ author_profile: true
 ---
 ![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
 
-<!-- Add a wrapper div to control alignment -->
 <div class="custom-list-container">
-<ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
+<ul style="list-style-type: none;">
     {% for post in site.posts %}
         {% unless post.tags contains "zeep" %}
             <li style="margin-bottom: 2em;">
-                {% if post.header.teaser %}
-                    <a href="{{ post.url }}">
-                        <img src="{{ post.header.teaser }}" alt="Teaser image for {{ post.title }}" style="max-width:200px; display:block; margin-bottom:0.5em;">
-                    </a>
-                {% endif %}
-                <a href="{{ post.url }}">{{ post.title }}</a>
-                {{ post.excerpt }}
+                <a href="{{ post.url }}" style="text-decoration:none;">
+                    <div style="display: flex; align-items: flex-start;">
+                        {% if post.header.teaser %}
+                            <img src="{{ post.header.teaser }}" alt="Teaser image for {{ post.title }}" style="max-width:200px; margin-right:1em;">
+                        {% endif %}
+                        <div>
+                            <div style="font-weight:bold;">{{ post.title }}</div>
+                            <div>{{ post.excerpt }}</div>
+                        </div>
+                    </div>
+                </a>
             </li>
         {% endunless %}
     {% endfor %}
 </ul>
 </div>
 {%- if page.tags -%}
-    {% for tag in page.tags %}
-        <a href="{{site.baseurl}}/archive.html#{{tag | slugize}}">
-            #{{ tag }}
-        </a>
-    {% endfor %}
+        {% for tag in page.tags %}
+                <a href="{{site.baseurl}}/archive.html#{{tag | slugize}}">
+                        #{{ tag }}
+                </a>
+        {% endfor %}
 {%- endif -%}

@@ -92,9 +92,14 @@ p {
   /* Remove default focus outline and set custom focus style */
   &:focus-within,
   &:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px #afa58f; /* Change #afa58f to your desired color */
-    border-color: $footer-background-color; /* Change to match your border color */
+    outline: none !important; // Remove default blue outline
+    box-shadow: 0 0 0 2px #afa58f; // Custom focus ring
+    border-color: $footer-background-color;
+  }
+  /* Remove inner focus ring for links inside li */
+  a:focus {
+    outline: none !important;
+    box-shadow: none !important;
   }
 }
 

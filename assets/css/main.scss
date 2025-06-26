@@ -131,21 +131,25 @@ p {
   @include breakpoint($small) {
     .custom-list-container li img {
       max-width: 80px;
+      margin-left: 0;
     }
   }
   @include breakpoint($medium) {
     .custom-list-container li img {
       max-width: 120px;
+      margin-left: 0;
     }
   }
   @include breakpoint($large) {
     .custom-list-container li img {
       max-width: 160px;
+      margin-left: 0;
     }
   }
   @include breakpoint($x-large) {
     .custom-list-container li img {
       max-width: 200px;
+      margin-left: 0;
     }
   }
 

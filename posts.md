@@ -10,7 +10,7 @@ author_profile: true
     <li style="margin-bottom: 2em;">
       {% if post.header.teaser %}
         <a href="{{ post.url }}">
-          <img src="{{ post.teaser }}" alt="Teaser image for {{ post.title }}" style="max-width:200px; display:block; margin-bottom:0.5em;">
+          <img src="{{ post.header.teaser }}" alt="Teaser image for {{ post.title }}" style="max-width:200px; display:block; margin-bottom:0.5em;">
         </a>
       {% endif %}
       <a href="{{ post.url }}">{{ post.title }}</a>

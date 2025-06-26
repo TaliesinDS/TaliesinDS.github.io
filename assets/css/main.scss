@@ -171,7 +171,8 @@ p {
     margin-top: 0.5em; 
   }
   .custom-post-title {
-    margin-top: 0.5em;
+    margin-top: 0.25em;
+    font-size: 1.3em;
   }                   
 }
 @include breakpoint($medium) {

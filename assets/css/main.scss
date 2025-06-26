@@ -69,6 +69,25 @@ p {
 }
 
 
+// To target a <div> with inline styles like margin-left: 0; padding-left: 0; you can't use a CSS selector directly for inline styles.
+// Instead, add a class or id to the div, for example: <div class="custom-list-container">
+// Then target it like this:
+.custom-list-container {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+// And for the <ul> inside:
+.custom-list-container ul {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+// For the <li> spacing:
+.custom-list-container li {
+  margin-bottom: 2em;
+}
 
 
 

@@ -11,7 +11,7 @@ author_profile: true
     {% unless post.tags contains "zeep" %}
         <li>
             {% if post.teaser %}
-                <img src="{{ post.teaser }}" alt="teaser image" style="max-width:150px; display:block; margin-bottom:8px;">
+                <img src="{{ post.heder.teaser }}" alt="teaser image" style="max-width:150px; display:block; margin-bottom:8px;">
             {% endif %}
             <a href="{{ post.url }}">{{ post.title }}</a>{{ post.excerpt }}
         </li>

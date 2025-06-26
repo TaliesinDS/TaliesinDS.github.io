@@ -7,21 +7,16 @@ author_profile: true
 ![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
 informatie over de zeep die ik maak.
 
-{% for tag in site.tags %}
-    {% if tag[0] == "zeep" %}
-        <ul style="list-style-type: none;">
-            {% for post in tag[1] %}
-                <li style="margin-bottom: 2em;">
-                    {% if post.teaser %}
-                        <a href="{{ post.url }}">
-                            <img src="{{ post.header.teaser }}" alt="Teaser image for {{ post.title }}" style="max-width:200px; display:block; margin-bottom:0.5em;">
-                        </a>
-                    {% endif %}
-                    <a href="{{ post.url }}">{{ post.title }}</a>
-                    {{ post.excerpt | strip_html }}
-                </li>
-            {% endfor %}
-        </ul>
+<ul style="list-style-type: none;">
+{% for post in site.posts %}
+    {% if post.tags contains "zeep" %}
+        <li>
+            {% if post.teaser %}
+                <img src="{{ post.header.teaser }}" alt="teaser image" style="max-width:150px; display:block; margin-bottom:8px;">
+            {% endif %}
+            <a href="{{ post.url }}">{{ post.title }}</a>{{ post.excerpt }}
+        </li>
     {% endif %}
 {% endfor %}
+</ul>
 

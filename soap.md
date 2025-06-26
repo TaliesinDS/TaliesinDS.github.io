@@ -20,6 +20,7 @@ author_profile: true
                         <div>
                             <div class="custom-post-title">{{ post.title }}</div>
                             <div id="custom-post-date">
+                                <i class="fas fa-spinner fa-spin fa-3x fa-fw"></i>
                                 {{ post.date | date: "%B %-d, %Y" }}
                             </div>
                             <div>{{ post.excerpt }}</div>

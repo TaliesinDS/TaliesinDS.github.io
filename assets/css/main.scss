@@ -13,12 +13,15 @@ search: false
     font-family: $serif;
     font-size: 0.9em;
     font-weight: normal;
+    line-height: 1.5;
+    color: $text-color;
   }
   li {
     font-family: $serif;
     font-size: 1.56em;
     font-weight: bold;
     line-height: 1.5;
+    color: $text-color;
   }
   dl {
     font-family: $serif;

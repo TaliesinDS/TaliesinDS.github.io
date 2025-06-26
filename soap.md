@@ -22,7 +22,9 @@ author_profile: true
                         <i class="fas fa-fw fa-calendar-alt"></i>
                         {{ post.date | date: "%B %-d, %Y" }}
                     </div>
-                    <div class="custom-post-excerpt">{{ post.excerpt }}</div>
+                    <div class="custom-post-excerpt" style="margin-bottom:0;">
+                        {{ post.excerpt | strip_html }}
+                    </div>
                 </div>
             </div>
         </a>
@@ -40,44 +42,3 @@ author_profile: true
     {% endfor %}
 {% endif %}
 
-<style>
-@media (max-width: 600px) {
-  .custom-list-container li img {
-    max-width: 80px !important;
-    width: 80px !important;
-    height: auto !important;
-    object-fit: contain !important;
-    display: block;
-  }
-  .custom-list-container li > a > div {
-    align-items: flex-start !important;
-    min-height: 0 !important;
-    overflow: hidden !important;
-  }
-  .custom-list-container li > a > div > div {
-    flex: 1 1 auto;
-    min-height: 0 !important;
-  }
-  .custom-post-date {
-    margin-top: 0.65em;
-  }
-  .custom-post-title {
-    margin-top: 0.25em;
-    font-size: 1.1em;
-  }
-  .custom-post-excerpt {
-    margin-top: 0.5em;
-    margin-bottom: 0 !important;
-    font-size: 1em;
-  }
-}
-.custom-list-container li > a > div {
-  align-items: flex-start;
-  overflow: hidden;
-}
-.custom-list-container li img {
-  height: auto;
-  object-fit: contain;
-  display: block;
-}
-</style>

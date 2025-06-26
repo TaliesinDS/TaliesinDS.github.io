@@ -9,7 +9,7 @@ informatie over de zeep die ik maak.
 
 <div style="margin-left: 0; padding-left: 0;">
 
-<ul style="list-style-type: none;">
+<ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
     {% for post in site.posts %}
         {% if post.tags contains "zeep" %}
             <li style="margin-bottom: 2em;">

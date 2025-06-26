@@ -6,7 +6,7 @@ author_profile: true
 ---
 ![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
 informatie over de zeep die ik maak.
-<div class="custom-list-container" style="margin-left: 0; padding-left: 0;">
+<div class="custom-list-container">
 
 <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
     {% for post in site.posts %}

@@ -9,7 +9,12 @@ author_profile: true
 <ul style="list-style-type: none;">
 {% for post in site.posts %}
     {% unless post.tags contains "zeep" %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a>{{ post.excerpt }}</li>
+        <li>
+            {% if post.teaser %}
+                <img src="{{ post.teaser }}" alt="teaser image" style="max-width:150px; display:block; margin-bottom:8px;">
+            {% endif %}
+            <a href="{{ post.url }}">{{ post.title }}</a>{{ post.excerpt }}
+        </li>
     {% endunless %}
 {% endfor %}
 </ul>

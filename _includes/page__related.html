@@ -5,14 +5,7 @@
   <div class="grid__wrapper">
     {% for post in posts limit:4 %}
       {% if post.id == page.id %}{% continue %}{% endif %}
-      <div class="related-post">
-        {% if post.teaser %}
-          <a href="{{ post.url | relative_url }}">
-            <img src="{{ post.teaser | relative_url }}" alt="{{ post.title }} teaser" class="related-post-teaser" />
-          </a>
-        {% endif %}
-        {% include archive-single.html type="grid" %}
-      </div>
+      {% include archive-single.html type="grid" %}
     {% endfor %}
   </div>
 </div>

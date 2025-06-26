@@ -9,13 +9,13 @@ author_profile: true
 <ul style="list-style-type: none;">
   {% for post in site.posts %}
     <li style="margin-bottom: 2em;">
-      {% if post.header.teaser %}
-        <a href="{{ post.url }}">
-          <img src="{{ post.header.teaser }}" alt="Teaser image for {{ post.title }}" style="max-width:200px; display:block; margin-bottom:0.5em;">
-        </a>
-      {% endif %}
       <a href="{{ post.url }}">{{ post.title }}</a>
       {{ post.excerpt }}
+      {% if post.header.teaser %}
+        <a href="{{ post.url }}">
+          <img src="{{ post.header.teaser }}" alt="Teaser image for {{ post.title }}" style="max-width:200px; display:block; margin-top:0.5em;">
+        </a>
+      {% endif %}
     </li>
   {% endfor %}
 </ul>

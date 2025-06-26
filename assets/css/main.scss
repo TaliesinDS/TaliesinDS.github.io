@@ -123,10 +123,13 @@ p {
 /* Responsive image sizing for smaller screens */
 @media (max-width: 600px) {
   .custom-list-container li img {
-    max-width: 80%;
-    height: auto;
+    max-width: 120px;
+    max-height: 120px;
+    width: 120px;
+    height: 120px;
     margin-left: auto;
     margin-right: auto;
+    display: block;
   }
 }
 

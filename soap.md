@@ -5,7 +5,6 @@ layout: single
 author_profile: true
 ---
 ![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
-informatie over de zeep die ik maak.
 <div class="custom-list-container">
 <ul style="list-style-type: none;">
     {% for post in site.posts %}
@@ -19,7 +18,7 @@ informatie over de zeep die ik maak.
                         <div>
                             <div style="font-weight:bold;">{{ post.title }}</div>
                             <div id="custom-post-date">
-                                {{ post.date | date: "%d-%m-%Y" }}
+                                {{ post.date | date: "%B %-d, %Y" }}
                             </div>
                             <div>{{ post.excerpt }}</div>
                         </div>

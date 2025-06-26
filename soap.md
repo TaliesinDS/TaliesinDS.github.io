@@ -5,19 +5,17 @@ layout: single
 author_profile: true
 ---
 ![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
-
-
-<div class="custom-list-container">
-<ul style="list-style-type: none;">
+<div class="custom-list-container" style="box-sizing: border-box; width: 100%;">
+<ul style="list-style-type: none; padding: 0; margin: 0; box-sizing: border-box;">
 {% for post in site.posts %}
 {% if post.tags contains "zeep" %}
-    <li style="margin-bottom: 2em;">
+    <li style="margin-bottom: 2em; box-sizing: border-box;">
         <a href="{{ post.url }}" style="text-decoration:none;">
-            <div style="display: flex; align-items: flex-start;">
+            <div style="display: flex; align-items: flex-start; box-sizing: border-box;">
                 {% if post.header.teaser %}
-                    <img src="{{ post.header.teaser }}" alt="Teaser image for {{ post.title }}" style="max-width:200px; margin-right:1em;">
+                    <img src="{{ post.header.teaser }}" alt="Teaser image for {{ post.title }}" style="max-width:200px; margin-right:1em; box-sizing: border-box;">
                 {% endif %}
-                <div>
+                <div style="box-sizing: border-box;">
                     <div class="custom-post-title">{{ post.title }}</div>
                     <div id="custom-post-date">
                         <i class="fas fa-fw fa-calendar-alt"></i>

@@ -5,6 +5,8 @@ layout: single
 author_profile: true
 ---
 ![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
+
+
 <div class="custom-list-container">
 <ul style="list-style-type: none;">
     {% for post in site.posts %}
@@ -16,7 +18,8 @@ author_profile: true
                             <img src="{{ post.header.teaser }}" alt="Teaser image for {{ post.title }}" style="max-width:200px; margin-right:1em;">
                         {% endif %}
                         <div>
-                            <div>{{ post.title }}</div>     <div id="custom-post-date">
+                            <div class="custom-post-title">{{ post.title }}</div>
+                            <div id="custom-post-date">
                                 {{ post.date | date: "%B %-d, %Y" }}
                             </div>
                             <div>{{ post.excerpt }}</div>

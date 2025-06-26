@@ -6,7 +6,10 @@ author_profile: true
 ---
 ![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
 
-<ul style="list-style-type: none;">
+<!-- Add a wrapper div to control alignment -->
+<div style="margin-left: 0; padding-left: 0;">
+
+<ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
     {% for post in site.posts %}
         {% unless post.tags contains "zeep" %}
             <li style="margin-bottom: 2em;">
@@ -21,10 +24,12 @@ author_profile: true
         {% endunless %}
     {% endfor %}
 </ul>
+
+</div>
 {%- if page.tags -%}
-        {% for tag in page.tags %}
-                <a href="{{site.baseurl}}/archive.html#{{tag | slugize}}">
-                        #{{ tag }}
-                </a>
-        {% endfor %}
+    {% for tag in page.tags %}
+        <a href="{{site.baseurl}}/archive.html#{{tag | slugize}}">
+            #{{ tag }}
+        </a>
+    {% endfor %}
 {%- endif -%}

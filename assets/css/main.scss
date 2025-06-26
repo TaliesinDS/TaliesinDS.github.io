@@ -120,41 +120,34 @@ p {
     margin-left: 0; // Stick image to the left
     margin-right: 0;
   }
-}
 
-/* Responsive image sizing for all breakpoints */
-@include breakpoint($small) {
   .custom-list-container li img {
-    max-width: 120px;
-    margin-left: 0; // Stick image to the left
-    margin-right: 0;
-    display: block;
-  }
-}
-@include breakpoint($medium) {
-  .custom-list-container li img {
-    max-width: 160px;
-    margin-left: 0; // Stick image to the left
-    margin-right: 0;
-    display: block;
-  }
-}
-@include breakpoint($large) {
-  .custom-list-container li img {
+    width: 100%;
     max-width: 200px;
-    margin-left: 0; // Stick image to the left
-    margin-right: 0;
+    height: auto;
     display: block;
   }
-}
-@include breakpoint($x-large) {
-  .custom-list-container li img {
-    max-width: 200px;
-    margin-left: 0; // Stick image to the left
-    margin-right: 0;
-    display: block;
+
+  @include breakpoint($small) {
+    .custom-list-container li img {
+      max-width: 80px;
+    }
   }
-}
+  @include breakpoint($medium) {
+    .custom-list-container li img {
+      max-width: 120px;
+    }
+  }
+  @include breakpoint($large) {
+    .custom-list-container li img {
+      max-width: 160px;
+    }
+  }
+  @include breakpoint($x-large) {
+    .custom-list-container li img {
+      max-width: 200px;
+    }
+  }
 
 
 

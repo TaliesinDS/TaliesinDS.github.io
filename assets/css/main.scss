@@ -138,6 +138,14 @@ p {
     width: 100% !important;
   }
 }
+
+// Fallback for screens smaller than 600px if $small is not set to 600px or lower
+@media (max-width: 600px) {
+  .custom-list-container li img {
+    max-width: 80px !important;
+    width: 100% !important;
+  }
+}
 @include breakpoint($medium) {
   .custom-list-container li img {
     max-width: 120px !important;

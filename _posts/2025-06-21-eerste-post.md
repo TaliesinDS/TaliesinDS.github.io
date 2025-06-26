@@ -11,5 +11,5 @@ comments: true
 ---
 eerste post test. <!--more-->
 
-![test image of a bull]({{ "/assets/images/bull1.png" | relative_url }})
+![test image of a bull](/assets/images/bull1.png)
 

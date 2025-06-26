@@ -22,41 +22,9 @@ author_profile: true
                         <i class="fas fa-fw fa-calendar-alt"></i>
                         {{ post.date | date: "%B %-d, %Y" }}
                     </div>
-                    <div class="custom-post-excerpt" style="margin-top:0.5em; margin-bottom:0; font-size:1em; font-weight:normal;">
-                        {{ post.excerpt | strip_html }}
-                    </div>
-                    <style>
-                    .custom-post-excerpt {
-                        margin-top: 0.5em;
-                        margin-bottom: 0;
-                        font-size: 1em;
-                        font-weight: normal;
-                    }
-                    @media (max-width: 900px) {
-                        .custom-post-excerpt {
-                            font-size: 0.98em !important;
-                            font-weight: normal !important;
-                            margin-top: 0.5em !important;
-                            margin-bottom: 0 !important;
-                        }
-                    }
-                    @media (max-width: 600px) {
-                        .custom-post-excerpt {
-                            font-size: 0.95em !important;
-                            font-weight: normal !important;
-                            margin-top: 0.5em !important;
-                            margin-bottom: 0 !important;
-                        }
-                    }
-                    @media (max-width: 400px) {
-                        .custom-post-excerpt {
-                            font-size: 0.92em !important;
-                            font-weight: normal !important;
-                            margin-top: 0.5em !important;
-                            margin-bottom: 0 !important;
-                        }
-                    }
-                    </style>     </div>
+                    <div class="custom-post-excerpt" style="margin-bottom:0; font-size:1em; font-weight:normal;">{{ post.excerpt | strip_html }}     </div>
+                </div>
+            </div>
         </a>
     </li>
 {% endif %}

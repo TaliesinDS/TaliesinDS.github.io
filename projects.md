@@ -23,7 +23,6 @@ author_profile: true
         {% endunless %}
     {% endfor %}
 </ul>
-
 </div>
 {%- if page.tags -%}
     {% for tag in page.tags %}

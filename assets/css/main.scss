@@ -121,13 +121,14 @@ p {
     margin-right: 0;
   }
 
-  .custom-list-container li img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    display: block;
+    .custom-list-container li img {
+      width: 100%;
+      max-width: 200px;
+      height: auto;
+      display: block;
+    }
   }
-
+  
   @include breakpoint($small) {
     .custom-list-container li img {
       max-width: 80px;
@@ -146,11 +147,10 @@ p {
       margin-left: 0;
     }
   }
-    @include breakpoint($x-large) {
-      .custom-list-container li img {
-        max-width: 200px;
-        margin-left: 0;
-      }
+  @include breakpoint($x-large) {
+    .custom-list-container li img {
+      max-width: 200px;
+      margin-left: 0;
     }
   }
 

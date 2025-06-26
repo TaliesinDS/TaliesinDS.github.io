@@ -6,8 +6,9 @@ author_profile: true
 ---
 ![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
 informatie over de zeep die ik maak.
-<div class="custom-list-container">
 
+
+<div class="custom-list-container">
 <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
     {% for post in site.posts %}
         {% if post.tags contains "zeep" %}
@@ -23,7 +24,6 @@ informatie over de zeep die ik maak.
         {% endif %}
     {% endfor %}
 </ul>
-
 </div>
 {%- if page.tags -%}
     {% for tag in page.tags %}

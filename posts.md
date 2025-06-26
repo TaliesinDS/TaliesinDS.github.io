@@ -5,6 +5,7 @@ layout: single
 author_profile: true
 ---
 
+<div class="custom-list-container">
 <ul style="list-style-type: none;">
   {% for post in site.posts %}
     <li style="margin-bottom: 2em;">
@@ -18,6 +19,7 @@ author_profile: true
     </li>
   {% endfor %}
 </ul>
+</div>
 {%- if page.tags -%}
     {% for tag in page.tags %}
         <a href="{{site.baseurl}}/archive.html#{{tag | slugize}}">

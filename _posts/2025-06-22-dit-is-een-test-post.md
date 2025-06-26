@@ -8,6 +8,8 @@ header:
  overlay_image: random
  overlay_filter: 0.3
 comments: true
+teaser: /assets/images/bull1.png
+
 ---
 
 

@@ -8,7 +8,7 @@ author_profile: true
 <ul style="list-style-type: none;">
   {% for post in site.posts %}
     <li style="margin-bottom: 2em;">
-      {% if post.teaser %}
+      {% if post.header.teaser %}
         <a href="{{ post.url }}">
           <img src="{{ post.teaser }}" alt="Teaser image for {{ post.title }}" style="max-width:200px; display:block; margin-bottom:0.5em;">
         </a>

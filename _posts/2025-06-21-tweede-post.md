@@ -4,9 +4,10 @@ layout: single
 author_profile: true
 tags: post zeep
 excerpt_separator: <!--more-->
-header:
- overlay_image: random
- overlay_filter: 0.3
+header: 
+  overlay_image: random
+  overlay_filter: 0.3
+  teaser: /assets/images/avatar1.png
 comments: true
 
 ---

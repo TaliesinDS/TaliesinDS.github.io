@@ -7,8 +7,7 @@ author_profile: true
 ![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
 
 <!-- Add a wrapper div to control alignment -->
-<div style="margin-left: 0; padding-left: 0;">
-
+<div class="custom-list-container">
 <ul style="list-style-type: none; margin-left: 0; padding-left: 0;">
     {% for post in site.posts %}
         {% unless post.tags contains "zeep" %}

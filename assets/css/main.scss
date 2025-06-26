@@ -121,7 +121,7 @@ p {
 }
 
 /* Responsive image sizing for smaller screens */
-@media (max-width: 600px) {
+@include breakpoint($small) {
   .custom-list-container li img {
     max-width: 120px;
     max-height: 120px;

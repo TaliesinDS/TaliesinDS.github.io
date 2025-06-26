@@ -16,8 +16,7 @@ author_profile: true
                             <img src="{{ post.header.teaser }}" alt="Teaser image for {{ post.title }}" style="max-width:200px; margin-right:1em;">
                         {% endif %}
                         <div>
-                            <div style="font-weight:bold;">{{ post.title }}</div>
-                            <div id="custom-post-date">
+                            <div>{{ post.title }}</div>     <div id="custom-post-date">
                                 {{ post.date | date: "%B %-d, %Y" }}
                             </div>
                             <div>{{ post.excerpt }}</div>

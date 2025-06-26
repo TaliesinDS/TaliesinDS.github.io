@@ -22,9 +22,7 @@ author_profile: true
                         <i class="fas fa-fw fa-calendar-alt"></i>
                         {{ post.date | date: "%B %-d, %Y" }}
                     </div>
-                    <div class="custom-post-excerpt" style="margin-bottom:0;">
-                        {{ post.excerpt | strip_html }}
-                    </div>
+                    <div class="custom-post-excerpt" style="margin-bottom:0; font-size:1em; font-weight:normal;">{{ post.excerpt | strip_html }}     </div>
                 </div>
             </div>
         </a>

@@ -168,8 +168,11 @@ p {
     }
   }
   .custom-post-date {
-   margin-top: 0.5em; 
- } 
+    margin-top: 0.5em; 
+  }
+  .custom-post-title {
+    margin-top: 0.5em;
+  }                   
 }
 @include breakpoint($medium) {
   .custom-list-container li img {

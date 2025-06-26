@@ -146,10 +146,11 @@ p {
       margin-left: 0;
     }
   }
-  @include breakpoint($x-large) {
-    .custom-list-container li img {
-      max-width: 200px;
-      margin-left: 0;
+    @include breakpoint($x-large) {
+      .custom-list-container li img {
+        max-width: 200px;
+        margin-left: 0;
+      }
     }
   }
 

@@ -7,8 +7,9 @@ excerpt_separator: <!--more-->
 header:
     overlay_image: random
     overlay_filter: 0.3
+    teaser: /assets/images/bull1.png
 comments: true
-teaser: /assets/images/bull1.png
+
 ---
 eerste post test. <!--more-->
 

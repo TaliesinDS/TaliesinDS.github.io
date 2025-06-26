@@ -114,6 +114,19 @@ p {
   img {
     box-shadow: none !important;
     transition: none !important;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Responsive image sizing for smaller screens */
+@media (max-width: 300px) {
+  .custom-list-container li img {
+    max-width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

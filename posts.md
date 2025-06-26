@@ -9,13 +9,17 @@ author_profile: true
 <ul style="list-style-type: none;">
   {% for post in site.posts %}
     <li style="margin-bottom: 2em;">
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      {{ post.excerpt }}
-      {% if post.header.teaser %}
-        <a href="{{ post.url }}">
-          <img src="{{ post.header.teaser }}" alt="Teaser image for {{ post.title }}" style="max-width:200px; display:block; margin-top:0.5em;">
-        </a>
-      {% endif %}
+      <a href="{{ post.url }}" style="text-decoration:none;">
+        <div style="display: flex; align-items: flex-start;">
+          {% if post.header.teaser %}
+            <img src="{{ post.header.teaser }}" alt="Teaser image for {{ post.title }}" style="max-width:200px; margin-right:1em;">
+          {% endif %}
+          <div>
+            <div style="font-weight:bold;">{{ post.title }}</div>
+            <div>{{ post.excerpt }}</div>
+          </div>
+        </div>
+      </a>
     </li>
   {% endfor %}
 </ul>

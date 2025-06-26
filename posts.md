@@ -25,5 +25,3 @@ author_profile: true
         </a>
     {% endfor %}
 {%- endif -%}
-
-

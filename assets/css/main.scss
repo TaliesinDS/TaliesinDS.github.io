@@ -167,6 +167,14 @@ p {
 }
 
 
+@media (max-width: 600px) {
+  .archive__item-teaser {
+    max-width: 80px !important;
+    width: 100% !important;
+  }
+}
+
+
 
 
 /* Style the comment form */

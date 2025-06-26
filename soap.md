@@ -18,7 +18,7 @@ informatie over de zeep die ik maak.
                         {% endif %}
                         <div>
                             <div style="font-weight:bold;">{{ post.title }}</div>
-                            <div class="custom-post-date">
+                            <div id="custom-post-date">
                                 {{ post.date | date: "%d-%m-%Y" }}
                             </div>
                             <div>{{ post.excerpt }}</div>

@@ -205,8 +205,13 @@ p {
     margin-bottom: 0 !important;
     font-size: 0.7em;
     // Responsive multiline ellipsis
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 3;
     max-height: 6em;
+  }
+  .page__hero--overlay .page__lead {
+    -webkit-line-clamp: 1;
+    line-height: 1.2em;
+    font-size: 1.1em;
   }
 }
 .custom-list-container li > a > div {

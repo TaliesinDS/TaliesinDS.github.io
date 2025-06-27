@@ -21,7 +21,6 @@ search: false
   // No max-height here
   line-height: 1.2em;
   font-size: 1.1em;
-  max-width: calc(100% - 300px);
 }
 
 
@@ -323,7 +322,10 @@ p {
   }
   .page__content {
     padding-inline-end: 0;
- }
+  }
+  .page__hero--overlay .page__lead {
+    max-width: calc(100% - 300px);
+  }
 }
 @include breakpoint($x-large) {
   .custom-list-container li img {
@@ -363,6 +365,9 @@ p {
   }
   .page__content {
     padding-inline-end: 0;
+  }
+  .page__hero--overlay .page__lead {
+    max-width: calc(100% - 300px);
   }
 }
 

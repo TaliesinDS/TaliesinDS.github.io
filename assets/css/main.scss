@@ -146,12 +146,7 @@ p {
 }
   
 // Responsive breakpoints for image sizing
-@include breakpoint($small) {
-  .custom-list-container li img {
-    max-width: 80px !important;
-    width: 100% !important;
-  }
-}
+
 @media (max-width: 600px) {
   .custom-list-container li img {
     max-width: 80px !important;
@@ -191,7 +186,17 @@ p {
   object-fit: contain;
   display: block;
 }
-
+@include breakpoint($small) {
+  .custom-list-container li img {
+    max-width: 80px !important;
+    width: 100% !important;
+  }
+  .custom-post-excerpt {
+    margin-top: 0.25em;
+    margin-bottom: 0 !important;
+    font-size: 0.85em;
+  }
+}
 @include breakpoint($medium) {
   .custom-list-container li img {
     max-width: 120px !important;

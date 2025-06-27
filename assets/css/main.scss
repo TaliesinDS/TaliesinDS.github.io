@@ -282,7 +282,7 @@ p {
 }
 @include breakpoint($x-large) {
   .custom-list-container li img {
-    max-width: 200px !important;
+    max-width: 160px !important;
     width: 100% !important;
     height: auto !important;
     object-fit: contain !important;

@@ -18,7 +18,7 @@ search: false
   }
   li {
     font-family: $serif;
-    font-size: 1.3em;
+    font-size: 1.1em;
     font-weight: normal;
     line-height: 1em;
     color: $text-color;
@@ -190,6 +190,10 @@ p {
   .custom-list-container li img {
     max-width: 80px !important;
     width: 100% !important;
+  }
+  .custom-post-title {
+    margin-top: 0.25em;
+    font-size: 1.1em;
   }
   .custom-post-excerpt {
     margin-top: 0.25em;

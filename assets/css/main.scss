@@ -16,7 +16,9 @@ search: false
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
-  max-height: 4.5em; // Adjust based on line-height if needed
+  // Remove max-height so only full lines are shown, not partial lines
+  // The combination of -webkit-line-clamp and overflow: hidden ensures only full lines are displayed
+  // No max-height here
   line-height: 1.5em;
 }
 

@@ -335,7 +335,7 @@ p {
     max-width: calc(100% - 200px);
   } 
   .page__related {
-  padding-inline-end: 200px;
+  //padding-inline-end: 200px;
   }
 }
 @include breakpoint($x-large) {
@@ -386,7 +386,7 @@ p {
     font-size: 1em !important; // 
   } 
   .page__related {
-    padding-inline-end: 200px;
+    //padding-inline-end: 200px;
   }
 }
 

@@ -304,6 +304,13 @@ p {
   .page__content {
     width: 120%;
   }
+  .page__inner-wrap {
+    float: inline-start;
+    margin-top: 1em;
+    margin-inline: 0;
+    width: 120%;
+    clear: both;
+  }
 }
 @include breakpoint($x-large) {
   .custom-list-container li img {
@@ -340,6 +347,13 @@ p {
   }
   .page__content {
     width: 120%;
+  }
+  .page__inner-wrap {
+    float: inline-start;
+    margin-top: 1em;
+    margin-inline: 0;
+    width: 100%;
+    clear: both;
   }
 }
 

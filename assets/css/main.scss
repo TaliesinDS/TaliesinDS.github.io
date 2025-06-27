@@ -368,6 +368,7 @@ p {
   }
   .page__hero--overlay .page__lead {
     max-width: calc(100% - 300px);
+    font-size: 1em !important; // 
   }
 }
 

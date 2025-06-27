@@ -194,6 +194,15 @@ p {
     object-fit: contain !important;
     display: block;
   }
+  .custom-list-container li > a > div {
+    align-items: flex-start !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+  .custom-list-container li > a > div > div {
+    flex: 1 1 auto;
+    min-height: 0 !important;
+  }
   .custom-post-title {
     margin-top: 0.5em;
     font-size: 1.1em;
@@ -211,6 +220,15 @@ p {
     height: auto !important;
     object-fit: contain !important;
     display: block;
+  }
+  .custom-list-container li > a > div {
+    align-items: flex-start !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+  .custom-list-container li > a > div > div {
+    flex: 1 1 auto;
+    min-height: 0 !important;
   }
   .custom-post-title {
     margin-top: 0.5em;
@@ -234,6 +252,15 @@ p {
     object-fit: contain !important;
     display: block;
   }
+  .custom-list-container li > a > div {
+    align-items: flex-start !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+  .custom-list-container li > a > div > div {
+    flex: 1 1 auto;
+    min-height: 0 !important;
+  }
   .custom-post-title {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -255,6 +282,15 @@ p {
     height: auto !important;
     object-fit: contain !important;
     display: block;
+  }
+  .custom-list-container li > a > div {
+    align-items: flex-start !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+  .custom-list-container li > a > div > div {
+    flex: 1 1 auto;
+    min-height: 0 !important;
   }
   .custom-post-title {
     margin-top: 0.5em;

@@ -22,7 +22,7 @@ author_profile: true
                         <i class="fas fa-fw fa-calendar-alt"></i>
                         {{ post.date | date: "%B %-d, %Y" }}
                     </div>
-                    <div class="custom-post-excerpt" style="margin-bottom:0; font-weight:normal; max-height:3em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ post.excerpt | strip_html }}</div>
+                    <div class="custom-post-excerpt" style="margin-bottom:0; font-weight:normal; max-height:3em; overflow: hidden; text-overflow: ellipsis;">{{ post.excerpt | strip_html }}</div>
                 </div>
             </div>
         </a>

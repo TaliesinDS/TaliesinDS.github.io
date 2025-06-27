@@ -12,7 +12,7 @@ author_profile: true
 {% if post.tags and post.tags contains 'zeep' %}
     <li style="margin-bottom: 2em; box-sizing: border-box;">
         <a href="{{ post.url }}" style="text-decoration:none;">
-            <div style="display: flex; align-items: flex-start; box-sizing: border-box; overflow: hidden;">
+            <div style="display: flex; align-items: flex-start; box-sizing: border-box;">
                 {% if post.header.teaser %}
                     <img src="{{ post.header.teaser }}" alt="Teaser image for {{ post.title }}" style="max-width:200px; height:auto; margin-right:1em; box-sizing: border-box; object-fit: contain; display: block;">
                 {% endif %}
@@ -22,7 +22,7 @@ author_profile: true
                         <i class="fas fa-fw fa-calendar-alt"></i>
                         {{ post.date | date: "%B %-d, %Y" }}
                     </div>
-                    <div class="custom-post-excerpt" style="margin-bottom:0; font-size:1em; font-weight:normal;">{{ post.excerpt | strip_html }}</div>
+                    <div class="custom-post-excerpt" style="margin-bottom:0; font-size:1em; font-weight:normal; max-height:3em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ post.excerpt | strip_html }}</div>
                 </div>
             </div>
         </a>

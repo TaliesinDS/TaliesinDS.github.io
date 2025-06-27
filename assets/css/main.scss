@@ -435,7 +435,16 @@ p {
   font-weight: normal;
   //height: 2.5em; // Set the height of the input box
 }
-#google-comment-form input[type="email"],
+#google-comment-form input[type="email"] {
+  font-size: 1em;
+  padding-left: 1em;
+  width: 100%;
+  margin-bottom: 0em;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-family: Georgia, 'Times New Roman', Times, serif; // <--- Change this line to set the input font
+  font-weight: normal;
+}
 #google-comment-form input[type="url"] {
   font-size: 1em;
   padding-left: 1em;

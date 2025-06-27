@@ -8,6 +8,21 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+.page__hero {
+  .page__lead {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    max-height: 4.5em; // Adjust based on line-height if needed
+    line-height: 1.5em;
+  }
+}
+
+
+
 .page__content {
   p {
     font-family: $serif;

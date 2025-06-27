@@ -339,6 +339,9 @@ p {
   }
 }
 @include breakpoint($x-large) {
+  $right-sidebar-width: 200px;
+  $right-sidebar-width-wide: 200px;
+
   .custom-list-container li img {
     max-width: 160px !important;
     width: 100% !important;
@@ -382,12 +385,9 @@ p {
     font-size: 1em !important; // 
   } 
   .page__related {
-  padding-inline-end: 300px;
+    padding-inline-end: 300px;
   }
-  $right-sidebar-width: 200px;
 }
-
-
 
 
 /* Style the comment form */

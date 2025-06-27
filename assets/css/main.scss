@@ -147,6 +147,19 @@ p {
   
 // Responsive breakpoints for image sizing
 
+// Ensure excerpt wraps and overflows only at the bottom
+.custom-post-excerpt {
+  white-space: normal;         // Allow wrapping
+  overflow: hidden;            // Hide overflow at the bottom
+  text-overflow: ellipsis;     // Show ellipsis when clipped
+  display: -webkit-box;        // For multiline ellipsis
+  -webkit-line-clamp: 3;       // Show up to 3 lines (adjust as needed)
+  -webkit-box-orient: vertical;
+  word-break: break-word;      // Break long words if needed
+  max-height: 4.5em;           // 3 lines * line-height (adjust as needed)
+  line-height: 1.5em;          // Set line height for calculation
+}
+
 @media (max-width: 600px) {
   .custom-list-container li img {
     max-width: 80px !important;
@@ -175,6 +188,9 @@ p {
     margin-top: 0.25em;
     margin-bottom: 0 !important;
     font-size: 0.85em;
+    // Responsive multiline ellipsis
+    -webkit-line-clamp: 4;
+    max-height: 6em;
   }
 }
 .custom-list-container li > a > div {
@@ -214,6 +230,8 @@ p {
     margin-top: 0.25em;
     margin-bottom: 0 !important;
     font-size: 0.85em;
+    -webkit-line-clamp: 4;
+    max-height: 6em;
   }
 }
 @include breakpoint($medium) {
@@ -246,6 +264,8 @@ p {
     margin-top: 0.5em;
     margin-bottom: 0 !important;
     font-size: 0.85em;
+    -webkit-line-clamp: 3;
+    max-height: 4.5em;
   }
 }
 @include breakpoint($large) {
@@ -278,6 +298,8 @@ p {
     margin-top: 0.5em;
     margin-bottom: 0 !important;
     font-size: 0.85em;
+    -webkit-line-clamp: 3;
+    max-height: 4.5em;
   }
 }
 @include breakpoint($x-large) {
@@ -310,6 +332,8 @@ p {
     margin-top: 0.5em;
     margin-bottom: 0 !important;
     font-size: 0.85em;
+    -webkit-line-clamp: 3;
+    max-height: 4.5em;
   }
 }
 

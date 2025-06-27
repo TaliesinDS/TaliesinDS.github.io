@@ -324,7 +324,7 @@ p {
     padding-inline-end: 0;
   }
   .page__hero--overlay .page__lead {
-    max-width: calc(100% - 300px);
+    max-width: calc(100% - 200px);
   }
 }
 @include breakpoint($x-large) {

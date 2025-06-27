@@ -2,7 +2,7 @@
 title: "Dit is een test post nr 5"
 layout: single
 author_profile: true
-tags: post webdev
+tags: post zeep
 excerpt_separator: <!--more-->
 header:
  overlay_image: random

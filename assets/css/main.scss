@@ -349,6 +349,7 @@ p {
     object-fit: contain !important;
     display: block;
     flex-shrink: 0; 
+    border-bottom: 1px solid $border-color;
   }
   .custom-list-container li > a > div {
     align-items: flex-start !important;
@@ -386,8 +387,6 @@ p {
   } 
   .page__related {
     padding-inline-end: 200px;
-    border-top: 1px solid $border-color;
-    width: calc(100% - 200px);
   }
 }
 

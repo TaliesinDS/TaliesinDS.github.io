@@ -206,17 +206,44 @@ p {
     max-width: 120px !important;
     width: 100% !important;
   }
+    .custom-post-title {
+    margin-top: 0.5em;
+    font-size: 1.1em;
+  }
+  .custom-post-excerpt {
+    margin-top: 0.25em;
+    margin-bottom: 0 !important;
+    font-size: 0.85em;
+  }
 }
 @include breakpoint($large) {
   .custom-list-container li img {
     max-width: 160px !important;
     width: 100% !important;
   }
+    .custom-post-title {
+    margin-top: 0.5em;
+    font-size: 1.1em;
+  }
+  .custom-post-excerpt {
+    margin-top: 0.25em;
+    margin-bottom: 0 !important;
+    font-size: 0.85em;
+  }
 }
 @include breakpoint($x-large) {
   .custom-list-container li img {
     max-width: 200px !important;
     width: 100% !important;
+  }
+    .custom-post-title {
+    margin-top: 0.5em;
+    font-size: 1.1em;
+  }
+  .custom-post-excerpt {
+    margin-top: 0.25em;
+    margin-bottom: 0 !important;
+    font-size: 0.85em;
   }
 }
 

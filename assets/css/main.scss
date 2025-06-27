@@ -431,6 +431,7 @@ p {
   border-radius: 4px;
   font-family: Georgia, 'Times New Roman', Times, serif; // <--- Change this line to set the input font
   font-weight: normal;
+  box-shadow: none;
   //height: 2.5em; // Set the height of the input box
 }
 #google-comment-form input[type="email"] {
@@ -441,7 +442,8 @@ p {
   border: 1px solid #bbb;
   border-radius: 4px;
   font-family: Georgia, 'Times New Roman', Times, serif; // <--- Change this line to set the input font
-  font-weight: normal;
+  font-weight: normal;\
+  box-shadow: none;
 }
 #google-comment-form input[type="url"] {
   font-size: 1em;
@@ -452,6 +454,7 @@ p {
   border-radius: 4px;
   font-family: Georgia, 'Times New Roman', Times, serif; // <--- Change this line to set the input font
   font-weight: normal;
+  box-shadow: none;
   //height: 2.5em; // Set the height of the input box
 }
 

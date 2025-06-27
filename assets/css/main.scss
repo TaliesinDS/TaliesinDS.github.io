@@ -339,9 +339,6 @@ p {
   }
 }
 @include breakpoint($x-large) {
-   .main {
-    max-width: 1480px;
-  }
   .custom-list-container li img {
     max-width: 160px !important;
     width: 100% !important;

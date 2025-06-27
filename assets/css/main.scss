@@ -495,21 +495,7 @@ p {
   padding: 0.5em 1em;
   margin-bottom: 0.5em;
   box-shadow: 0 1px 4px rgba(0,0,0,0.03);
-  // Overlay a subtle dark layer without overriding the original background color
-  position: relative;
-  overflow: hidden;
-}
-#comments div::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.08); // slightly darker overlay, no color
-  pointer-events: none;
-  z-index: 1;
-}
-#comments div > * {
-  position: relative;
-  z-index: 2;
+  background-color: #f2f2f2;
 }
 
 #comments strong {

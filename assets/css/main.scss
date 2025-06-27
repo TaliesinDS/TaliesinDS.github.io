@@ -301,6 +301,9 @@ p {
     -webkit-line-clamp: 3;
     max-height: 4.5em;
   }
+  .page__content {
+    width: 120%;
+  }
 }
 @include breakpoint($x-large) {
   .custom-list-container li img {
@@ -334,6 +337,9 @@ p {
     font-size: 0.85em;
     -webkit-line-clamp: 3;
     max-height: 4.5em;
+  }
+  .page__content {
+    width: 120%;
   }
 }
 

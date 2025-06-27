@@ -311,6 +311,9 @@ p {
     width: 120%;
     clear: both;
   }
+  .page__content {
+    padding-inline-end: 0;
+ }
 }
 @include breakpoint($x-large) {
   .custom-list-container li img {
@@ -354,6 +357,9 @@ p {
     margin-inline: 0;
     width: 120%;
     clear: both;
+ }
+  .page__content {
+    padding-inline-end: 0;
   }
 }
 

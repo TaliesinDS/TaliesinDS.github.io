@@ -189,7 +189,7 @@ p {
     margin-bottom: 0 !important;
     font-size: 0.85em;
     // Responsive multiline ellipsis
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     max-height: 6em;
   }
 }
@@ -230,7 +230,7 @@ p {
     margin-top: 0.25em;
     margin-bottom: 0 !important;
     font-size: 0.85em;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     max-height: 6em;
   }
 }

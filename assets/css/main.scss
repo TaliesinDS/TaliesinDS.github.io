@@ -185,6 +185,8 @@ p {
   height: auto;
   object-fit: contain;
   display: block;
+  min-width: 80px; // Prevent image from shrinking to zero
+  flex-shrink: 0;  // Prevent flexbox from shrinking the image
 }
 @include breakpoint($small) {
   .custom-list-container li img {
@@ -193,6 +195,7 @@ p {
     height: auto !important;
     object-fit: contain !important;
     display: block;
+    flex-shrink: 0; 
   }
   .custom-list-container li > a > div {
     align-items: flex-start !important;
@@ -220,6 +223,7 @@ p {
     height: auto !important;
     object-fit: contain !important;
     display: block;
+    flex-shrink: 0; 
   }
   .custom-list-container li > a > div {
     align-items: flex-start !important;
@@ -251,6 +255,7 @@ p {
     height: auto !important;
     object-fit: contain !important;
     display: block;
+    flex-shrink: 0; 
   }
   .custom-list-container li > a > div {
     align-items: flex-start !important;
@@ -282,6 +287,7 @@ p {
     height: auto !important;
     object-fit: contain !important;
     display: block;
+    flex-shrink: 0; 
   }
   .custom-list-container li > a > div {
     align-items: flex-start !important;

@@ -590,6 +590,15 @@ p {
 
 
 /* Archive page tag list restyle */
+// Ensure all variables used below are defined or imported before this block
+// Example (remove or adjust as needed if already defined elsewhere):
+// $serif: Georgia, 'Times New Roman', Times, serif;
+// $text-color: #222;
+// $border-color: #e2decf;
+// $link-color: #007acc;
+// $accent-color: #d2691e;
+// $muted-text-color: #8e8b82;
+
 #tags-list {
   margin-top: 2em;
   .tag-list {

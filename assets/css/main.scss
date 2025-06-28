@@ -215,23 +215,11 @@ p {
   }
   .page__hero--overlay .page__title {
     font-size: 1.3em;
+
   }
   .archive__item {
     display: flex !important;
     align-items: flex-column !important;
-  }
-  .archive__item-teaser {
-    max-width: 80px !important;
-    width: 80px !important;
-    height: auto !important;
-    object-fit: contain !important;
-    display: block;
-    margin-right: 1em;
-    flex-shrink: 0;
-  }
-  .archive__item {
-    display: flex !important;
-    align-items: flex-start !important;
   }
   .archive__item-teaser {
     max-width: 80px !important;
@@ -249,7 +237,7 @@ p {
     text-align: left;
   }
   .archive__item-title {
-    align-self: flex-start !important;
+    align-self: flex-column !important;
     margin-top: 0;
     margin-bottom: 0.2em;
     font-size: 1.1em;

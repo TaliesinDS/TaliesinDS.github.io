@@ -221,62 +221,60 @@ p {
     .grid__wrapper {
       display: flex !important;
       flex-direction: column !important;
-      gap: 1.5em !important;
+      gap: 1.5em;
     }
     .grid__item {
       display: flex !important;
       align-items: flex-start !important;
-      gap: 1em !important;
-      padding: 0.5em 0 !important;
-      border-radius: 4px !important;
-      background: none !important;
-      box-shadow: none !important;
-      margin-bottom: 0em !important;
+      gap: 1em;
+      padding: 0.5em 0;
+      border-radius: 4px;
+      background: none;
+      box-shadow: none;
+      margin-bottom: 0em;
     }
     .archive__item-teaser img {
-      flex-shrink: 0 !important;
-      width: 80px !important;
-      max-width: 80px !important;
-      height: auto !important;
-      object-fit: contain !important;
-      display: inline-block !important;
-      margin: 0 !important;
-      border-radius: 4px !important;
-      box-shadow: none !important;
+      flex-shrink: 0;
+      width: 80px;
+      max-width: 80px;
+      height: auto;
+      object-fit: contain;
+      display: inline-block;
+      margin: 0;
+      border-radius: 4px;
+      box-shadow: none;
     }
     .archive__item {
-      flex: 1 1 0 !important;
-      display: flex !important;
+      flex: 1 1 0;
+      display: flex;
       flex-direction: column !important;
       justify-content: flex-start !important;
-      min-width: 0 !important;
+      min-width: 0;
     }
     .archive__item-title {
-      font-size: 1em !important;
-      font-weight: bold !important;
-      margin: 0 0 0.25em 0 !important;
-      line-height: 1.2 !important;
+      font-size: 1em;
+      font-weight: bold;
+      margin: 0 0 0.25em 0;
+      line-height: 1.2;
     }
     .page__meta {
-      font-size: 0.8em !important;
-      color: $muted-text-color !important;
-      margin-bottom: 0.25em !important;
+      font-size: 0.8em;
+      color: $muted-text-color;
+      margin-bottom: 0.25em;
     }
     .archive__item-excerpt {
-      font-size: 0.75em !important;
-      color: $text-color !important;
-      margin: 0 !important;
-      line-height: 1.3 !important;
-      overflow: hidden !important;
-      text-overflow: ellipsis !important;
-      display: -webkit-box !important;
-      -webkit-line-clamp: 3 !important;
-      -webkit-box-orient: vertical !important;
-      white-space: normal !important;
+      font-size: 0.75em;
+      color: $text-color;
+      margin: 0;
+      line-height: 1.3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      white-space: normal;
     }
   }
-    
-
   
 
 

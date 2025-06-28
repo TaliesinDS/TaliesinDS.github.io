@@ -234,8 +234,15 @@ p {
     width: 80px !important;
     height: auto !important;
     object-fit: contain !important;
-    display: block;  
-  }
+    display: block;
+}
+.archive__item-main {
+  display: flex;
+  align-items: center;
+}
+.archive__item-teaser {
+  margin-right: 1em;
+}
 
 
 @include breakpoint($small) {

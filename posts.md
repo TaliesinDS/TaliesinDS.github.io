@@ -5,8 +5,6 @@ layout: single
 author_profile: true
 ---
 
-placeholder text
-
 <div class="custom-list-container" style="box-sizing: border-box; width: 100%;">
 <ul style="list-style-type: none; padding: 0; margin: 0; box-sizing: border-box;">
   {% for post in site.posts %}

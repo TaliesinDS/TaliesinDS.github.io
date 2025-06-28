@@ -229,15 +229,7 @@ p {
     flex: 1 1 0%;
     min-width: 0;
     width: 100%;
-  }
-  .archive__item-teaser {
-    flex: 0 0 80px;
-    max-width: 80px;
-    width: 80px;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    margin: 0;
+  
   }
   .archive__item-teaser img {
     width: 100%;
@@ -248,21 +240,24 @@ p {
   /* Stack title, meta, excerpt vertically */
   .archive__item-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
     gap: 0.2em;
     flex: 1 1 0%;
     min-width: 0;
   }
   .archive__item-title {
+    flex-direction: column !important;
     margin-top: 0;
     margin-bottom: 0.2em;
     font-size: 1.1em;
   }
   .page__meta {
+    flex-direction: column !important;
     margin: 0 0 0.4em 0;
     font-size: 0.85em;
   }
   .archive__item-excerpt {
+    flex-direction: column !important;
     margin-top: 0.25em;
     margin-bottom: 0;
     font-size: 0.7em;

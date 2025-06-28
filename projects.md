@@ -4,6 +4,7 @@ title: "andere dingen"
 layout: single
 author_profile: true
 ---
+placeholder text
 
 ![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
 

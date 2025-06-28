@@ -328,3 +328,5 @@ defaults:
       share: false
       related: true
       show_date: true
+
+page_excerpts: true

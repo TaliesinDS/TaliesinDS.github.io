@@ -3,13 +3,10 @@ permalink: /posts/
 title: "Alle posts"
 layout: single
 author_profile: true
-excerpt: "Alle posts."
+excerpt: "This page displays a complete list of all posts on the site"
 ---
-<p>Alle posts.<br>
-Nieuwste bovenaan.<br>
-nog wat tekst <br>
-misschien werkt dit.
-</p>
+This page displays a complete list of all posts on the site, with the newest entries shown at the top. Here you can easily browse through recent updates, articles, and stories in reverse chronological order. Whether you’re looking for the latest content or want to revisit older posts, this overview provides a convenient way to explore everything that has been published.
+
 
 <div class="custom-list-container" style="box-sizing: border-box; width: 100%;">
 <ul style="list-style-type: none; padding: 0; margin: 0; box-sizing: border-box;">

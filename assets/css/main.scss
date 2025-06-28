@@ -228,6 +228,16 @@ p {
   min-width: 80px; // Prevent image from shrinking to zero
   flex-shrink: 0;  // Prevent flexbox from shrinking the image
 }
+
+.archive__item-teaser {
+    max-width: 80px !important;
+    width: 80px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;  
+  }
+
+
 @include breakpoint($small) {
   .custom-list-container li img {
     max-width: 80px !important;

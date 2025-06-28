@@ -221,18 +221,14 @@ p {
     min-height: 0;
     overflow: hidden;
   }
-  .archive__item,
-  .archive__item-content {
+  .archive__item {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 1em;
     flex: 1 1 0%;
     min-width: 0;
-  }
-  .archive__item-content {
-    flex-direction: column;
-    gap: 0.2em;
+    width: 100%;
   }
   .archive__item-teaser {
     flex: 0 0 80px;
@@ -248,6 +244,14 @@ p {
     height: auto;
     display: block;
     object-fit: contain;
+  }
+  /* Stack title, meta, excerpt vertically */
+  .archive__item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    flex: 1 1 0%;
+    min-width: 0;
   }
   .archive__item-title {
     margin-top: 0;

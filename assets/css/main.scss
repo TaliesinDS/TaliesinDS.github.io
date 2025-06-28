@@ -217,15 +217,15 @@ p {
     display: flex;
     align-items: flex-start;
     gap: 1em;
-    min-height: 0 !important;
-    overflow: hidden !important;
+    min-height: 0 ;
+    overflow: hidden ;
   }
   .archive__item-teaser {
     flex: 0 0 80px;
-    max-width: 80px !important;
-    width: 80px !important;
-    height: auto !important;
-    object-fit: contain !important;
+    max-width: 80px ;
+    width: 80px ;
+    height: auto ;
+    object-fit: contain ;
     display: block;
     margin: 0;
   }
@@ -253,7 +253,7 @@ p {
   }
   .archive__item-excerpt {
     margin-top: 0.25em;
-    margin-bottom: 0 !important;
+    margin-bottom: 0 ;
     font-size: 0.7em;
     display: -webkit-box;
     -webkit-line-clamp: 3;

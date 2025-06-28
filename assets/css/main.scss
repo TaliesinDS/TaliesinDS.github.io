@@ -221,6 +221,19 @@ p {
     min-height: 0;
     overflow: hidden;
   }
+  .archive__item,
+  .archive__item-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1em;
+    flex: 1 1 0%;
+    min-width: 0;
+  }
+  .archive__item-content {
+    flex-direction: column;
+    gap: 0.2em;
+  }
   .archive__item-teaser {
     flex: 0 0 80px;
     max-width: 80px;
@@ -236,13 +249,6 @@ p {
     display: block;
     object-fit: contain;
   }
-  .archive__item {
-    flex: 1 1 0%;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.2em;
-  }
   .archive__item-title {
     margin-top: 0;
     margin-bottom: 0.2em;
@@ -251,22 +257,19 @@ p {
   .page__meta {
     margin: 0 0 0.4em 0;
     font-size: 0.85em;
+  }
   .archive__item-excerpt {
     margin-top: 0.25em;
-    margin-bottom: 0 ;
+    margin-bottom: 0;
     font-size: 0.7em;
     display: -webkit-box;
-    display: box;
     -webkit-line-clamp: 3;
-    line-clamp: 3;
     -webkit-box-orient: vertical;
-    box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;
     line-height: 1.4em;
     max-height: 4.2em;
-  }
   }
   .page__hero--overlay .page__title {
     font-size: 1.3em;

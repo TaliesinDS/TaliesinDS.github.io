@@ -215,17 +215,18 @@ p {
   }
   .grid__item {
     display: flex;
+    flex-direction: row;
     align-items: flex-start;
     gap: 1em;
-    min-height: 0 ;
-    overflow: hidden ;
+    min-height: 0;
+    overflow: hidden;
   }
   .archive__item-teaser {
     flex: 0 0 80px;
-    max-width: 80px ;
-    width: 80px ;
-    height: auto ;
-    object-fit: contain ;
+    max-width: 80px;
+    width: 80px;
+    height: auto;
+    object-fit: contain;
     display: block;
     margin: 0;
   }
@@ -250,19 +251,22 @@ p {
   .page__meta {
     margin: 0 0 0.4em 0;
     font-size: 0.85em;
-  }
   .archive__item-excerpt {
     margin-top: 0.25em;
     margin-bottom: 0 ;
     font-size: 0.7em;
     display: -webkit-box;
+    display: box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
+    box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;
     line-height: 1.4em;
     max-height: 4.2em;
+  }
   }
   .page__hero--overlay .page__title {
     font-size: 1.3em;

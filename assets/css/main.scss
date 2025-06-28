@@ -640,8 +640,7 @@ p {
               border-bottom: 1px dotted $border-color;
               transition: color 0.15s, border 0.15s;
               &:hover {
-                color: $accent-color;
-                border-bottom: 1px solid $accent-color;
+                color: $link-color-hover;
               }
             }
           }

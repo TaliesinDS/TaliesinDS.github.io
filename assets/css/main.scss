@@ -587,3 +587,76 @@ p {
   font-size: 0.8em;
   line-height: 1.5;
 }
+
+
+/* Archive page tag list restyle */
+#tags-list {
+  margin-top: 2em;
+  .tag-list {
+    background: #faf8f4;
+    border: 1px solid #e2decf;
+    border-radius: 8px;
+    margin-bottom: 2em;
+    padding: 1.5em 1.5em 1em 1.5em;
+    box-shadow: 0 2px 8px rgba(175, 165, 143, 0.06);
+    transition: box-shadow 0.2s;
+    &:hover {
+      box-shadow: 0 4px 16px rgba(175, 165, 143, 0.13);
+    }
+    .post-list-heading {
+      font-family: $serif;
+      font-size: 1.15em;
+      font-weight: bold;
+      color: $text-color;
+      margin-bottom: 0.8em;
+      border-bottom: 1px solid $border-color;
+      padding-bottom: 0.2em;
+      letter-spacing: 0.01em;
+      background: none;
+    }
+    .post-list {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      &.post-list-narrow {
+        li {
+          margin-bottom: 0.7em;
+          font-size: 1em;
+          line-height: 1.4;
+          b {
+            font-weight: 600;
+            a {
+              color: $link-color;
+              text-decoration: none;
+              border-bottom: 1px dotted $border-color;
+              transition: color 0.15s, border 0.15s;
+              &:hover {
+                color: $accent-color;
+                border-bottom: 1px solid $accent-color;
+              }
+            }
+          }
+          i {
+            font-size: 0.85em;
+            color: $muted-text-color;
+            font-style: normal;
+            margin-left: 0.5em;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive tweaks for tag archive */
+@media (max-width: 600px) {
+  #tags-list .tag-list {
+    padding: 1em 0.5em 0.5em 0.5em;
+    .post-list-heading {
+      font-size: 1em;
+    }
+    .post-list.post-list-narrow li {
+      font-size: 0.95em;
+    }
+  }
+}

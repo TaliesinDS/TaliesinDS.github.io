@@ -5,8 +5,9 @@ layout: single
 author_profile: true
 excerpt: "Alle posts."
 ---
-Alle posts.
+<p>Alle posts.
 Nieuwste bovenaan.
+</p>
 
 <div class="custom-list-container" style="box-sizing: border-box; width: 100%;">
 <ul style="list-style-type: none; padding: 0; margin: 0; box-sizing: border-box;">

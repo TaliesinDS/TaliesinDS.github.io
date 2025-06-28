@@ -217,8 +217,8 @@ p {
     font-size: 1.3em;
   }
   .archive__item-main {
-    display: flex;
-    align-items: flex-start;
+    display: flex !important;
+    align-items: flex-start !important;
   }
   .archive__item-teaser {
     max-width: 80px !important;
@@ -230,8 +230,8 @@ p {
     flex-shrink: 0;
   }
   .archive__item-title {
-    flex: 1 1 0;
-    align-self: flex-start;
+    flex: 1 1 0 !important;
+    align-self: flex-start !important;
     margin-top: 0;
   }
 }

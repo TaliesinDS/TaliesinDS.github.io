@@ -219,60 +219,62 @@ p {
 
   .page__related {
     .grid__wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5em;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 1.5em !important;
     }
     .grid__item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1em;
-      padding: 0.5em 0;
-      border-radius: 4px;
-      background: none;
-      box-shadow: none;
-      margin-bottom: 0em;
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 1em !important;
+      padding: 0.5em 0 !important;
+      border-radius: 4px !important;
+      background: none !important;
+      box-shadow: none !important;
+      margin-bottom: 0em !important;
     }
     .archive__item-teaser img {
-      flex-shrink: 0;
-      width: 80px;
-      max-width: 80px;
-      height: auto;
-      object-fit: contain;
-      display: inline-block;
-      margin: 0;
-      border-radius: 4px;
-      box-shadow: none;
+      flex-shrink: 0 !important;
+      width: 80px !important;
+      max-width: 80px !important;
+      height: auto !important;
+      object-fit: contain !important;
+      display: inline-block !important;
+      margin: 0 !important;
+      border-radius: 4px !important;
+      box-shadow: none !important;
     }
     .archive__item {
-      flex: 1 1 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      min-width: 0;
+      flex: 1 1 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: flex-start !important;
+      min-width: 0 !important;
     }
     .archive__item-title {
-      font-size: 1em;
-      font-weight: bold;
-      margin: 0 0 0.25em 0;
-      line-height: 1.2;
+      font-size: 1em !important;
+      font-weight: bold !important;
+      margin: 0 0 0.25em 0 !important;
+      line-height: 1.2 !important;
     }
     .page__meta {
-      font-size: 0.8em;
-      color: $muted-text-color;
-      margin-bottom: 0.25em;
+      font-size: 0.8em !important;
+      color: $muted-text-color !important;
+      margin-bottom: 0.25em !important;
     }
     .archive__item-excerpt {
-      font-size: 0.75em;
-      color: $text-color;
-      margin: 0;
-      line-height: 1.3;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      white-space: normal;
+      font-size: 0.75em !important;
+      color: $text-color !important;
+      margin: 0 !important;
+      line-height: 1.3 !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      display: -webkit-box !important;
+      -webkit-line-clamp: 3 !important;
+      -webkit-box-orient: vertical !important;
+      white-space: normal !important;
+    }
+  }
     }
   }
   

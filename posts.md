@@ -3,7 +3,7 @@ permalink: /posts/
 title: "Alle posts"
 layout: single
 author_profile: true
-excerpt: Alle posts.
+excerpt: "Alle posts."
 ---
 Alle posts.
 Nieuwste bovenaan.

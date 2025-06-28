@@ -523,34 +523,38 @@ body {
 /*
    Related
    ========================================================================== */
+  .page__related {
+    @include clearfix();
+    float: inline-start;
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid $border-color;
 
-.page__related {
-  @include clearfix();
-  float: inline-start;
-  margin-top: 2em;
-  padding-top: 1em;
-  border-top: 1px solid $border-color;
-  @include breakpoint($large) {
-    float: inline-end;
-    width: calc(100% - #{$right-sidebar-width-narrow} - 200px);
+    @include breakpoint($large) {
+      float: inline-end;
+      width: calc(100% - #{$right-sidebar-width-narrow} - 200px);
+      position: relative;
+      left: -200px;
+    }
+
+    @include breakpoint($x-large) {
+      width: calc(100% - #{$right-sidebar-width} - 200px);
+      position: relative;
+      left: -200px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 
-  @include breakpoint($x-large) {
-    width: calc(100% - #{$right-sidebar-width} - 200px);
+  .page__related-title {
+    margin-bottom: 10px;
+    font-family: $serif;
+    font-size: $type-size-6;
+    text-transform: uppercase;
   }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-}
-
-.page__related-title {
-  margin-bottom: 10px;
-  font-family: $serif;
-  font-size: $type-size-6;
-  text-transform: uppercase;
-}
 
 /*
    Wide Pages

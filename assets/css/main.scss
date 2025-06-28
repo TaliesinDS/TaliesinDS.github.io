@@ -213,63 +213,6 @@ p {
     line-height: 1.1em;
     font-size: 1.0em;
   }
-  .grid__item {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 1em;
-    min-height: 0;
-    overflow: hidden;
-  }
-  .archive__item {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 1em;
-    flex: 1 1 0%;
-    min-width: 0;
-    width: 100%;
-  
-  }
-  .archive__item-teaser img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-  }
-  /* Stack title, meta, excerpt vertically */
-  .archive__item-content {
-    display: flex;
-    flex-direction: column !important;
-    gap: 0.2em;
-    flex: 1 1 0%;
-    min-width: 0;
-  }
-  .archive__item-title {
-    flex-direction: column !important;
-    margin-top: 0;
-    margin-bottom: 0.2em;
-    font-size: 1.1em;
-  }
-  .page__meta {
-    flex-direction: column !important;
-    margin: 0 0 0.4em 0;
-    font-size: 0.85em;
-  }
-  .archive__item-excerpt {
-    flex-direction: column !important;
-    margin-top: 0.25em;
-    margin-bottom: 0;
-    font-size: 0.7em;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: normal;
-    line-height: 1.4em;
-    max-height: 4.2em;
-  }
   .page__hero--overlay .page__title {
     font-size: 1.3em;
   }

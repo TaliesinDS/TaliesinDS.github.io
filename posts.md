@@ -5,8 +5,10 @@ layout: single
 author_profile: true
 excerpt: "Alle posts."
 ---
-<p>Alle posts.
-Nieuwste bovenaan.
+<p>Alle posts.<br>
+Nieuwste bovenaan.<br>
+nog wat tekst <br>
+misschien werkt dit.
 </p>
 
 <div class="custom-list-container" style="box-sizing: border-box; width: 100%;">

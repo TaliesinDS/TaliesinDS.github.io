@@ -673,76 +673,53 @@ p {
 .search-content__form {
   background-color: #f6f6f6;
   font-size: 1.2em;
-
   .search-input {
     font-size: 1.2em;
   }
 }
-
-/* Style the results container and items */
-.results {
-  width: 100%;
-  margin-top: 1em;
-
-  /* Direct children for search results */
-  > ul,
-  > ol {
-    padding: 0;
-    margin: 0;
+.results__found {
+  font-family: $serif;
+  margin-top: 0.5em;
+  font-size: 0.75em;
+}
+/* Flex layout for image and content */
+.archive__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1em;
+  flex-direction: row;
+  .archive__item-teaser {
+    margin-bottom: 0;
+    flex-shrink: 0;
+    order: 1;
+    img {
+      max-width: 120px;
+      height: auto;
+      display: block;
+      margin: 0;
+      border-radius: 4px;
+    }
   }
-
-  .results__found {
-    font-family: $serif;
-    margin-top: 0.5em;
-    font-size: 0.75em;
-  }
-
-  .results,
-  li {
-    list-style: none;
-    margin: 0 0 1em 0;
-    padding: 0;
-
-    /* Flex layout for image and content */
-    .list__item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1em;
-      flex-direction: row;
-
-      .archive__item-teaser {
-        margin-bottom: 0;
-        flex-shrink: 0;
-        order: 1;
-        img {
-          max-width: 120px;
-          height: auto;
-          display: block;
-          margin: 0;
-          border-radius: 4px;
-        }
-      }
-      .archive__item-content {
-        flex: 1 1 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        order: 2;
-        .archive__item-title {
-          font-family: $serif;
-          font-size: 1.1em;
-          font-weight: bold;
-          margin-bottom: 0.25em;
-        }
-        .archive__item-excerpt {
-          font-family: $serif;
-          font-size: 0.9em;
-          margin-bottom: 0.5em;
-        }
-      }
+  .archive__item-content {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    order: 2;
+    .archive__item-title {
+      font-family: $serif;
+      font-size: 1.1em;
+      font-weight: bold;
+      margin-bottom: 0.25em;
+    }
+    .archive__item-excerpt {
+      font-family: $serif;
+      font-size: 0.9em;
+      margin-bottom: 0.5em;
     }
   }
 }
+
 
 /* Responsive: stack image above text on small screens */
 @media (max-width: 600px) {

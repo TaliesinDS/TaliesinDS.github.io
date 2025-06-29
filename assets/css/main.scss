@@ -671,18 +671,21 @@ p {
 
 .search-content__form {
   background-color: #f6f6f6;
-  font-size: 16px;
+  font-size: 1em;
+  .search-input {
+    font-size: 1em;
+  }
 }
 .results {
-   .results__found {
-    font-family: serif;
+  .results__found {
+    font-family: $serif;
     margin-top: 0.5em;
-    font-size: .75em;
-   }
-   .list__item {
+    font-size: 0.75em;
+  }
+  .list__item {
     .archive__item {
       .archive__item-title {
-        font-family: serif;
+        font-family: $serif;
         font-size: 1.1em;
         font-weight: bold;
         margin-bottom: 0.25em;
@@ -696,13 +699,13 @@ p {
           margin-left: 0;
           margin-right: 0;
           border-radius: 4px;
-        }  
+        }
       }
       .archive__item-excerpt {
-        font-family: serif;
+        font-family: $serif;
         font-size: 0.9em;
         margin-bottom: 0.5em;
-      } 
+      }
     }
-   }
+  }
 }

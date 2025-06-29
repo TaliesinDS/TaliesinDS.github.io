@@ -63,7 +63,7 @@ $(document).ready(function() {
           '<div class="list__item">' +
             '<article class="archive__item archive__item--with-image" itemscope itemtype="https://schema.org/CreativeWork" style="display: flex; align-items: flex-start;">' +
               '<div class="archive__item-teaser" style="flex: 0 0 auto; margin-right: 1em;">' +
-                '<img src="assets/images/bull200px.webp" alt="Default image" style="max-width: 120px; height: auto; display: block;">' +
+                '<img src="/assets/images/bull200px.webp" alt="Default image" style="max-width: 120px; height: auto; display: block;">' +
               '</div>' +
               '<div class="archive__item-content" style="flex: 1 1 0%;">' +
                 '<h2 class="archive__item-title" itemprop="headline" style="margin-top:0;">' +

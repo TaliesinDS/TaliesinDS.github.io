@@ -700,6 +700,17 @@ p {
       display: block;
       margin: 0;
       border-radius: 4px;
+      object-fit: contain;
+    }
+
+    // Responsive: smaller image on small screens
+    @media (max-width: 600px) {
+      img {
+      max-width: 80px;
+      width: 80px;
+      height: auto;
+      object-fit: contain;
+      }
     }
   }
   .archive__item-content {

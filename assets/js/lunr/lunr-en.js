@@ -43,37 +43,30 @@ $(document).ready(function() {
     for (var item in result) {
       var ref = result[item].ref;
       if(store[ref].teaser){
-        var teaserImg = store[ref].teaser ? store[ref].teaser : '/assets/images/bull200px.webp';
-        var teaserAlt = store[ref].teaser ? (store[ref].title || 'Teaser image') : 'Default bull image';
         var searchitem =
           '<div class="list__item">' +
             '<div class="archive__item-content-wrapper">' +
               '<div class="archive__item-teaser">' +
-          '<img src="' + teaserImg + '" alt="">' +
+          '<img src="' + store[ref].teaser + '" alt="">' +
               '</div>' +
               '<div class="archive__item-text">' +
-          '<h4 class="archive__item-title" itemprop="headline">' +
+          '<h2 class="archive__item-title" itemprop="headline">' +
             '<a href="' + store[ref].url + '" rel="permalink">' + store[ref].title + '</a>' +
-          '</h4>' +
+          '</h2>' +
           '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
               '</div>' +
             '</div>' +
           '</div>';
       }
       else{
-        var searchitem =
-          '<div class="list__item">' +
-            '<div class="archive__item-content-wrapper">' +
-          '<div class="archive__item-teaser">' +
-          '<img src="/assets/images/bull200px.webp" alt="Default bull image">' +
-          '</div>' +
-          '<div class="archive__item-text">' +
-          '<h4 class="archive__item-title" itemprop="headline">' +
-            '<a href="' + store[ref].url + '" rel="permalink">' + store[ref].title + '</a>' +
-          '</h4>' +
-          '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
-          '</div>' +
-            '</div>' +
+    	  var searchitem =
+          '<div class="list__item">'+
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<h2 class="archive__item-title" itemprop="headline">'+
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+              '</h2>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+            '</article>'+
           '</div>';
       }
       resultdiv.append(searchitem);

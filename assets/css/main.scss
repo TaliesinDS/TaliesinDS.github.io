@@ -669,6 +669,7 @@ p {
   }
 }
 
+/* Search form styling */
 .search-content__form {
   background-color: #f6f6f6;
   font-size: 1.2em;
@@ -678,10 +679,17 @@ p {
   }
 }
 
-// Style the results container and items
+/* Style the results container and items */
 .results {
-  // Ensure results take full width
   width: 100%;
+  margin-top: 1em;
+
+  /* Direct children for search results */
+  > ul,
+  > ol {
+    padding: 0;
+    margin: 0;
+  }
 
   .results__found {
     font-family: $serif;
@@ -689,25 +697,27 @@ p {
     font-size: 0.75em;
   }
 
-  .list__item {
-    // Remove default list style and spacing
+  .list__item,
+  li {
     list-style: none;
-    margin: 0;
+    margin: 0 0 1em 0;
     padding: 0;
 
+    /* Flex layout for image and content */
     .archive__item {
       display: flex;
       align-items: flex-start;
       gap: 1em;
+      flex-direction: row;
 
       .archive__item-teaser {
         margin-bottom: 0;
+        flex-shrink: 0;
         img {
           max-width: 120px;
           height: auto;
           display: block;
-          margin-left: 0;
-          margin-right: 0;
+          margin: 0;
           border-radius: 4px;
         }
       }
@@ -730,17 +740,17 @@ p {
         }
       }
     }
+  }
+}
 
-    // Ensure correct order: image left, content (title+excerpt) right
-    .archive__item {
-      flex-direction: row;
-
-      .archive__item-teaser {
-        order: 0;
-      }
-      .archive__item-content {
-        order: 1;
-      }
+/* Responsive: stack image above text on small screens */
+@media (max-width: 600px) {
+  .results .archive__item {
+    flex-direction: column;
+    gap: 0.5em;
+    .archive__item-teaser img {
+      max-width: 100%;
+      margin-bottom: 0.5em;
     }
   }
 }

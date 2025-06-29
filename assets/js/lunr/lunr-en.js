@@ -26,42 +26,52 @@ $(document).ready(function() {
   $('input#search').on('keyup', function () {
     var resultdiv = $('#results');
     var query = $(this).val().toLowerCase();
-    var result = idx.search(query);
-
+    var result =
+      idx.query(function (q) {
+        query.split(lunr.tokenizer.separator).forEach(function (term) {
+          q.term(term, { boost: 100 })
+          if(query.lastIndexOf(" ") != query.length-1){
+            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+          }
+          if (term != ""){
+            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+          }
+        })
+      });
     resultdiv.empty();
-    resultdiv.prepend('<p class="results__found">' + result.length + ' Result(s) found</p>');
-    for (var i = 0; i < result.length; i++) {
-      var ref = result[i].ref;
-      if (store[ref].teaser) {
+    resultdiv.prepend('<p class="results__found">'+result.length+' {{ site.data.ui-text[site.locale].results_found | default: "Result(s) found" }}</p>');
+for (var i = 0; i < result.length; i++) {
+  var ref = result[i].ref;
+      if(store[ref].teaser){
         var teaserImg = store[ref].teaser ? store[ref].teaser : '/assets/images/bull200px.webp';
         var searchitem =
           '<div class="list__item">' +
             '<div class="archive__item-content-wrapper">' +
               '<div class="archive__item-teaser">' +
-                '<img src="' + teaserImg + '" alt="">' +
+          '<img src="' + teaserImg + '" alt="">' +
               '</div>' +
               '<div class="archive__item-text">' +
-                '<h4 class="archive__item-title" itemprop="headline">' +
-                  '<a href="' + store[ref].url + '" rel="permalink">' + store[ref].title + '</a>' +
-                '</h4>' +
-                '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
+          '<h4 class="archive__item-title" itemprop="headline">' +
+            '<a href="' + store[ref].url + '" rel="permalink">' + store[ref].title + '</a>' +
+          '</h4>' +
+          '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
               '</div>' +
             '</div>' +
           '</div>';
       }
-      else {
+      else{
         var searchitem =
           '<div class="list__item">' +
             '<div class="archive__item-content-wrapper">' +
-              '<div class="archive__item-teaser">' +
-                '<img src="/assets/images/bull200px.webp" alt="Default bull image">' +
-              '</div>' +
-              '<div class="archive__item-text">' +
-                '<h4 class="archive__item-title" itemprop="headline">' +
-                  '<a href="' + store[ref].url + '" rel="permalink">' + store[ref].title + '</a>' +
-                '</h4>' +
-                '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
-              '</div>' +
+          '<div class="archive__item-teaser">' +
+          '<img src="/assets/images/bull200px.webp" alt="Default bull image">' +
+          '</div>' +
+          '<div class="archive__item-text">' +
+          '<h4 class="archive__item-title" itemprop="headline">' +
+            '<a href="' + store[ref].url + '" rel="permalink">' + store[ref].title + '</a>' +
+          '</h4>' +
+          '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
+          '</div>' +
             '</div>' +
           '</div>';
       }

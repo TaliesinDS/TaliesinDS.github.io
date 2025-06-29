@@ -684,6 +684,7 @@ p {
 }
 /* Flex layout for image and content */
 .archive__item-content-wrapper {
+  flex-direction: row;
   gap: 1em;
   .archive__item-teaser {
     margin-bottom: 0;

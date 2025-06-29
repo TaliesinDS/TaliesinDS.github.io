@@ -682,88 +682,88 @@ p {
   margin-top: 0.5em;
   font-size: 0.75em;
 }
-/* Flex layout for image and content */
-.archive__item-content-wrapper {
+
+/* List item layout for search results */
+.list__item {
+  margin-bottom: 2em;
+  border-radius: 4px;
+  max-width: 100%;
+  border: 0px solid #afa58f;
+  transition: box-shadow 0.2s;
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+}
+
+/* Archive item layout */
+.list__item .archive__item {
   display: flex;
-  flex-direction: row; // This already puts image/content in a row (left to right)
+  flex-direction: row;
   align-items: flex-start;
   gap: 1em;
+  background: none;
+  box-shadow: none;
+  border-radius: 4px;
+  padding: 0.5em 0;
+}
 
-  // Move teaser image to the left by putting .archive__item-teaser before .archive__item-content in your HTML.
-  // If you can't change the HTML, you can use order:
-  .archive__item-teaser {
-    order: 0; // Ensure teaser comes first (left)
-    margin-bottom: 0;
+/* Teaser image styles */
+.list__item .archive__item-teaser {
+  order: 0;
+  margin-bottom: 0;
+  img {
+    max-width: 120px;
+    height: auto;
+    display: block;
+    margin: 0;
+    border-radius: 4px;
+    object-fit: contain;
+  }
+  @media (max-width: 600px) {
+    min-width: 80px;
+    max-width: 80px;
+    flex-shrink: 0;
     img {
-      max-width: 120px;
-      height: auto;
-      display: block;
-      margin: 0;
-      border-radius: 4px;
-      object-fit: contain;
-    }
-
-    // Prevent squishing/cropping on small screens
-    @media (max-width: 600px) {
-      min-width: 80px;
       max-width: 80px;
-      flex-shrink: 0;
-      img {
-        max-width: 80px;
-        width: 80px;
-        height: auto;
-        object-fit: contain;
-        display: block;
-        margin-bottom: 2px;
-      }
+      width: 80px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 2px;
     }
   }
+}
 
-      // Responsive: smaller image on small screens
-      @media (max-width: 600px) {
-        img {
-          max-width: 80px;
-          width: 80px;
-          height: auto;
-          object-fit: contain;
-        }
-      }
-    } // <-- This closes .archive__item-content-wrapper
-  
-  .archive__item-content {
-    order: 1; // Ensure content comes after teaser (right)
-    .archive__item-title,
-    h2.archive__item-title {
-      font-family: $serif;
-      font-size: 1.1em !important;
-      font-weight: bold;
-      margin-bottom: 0.25em;
-      @media (max-width: 600px) {
-        font-size: 1em !important;
-        margin-bottom: 0.15em;
-      }
-    }
-    .archive__item-excerpt {
-      font-family: $serif;
-      font-size: 0.9em;
-      margin-bottom: 0.5em;
-      @media (max-width: 600px) {
-        font-size: 0.75em;
-        margin-bottom: 0.15em;
-      }
-    }
+/* Content styles */
+.list__item .archive__item-title,
+.list__item h2.archive__item-title {
+  font-family: $serif;
+  font-size: 1.1em !important;
+  font-weight: bold;
+  margin-bottom: 0.25em;
+  @media (max-width: 600px) {
+    font-size: 1em !important;
+    margin-bottom: 0.15em;
   }
-
-
+}
+.list__item .archive__item-excerpt {
+  font-family: $serif;
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+  @media (max-width: 600px) {
+    font-size: 0.75em;
+    margin-bottom: 0.15em;
+  }
+}
 
 /* Responsive: stack image above text on small screens */
 @media (max-width: 600px) {
-  .results .archive__item {
+  .list__item .archive__item {
     flex-direction: column;
     gap: 0.5em;
-    .archive__item-teaser img {
-      max-width: 100%;
-      margin-bottom: 0.5em;
-    }
+  }
+  .list__item .archive__item-teaser img {
+    max-width: 100%;
+    margin-bottom: 0.5em;
   }
 }

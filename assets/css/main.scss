@@ -683,7 +683,7 @@ p {
   font-size: 0.75em;
 }
 /* Flex layout for image and content */
-.archive__item {
+.archive__item-content-wrapper {
   gap: 1em;
   .archive__item-teaser {
     margin-bottom: 0;

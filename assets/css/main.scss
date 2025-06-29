@@ -684,14 +684,9 @@ p {
 }
 /* Flex layout for image and content */
 .archive__item {
-  display: flex;
-  align-items: flex-start;
   gap: 1em;
-  flex-direction: row;
   .archive__item-teaser {
     margin-bottom: 0;
-    flex-shrink: 0;
-    order: 1;
     img {
       max-width: 120px;
       height: auto;
@@ -699,6 +694,8 @@ p {
       margin: 0;
       border-radius: 4px;
     }
+  }
+  .archive__item-content {
     .archive__item-title {
       font-family: $serif;
       font-size: 1.1em;

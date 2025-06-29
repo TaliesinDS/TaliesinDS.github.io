@@ -498,18 +498,22 @@ $(document).ready(function() {
       if(store[ref].teaser){
         var searchitem =
           '<div class="list__item">'+
-            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
-              '<h2 class="archive__item-title" itemprop="headline">'+
-                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
-              '</h2>'+
-              '<div class="archive__item-teaser">'+
-                '<img src="'+store[ref].teaser+'" alt="">'+
+            '<article class="archive__item search-result-item" itemscope itemtype="https://schema.org/CreativeWork">'+
+              '<div class="search-result-image" style="float:left; margin-right: 16px;">'+
+          '<img src="'+store[ref].teaser+'" alt="" style="max-width:100px; height:auto; display:block;">'+
               '</div>'+
-              '<p class="archive__item-excerpt" itemprop="description">'+(store[ref].excerpt && store[ref].excerpt.trim() !== "" ? store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...' : '')+'</p>'+
+              '<div class="search-result-content" style="overflow:hidden;">'+
+          '<h2 class="archive__item-title" itemprop="headline" style="margin-top:0;">'+
+            '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
+          '</h2>'+
+          '<p class="archive__item-excerpt" itemprop="description">'+
+            (store[ref].excerpt && store[ref].excerpt.trim() !== "" ? store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...' : '')+
+          '</p>'+
+              '</div>'+
             '</article>'+
           '</div>';
-      }
-      else{
+            }
+            else{
     	  var searchitem =
           '<div class="list__item">'+
             '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+

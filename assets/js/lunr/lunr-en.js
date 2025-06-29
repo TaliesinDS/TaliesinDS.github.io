@@ -52,9 +52,9 @@ $(document).ready(function() {
           '<img src="' + teaserImg + '" alt="">' +
               '</div>' +
               '<div class="archive__item-text">' +
-          '<h2 class="archive__item-title" itemprop="headline">' +
+          '<h3 class="archive__item-title" itemprop="headline">' +
             '<a href="' + store[ref].url + '" rel="permalink">' + store[ref].title + '</a>' +
-          '</h2>' +
+          '</h3>' +
           '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
               '</div>' +
             '</div>' +
@@ -68,9 +68,9 @@ $(document).ready(function() {
           '<img src="/assets/images/bull200px.webp" alt="Default bull image">' +
           '</div>' +
           '<div class="archive__item-text">' +
-          '<h2 class="archive__item-title" itemprop="headline">' +
+          '<h3 class="archive__item-title" itemprop="headline">' +
             '<a href="' + store[ref].url + '" rel="permalink">' + store[ref].title + '</a>' +
-          '</h2>' +
+          '</h3>' +
           '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
           '</div>' +
             '</div>' +

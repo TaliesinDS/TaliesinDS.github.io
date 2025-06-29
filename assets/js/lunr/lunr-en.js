@@ -21,7 +21,6 @@ var idx = lunr(function () {
     })
   }
 });
-
 $(document).ready(function() {
   $('input#search').on('keyup', function () {
     var resultdiv = $('#results');
@@ -42,35 +41,21 @@ $(document).ready(function() {
     resultdiv.prepend('<p class="results__found">'+result.length+' {{ site.data.ui-text[site.locale].results_found | default: "Result(s) found" }}</p>');
     for (var item in result) {
       var ref = result[item].ref;
-      if(store[ref].teaser){
-        var teaserImg = store[ref].teaser ? store[ref].teaser : '/assets/images/bull200px.webp';
-        var teaserAlt = store[ref].teaser ? (store[ref].title || 'Teaser image') : 'Default bull image';
-        var searchitem =
-          '<div class="list__item">' +
-            '<div class="archive__item-content-wrapper">' +
-              '<div class="archive__item-teaser">' +
-          '<img src="' + teaserImg + '" alt="">' +
-              '</div>' +
-              '<div class="archive__item-text">' +
-          '<h2 class="archive__item-title" itemprop="headline">' +
-            '<a href="' + store[ref].url + '" rel="permalink">' + store[ref].title + '</a>' +
-          '</h2>' +
-          '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
-              '</div>' +
+      var teaserImg = store[ref].teaser ? store[ref].teaser : "bull200px.webp";
+      var searchitem =
+        '<div class="list__item">' +
+          '<div class="archive__item-content-wrapper">' +
+            '<div class="archive__item-teaser">' +
+        '<img src="' + teaserImg + '" alt="">' +
             '</div>' +
-          '</div>';
-      }
-      else{
-    	  var searchitem =
-          '<div class="list__item">'+
-            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
-              '<h2 class="archive__item-title" itemprop="headline">'+
-                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
-              '</h2>'+
-              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
-            '</article>'+
-          '</div>';
-      }
+            '<div class="archive__item-text">' +
+        '<h2 class="archive__item-title" itemprop="headline">' +
+          '<a href="' + store[ref].url + '" rel="permalink">' + store[ref].title + '</a>' +
+        '</h2>' +
+        '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
       resultdiv.append(searchitem);
     }
   });

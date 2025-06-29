@@ -43,11 +43,13 @@ $(document).ready(function() {
     for (var item in result) {
       var ref = result[item].ref;
       if(store[ref].teaser){
+        var teaserImg = store[ref].teaser ? store[ref].teaser : '/assets/images/bull200px.webp';
+        var teaserAlt = store[ref].teaser ? (store[ref].title || 'Teaser image') : 'Default bull image';
         var searchitem =
           '<div class="list__item">' +
             '<div class="archive__item-content-wrapper">' +
               '<div class="archive__item-teaser">' +
-          '<img src="' + store[ref].teaser + '" alt="">' +
+          '<img src="' + teaserImg + '" alt="">' +
               '</div>' +
               '<div class="archive__item-text">' +
           '<h2 class="archive__item-title" itemprop="headline">' +

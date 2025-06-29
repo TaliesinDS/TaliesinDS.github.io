@@ -21,7 +21,6 @@ var idx = lunr(function () {
     })
   }
 });
-
 $(document).ready(function() {
   $('input#search').on('keyup', function () {
     var resultdiv = $('#results');
@@ -42,29 +41,32 @@ $(document).ready(function() {
     resultdiv.prepend('<p class="results__found">'+result.length+' {{ site.data.ui-text[site.locale].results_found | default: "Result(s) found" }}</p>');
     for (var item in result) {
       var ref = result[item].ref;
+      var searchitem = '';
       if(store[ref].teaser){
-        var searchitem =
-          '<div class="list__item">'+
-            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
-              '<h2 class="archive__item-title" itemprop="headline">'+
-                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
-              '</h2>'+
-              '<div class="archive__item-teaser">'+
-                '<img src="'+store[ref].teaser+'" alt="">'+
-              '</div>'+
-              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
-            '</article>'+
+        searchitem =
+          '<div class="list__item">' +
+            '<article class="archive__item archive__item--with-image" itemscope itemtype="https://schema.org/CreativeWork" style="display: flex; align-items: flex-start;">' +
+              '<div class="archive__item-teaser" style="flex: 0 0 auto; margin-right: 1em;">' +
+                '<img src="'+store[ref].teaser+'" alt="" style="max-width: 120px; height: auto; display: block;">' +
+              '</div>' +
+              '<div class="archive__item-content" style="flex: 1 1 0%;">' +
+                '<h2 class="archive__item-title" itemprop="headline" style="margin-top:0;">' +
+                  '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>' +
+                '</h2>' +
+                '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>' +
+              '</div>' +
+            '</article>' +
           '</div>';
       }
       else{
-    	  var searchitem =
-          '<div class="list__item">'+
-            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
-              '<h2 class="archive__item-title" itemprop="headline">'+
-                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
-              '</h2>'+
-              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
-            '</article>'+
+        searchitem =
+          '<div class="list__item">' +
+            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">' +
+              '<h2 class="archive__item-title" itemprop="headline">' +
+                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>' +
+              '</h2>' +
+              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>' +
+            '</article>' +
           '</div>';
       }
       resultdiv.append(searchitem);

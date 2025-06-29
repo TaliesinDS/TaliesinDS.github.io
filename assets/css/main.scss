@@ -732,13 +732,14 @@ p {
   
   .archive__item-content {
     order: 1; // Ensure content comes after teaser (right)
-    .archive__item-title {
+    .archive__item-title,
+    h2.archive__item-title {
       font-family: $serif;
-      font-size: 1.1em;
+      font-size: 1.1em !important;
       font-weight: bold;
       margin-bottom: 0.25em;
       @media (max-width: 600px) {
-        font-size: 1em;
+        font-size: 1em !important;
         margin-bottom: 0.15em;
       }
     }

@@ -1,6 +1,4 @@
----
-layout: none
----
+
 
 var idx = lunr(function () {
   this.field('title')
@@ -21,7 +19,6 @@ var idx = lunr(function () {
     })
   }
 });
-
 $(document).ready(function() {
   $('input#search').on('keyup', function () {
     var resultdiv = $('#results');
@@ -29,53 +26,42 @@ $(document).ready(function() {
     var result =
       idx.query(function (q) {
         query.split(lunr.tokenizer.separator).forEach(function (term) {
-          q.term(term, { boost: 100 })
+          q.term(term, { boost: 100 });
           if(query.lastIndexOf(" ") != query.length-1){
-            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+            q.term(term, { usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 });
           }
           if (term != ""){
-            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+            q.term(term, { usePipeline: false, editDistance: 1, boost: 1 });
           }
-        })
+        });
       });
     resultdiv.empty();
     resultdiv.prepend('<p class="results__found">'+result.length+' {{ site.data.ui-text[site.locale].results_found | default: "Result(s) found" }}</p>');
     for (var item in result) {
       var ref = result[item].ref;
-      if(store[ref].teaser){
-        var teaserImg = store[ref].teaser ? store[ref].teaser : '/assets/images/bull200px.webp';
-        var teaserAlt = store[ref].teaser ? (store[ref].title || 'Teaser image') : 'Default bull image';
-        var searchitem =
+      var url = store[ref].url;
+      // Ensure url is absolute or relative as needed
+      if (!/^https?:\/\//.test(url) && !url.startsWith('/')) {
+        url = '/' + url;
+      }
+      var teaserImg = store[ref].teaser ? store[ref].teaser : '/assets/images/bull200px.webp';
+      var teaserAlt = store[ref].teaser ? (store[ref].title || 'Teaser image') : 'Default bull image';
+      var searchitem =
+        '<a href="' + url + '" rel="permalink" class="list__item-link">' +
           '<div class="list__item">' +
             '<div class="archive__item-content-wrapper">' +
               '<div class="archive__item-teaser">' +
-          '<img src="' + teaserImg + '" alt="">' +
+                  '<img src="' + teaserImg + '" alt="' + teaserAlt + '">' +
               '</div>' +
               '<div class="archive__item-text">' +
-          '<h4 class="archive__item-title" itemprop="headline">' +
-            '<a href="' + store[ref].url + '" rel="permalink">' + store[ref].title + '</a>' +
-          '</h4>' +
-          '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
+                '<h4 class="archive__item-title" itemprop="headline">' +
+                    store[ref].title +
+                '</h4>' +
+                '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
               '</div>' +
             '</div>' +
-          '</div>';
-      }
-      else{
-        var searchitem =
-          '<div class="list__item">' +
-            '<div class="archive__item-content-wrapper">' +
-          '<div class="archive__item-teaser">' +
-          '<img src="/assets/images/bull200px.webp" alt="Default bull image">' +
           '</div>' +
-          '<div class="archive__item-text">' +
-          '<h4 class="archive__item-title" itemprop="headline">' +
-            '<a href="' + store[ref].url + '" rel="permalink">' + store[ref].title + '</a>' +
-          '</h4>' +
-          '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
-          '</div>' +
-            '</div>' +
-          '</div>';
-      }
+        '</a>';
       resultdiv.append(searchitem);
     }
   });

@@ -727,19 +727,17 @@ p {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-
+        order: 2;
         .archive__item-title {
           font-family: $serif;
           font-size: 1.1em;
           font-weight: bold;
           margin-bottom: 0.25em;
-          order: 2;
         }
         .archive__item-excerpt {
           font-family: $serif;
           font-size: 0.9em;
           margin-bottom: 0.5em;
-          order: 3;
         }
       }
     }

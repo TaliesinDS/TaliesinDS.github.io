@@ -671,41 +671,51 @@ p {
 
 .search-content__form {
   background-color: #f6f6f6;
-  font-size: 1em;
+  font-size: 1.2em;
   .search-input {
-    font-size: 1em;
+    font-size: 1.2em;
   }
-}
-.results {
-  .results__found {
-    font-family: $serif;
-    margin-top: 0.5em;
-    font-size: 0.75em;
-  }
-  .list__item {
-    .archive__item {
-      .archive__item-title {
-        font-family: $serif;
-        font-size: 1.1em;
-        font-weight: bold;
-        margin-bottom: 0.25em;
-      }
-      .archive__item-teaser {
-        margin-bottom: 0.5em;
-        img {
-          max-width: 200px;
-          height: auto;
-          display: block;
-          margin-left: 0;
-          margin-right: 0;
-          border-radius: 4px;
+  .results {
+    .results__found {
+      font-family: $serif;
+      margin-top: 0.5em;
+      font-size: 0.75em;
+    }
+    .list__item {
+      .archive__item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1em;
+
+        .archive__item-teaser {
+          margin-bottom: 0;
+          img {
+            max-width: 120px;
+            height: auto;
+            display: block;
+            margin-left: 0;
+            margin-right: 0;
+            border-radius: 4px;
+          }
         }
-      }
-      .archive__item-excerpt {
-        font-family: $serif;
-        font-size: 0.9em;
-        margin-bottom: 0.5em;
+        .archive__item-content {
+          flex: 1 1 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+
+          .archive__item-title {
+            font-family: $serif;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 0.25em;
+          }
+          .archive__item-excerpt {
+            font-family: $serif;
+            font-size: 0.9em;
+            margin-bottom: 0.5em;
+          }
+        }
       }
     }
   }
-}

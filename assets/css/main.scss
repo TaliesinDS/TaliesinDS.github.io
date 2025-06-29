@@ -730,5 +730,17 @@ p {
         }
       }
     }
+
+    // Ensure correct order: image left, content (title+excerpt) right
+    .archive__item {
+      flex-direction: row;
+
+      .archive__item-teaser {
+        order: 0;
+      }
+      .archive__item-content {
+        order: 1;
+      }
+    }
   }
 }

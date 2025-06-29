@@ -901,7 +901,7 @@ nl: &DEFAULT_NL
   search_label_text          : "Geef uw zoekterm in..."
   search_placeholder_text    : "Geef uw zoekterm in..."
   search_algolia_no_results  :
-  results_found              : "Resultaat gevonden"
+  results_found              : "Resultaten gevonden"
   back_to_top                : "Terug naar boven"
 nl-BE:
   <<: *DEFAULT_NL

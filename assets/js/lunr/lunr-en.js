@@ -52,9 +52,7 @@ $(document).ready(function() {
         '<div class="list__item">' +
           '<div class="archive__item-content-wrapper">' +
             '<div class="archive__item-teaser">' +
-              '<a href="' + url + '" rel="permalink">' +
-                '<img src="' + teaserImg + '" alt="' + teaserAlt + '">' +
-              '</a>' +
+              '<img src="' + teaserImg + '" alt="' + teaserAlt + '">' +
             '</div>' +
             '<div class="archive__item-text">' +
               '<h4 class="archive__item-title" itemprop="headline">' +

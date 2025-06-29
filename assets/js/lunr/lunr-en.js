@@ -1,4 +1,6 @@
-
+---
+layout: none
+---
 
 var idx = lunr(function () {
   this.field('title')
@@ -47,21 +49,21 @@ $(document).ready(function() {
       var teaserImg = store[ref].teaser ? store[ref].teaser : '/assets/images/bull200px.webp';
       var teaserAlt = store[ref].teaser ? (store[ref].title || 'Teaser image') : 'Default bull image';
       var searchitem =
-        '<a href="' + url + '" rel="permalink" class="list__item-link">' +
-          '<div class="list__item">' +
-            '<div class="archive__item-content-wrapper">' +
-              '<div class="archive__item-teaser">' +
-                  '<img src="' + teaserImg + '" alt="' + teaserAlt + '">' +
-              '</div>' +
-              '<div class="archive__item-text">' +
-                '<h4 class="archive__item-title" itemprop="headline">' +
-                    store[ref].title +
-                '</h4>' +
-                '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
-              '</div>' +
+        '<div class="list__item">' +
+          '<div class="archive__item-content-wrapper">' +
+            '<div class="archive__item-teaser">' +
+              '<a href="' + url + '" rel="permalink">' +
+                '<img src="' + teaserImg + '" alt="' + teaserAlt + '">' +
+              '</a>' +
+            '</div>' +
+            '<div class="archive__item-text">' +
+              '<h4 class="archive__item-title" itemprop="headline">' +
+                '<a href="' + url + '" rel="permalink">' + store[ref].title + '</a>' +
+              '</h4>' +
+              '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
             '</div>' +
           '</div>' +
-        '</a>';
+        '</div>';
       resultdiv.append(searchitem);
     }
   });

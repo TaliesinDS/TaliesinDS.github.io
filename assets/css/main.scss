@@ -719,16 +719,17 @@ p {
     }
   }
 
-    // Responsive: smaller image on small screens
-    @media (max-width: 600px) {
-      img {
-      max-width: 80px;
-      width: 80px;
-      height: auto;
-      object-fit: contain;
+      // Responsive: smaller image on small screens
+      @media (max-width: 600px) {
+        img {
+          max-width: 80px;
+          width: 80px;
+          height: auto;
+          object-fit: contain;
+        }
       }
-    }
-  }
+    } // <-- This closes .archive__item-content-wrapper
+  
   .archive__item-content {
     order: 1; // Ensure content comes after teaser (right)
     .archive__item-title {

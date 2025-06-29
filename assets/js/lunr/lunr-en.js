@@ -28,14 +28,14 @@ $(document).ready(function() {
     var result =
       idx.query(function (q) {
         query.split(lunr.tokenizer.separator).forEach(function (term) {
-          q.term(term, { boost: 100 })
+          q.term(term, { boost: 100 });
           if(query.lastIndexOf(" ") != query.length-1){
-            q.term(term, {  usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 })
+            q.term(term, { usePipeline: false, wildcard: lunr.Query.wildcard.TRAILING, boost: 10 });
           }
           if (term != ""){
-            q.term(term, {  usePipeline: false, editDistance: 1, boost: 1 })
+            q.term(term, { usePipeline: false, editDistance: 1, boost: 1 });
           }
-        })
+        });
       });
     resultdiv.empty();
     resultdiv.prepend('<p class="results__found">'+result.length+' {{ site.data.ui-text[site.locale].results_found | default: "Result(s) found" }}</p>');

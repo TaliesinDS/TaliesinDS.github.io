@@ -685,10 +685,14 @@ p {
 /* Flex layout for image and content */
 .archive__item-content-wrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; // This already puts image/content in a row (left to right)
   align-items: flex-start;
   gap: 1em;
+
+  // Move teaser image to the left by putting .archive__item-teaser before .archive__item-content in your HTML.
+  // If you can't change the HTML, you can use order:
   .archive__item-teaser {
+    order: 0; // Ensure teaser comes first (left)
     margin-bottom: 0;
     img {
       max-width: 120px;
@@ -699,6 +703,7 @@ p {
     }
   }
   .archive__item-content {
+    order: 1; // Ensure content comes after teaser (right)
     .archive__item-title {
       font-family: $serif;
       font-size: 1.1em;

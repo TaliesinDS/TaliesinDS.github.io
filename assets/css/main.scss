@@ -673,3 +673,36 @@ p {
   background-color: transparent;
   font-size: 16px;
 }
+.results {
+   .results__found {
+    font-family: serif;
+    margin-top: 0.5em;
+    font-size: .75em;
+   }
+   .list__item {
+    .archive__item {
+      .archive__item-title {
+        font-family: serif;
+        font-size: 1.1em;
+        font-weight: bold;
+        margin-bottom: 0.25em;
+      }
+      .archive__item-teaser {
+        margin-bottom: 0.5em;
+        img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin-left: 0;
+          margin-right: 0;
+          border-radius: 4px;
+        }  
+      }
+      .archive__item-excerpt {
+        font-family: serif;
+        font-size: 0.9em;
+        margin-bottom: 0.5em;
+      } 
+    }
+   }
+}

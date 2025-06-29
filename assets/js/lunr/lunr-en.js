@@ -61,14 +61,19 @@ $(document).ready(function() {
           '</div>';
       }
       else{
-    	  var searchitem =
-          '<div class="list__item">'+
-            '<article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">'+
-              '<h2 class="archive__item-title" itemprop="headline">'+
-                '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
-              '</h2>'+
-              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
-            '</article>'+
+        var searchitem =
+          '<div class="list__item">' +
+            '<div class="archive__item-content-wrapper">' +
+          '<div class="archive__item-teaser">' +
+          '<img src="/assets/images/bull200px.webp" alt="Default bull image">' +
+          '</div>' +
+          '<div class="archive__item-text">' +
+          '<h2 class="archive__item-title" itemprop="headline">' +
+            '<a href="' + store[ref].url + '" rel="permalink">' + store[ref].title + '</a>' +
+          '</h2>' +
+          '<p class="archive__item-excerpt" itemprop="description">' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
+          '</div>' +
+            '</div>' +
           '</div>';
       }
       resultdiv.append(searchitem);

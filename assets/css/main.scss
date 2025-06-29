@@ -703,6 +703,21 @@ p {
       object-fit: contain;
     }
 
+    // Prevent squishing/cropping on small screens
+    @media (max-width: 600px) {
+      min-width: 80px;
+      max-width: 80px;
+      flex-shrink: 0;
+      img {
+        max-width: 80px;
+        width: 80px;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+    }
+  }
+
     // Responsive: smaller image on small screens
     @media (max-width: 600px) {
       img {

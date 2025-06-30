@@ -1,14 +1,16 @@
 ---
 layout: tag
-title: post
+title: alle posts met tag "posts"
 permalink: /tag/post/
 header: false
 ---
 
 <h1>Posts tagged with "{{ page.title }}"</h1>
 <div class="tag-post-list">
-  {% assign tagname = page.title %}
-  {% assign tagged_posts = site.posts | where_exp: "post", "post.tags contains tagname" %}
+{% assign tagname = page.name | split: '.' | first %}
+{% assign tagged_posts = site.posts | where_exp: "post", "post.tags contains tagname" %}
+<h1>Posts tagged with "{{ tagname }}"</h1>
+<div class="tag-post-list">
   {% for post in tagged_posts %}
     <div class="tag-post-item" style="display: flex; align-items: flex-start; margin-bottom: 2em;">
       <div class="tag-post-teaser" style="flex: 0 0 120px; margin-right: 1em;">

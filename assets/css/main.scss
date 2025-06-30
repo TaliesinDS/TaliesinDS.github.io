@@ -818,15 +818,17 @@ p {
 }
 
 .tag-post-content h2 {
-  margin-top: 0;
-  margin-bottom: 0em;
-  font-size: 1.3em;
+  margin-top: 0.5;
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
+  font-weight: 450;
   font-family: serif;
 }
 .tag-post-date {
   margin-top: 0;
   margin-bottom: 0.3em;
-  font-size: 0.7em;
+  font-size: 0.6em;
+  font-weight: lighter;
   font-family: serif;
 }
 .tag-post-content a {

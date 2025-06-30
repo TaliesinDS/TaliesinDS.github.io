@@ -768,3 +768,97 @@ p {
     margin-bottom: 0.5em;
   }
 }
+
+
+//tag pages
+/* Tag post list styles */
+.page__title {
+  font-family: $serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 2.5em;
+  color: $text-color;
+}
+.tag-post-list {
+  margin: 2em 0;
+  padding: 0;
+}
+
+.tag-post-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2em;
+  background: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  padding: 1em;
+  transition: box-shadow 0.2s;
+}
+
+.tag-post-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.tag-post-teaser {
+  flex: 0 0 120px;
+  margin-right: 1em;
+}
+
+.tag-post-teaser img {
+  border-radius: 6px;
+  width: 120px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  background: #eee;
+}
+
+.tag-post-content {
+  flex: 1 1 0%;
+}
+
+.tag-post-content h2 {
+  margin-top: 0;
+  margin-bottom: 0.3em;
+  font-size: 1.3em;
+}
+
+.tag-post-content a {
+  text-decoration: none;
+  color: #2a2a2a;
+}
+
+.tag-post-content a:hover {
+  text-decoration: underline;
+  color: #007acc;
+}
+
+.tag-post-content div {
+  color: #888;
+  font-size: 0.95em;
+  margin-bottom: 0.5em;
+}
+
+.tag-post-content p {
+  margin: 0;
+  color: #444;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 700px) {
+  .tag-post-item {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.7em;
+  }
+  .tag-post-teaser {
+    margin-right: 0;
+    margin-bottom: 0.7em;
+    text-align: center;
+  }
+  .tag-post-teaser img {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}

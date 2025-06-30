@@ -782,11 +782,11 @@ p {
     outline: none !important; // Remove default blue outline
     box-shadow: 0 0 0 2px #afa58f; // Custom focus ring
     border-color: $footer-background-color;
+    border-radius: 4px; 
   }
 }
 .tag-post-item-link:hover .tag-post-item {
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-  background: #f5faff;
 }
 
 .page__title {

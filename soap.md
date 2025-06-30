@@ -36,10 +36,9 @@ Soap making is an ancient craft that dates back thousands of years, with its ori
 </div>
 
 {% if page.tags %}
+  <div class="post-tags">
     {% for tag in page.tags %}
-        <a href="{{site.baseurl}}/archive.html#{{tag | slugize}}">
-            #{{ tag }}
-        </a>
+      <a href="{{ '/tag/' | append: tag | slugify | append: '/' | relative_url }}" class="post-tag">#{{ tag }}</a>
     {% endfor %}
+  </div>
 {% endif %}
-

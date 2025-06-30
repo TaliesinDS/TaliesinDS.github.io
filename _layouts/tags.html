@@ -1,7 +1,20 @@
 ---
-layout: archive
+layout: single
+title: "Tags"
+permalink: /tags/
 ---
 
-{{ content }}
+<div>
+  Browse posts by tag:
+</div>
 
-{% include posts-taxonomy.html taxonomies=site.tags %}
+<ul class="tag-index">
+  {% for tag in site.data.tags %}
+    <li>
+      <a href="{{ '/tag/' | append: tag[0] | slugify | append: '/' | relative_url }}">
+        <strong>#{{ tag[0] }}</strong>
+      </a>
+      <span> - {{ tag[1].description }}</span>
+    </li>
+  {% endfor %}
+</ul>

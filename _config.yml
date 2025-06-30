@@ -313,6 +313,10 @@ jekyll-archives:
     day: '/:year/:month/:day/'
     tag: '/tag/:name/'
 
+collections:
+  tags:
+    output: true
+    permalink: /tag/:name/
 
 # HTML Compression
 # - https://jch.penibelst.de/

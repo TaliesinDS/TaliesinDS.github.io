@@ -31,11 +31,10 @@ This page displays a complete list of all posts on the site, with the newest ent
   {% endfor %}
 </ul>
 </div>
-{%- if page.tags -%}
+{% if page.tags %}
+  <div class="post-tags">
     {% for tag in page.tags %}
-        <a href="{{site.baseurl}}/archive.html#{{tag | slugize}}">
-            #{{ tag }}
-        </a>
+      <a href="{{ '/tag/' | append: tag | slugify | append: '/' | relative_url }}" class="post-tag">#{{ tag }}</a>
     {% endfor %}
-{%- endif -%}
-
+  </div>
+{% endif %}

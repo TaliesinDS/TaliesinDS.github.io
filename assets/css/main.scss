@@ -54,7 +54,6 @@ search: false
   margin-top: 0em;
 }
 h1,
-  font-weight: 600;
 h2,
 h3,
 h4,
@@ -67,22 +66,23 @@ h6 {
 }
 h1 {
   margin-top:0;
-  font-size:1.563em
+  font-size:1.563em;
+  font-weight: 600;
 }
 h2 {
-  font-size:1.25em
+  font-size:1.25em;
 }
 h3 {
-  font-size:1.125em
+  font-size:1.125em;
 }
 h4 {
-  font-size:1.0625em
+  font-size:1.0625em;
 }
 h5 {
-  font-size:1.03125em
+  font-size:1.03125em;
 }
 h6 {
-  font-size:1em
+  font-size:1em;
 }
 small,
 .small {

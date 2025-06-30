@@ -772,6 +772,16 @@ p {
 
 //tag pages
 /* Tag post list styles */
+
+.tag-post-item-link {
+  display: block;
+  transition: box-shadow 0.2s;
+}
+.tag-post-item-link:hover .tag-post-item {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  background: #f5faff;
+}
+
 .page__title {
   font-family: $serif;
   font-size: 1.5em;

@@ -2,6 +2,7 @@
 layout: tag
 title: post
 permalink: /tag/post/
+header: false
 ---
 
 <h1>Posts tagged with "{{ page.title }}"</h1>

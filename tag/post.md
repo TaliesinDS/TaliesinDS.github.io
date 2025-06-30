@@ -5,7 +5,6 @@ permalink: /tag/post/
 header: false
 ---
 
-
 <div class="tag-post-list">
 {% assign tagname = page.name | split: '.' | first %}
 {% assign tagged_posts = site.posts | where_exp: "post", "post.tags contains tagname" %}
@@ -22,7 +21,8 @@ header: false
                     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                 </h2>
                 <div class="tag-post-date" style="color: #888; font-size: 0.9em; margin-bottom: 0.5em;">
-                        {{ post.date | date: "%b %-d, %Y" }}
+                    <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                    {{ post.date | date: "%b %-d, %Y" }}
                 </div>
                 <p>{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
             </div>

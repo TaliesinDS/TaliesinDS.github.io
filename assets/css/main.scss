@@ -50,7 +50,7 @@ search: false
   font-size: 0.6em;
   font-weight: lighter;
   color: $muted-text-color;
-  font-family: 'EB Garamond', Georgia, 'Times New Roman', Times, serif;
+  font-family: $serif;
   margin-top: 0em;
 }
 h1,
@@ -464,7 +464,7 @@ p {
 
 /* Style the comment form */
 #google-comment-form {
-  font-family: Georgia, 'Times New Roman', Times, serif, Arial, sans-serif;
+  font-family: $serif;
   font-size: 0.75em;
   color: #8e8b82;
   padding: 1em;
@@ -491,7 +491,7 @@ p {
   margin-bottom: 1em;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-family: Georgia, 'Times New Roman', Times, serif; // <--- Change this line to set the input font
+  font-family: $serif; // <--- Change this line to set the input font
   font-weight: normal;
   box-shadow: none;
 }
@@ -502,7 +502,7 @@ p {
   margin-bottom: 0em;
   border: 1px solid #bbb;
   border-radius: 4px;
-  font-family: Georgia, 'Times New Roman', Times, serif; // <--- Change this line to set the input font
+  font-family: $serif; // <--- Change this line to set the input font
   font-weight: normal;
   box-shadow: none !important;
   //height: 2.5em; // Set the height of the input box
@@ -514,7 +514,7 @@ p {
   margin-bottom: 1em;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-family: Georgia, 'Times New Roman', Times, serif; // <--- Change this line to set the input font
+  font-family: $serif; // <--- Change this line to set the input font
   font-weight: normal;
   box-shadow: none;
 }
@@ -525,7 +525,7 @@ p {
   margin-bottom: 0em;
   border: 1px solid #bbb;
   border-radius: 4px;
-  font-family: Georgia, 'Times New Roman', Times, serif; // <--- Change this line to set the input font
+  font-family: $serif; // <--- Change this line to set the input font
   font-weight: normal;
   box-shadow: none;
   //height: 2.5em; // Set the height of the input box
@@ -539,7 +539,7 @@ p {
   border: none;
   border-radius: 4px;
   border: 1px solid #afa58f;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family:  $serif;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.2s;
@@ -556,7 +556,7 @@ p {
 
 /* Style the comments display */
 #comments {
-  font-family: 'Georgia', 'Times New Roman', serif;
+  font-family: $serif;
   font-size: 1.08em;
   color: #222;
   margin-top: 2em;
@@ -577,7 +577,7 @@ p {
 
 #comments em {
   color: #8e8b82;
-  font-family: Georgia,Times,serif;
+  font-family: $serif;
   font-size: .75em;
   margin-left: 0.5em;
 }
@@ -592,7 +592,7 @@ p {
 /* Archive page tag list restyle */
 // Ensure all variables used below are defined or imported before this block
 // Example (remove or adjust as needed if already defined elsewhere):
-// $serif: Georgia, 'Times New Roman', Times, serif;
+// $serif: Georgia, 'Times New Roman', Times, $serif;
 // $text-color: #222;
 // $border-color: #e2decf;
 // $link-color: #007acc;

@@ -32,13 +32,14 @@ $helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif !default;
 
 /* Serif - modern font stack */
 $transitional: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
-$old-style: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;;
+$old-style: 'EB Garamond', 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;;
 $monospace-slab-serif: 'Nimbus Mono PS', 'Courier New', monospace;
 $slab-serif: Rockwell, 'Rockwell Nova', 'Roboto Slab', 'DejaVu Serif', 'Sitka Small', serif;
 $antique: Superclarendon, 'Bookman Old Style', 'URW Bookman', 'URW Bookman L', 'Georgia Pro', Georgia, serif;
 $didone: Didot, 'Bodoni MT', 'Noto Serif Display', 'URW Palladio L', P052, Sylfaen, serif;
 
 /* serif typefaces - defined in Minimal Mistakes */
+$eb-garamond: 'EB Garamond', serif !default;
 $georgia: Georgia, serif !default;
 $times: Times, serif !default;
 $bodoni: "Bodoni MT", serif !default;
@@ -53,7 +54,7 @@ $handwritten: 'Segoe Print', 'Bradley Hand', Chilanka, TSCu_Comic, casual, cursi
 
 /* Defaults used in Minimal mistakes */
 $default-sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-$default-serif: Georgia, Times, serif;
+$default-serif: 'EB Garamond', Georgia, Times, serif;
 $default-monospace: Monaco, Consolas, "Lucida Console", monospace;
 
 /* Emoji native from modern font stack - add to the end of the font-face for native emojis */

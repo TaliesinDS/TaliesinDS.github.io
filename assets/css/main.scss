@@ -769,13 +769,20 @@ p {
   }
 }
 
-
 //tag pages
 /* Tag post list styles */
 
 .tag-post-item-link {
   display: block;
   transition: box-shadow 0.2s;
+
+  // Custom focus ring instead of default blue outline
+  &:focus-within,
+  &:focus {
+    outline: none !important; // Remove default blue outline
+    box-shadow: 0 0 0 2px #afa58f; // Custom focus ring
+    border-color: $footer-background-color;
+  }
 }
 .tag-post-item-link:hover .tag-post-item {
   box-shadow: 0 4px 16px rgba(0,0,0,0.10);
@@ -798,9 +805,7 @@ p {
   display: flex;
   align-items: flex-start;
   margin-bottom: 2em;
-  background: #fafafa;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  border-radius: 4px;
   padding: 1em;
   transition: box-shadow 0.2s;
 }

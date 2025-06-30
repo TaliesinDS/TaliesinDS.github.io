@@ -266,6 +266,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-archives
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -306,11 +307,8 @@ tag_archive:
 #     tag: /tags/:name/
 jekyll-archives:
   enabled: tags
-  layout: archive
+  layout: tag
   permalinks:
-    year: '/:year/'
-    month: '/:year/:month/'
-    day: '/:year/:month/:day/'
     tag: '/tag/:name/'
 
 collections:

@@ -1,6 +1,6 @@
 ---
 layout: tag
-title: alle posts met tag "posts"
+title: alle posts met de tag "posts"
 permalink: /tag/post/
 header: false
 ---
@@ -20,11 +20,9 @@ header: false
       <div class="tag-post-content" style="flex: 1 1 0%;">
         <h2 style="margin-top:0;">
           <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-        </h2>
-        <div style="color: #888; font-size: 0.9em; margin-bottom: 0.5em;">
-          {{ post.date | date: "%b %-d, %Y" }}
-        </div>
-        <p>{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+        <div class="tag-post-date" style="color: #888; font-size: 0.9em; margin-bottom: 0.5em;">
+            {{ post.date | date: "%b %-d, %Y" }}
+        </div>     <p>{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
       </div>
     </div>
   {% endfor %}

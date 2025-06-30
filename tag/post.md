@@ -5,11 +5,10 @@ permalink: /tag/post/
 header: false
 ---
 
-<h1>Posts tagged with "{{ page.title }}"</h1>
+
 <div class="tag-post-list">
 {% assign tagname = page.name | split: '.' | first %}
 {% assign tagged_posts = site.posts | where_exp: "post", "post.tags contains tagname" %}
-<h1>Posts tagged with "{{ tagname }}"</h1>
 <div class="tag-post-list">
   {% for post in tagged_posts %}
     <div class="tag-post-item" style="display: flex; align-items: flex-start; margin-bottom: 2em;">

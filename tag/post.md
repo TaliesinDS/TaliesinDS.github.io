@@ -1,6 +1,6 @@
 ---
 layout: tag
-title: "Posts tagged with '{{ page.title }}'"
+title: post
 permalink: /tag/post/
 ---
 

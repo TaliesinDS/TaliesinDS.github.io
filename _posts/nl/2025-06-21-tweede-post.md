@@ -9,7 +9,7 @@ header:
   overlay_filter: 0.3
   teaser: /assets/images/bull200px.webp
 comments: true
-
+lang: nl
 ---
 
 tweede  post test.<!--more-->

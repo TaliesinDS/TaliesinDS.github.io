@@ -229,7 +229,7 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:title/
+permalink: /:lang/:categories/:title/
 timezone: Europe/Amsterdam
 
 
@@ -342,8 +342,8 @@ defaults:
 page_excerpts: true
 
 languages: ["en", "nl"]
-default_lang: "en"
+default_lang: "nl"
 exclude_from_localization: ["javascript", "images", "css", "public", "sitemap"]
 parallel_localization: true
-url: https://polyglot.untra.io
+url: "https://taliesinds.github.io"
 lang_from_path: true

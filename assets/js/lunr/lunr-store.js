@@ -135,7 +135,7 @@ var store = [{
     "excerpt":"   Search through all of my posts by tag!         ","url": "https://taliesinds.github.io//archive.html"
   },{
     "title": "Alle posts met de tag 'post'",
-    "excerpt":"","url": "https://taliesinds.github.io//tag/post/"
+    "excerpt":"{% assign tagname = page.name | split: '.' | first %} {% assign tagged_posts = site.posts | where_exp: \"post\", \"post.tags contains tagname\" %} {% for post in tagged_posts %} {{ post.title }} {{ post.date | date: \"%b %-d, %Y\" }} {% assign excerpt = post.excerpt | strip_html | strip_newlines |...","url": "https://taliesinds.github.io//tag/post/"
   },{
     "title": "Alle posts",
     "excerpt":"Deze pagina toont een volledig overzicht van alle berichten op de site, met de nieuwste bijdragen bovenaan. Hier kun je eenvoudig door recente updates, artikelen en verhalen bladeren in omgekeerd chronologische volgorde. Of je nu op zoek bent naar de laatste inhoud of oudere berichten wilt teruglezen, dit overzicht biedt...","url": "https://taliesinds.github.io//posts/"
@@ -150,8 +150,8 @@ var store = [{
     "excerpt":"Search through all of my posts by tag! {% for tag in site.tags %} {% assign tag_name = tag | first %} {% assign tag_name_pretty = tag_name | replace: \"_\", \" \" | capitalize %} In #{{ tag_name }}: {% for post in site.tags[tag_name] %} {%- assign date_format = site.minima.date_format...","url": "https://taliesinds.github.io//tags/"
   },{
     "title": "Alle posts met de tag 'webdev'",
-    "excerpt":"","url": "https://taliesinds.github.io//tag/webdev/"
+    "excerpt":"{% assign tagname = page.name | split: '.' | first %} {% assign tagged_posts = site.posts | where_exp: \"post\", \"post.tags contains tagname\" %} {% for post in tagged_posts %} {{ post.title }} {{ post.date | date: \"%b %-d, %Y\" }} {% assign excerpt = post.excerpt | strip_html | strip_newlines |...","url": "https://taliesinds.github.io//tag/webdev/"
   },{
     "title": "Alle posts met de tag 'zeep'",
-    "excerpt":"","url": "https://taliesinds.github.io//tag/zeep/"
+    "excerpt":"{% assign tagname = page.name | split: '.' | first %} {% assign tagged_posts = site.posts | where_exp: \"post\", \"post.tags contains tagname\" %} {% for post in tagged_posts %} {{ post.title }} {{ post.date | date: \"%b %-d, %Y\" }} {% assign excerpt = post.excerpt | strip_html | strip_newlines |...","url": "https://taliesinds.github.io//tag/zeep/"
   }]

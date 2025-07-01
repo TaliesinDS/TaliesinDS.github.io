@@ -1,1 +1,1 @@
-Sitemap: https://taliesinds.github.io//sitemap.xml
+Sitemap: https://polyglot.untra.io/sitemap.xml

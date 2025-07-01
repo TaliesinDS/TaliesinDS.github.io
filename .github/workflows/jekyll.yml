@@ -19,9 +19,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-<<<<<<< HEAD
           github_token: ${{ secrets.PERSONAL_TOKEN }}
-=======
-          github_token: ${{ secrets.GITHUB_TOKEN }}
->>>>>>> parent of 6411a52 (Update jekyll.yml)
           publish_dir: ./_site

@@ -2,13 +2,13 @@
 <div id="comments"></div>
 <script>
     // Function to format the date and time from the data
-   function formatDate(stringDate) {
-    // Split the string into date and time parts
-    const dateTimeParts = stringDate.split(' ');
-    const datePart = dateTimeParts[0]; // Date part like "7/12/2024"
-    let timePart = dateTimeParts[1] || "00:00:00"; // Default if missing
-    // Parse hours, minutes, and seconds from the time part
-    const [hours, minutes, seconds] = timePart.split(':');
+    function formatDate(stringDate) {
+        // Split the string into date and time parts
+        const dateTimeParts = stringDate.split(' ');
+        const datePart = dateTimeParts[0]; // Date part like "7/12/2024"
+        let timePart = dateTimeParts[1]; // Time part like "23:32:54"
+        // Parse hours, minutes, and seconds from the time part
+        const [hours, minutes, seconds] = timePart.split(':');
         // Convert hours to 12-hour format and determine AM/PM
         let ampm = 'AM';
         let formattedHours = parseInt(hours, 10);

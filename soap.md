@@ -5,7 +5,9 @@ layout: single
 author_profile: true
 ---
 
-Soap making is an ancient craft that dates back thousands of years, with its origins believed to be in ancient Babylon around 2800 BCE. Early soap was made by mixing animal fats with wood ash and water, a process known as saponification. The ancient Egyptians, Greeks, and Romans also developed their own soap recipes, often using olive oil and aromatic herbs for cleansing and medicinal purposes. During the Middle Ages, soap making became a specialized trade in Europe, with cities like Marseille and Castile gaining fame for their high-quality soaps made from olive oil. Over time, advancements in chemistry and the availability of new ingredients led to the development of milder, more effective soaps, transforming soap making from a household necessity into a refined art and a thriving industry.
+
+
+Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep, het ontwerpen van verpakkingen en het optimaliseren van het productieproces. Ik ben geen expert, maar vind het leuk om te experimenteren met verschillende recepten, technieken en materialen. Hier lees je over mijn ontdekkingen, successen en soms ook mislukkingen tijdens het leren en uitproberen. Of het nu gaat om het vinden van de juiste ingrediënten, het testen van nieuwe vormen of het bedenken van creatieve verpakkingen, ik neem je graag mee in mijn persoonlijke leerproces en experimenten rondom ambachtelijke zeep.
 
 ![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
 

@@ -5,7 +5,7 @@ layout: single
 author_profile: true
 excerpt: "This page displays a complete list of all posts on the site"
 ---
-This page displays a complete list of all posts on the site, with the newest entries shown at the top. Here you can easily browse through recent updates, articles, and stories in reverse chronological order. Whether you’re looking for the latest content or want to revisit older posts, this overview provides a convenient way to explore everything that has been published.
+Deze pagina toont een volledig overzicht van alle berichten op de site, met de nieuwste bijdragen bovenaan. Hier kun je eenvoudig door recente updates, artikelen en verhalen bladeren in omgekeerd chronologische volgorde. Of je nu op zoek bent naar de laatste inhoud of oudere berichten wilt teruglezen, dit overzicht biedt een handige manier om alles te ontdekken wat is gepubliceerd.
 
 
 <div class="custom-list-container" style="box-sizing: border-box; width: 100%;">

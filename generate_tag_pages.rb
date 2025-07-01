@@ -34,7 +34,7 @@ all_tags.uniq.each do |tag|
       ---
       layout: tag
       title: "Alle posts met de tag '#{tag}'"
-      permalink: /tag/#{tag.downcase.gsub(' ', '-')}/
+      permalink: /:lang/tag/#{tag.downcase.gsub(' ', '-')}/
       header: false
       tagname: #{tag}
       ---

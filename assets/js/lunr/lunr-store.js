@@ -129,7 +129,7 @@ var store = [{
     "excerpt":"lorem ipsum   ","url": "https://taliesinds.github.io//about/"
   },{
     "title": "Over mij",
-    "excerpt":"lorem ipsum   ","url": "https://taliesinds.github.io//about/"
+    "excerpt":"Hier vertel ik wat over mijzelf.    ","url": "https://taliesinds.github.io//about/"
   },{
     "title": "Post Archive",
     "excerpt":"   Search through all of my posts by tag!         ","url": "https://taliesinds.github.io//archive.html"

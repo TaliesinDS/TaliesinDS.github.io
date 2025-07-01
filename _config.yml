@@ -340,3 +340,10 @@ defaults:
       show_date: true
 
 page_excerpts: true
+
+languages: ["en", "nl"]
+default_lang: "en"
+exclude_from_localization: ["javascript", "images", "css", "public", "sitemap"]
+parallel_localization: true
+url: https://polyglot.untra.io
+lang_from_path: true

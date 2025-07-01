@@ -126,7 +126,7 @@ var store = [{
     "excerpt":"What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived...","url": "https://taliesinds.github.io//_posts/nl/2025-06-25-dit-is-een-test-post-nr05/"
   },{
     "title": "Over mij",
-    "excerpt":"lorem ipsum   ","url": "https://taliesinds.github.io//about/"
+    "excerpt":"some stuff about me    ","url": "https://taliesinds.github.io//about/"
   },{
     "title": "Over mij",
     "excerpt":"Hier vertel ik wat over mijzelf.    ","url": "https://taliesinds.github.io//about/"

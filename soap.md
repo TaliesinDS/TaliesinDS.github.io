@@ -1,20 +1,20 @@
 ---
-permalink: /projects/
-title: "andere dingen"
+permalink: /soap/
+title: "Handgemaakte Zeep"
 layout: single
 author_profile: true
-lang: en
-permalink: /en/
 ---
 
-Op deze pagina vind je een overzicht van uiteenlopende projecten waar ik aan werk. Denk aan 3D-printen, leerbewerking, naaien, het maken van kleine messing onderdelen zoals tassenbeslag, experimenten met AI en nog veel meer creatieve bezigheden. Hier deel ik mijn ervaringen, ideeën en resultaten van allerlei algemene projecten en hobby’s. Laat je inspireren door de verschillende technieken en materialen die ik gebruik!
+
+
+Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep, het ontwerpen van verpakkingen en het optimaliseren van het productieproces. Ik ben geen expert, maar vind het leuk om te experimenteren met verschillende recepten, technieken en materialen. Hier lees je over mijn ontdekkingen, successen en soms ook mislukkingen tijdens het leren en uitproberen. Of het nu gaat om het vinden van de juiste ingrediënten, het testen van nieuwe vormen of het bedenken van creatieve verpakkingen, ik neem je graag mee in mijn persoonlijke leerproces en experimenten rondom ambachtelijke zeep.
 
 ![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
 
 <div class="custom-list-container" style="box-sizing: border-box; width: 100%;">
 <ul style="list-style-type: none; padding: 0; margin: 0; box-sizing: border-box;">
 {% for post in site.posts %}
-{% unless post.tags contains "zeep" %}
+{% if post.tags and post.tags contains 'zeep' %}
     <li style="margin-bottom: 2em; box-sizing: border-box;">
         <a href="{{ post.url }}" style="text-decoration:none;">
             <div style="display: flex; align-items: flex-start; box-sizing: border-box;">
@@ -32,7 +32,7 @@ Op deze pagina vind je een overzicht van uiteenlopende projecten waar ik aan wer
             </div>
         </a>
     </li>
-{% endunless %}
+{% endif %}
 {% endfor %}
 </ul>
 </div>

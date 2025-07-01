@@ -339,9 +339,3 @@ defaults:
 
 page_excerpts: true
 
-languages: ["en", "nl"]
-default_lang: "nl"
-exclude_from_localization: ["javascript", "images", "css", "public", "sitemap", "_sass", "assets" ]
-parallel_localization: true
-url: "https://taliesinds.github.io"
-lang_from_path: true

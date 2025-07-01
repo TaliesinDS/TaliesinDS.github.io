@@ -264,14 +264,10 @@ textarea:focus, textarea:focus-visible {
       min-width: 0;
     }
     .archive__item-title {
-      font-size: 0.9em;
-      font-weight: 600;
+      font-size: 1em;
+      font-weight: bold;
       margin: 0 0 0.25em 0;
       line-height: 1.2;
-    }
-    h2.archive__item-title {
-      font-size: 1em;
-      font-weight: 600;
     }
     .page__meta {
       font-size: 0.8em;
@@ -313,11 +309,7 @@ textarea:focus, textarea:focus-visible {
   flex-shrink: 0;  // Prevent flexbox from shrinking the image
 }
 
-.grid__item .archive__item-title {
-  font-size: 0.9em;
-  font-weight: 500;
-  /* Add any other styles you want */
-}
+
 
 @include breakpoint($small) {
   .custom-list-container li img {
@@ -758,11 +750,11 @@ textarea:focus, textarea:focus-visible {
 .list__item .archive__item-title,
 .list__item h2.archive__item-title {
   font-family: $serif;
-  font-size: 0.9em !important;
-  font-weight: 600;
+  font-size: 1.1em !important;
+  font-weight: bold;
   margin-bottom: 0.25em;
   @media (max-width: 600px) {
-    font-size: 0.8em !important;
+    font-size: 1em !important;
     margin-bottom: 0.15em;
   }
 }

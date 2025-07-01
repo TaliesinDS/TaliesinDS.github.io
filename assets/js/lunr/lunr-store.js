@@ -41,30 +41,6 @@ var store = [{
         "url": "/dit-is-een-test-post-nr05/",
         "teaser": "/assets/images/bull200px.webp"
       },,{
-    "title": "Dit is een test post nr 2",
-    "excerpt":"What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived...","url": "https://taliesinds.github.io//_posts/2025-06-20-dit-is-een-test-post-nr02/"
-  },{
-    "title": "Eerste post",
-    "excerpt":"eerste post test.       ","url": "https://taliesinds.github.io//_posts/2025-06-21-eerste-post/"
-  },{
-    "title": "Tweede post",
-    "excerpt":"tweede  post test. blablabla over zeep enzo     ","url": "https://taliesinds.github.io//_posts/2025-06-21-tweede-post/"
-  },{
-    "title": "Dit is een test post",
-    "excerpt":"What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived...","url": "https://taliesinds.github.io//_posts/2025-06-22-dit-is-een-test-post/"
-  },{
-    "title": "Dit is een test post nr 3",
-    "excerpt":"What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived...","url": "https://taliesinds.github.io//_posts/2025-06-23-dit-is-een-test-post-nr03/"
-  },{
-    "title": "Dit is een test post nr 4",
-    "excerpt":"What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived...","url": "https://taliesinds.github.io//_posts/2025-06-24-dit-is-een-test-post-nr04/"
-  },{
-    "title": "Dit is een test post nr 5",
-    "excerpt":"What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived...","url": "https://taliesinds.github.io//_posts/2025-06-25-dit-is-een-test-post-nr05/"
-  },{
-    "title": "Over mij",
-    "excerpt":"lorem ipsum   ","url": "https://taliesinds.github.io//about/"
-  },{
     "title": "Post Archive",
     "excerpt":"   Search through all of my posts by tag!         ","url": "https://taliesinds.github.io//archive.html"
   },{
@@ -79,9 +55,6 @@ var store = [{
   },{
     "title": "Handgemaakte Zeep",
     "excerpt":"Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep, het ontwerpen van verpakkingen en het optimaliseren van het productieproces. Ik ben geen expert, maar vind het leuk om te experimenteren met verschillende recepten, technieken en materialen. Hier lees je over mijn ontdekkingen, successen en soms ook...","url": "https://taliesinds.github.io//soap/"
-  },{
-    "title": "Tags",
-    "excerpt":"   Browse posts by tag:      {% for tag in site.data.tags %}                     #{{ tag[0] }}               - {{ tag[1].description }}        {% endfor %} ","url": "https://taliesinds.github.io//tags/"
   },{
     "title": "Post Archive",
     "excerpt":"Search through all of my posts by tag! {% for tag in site.tags %} {% assign tag_name = tag | first %} {% assign tag_name_pretty = tag_name | replace: \"_\", \" \" | capitalize %} In #{{ tag_name }}: {% for post in site.tags[tag_name] %} {%- assign date_format = site.minima.date_format...","url": "https://taliesinds.github.io//tags/"

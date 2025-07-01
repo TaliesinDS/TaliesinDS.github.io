@@ -1,1 +1,1 @@
-Sitemap: https://taliesinds.github.io//pages/TaliesinDS/sitemap.xml
+Sitemap: https://taliesinds.github.io//TaliesinDS.github.io/sitemap.xml

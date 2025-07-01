@@ -304,17 +304,17 @@ tag_archive:
 #     tag: archive-taxonomy
 #   permalinks:
 #     category: /categories/:name/
-#     tag: /tags/:name/
+#     tag: /:lang/tags/:name/
 jekyll-archives:
   enabled: tags
   layout: tag
   permalinks:
-    tag: '/tag/:name/'
+    tag: '/:lang/tag/:name/'
 
 collections:
   tags:
     output: true
-    permalink: /tag/:name/
+    permalink: /:lang/tag/:name/
 
 # HTML Compression
 # - https://jch.penibelst.de/

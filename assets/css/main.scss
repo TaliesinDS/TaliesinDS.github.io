@@ -313,7 +313,11 @@ textarea:focus, textarea:focus-visible {
   flex-shrink: 0;  // Prevent flexbox from shrinking the image
 }
 
-
+.grid__item .archive__item-title {
+  font-size: 0.9em;
+  font-weight: 500;
+  /* Add any other styles you want */
+}
 
 @include breakpoint($small) {
   .custom-list-container li img {

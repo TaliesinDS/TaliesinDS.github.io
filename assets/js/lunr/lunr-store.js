@@ -146,9 +146,6 @@ var store = [{
     "title": "Handgemaakte Zeep",
     "excerpt":"Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep, het ontwerpen van verpakkingen en het optimaliseren van het productieproces. Ik ben geen expert, maar vind het leuk om te experimenteren met verschillende recepten, technieken en materialen. Hier lees je over mijn ontdekkingen, successen en soms ook...","url": "https://taliesinds.github.io//soap/"
   },{
-    "title": "Post Archive",
-    "excerpt":"Search through all of my posts by tag! {% for tag in site.tags %} {% assign tag_name = tag | first %} {% assign tag_name_pretty = tag_name | replace: \"_\", \" \" | capitalize %} In #{{ tag_name }}: {% for post in site.tags[tag_name] %} {%- assign date_format = site.minima.date_format...","url": "https://taliesinds.github.io//tags/"
-  },{
     "title": "Alle posts met de tag 'webdev'",
     "excerpt":"","url": "https://taliesinds.github.io//tag/webdev/"
   },{

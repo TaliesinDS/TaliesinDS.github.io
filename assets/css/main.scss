@@ -750,11 +750,11 @@ textarea:focus, textarea:focus-visible {
 .list__item .archive__item-title,
 .list__item h2.archive__item-title {
   font-family: $serif;
-  font-size: 1.1em !important;
-  font-weight: bold;
+  font-size: 0.9em !important;
+  font-weight: 600;
   margin-bottom: 0.25em;
   @media (max-width: 600px) {
-    font-size: 1em !important;
+    font-size: 0.8em !important;
     margin-bottom: 0.15em;
   }
 }

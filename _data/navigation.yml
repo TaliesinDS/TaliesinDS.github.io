@@ -9,4 +9,4 @@ main:
   - title: "Alle posts"
     url: /posts/
   - title: "Over mij"
-    url: /_pages/about/
+    url: /about/

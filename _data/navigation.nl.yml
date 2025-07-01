@@ -1,0 +1,9 @@
+main:
+  - title: "Zeep"
+    url: /nl/soap/
+  - title: "Andere projecten"
+    url: /nl/projects/
+  - title: "Alle posts"
+    url: /nl/posts/
+  - title: "Over mij"
+    url: /nl/about/

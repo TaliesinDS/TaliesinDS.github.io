@@ -1,0 +1,14 @@
+---
+layout: default
+lang: nl
+---
+
+<h1>Posts tagged met "{{ page.title }}"</h1>
+<ul>
+  {% for post in page.posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span> - {{ post.date | date: "%b %-d, %Y" }}</span>
+    </li>
+  {% endfor %}
+</ul>

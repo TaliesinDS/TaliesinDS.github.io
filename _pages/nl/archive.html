@@ -1,12 +1,12 @@
 ---
-layout: single
-title: "Post Archive"
-permalink: /:lang/tags/
-search: false
+layout: page
+title: "Post Archief"
+permalink: /:lang/archive.html
+lang: nl
 ---
 <div>
-  Search through all of my posts by tag!
-</div> 
+  Zoek in al mijn posts op tag!
+</div> </br>
 
 <div id="tags-list">
 {% for tag in site.tags %}
@@ -24,10 +24,16 @@ search: false
          <a href="{{ post.url | relative_url }}">
            {{ post.title | escape }}
          </a>
-       </b> - <i>{{ post.date | date: date_format }}</i>
+       </b>
+        {% if post.subtitle %}
+    <div class="post-subtitle">{{ post.subtitle }}</div>
+  {% endif %}
+   - <i>{{ post.date | date: date_format }}</i>
      </li>
      {% endfor %}
     </ul>
   </div>
 {% endfor %}
 </div>
+
+ 

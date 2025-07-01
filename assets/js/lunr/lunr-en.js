@@ -1,4 +1,3 @@
-
 var idx = lunr(function () {
   this.field('title')
   this.field('excerpt')
@@ -8,26 +7,16 @@ var idx = lunr(function () {
 
   this.pipeline.remove(lunr.trimmer)
 
-  Object.keys(store).forEach(function(item) {
+  for (var item in store) {
     this.add({
       title: store[item].title,
       excerpt: store[item].excerpt,
       categories: store[item].categories,
       tags: store[item].tags,
       id: item
-    });
-  }, this);
+    })
+  }
 });
-function cleanExcerpt(text) {
-  if (!text) return "";
-  // Remove Liquid tags
-  text = text.replace(/{%.*?%}/g, '');
-  text = text.replace(/{{.*?}}/g, '');
-  // Remove HTML tags
-  text = text.replace(/<[^>]*>/g, '');
-  // Optionally, trim whitespace
-  return text.trim();
-}
 $(document).ready(function() {
   $('input#search').on('keyup', function () {
     var resultdiv = $('#results');
@@ -45,17 +34,9 @@ $(document).ready(function() {
         })
       });
     resultdiv.empty();
-    resultdiv.prepend('<p class="results__found">'+result.length+' Result(s) found</p>');
+    resultdiv.prepend('<p class="results__found">'+result.length+' Resultaten gevonden</p>');
     for (var item in result) {
       var ref = result[item].ref;
-
-      // Clean and prepare the excerpt
-      let excerpt = cleanExcerpt(store[ref].excerpt).split(" ").splice(0,20).join(" ");
-      if (!excerpt || excerpt.trim() === "") {
-      excerpt = "No summary available.";
-      }
-
-  
       var searchitem = '';
       if(store[ref].teaser){
         searchitem =
@@ -68,7 +49,7 @@ $(document).ready(function() {
                 '<h2 class="archive__item-title" itemprop="headline" style="margin-top:0;">' +
                   '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>' +
                 '</h2>' +
-                '<p class="archive__item-excerpt" itemprop="description">'+cleanExcerpt(store[ref].excerpt).split(" ").splice(0,40).join(" ")+'...</p>' +
+                '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,40).join(" ")+'...</p>' +
               '</div>' +
             '</article>' +
           '</div>';
@@ -84,7 +65,7 @@ $(document).ready(function() {
                 '<h2 class="archive__item-title" itemprop="headline" style="margin-top:0;">' +
                   '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>' +
                 '</h2>' +
-                '<p class="archive__item-excerpt" itemprop="description">'+cleanExcerpt(store[ref].excerpt).split(" ").splice(0,40).join(" ")+'...</p>' +
+                '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,40).join(" ")+'...</p>' +
               '</div>' +
             '</article>' +
           '</div>';

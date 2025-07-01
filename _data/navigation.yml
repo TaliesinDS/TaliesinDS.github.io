@@ -1,9 +1,12 @@
+# main links
 main:
-  - title: "Soap"
-    url: /en/soap/
-  - title: "Other Projects"
-    url: /en/projects/
-  - title: "All Posts"
-    url: /en/posts/
-  - title: "About Me"
-    url: /en/about/
+  #- title: "About"
+  #   url: https://taliesinds.github.io/about/
+  - title: "Zeep"
+    url: /soap/
+  - title: "Andere projecten"
+    url: /projects/
+  - title: "Alle posts"
+    url: /posts/
+  - title: "Over mij"
+    url: /about/

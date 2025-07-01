@@ -1,5 +1,5 @@
 ---
-permalink: /about/
+permalink: /:lang/about/
 title: "Over mij"
 layout: single
 author_profile: true

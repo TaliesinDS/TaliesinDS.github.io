@@ -1,5 +1,5 @@
 ---
-permalink: /projects/
+permalink: /:lang/projects/
 title: "andere dingen"
 layout: single
 author_profile: true

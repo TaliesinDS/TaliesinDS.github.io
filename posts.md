@@ -1,5 +1,5 @@
 ---
-permalink: /posts/
+permalink: /:lang/posts/
 title: "Alle posts"
 layout: single
 author_profile: true

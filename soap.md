@@ -1,5 +1,5 @@
 ---
-permalink: /soap/
+permalink: /:lang/soap/
 title: "Handgemaakte Zeep"
 layout: single
 author_profile: true

@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Post Archive"
-permalink: /tags/
+permalink: /:lang/tags/
 search: false
 ---
 <div>

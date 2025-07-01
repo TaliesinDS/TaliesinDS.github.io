@@ -22,7 +22,12 @@ header: false
                         <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
                         {{ post.date | date: "%b %-d, %Y" }}
                     </div>
-                    <p>{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+                    {% assign excerpt = post.excerpt | strip_html | strip_newlines | strip %}
+                    {% if excerpt contains '{%' or excerpt contains '%}' or excerpt == "" %}
+                      <p><em>Geen samenvatting beschikbaar.</em></p>
+                    {% else %}
+                      <p>{{ excerpt | truncatewords: 40 }}</p>
+                    {% endif %}
                 </div>
             </div>
         </a>

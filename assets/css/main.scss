@@ -98,6 +98,17 @@ p {
   padding-left: 0;
 }
 
+a:focus, a:focus-visible,
+button:focus, button:focus-visible,
+input:focus, input:focus-visible,
+textarea:focus, textarea:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 2px #afa58f;
+  border-color: $footer-background-color;
+  border-radius: 4px;
+  transition: box-shadow 0.2s;
+}
+
 
 // To target a <div> with inline styles like margin-left: 0; padding-left: 0; you can't use a CSS selector directly for inline styles.
 // Instead, add a class or id to the div, for example: <div class="custom-list-container">

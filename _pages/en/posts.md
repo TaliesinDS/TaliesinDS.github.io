@@ -5,6 +5,8 @@ layout: single
 author_profile: true
 excerpt: "This page displays a complete list of all posts on the site"
 lang: en
+--- 
+
 This page provides a complete overview of all posts on the site, with the newest entries at the top. Here you can easily browse recent updates, articles, and stories in reverse chronological order. Whether you're looking for the latest content or want to revisit older posts, this overview offers a convenient way to discover everything that has been published.
 
 

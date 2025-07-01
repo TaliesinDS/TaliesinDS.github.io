@@ -1,6 +1,3 @@
----
-layout: none
----
 
 var idx = lunr(function () {
   this.field('title')

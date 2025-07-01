@@ -1,6 +1,3 @@
----
-layout: none
----
 
 step1list = new Array();
 step1list["ΦΑΓΙΑ"] = "ΦΑ";

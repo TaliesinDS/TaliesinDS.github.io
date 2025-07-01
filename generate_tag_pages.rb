@@ -2,8 +2,8 @@
 require 'yaml'
 require 'fileutils'
 
-# Path to your _posts directory
-posts_dir = "_posts"
+# Paths to your _posts directories for each language
+post_dirs = ["_posts/en", "_posts/nl"]
 # Path to your tag pages directory
 tags_dir = "tag"
 
@@ -12,15 +12,17 @@ FileUtils.mkdir_p(tags_dir)
 # Collect all tags from posts
 all_tags = []
 
-Dir.glob("#{posts_dir}/*.*") do |post_file|
-  content = File.read(post_file)
-  if content =~ /\A---\s*\n(.*?)\n---/m
-    front_matter = YAML.safe_load($1)
-    tags = front_matter["tags"]
-    if tags.is_a?(String)
-      tags = tags.split # splits on whitespace
+post_dirs.each do |posts_dir|
+  Dir.glob("#{posts_dir}/*.*") do |post_file|
+    content = File.read(post_file)
+    if content =~ /\A---\s*\n(.*?)\n---/m
+      front_matter = YAML.safe_load($1)
+      tags = front_matter["tags"]
+      if tags.is_a?(String)
+        tags = tags.split # splits on whitespace
+      end
+      all_tags.concat(tags) if tags
     end
-    all_tags.concat(tags) if tags
   end
 end
 
@@ -53,7 +55,12 @@ all_tags.uniq.each do |tag|
                               <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
                               {{ post.date | date: "%b %-d, %Y" }}
                           </div>
-                          <p>{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+                          {% assign excerpt = post.excerpt | strip_html | strip_newlines | strip %}
+                          {% if excerpt contains '{%' or excerpt contains '%}' or excerpt == "" %}
+                            <p><em>Geen samenvatting beschikbaar.</em></p>
+                          {% else %}
+                            <p>{{ excerpt | truncatewords: 40 }}</p>
+                          {% endif %}
                       </div>
                   </div>
               </a>
@@ -64,3 +71,4 @@ all_tags.uniq.each do |tag|
   puts "Created #{filename}"
 end
 
+# No additional code needed here; script

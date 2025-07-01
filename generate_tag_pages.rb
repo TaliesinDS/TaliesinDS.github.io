@@ -18,14 +18,14 @@ Dir.glob("#{posts_dir}/*.*") do |post_file|
     front_matter = YAML.safe_load($1)
     tags = front_matter["tags"]
     if tags.is_a?(String)
-      tags = [tags]
+      tags = tags.split # splits on whitespace
     end
     all_tags.concat(tags) if tags
   end
 end
 
 all_tags.uniq.each do |tag|
-  filename = "#{tags_dir}/#{tag.downcase.gsub(' ', '-')}.md"
+  filename = File.join(tags_dir, "#{tag.downcase.gsub(' ', '-')}.md")
   next if File.exist?(filename)
   File.open(filename, "w") do |f|
     f.puts <<~MARKDOWN

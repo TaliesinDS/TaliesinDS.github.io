@@ -1,7 +1,7 @@
 ---
 layout: tag
-title: "Alle posts met de tag 'post zeep'"
-permalink: /tag/post-zeep/
+title: "Alle posts met de tag 'zeep'"
+permalink: /tag/zeep/
 header: false
 ---
 

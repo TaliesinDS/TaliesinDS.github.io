@@ -1,7 +1,7 @@
 ---
 layout: tag
-title: "Alle posts met de tag 'post webdev'"
-permalink: /tag/post-webdev/
+title: "Alle posts met de tag 'webdev'"
+permalink: /tag/webdev/
 header: false
 ---
 

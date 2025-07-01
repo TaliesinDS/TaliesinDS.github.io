@@ -1,0 +1,370 @@
+<div class="page__comments">
+  {% capture comments_label %}{{ site.data.ui-text[site.locale].comments_label | default: "Comments" }}{% endcapture %}
+  {% case site.comments.provider %}
+    {% when "discourse" %}
+      <h4 class="page__comments-title">{{ comments_label }}</h4>
+      <section id="discourse-comments"></section>
+    {% when "disqus" %}
+      <h4 class="page__comments-title">{{ comments_label }}</h4>
+      <section id="disqus_thread"></section>
+    {% when "facebook" %}
+      <h4 class="page__comments-title">{{ comments_label }}</h4>
+      <section class="fb-comments" data-href="{{ page.url | absolute_url }}" data-mobile="true" data-num-posts="{{ site.comments.facebook.num_posts | default: 5 }}" data-width="100%" data-colorscheme="{{ site.comments.facebook.colorscheme | default: 'light' }}"></section>
+    {% when "staticman_v2" %}
+      <section id="static-comments">
+        {% if site.repository and site.comments.staticman.branch %}
+          <!-- Start static comments -->
+          <div class="js-comments">
+            {% if site.data.comments[page.slug] %}
+              <h4 class="page__comments-title">{{ site.data.ui-text[site.locale].comments_title | default: "Comments" }}</h4>
+              {% assign comments = site.data.comments[page.slug] %}
+
+              <!-- In order to sort by date we must have an array of objects, not an array of arrays, so
+                    create a new array of plain comment objects and then sort by the comment date. -->
+              {% assign commentObjects = '' | split: '' %}
+              {% for comment in comments %}
+                {% assign commentObject = comment[1] %}
+                {% assign commentObjects = commentObjects | push: commentObject %}
+              {% endfor %}
+              {% assign comments = commentObjects | sort: "date" %}
+
+              {% for comment in comments %}
+                {% assign email = comment.email %}
+                {% assign name = comment.name %}
+                {% assign url = comment.url %}
+                {% assign date = comment.date %}
+                {% assign message = comment.message %}
+                {% include comment.html index=forloop.index email=email name=name url=url date=date message=message %}
+              {% endfor %}
+            {% endif %}
+          </div>
+          <!-- End static comments -->
+
+          <!-- Start new comment form -->
+          <div class="page__comments-form">
+            <h4 class="page__comments-title">{{ site.data.ui-text[site.locale].comments_label | default: "Leave a Comment" }}</h4>
+            <p class="small">{{ site.data.ui-text[site.locale].comment_form_info | default: "Your email address will not be published. Required fields are marked" }} <span class="required">*</span></p>
+            <form id="new_comment" class="page__comments-form js-form form" method="post" action="{{ site.comments.staticman.endpoint }}{{ site.repository }}/{{ site.comments.staticman.branch }}/comments">
+              <div class="form__spinner">
+                <i class="fas fa-spinner fa-spin fa-3x fa-fw"></i>
+                <span class="sr-only">{{ site.data.ui-text[site.locale].loading_label | default: "Loading..." }}</span>
+              </div>
+
+              <div class="form-group">
+                <label for="comment-form-message">{{ site.data.ui-text[site.locale].comment_form_comment_label | default: "Comment" }} <small class="required">*</small></label>
+                <textarea type="text" rows="3" id="comment-form-message" name="fields[message]" tabindex="1"></textarea>
+                <div class="small help-block"><a href="https://daringfireball.net/projects/markdown/">{{ site.data.ui-text[site.locale].comment_form_md_info | default: "Markdown is supported." }}</a></div>
+              </div>
+              <div class="form-group">
+                <label for="comment-form-name">{{ site.data.ui-text[site.locale].comment_form_name_label | default: "Name" }} <small class="required">*</small></label>
+                <input type="text" id="comment-form-name" name="fields[name]" tabindex="2" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-email">{{ site.data.ui-text[site.locale].comment_form_email_label | default: "Email address" }} <small class="required">*</small></label>
+                <input type="email" id="comment-form-email" name="fields[email]" tabindex="3" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-url">{{ site.data.ui-text[site.locale].comment_form_website_label | default: "Website (optional)" }}</label>
+                <input type="url" id="comment-form-url" name="fields[url]" tabindex="4"/>
+              </div>
+              <div class="form-group hidden" style="display: none;">
+                <input type="hidden" name="options[slug]" value="{{ page.slug }}">
+                <label for="comment-form-location">Not used. Leave blank if you are a human.</label>
+                <input type="text" id="comment-form-location" name="fields[hidden]" autocomplete="off"/>
+                {% if site.reCaptcha.siteKey %}<input type="hidden" name="options[reCaptcha][siteKey]" value="{{ site.reCaptcha.siteKey }}">{% endif %}
+                {% if site.reCaptcha.secret %}<input type="hidden" name="options[reCaptcha][secret]" value="{{ site.reCaptcha.secret }}">{% endif %}
+              </div>
+              <!-- Start comment form alert messaging -->
+              <p class="hidden js-notice">
+                <strong class="js-notice-text"></strong>
+              </p>
+              <!-- End comment form alert messaging -->
+              {% if site.reCaptcha.siteKey %}
+                <div class="form-group">
+                  <div class="g-recaptcha" data-sitekey="{{ site.reCaptcha.siteKey }}"></div>
+                </div>
+              {% endif %}
+              <div class="form-group">
+                <button type="submit" id="comment-form-submit" tabindex="5" class="btn btn--primary btn--large">{{ site.data.ui-text[site.locale].comment_btn_submit | default: "Submit Comment" }}</button>
+              </div>
+            </form>
+          </div>
+          <!-- End new comment form -->
+          {% if site.reCaptcha.siteKey %}<script async src="https://www.google.com/recaptcha/api.js"></script>{% endif %}
+        {% endif %}
+      </section>
+    {% when "staticman" %}
+      <section id="static-comments">
+        {% if site.repository and site.staticman.branch %}
+          <!-- Start static comments -->
+          <div class="js-comments">
+            {% if site.data.comments[page.slug] %}
+              <h4 class="page__comments-title">{{ site.data.ui-text[site.locale].comments_title | default: "Comments" }}</h4>
+              {% assign comments = site.data.comments[page.slug] %}
+
+              <!-- In order to sort by date we must have an array of objects, not an array of arrays, so
+                    create a new array of plain comment objects and then sort by the comment date. -->
+              {% assign commentObjects = '' | split: '' %}
+              {% for comment in comments %}
+                {% assign commentObject = comment[1] %}
+                {% assign commentObjects = commentObjects | push: commentObject %}
+              {% endfor %}
+              {% assign comments = commentObjects | sort: "date" %}
+
+              {% for comment in comments %}
+                {% assign email = comment.email %}
+                {% assign name = comment.name %}
+                {% assign url = comment.url %}
+                {% assign date = comment.date %}
+                {% assign message = comment.message %}
+                {% include comment.html index=forloop.index email=email name=name url=url date=date message=message %}
+              {% endfor %}
+            {% endif %}
+          </div>
+          <!-- End static comments -->
+
+          <!-- Start new comment form -->
+          <div class="page__comments-form">
+            <h4 class="page__comments-title">{{ site.data.ui-text[site.locale].comments_label | default: "Leave a Comment" }}</h4>
+            <p class="small">{{ site.data.ui-text[site.locale].comment_form_info | default: "Your email address will not be published. Required fields are marked" }} <span class="required">*</span></p>
+            <form id="new_comment" class="page__comments-form js-form form" method="post" action="https://api.staticman.net/v1/entry/{{ site.repository }}/{{ site.staticman.branch }}">
+              <div class="form__spinner">
+                <i class="fas fa-spinner fa-spin fa-3x fa-fw"></i>
+                <span class="sr-only">{{ site.data.ui-text[site.locale].loading_label | default: "Loading..." }}</span>
+              </div>
+
+              <div class="form-group">
+                <label for="comment-form-message">{{ site.data.ui-text[site.locale].comment_form_comment_label | default: "Comment" }} <small class="required">*</small></label>
+                <textarea type="text" rows="3" id="comment-form-message" name="fields[message]" tabindex="1"></textarea>
+                <div class="small help-block"><a href="https://daringfireball.net/projects/markdown/">{{ site.data.ui-text[site.locale].comment_form_md_info | default: "Markdown is supported." }}</a></div>
+              </div>
+              <div class="form-group">
+                <label for="comment-form-name">{{ site.data.ui-text[site.locale].comment_form_name_label | default: "Name" }} <small class="required">*</small></label>
+                <input type="text" id="comment-form-name" name="fields[name]" tabindex="2" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-email">{{ site.data.ui-text[site.locale].comment_form_email_label | default: "Email address" }} <small class="required">*</small></label>
+                <input type="email" id="comment-form-email" name="fields[email]" tabindex="3" />
+              </div>
+              <div class="form-group">
+                <label for="comment-form-url">{{ site.data.ui-text[site.locale].comment_form_website_label | default: "Website (optional)" }}</label>
+                <input type="url" id="comment-form-url" name="fields[url]" tabindex="4"/>
+              </div>
+              <div class="form-group hidden" style="display: none;">
+                <input type="hidden" name="options[slug]" value="{{ page.slug }}">
+                <label for="comment-form-location">Not used. Leave blank if you are a human.</label>
+                <input type="text" id="comment-form-location" name="fields[hidden]" autocomplete="off"/>
+              </div>
+              <!-- Start comment form alert messaging -->
+              <p class="hidden js-notice">
+                <strong class="js-notice-text"></strong>
+              </p>
+              <!-- End comment form alert messaging -->
+              <div class="form-group">
+                <button type="submit" id="comment-form-submit" tabindex="5" class="btn btn--primary btn--large">{{ site.data.ui-text[site.locale].comment_btn_submit | default: "Submit Comment" }}</button>
+              </div>
+            </form>
+          </div>
+          <!-- End new comment form -->
+        {% endif %}
+      </section>
+    {% when "utterances" %}
+      <h4 class="page__comments-title">{{ comments_label }}</h4>
+      <section id="utterances-comments"></section>
+    {% when "giscus" %}
+      <h4 class="page__comments-title">{{ comments_label }}</h4>
+      <section id="giscus-comments"></section>
+    {% when "custom" %}
+
+
+
+<div style="margin-top:1em;"></div>
+<form id="google-comment-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd-xZgVsbuQsLumpP_W1u97vPG7RbR9_awZ3XDQTpXegkB1XA/formResponse" method="POST">
+  <div style="display: flex; gap: 1em;">
+    <input type="text" id="name" name="entry.1922964266" required placeholder="Name" style="flex:1; box-sizing: border-box;" onkeydown="if(event.key==='Enter'){this.value += '\n'; event.preventDefault();}">
+    <input type="email" id="email" name="entry.1297944239" placeholder="Email (optional)" style="flex:1; box-sizing: border-box;">
+  </div>
+  <textarea id="comment" name="entry.503498009" required rows="4" placeholder="Comment"></textarea><br><br>
+  <!-- Hidden field for the page URL -->
+  <input type="hidden" id="page-url" name="entry.1587242798" value="">
+   
+  <div style="display: flex; justify-content: flex-end; align-items: center;">
+    <button type="submit">Submit</button>
+  </div>
+  <div id="comment-success" style="display:none;color:green;margin-top:10px;">
+    Thank you for your comment!
+  </div>
+  <script>
+    // Reload the page after showing the success message
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('google-comment-form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          setTimeout(function() {
+            window.location.reload();
+          }, 1200); // Wait 1.2s to show the success message before reload
+        });
+      }
+    });
+  </script>
+</form>
+{% raw %}
+<script>
+// Set the normalized page URL in the hidden field before submit
+document.addEventListener('DOMContentLoaded', function() {
+  var url = window.location.href.replace(/\/$/, '');
+  document.getElementById('page-url').value = url;
+});
+
+document.getElementById('google-comment-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = e.target;
+  // Always update the hidden field before submit
+  form.querySelector('#page-url').value = window.location.href.replace(/\/$/, '');
+  var data = new FormData(form);
+  fetch(form.action, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: data
+  }).then(function() {
+    form.reset();
+    document.getElementById('comment-success').style.display = 'block';
+  }).catch(function() {
+    alert('There was an error submitting your comment.');
+  });
+});
+</script>
+<div id="comments"></div>
+<script>
+  // Function to format the date and time from the data
+  function formatDate(stringDate) {
+    // Split the string into date and time parts
+    const dateTimeParts = stringDate.split(' ');
+    const datePart = dateTimeParts[0]; // Date part like "7/12/2024"
+    const timePart = dateTimeParts[1]; // Time part like "23:32:54"
+    // Parse date in MM/DD/YYYY format
+    const [month, day, year] = datePart.split('/');
+    // Create a Date object
+    const dateObj = new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${timePart}`);
+    // Format date as "25 June, 2025"
+    const months = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+    const formattedDate = `${dateObj.getDate()} ${months[dateObj.getMonth()]}, ${dateObj.getFullYear()}`;
+    // Format time as 24-hour "HH:mm:ss"
+    const formattedTime = dateObj.toISOString().substr(11, 8);
+    // Return the formatted date and time
+    return `${formattedDate} at ${formattedTime}`;
+  }
+
+  // CSV parsing function to handle quoted fields and commas
+  function parseCSV(text) {
+    const rows = [];
+    let row = [];
+    let cell = '';
+    let inQuotes = false;
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i];
+      if (char === '"') {
+        if (inQuotes && text[i + 1] === '"') {
+          cell += '"';
+          i++;
+        } else {
+          inQuotes = !inQuotes;
+        }
+      } else if (char === ',' && !inQuotes) {
+        row.push(cell);
+        cell = '';
+      } else if ((char === '\n' || char === '\r') && !inQuotes) {
+        if (cell !== '' || row.length > 0) {
+          row.push(cell);
+          rows.push(row);
+          row = [];
+          cell = '';
+        }
+        // Handle \r\n
+        if (char === '\r' && text[i + 1] === '\n') i++;
+      } else {
+        cell += char;
+      }
+    }
+    // Add the last cell if any
+    if (cell !== '' || row.length > 0) {
+      row.push(cell);
+      rows.push(row);
+    }
+    return rows;
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the current page URL and normalize it (remove trailing slash)
+    let thisPageUrl = window.location.href.replace(/\/$/, '');
+    // Fetch the data from the Google Sheets URL
+    const csvUrl = `https://docs.google.com/spreadsheets/d/1ZqE6ePnexceUrxq90JD6buZ1Zl3agU11_i_TDaCTCuU/gviz/tq?tqx=out:csv&sheet=Form_Responses1`;
+    fetch(csvUrl)
+      .then(response => response.text())
+      .then(csvText => {
+      const rows = parseCSV(csvText.trim());
+      const commentsContainer = document.getElementById('comments');
+      commentsContainer.innerHTML = '';
+      // Collect comments for this page
+      const comments = [];
+      rows.forEach((row, idx) => {
+      // Skip header row if it contains column names
+      if (idx === 0 && row[0].toLowerCase().includes('timestamp')) return;
+      // Ensure the row has at least 5 columns to avoid errors
+      if (row.length >= 5) {
+      const date = row[0]; // Timestamp
+      const name = row[1]; // Name
+      const email = row[2]; // Email
+      const comment = row[3]; // Comment
+      const pageUrl = row[4].replace(/\/$/, ''); // Page URL (normalized)
+      // Only show comments for this page
+      if (pageUrl === thisPageUrl) {
+      comments.push({ date, name, email, comment });
+      }
+      }
+      });
+      // Sort comments by date descending (newest first)
+      comments.sort((a, b) => new Date(b.date) - new Date(a.date));
+      // Helper to format date as "Month day, Year at HH:mm"
+      function formatDateSimpleWithTime(stringDate) {
+        // Split the string into date and time parts
+        const dateTimeParts = stringDate.split(' ');
+        const datePart = dateTimeParts[0]; // Date part like "7/12/2024"
+        const timePart = dateTimeParts[1] || "00:00:00"; // Time part like "15:34:12"
+        // Parse date in MM/DD/YYYY format
+        const [month, day, year] = datePart.split('/');
+        const dateObj = new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${timePart}`);
+        // Format as "Month day, Year at HH:mm"
+        const months = [
+          "January", "February", "March", "April", "May", "June",
+          "July", "August", "September", "October", "November", "December"
+        ];
+        const hours = dateObj.getHours().toString().padStart(2, '0');
+        const minutes = dateObj.getMinutes().toString().padStart(2, '0');
+        return `${months[dateObj.getMonth()]} ${dateObj.getDate()}, ${dateObj.getFullYear()} at ${hours}:${minutes}`;
+      }
+      // Helper to capitalize the first letter of each word
+      function capitalizeWords(str) {
+        return str.replace(/\b\w/g, c => c.toUpperCase());
+      }
+      // Render comments
+      comments.forEach(({ date, name, email, comment }) => {
+        const displayName = capitalizeWords(name || '');
+        const commentDiv = document.createElement('div');
+        // Replace \n with <br> for line breaks in comment text
+        const commentHtml = (comment || '').replace(/\r\n|\r|\n/g, '<br>');
+        // Use formatDateSimpleWithTime(date) for the date and time format
+        const formattedDate = formatDateSimpleWithTime(date);
+        const nameHtml = email ? `<a href="mailto:${email}">${displayName}</a>` : displayName;
+        commentDiv.innerHTML = `<strong>${nameHtml}</strong> <em><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> ${formattedDate}</em><p>${commentHtml}</p>`;
+        commentsContainer.appendChild(commentDiv);
+      });
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  });
+</script>
+{% endraw %}
+{% endcase %}

@@ -1,0 +1,4 @@
+mytag:
+  description: "This is a description for mytag."
+another_tag:
+  description: "Description for another tag."

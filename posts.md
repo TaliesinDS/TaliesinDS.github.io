@@ -4,6 +4,7 @@ title: "Alle posts"
 layout: single
 author_profile: true
 excerpt: "This page displays a complete list of all posts on the site"
+lang: nl
 ---
 Deze pagina toont een volledig overzicht van alle berichten op de site, met de nieuwste bijdragen bovenaan. Hier kun je eenvoudig door recente updates, artikelen en verhalen bladeren in omgekeerd chronologische volgorde. Of je nu op zoek bent naar de laatste inhoud of oudere berichten wilt teruglezen, dit overzicht biedt een handige manier om alles te ontdekken wat is gepubliceerd.
 

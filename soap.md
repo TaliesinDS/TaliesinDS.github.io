@@ -3,6 +3,7 @@ permalink: /soap/
 title: "Handgemaakte Zeep"
 layout: single
 author_profile: true
+lang: nl
 ---
 
 

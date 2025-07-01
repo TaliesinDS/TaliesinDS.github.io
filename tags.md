@@ -2,6 +2,7 @@
 layout: single
 title: "Post Archive"
 permalink: /tags/
+search: false
 ---
 <div>
   Search through all of my posts by tag!

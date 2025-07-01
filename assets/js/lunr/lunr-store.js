@@ -40,28 +40,4 @@ var store = [{
         "tags": ["post","zeep"],
         "url": "/dit-is-een-test-post-nr05/",
         "teaser": "/assets/images/bull200px.webp"
-      },,{
-    "title": "Post Archive",
-    "excerpt":"   Search through all of my posts by tag!         ","url": "https://taliesinds.github.io//archive.html"
-  },{
-    "title": "alle posts met de tag \"posts\"",
-    "excerpt":"{% assign tagname = page.name | split: '.' | first %} {% assign tagged_posts = site.posts | where_exp: \"post\", \"post.tags contains tagname\" %} {% for post in tagged_posts %} {{ post.title }} {{ post.date | date: \"%b %-d, %Y\" }} {{ post.excerpt | strip_html | truncatewords: 40 }} {% endfor...","url": "https://taliesinds.github.io//tag/post/"
-  },{
-    "title": "Alle posts",
-    "excerpt":"Deze pagina toont een volledig overzicht van alle berichten op de site, met de nieuwste bijdragen bovenaan. Hier kun je eenvoudig door recente updates, artikelen en verhalen bladeren in omgekeerd chronologische volgorde. Of je nu op zoek bent naar de laatste inhoud of oudere berichten wilt teruglezen, dit overzicht biedt...","url": "https://taliesinds.github.io//posts/"
-  },{
-    "title": "andere dingen",
-    "excerpt":"Op deze pagina vind je een overzicht van uiteenlopende projecten waar ik aan werk. Denk aan 3D-printen, leerbewerking, naaien, het maken van kleine messing onderdelen zoals tassenbeslag, experimenten met AI en nog veel meer creatieve bezigheden. Hier deel ik mijn ervaringen, ideeën en resultaten van allerlei algemene projecten en hobby’s....","url": "https://taliesinds.github.io//projects/"
-  },{
-    "title": "Handgemaakte Zeep",
-    "excerpt":"Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep, het ontwerpen van verpakkingen en het optimaliseren van het productieproces. Ik ben geen expert, maar vind het leuk om te experimenteren met verschillende recepten, technieken en materialen. Hier lees je over mijn ontdekkingen, successen en soms ook...","url": "https://taliesinds.github.io//soap/"
-  },{
-    "title": "Post Archive",
-    "excerpt":"Search through all of my posts by tag! {% for tag in site.tags %} {% assign tag_name = tag | first %} {% assign tag_name_pretty = tag_name | replace: \"_\", \" \" | capitalize %} In #{{ tag_name }}: {% for post in site.tags[tag_name] %} {%- assign date_format = site.minima.date_format...","url": "https://taliesinds.github.io//tags/"
-  },{
-    "title": "Alle posts met de tag 'webdev'",
-    "excerpt":"{% assign tagname = page.name | split: '.' | first %} {% assign tagged_posts = site.posts | where_exp: \"post\", \"post.tags contains tagname\" %} {% for post in tagged_posts %} {{ post.title }} {{ post.date | date: \"%b %-d, %Y\" }} {{ post.excerpt | strip_html | truncatewords: 40 }} {% endfor...","url": "https://taliesinds.github.io//tag/webdev/"
-  },{
-    "title": "Alle posts met de tag 'zeep'",
-    "excerpt":"{% assign tagname = page.name | split: '.' | first %} {% assign tagged_posts = site.posts | where_exp: \"post\", \"post.tags contains tagname\" %} {% for post in tagged_posts %} {{ post.title }} {{ post.date | date: \"%b %-d, %Y\" }} {{ post.excerpt | strip_html | truncatewords: 40 }} {% endfor...","url": "https://taliesinds.github.io//tag/zeep/"
-  }]
+      },,]

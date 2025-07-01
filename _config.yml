@@ -340,5 +340,5 @@ languages: ["en", "nl"]
 default_lang: "nl"
 exclude_from_localization: ["javascript", "images", "css", "public", "sitemap", "_includes", "_layouts", "_data", "_sass", "assets" ]
 parallel_localization: true
-url: "https://taliesinds.github.io"
+url: https://taliesinds.github.io
 lang_from_path: true

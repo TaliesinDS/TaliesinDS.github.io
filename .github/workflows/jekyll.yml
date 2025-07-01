@@ -2,7 +2,7 @@ name: Build and Deploy Jekyll site with Polyglot
 
 on:
   push:
-    branches: [main] # or your default branch.
+    branches: [main] # or your default branch
 
 jobs:
   build:

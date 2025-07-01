@@ -232,7 +232,7 @@ sass:
 
 
 # Outputting
-permalink: /:lang/:categories/:title/
+permalink: /:categories/:title/
 timezone: Europe/Amsterdam
 
 
@@ -246,7 +246,7 @@ pagination:
   debug: false
   collection: 'posts'
   per_page: 10
-  permalink: '/:lang/page/:num/'
+  permalink: '/page/:num/'
   title: ':title - page :num'
   limit: 0
   sort_field: 'date'
@@ -302,17 +302,17 @@ whitelist:
 #     tag: archive-taxonomy
 #   permalinks:
 #     category: /categories/:name/
-#     tag: /:lang/tags/:name/
+#     tag: /tags/:name/
 jekyll-archives:
   enabled: tags
   layout: tag
   permalinks:
-    tag: '/:lang/tag/:name/'
+    tag: '/tag/:name/'
 
 collections:
   tags:
     output: true
-    permalink: /:lang/tag/:name/
+    permalink: /tag/:name/
 
 # HTML Compression
 # - https://jch.penibelst.de/

@@ -21,6 +21,16 @@ var idx = lunr(function () {
     })
   }
 });
+function cleanExcerpt(text) {
+  if (!text) return "";
+  // Remove Liquid tags
+  text = text.replace(/{%.*?%}/g, '');
+  text = text.replace(/{{.*?}}/g, '');
+  // Remove HTML tags
+  text = text.replace(/<[^>]*>/g, '');
+  // Optionally, trim whitespace
+  return text.trim();
+}
 $(document).ready(function() {
   $('input#search').on('keyup', function () {
     var resultdiv = $('#results');
@@ -53,7 +63,7 @@ $(document).ready(function() {
                 '<h2 class="archive__item-title" itemprop="headline" style="margin-top:0;">' +
                   '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>' +
                 '</h2>' +
-                '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,40).join(" ")+'...</p>' +
+                '<p class="archive__item-excerpt" itemprop="description">'+cleanExcerpt(store[ref].excerpt).split(" ").splice(0,40).join(" ")+'...</p>' +
               '</div>' +
             '</article>' +
           '</div>';
@@ -69,7 +79,7 @@ $(document).ready(function() {
                 '<h2 class="archive__item-title" itemprop="headline" style="margin-top:0;">' +
                   '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>' +
                 '</h2>' +
-                '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,40).join(" ")+'...</p>' +
+                '<p class="archive__item-excerpt" itemprop="description">'+cleanExcerpt(store[ref].excerpt).split(" ").splice(0,40).join(" ")+'...</p>' +
               '</div>' +
             '</article>' +
           '</div>';

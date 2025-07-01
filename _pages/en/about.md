@@ -1,9 +1,10 @@
 ---
 permalink: /:lang/about/
-title: "Over mij"
+title: "About me"
 layout: single
 author_profile: true
 tag: about
+lang: en
 ---
 
 some stuff about me

@@ -4,6 +4,7 @@ title: "Over mij"
 layout: single
 author_profile: true
 tag: about
+lang: nl
 ---
 
 Hier vertel ik wat over mijzelf.

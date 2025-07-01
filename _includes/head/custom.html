@@ -3,12 +3,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
- {% for lang in site.languages %}
-  {% if lang == site.active_lang %}
-    <span>{{ lang }}</span>
-  {% else %}
-    <a href="{{ page.url | replace_first: '/' | prepend: '/' | prepend: lang | relative_url }}">{{ lang }}</a>
-  {% endif %}
-{% endfor %}
+
 
 <!-- end custom head snippets -->

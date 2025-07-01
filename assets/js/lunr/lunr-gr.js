@@ -1,3 +1,4 @@
+
 step1list = new Array();
 step1list["ΦΑΓΙΑ"] = "ΦΑ";
 step1list["ΦΑΓΙΟΥ"] = "ΦΑ";
@@ -470,7 +471,16 @@ var idx = lunr(function () {
     })
   }
 });
-
+function cleanExcerpt(text) {
+  if (!text) return "";
+  // Remove Liquid tags
+  text = text.replace(/{%.*?%}/g, '');
+  text = text.replace(/{{.*?}}/g, '');
+  // Remove HTML tags
+  text = text.replace(/<[^>]*>/g, '');
+  // Optionally, trim whitespace
+  return text.trim();
+}
 $(document).ready(function() {
   $('input#search').on('keyup', function () {
     var resultdiv = $('#results');
@@ -488,7 +498,7 @@ $(document).ready(function() {
         })
       });
     resultdiv.empty();
-    resultdiv.prepend('<p class="results__found">'+result.length+' Resultaten gevonden</p>');
+    resultdiv.prepend('<p class="results__found">'+result.length+' {{ site.data.ui-text[site.locale].results_found | default: "Result(s) found" }}</p>');
     for (var item in result) {
       var ref = result[item].ref;
       if(store[ref].teaser){
@@ -502,7 +512,7 @@ $(document).ready(function() {
           '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>' +
               '</h2>' +
               '<p class="archive__item-excerpt" itemprop="description">' +
-          (store[ref].excerpt && store[ref].excerpt.trim() !== "" ? store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...' : '') +
+          cleanExcerpt(store[ref].excerpt) && store[ref].excerpt.trim() !== "" ? store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...' : '') +
               '</p>' +
             '</div>' +
           '</div>';
@@ -514,7 +524,7 @@ $(document).ready(function() {
               '<h2 class="archive__item-title" itemprop="headline">'+
                 '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
               '</h2>'+
-              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+              '<p class="archive__item-excerpt" itemprop="description">'+cleanExcerpt(store[ref].excerpt).split(" ").splice(0,20).join(" ")+'...</p>'+
             '</article>'+
           '</div>';
       }

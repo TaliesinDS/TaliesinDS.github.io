@@ -7,7 +7,7 @@ tag: about
 ---
 
 lorem ipsum
-<iframe width="560" height="315"
+<iframe width="315" height="560"
   src="https://www.youtube.com/embed/ugcqTOxuyuk"
   title="YouTube video player"
   frameborder="0"

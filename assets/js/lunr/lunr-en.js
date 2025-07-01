@@ -48,6 +48,14 @@ $(document).ready(function() {
     resultdiv.prepend('<p class="results__found">'+result.length+' Result(s) found</p>');
     for (var item in result) {
       var ref = result[item].ref;
+
+      // Clean and prepare the excerpt
+      let excerpt = cleanExcerpt(store[ref].excerpt).split(" ").splice(0,20).join(" ");
+      if (!excerpt || excerpt.trim() === "") {
+      excerpt = "No summary available.";
+      }
+
+  
       var searchitem = '';
       if(store[ref].teaser){
         searchitem =

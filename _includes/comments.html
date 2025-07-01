@@ -238,25 +238,25 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
 <script>
   // Function to format the date and time from the data
   function formatDate(stringDate) {
-    // Split the string into date and time parts
-    const dateTimeParts = stringDate.split(' ');
-    const datePart = dateTimeParts[0]; // Date part like "7/12/2024"
-    const timePart = dateTimeParts[1]; // Time part like "23:32:54"
-    // Parse date in MM/DD/YYYY format
-    const [month, day, year] = datePart.split('/');
-    // Create a Date object
-    const dateObj = new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${timePart}`);
-    // Format date as "25 June, 2025"
-    const months = [
-      "January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
-    ];
-    const formattedDate = `${dateObj.getDate()} ${months[dateObj.getMonth()]}, ${dateObj.getFullYear()}`;
-    // Format time as 24-hour "HH:mm:ss"
-    const formattedTime = dateObj.toISOString().substr(11, 8);
-    // Return the formatted date and time
-    return `${formattedDate} at ${formattedTime}`;
-  }
+  // Split the string into date and time parts
+  const dateTimeParts = stringDate.split(' ');
+  const datePart = dateTimeParts[0]; // Date part like "7/12/2024"
+  const timePart = dateTimeParts[1] || "00:00:00"; // Time part like "23:32:54"
+  // Parse date in MM/DD/YYYY format
+  const [month, day, year] = datePart.split('/');
+  // Create a Date object
+  const dateObj = new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${timePart}`);
+  // Format date as "25 June, 2025"
+  const months = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  const formattedDate = `${dateObj.getDate()} ${months[dateObj.getMonth()]}, ${dateObj.getFullYear()}`;
+  // Format time as 24-hour "HH:mm:ss"
+  const formattedTime = dateObj.toISOString().substr(11, 8);
+  // Return the formatted date and time
+  return `${formattedDate} at ${formattedTime}`;
+}
 
   // CSV parsing function to handle quoted fields and commas
   function parseCSV(text) {

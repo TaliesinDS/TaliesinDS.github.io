@@ -306,6 +306,9 @@ collections:
   tags:
     output: true
     permalink: /tag/:name/
+  pages:
+    output: true
+    permalink: /:name/
 
 # HTML Compression
 # - https://jch.penibelst.de/

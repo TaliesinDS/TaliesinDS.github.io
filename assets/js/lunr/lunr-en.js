@@ -8,15 +8,15 @@ var idx = lunr(function () {
 
   this.pipeline.remove(lunr.trimmer)
 
-  for (var item in store) {
+  Object.keys(store).forEach(function(item) {
     this.add({
       title: store[item].title,
       excerpt: store[item].excerpt,
       categories: store[item].categories,
       tags: store[item].tags,
       id: item
-    })
-  }
+    });
+  }, this);
 });
 function cleanExcerpt(text) {
   if (!text) return "";
@@ -45,7 +45,7 @@ $(document).ready(function() {
         })
       });
     resultdiv.empty();
-    resultdiv.prepend('<p class="results__found">'+result.length+' {{ site.data.ui-text[site.locale].results_found | default: "Result(s) found" }}</p>');
+    resultdiv.prepend('<p class="results__found">'+result.length+' Result(s) found</p>');
     for (var item in result) {
       var ref = result[item].ref;
       var searchitem = '';

@@ -303,35 +303,12 @@
         
         <p>lorem ipsum</p>
 
-<div style="position:relative;width:30%;max-width:350px;margin:auto;height:0;padding-bottom:177.78%;">
-  <iframe src="https://www.youtube.com/embed/ugcqTOxuyuk" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-  </iframe>
+<div style="display: flex; justify-content: center;">
+  <div style="transform: scale(0.6); transform-origin: top center;">
+    <iframe width="315" height="560" src="https://www.youtube.com/embed/ugcqTOxuyuk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+    </iframe>
+  </div>
 </div>
-
-<hr />
-
-<h2 id="tips-for-embedding-portrait-shorts-videos">Tips for Embedding Portrait (Shorts) Videos</h2>
-
-<ul>
-  <li><strong>Change <code class="language-plaintext highlighter-rouge">width:60%;</code></strong> in the <code class="language-plaintext highlighter-rouge">&lt;div&gt;</code> to make the video bigger or smaller (e.g., <code class="language-plaintext highlighter-rouge">80%</code>, <code class="language-plaintext highlighter-rouge">40%</code>, etc.).</li>
-  <li><code class="language-plaintext highlighter-rouge">padding-bottom:177.78%</code> keeps the 9:16 aspect ratio (portrait).</li>
-  <li><code class="language-plaintext highlighter-rouge">max-width:350px;</code> prevents the video from getting too large on wide screens—adjust as needed.</li>
-  <li><code class="language-plaintext highlighter-rouge">margin:auto;</code> centers the video on the page.</li>
-  <li>The <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> uses <code class="language-plaintext highlighter-rouge">width:100%;height:100%;</code> to always fill the container.</li>
-</ul>
-
-<p><strong>Usage Example:</strong></p>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"position:relative;width:80%;max-width:400px;margin:auto;height:0;padding-bottom:177.78%;"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">"https://www.youtube.com/embed/ugcqTOxuyuk"</span>
-    <span class="na">style=</span><span class="s">"position:absolute;top:0;left:0;width:100%;height:100%;"</span>
-    <span class="na">frameborder=</span><span class="s">"0"</span>
-    <span class="na">allowfullscreen</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;/iframe&gt;</span>
-<span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
-
-<p>Adjust the <code class="language-plaintext highlighter-rouge">width</code> and <code class="language-plaintext highlighter-rouge">max-width</code> values to fit your design needs!</p>
 
         
       </section>

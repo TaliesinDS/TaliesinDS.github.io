@@ -10,8 +10,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Dit is een test post nr 5 - Portfolio</title>
-<meta name="description" content="What is Lorem Ipsum?">
+<!-- begin _includes/seo.html --><title>2 Talige Versie Test Post - Portfolio</title>
+<meta name="description" content="English   Nederlands      About Me   Hello! My name is Arthur...      Over mij   Hallo! Mijn naam is Arthur...">
 
 
   <meta name="author" content="Arthur Kortekaas">
@@ -23,11 +23,11 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="nl_NL">
 <meta property="og:site_name" content="Portfolio">
-<meta property="og:title" content="Dit is een test post nr 5">
-<meta property="og:url" content="https://taliesinds.github.io//dit-is-een-test-post-nr05/">
+<meta property="og:title" content="2 Talige Versie Test Post">
+<meta property="og:url" content="https://taliesinds.github.io//2-talige-versie-test-post/">
 
 
-  <meta property="og:description" content="What is Lorem Ipsum?">
+  <meta property="og:description" content="English   Nederlands      About Me   Hello! My name is Arthur...      Over mij   Hallo! Mijn naam is Arthur...">
 
 
 
@@ -37,7 +37,7 @@
 
 
 
-  <meta property="article:published_time" content="2025-06-25T00:00:00+02:00">
+  <meta property="article:published_time" content="2025-07-04T00:00:00+02:00">
 
 
 
@@ -48,7 +48,7 @@
   
 
 
-<link rel="canonical" href="https://taliesinds.github.io//dit-is-een-test-post-nr05/">
+<link rel="canonical" href="https://taliesinds.github.io//2-talige-versie-test-post/">
 
 
 
@@ -193,12 +193,32 @@
     <div class="wrapper">
       <h1 id="page-title" class="page__title" itemprop="headline">
         
-          Dit is een test post nr 5
+          2 Talige Versie Test Post
 
         
       </h1>
       
-        <p class="page__lead">What is Lorem Ipsum?
+        <p class="page__lead"><div class="lang-switcher">
+  <button onclick="showLang('en')">English</button>
+  <button onclick="showLang('nl')">Nederlands</button>
+</div>
+
+<div class="lang-content lang-en">
+  <h2>About Me</h2>
+  Hello! My name is Arthur...
+</div>
+
+<div class="lang-content lang-nl" style="display:none;">
+  <h2>Over mij</h2>
+  Hallo! Mijn naam is Arthur...
+</div>
+
+<script>
+function showLang(lang) {
+  document.querySelector('.lang-en').style.display = (lang === 'en') ? 'block' : 'none';
+  document.querySelector('.lang-nl').style.display = (lang === 'nl') ? 'block' : 'none';
+}
+</script>
 
 </p>
       
@@ -210,7 +230,7 @@
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2025-06-25T00:00:00+02:00">June 25, 2025</time>
+        <time datetime="2025-07-04T00:00:00+02:00">July 4, 2025</time>
       </span>
     
 
@@ -353,9 +373,9 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Dit is een test post nr 5">
-    <meta itemprop="description" content="What is Lorem Ipsum?">
-    <meta itemprop="datePublished" content="2025-06-25T00:00:00+02:00">
+    <meta itemprop="headline" content="2 Talige Versie Test Post">
+    <meta itemprop="description" content="  English  Nederlands  About Me  Hello! My name is Arthur...  Over mij  Hallo! Mijn naam is Arthur...">
+    <meta itemprop="datePublished" content="2025-07-04T00:00:00+02:00">
     
 
     <div class="page__inner-wrap">
@@ -363,16 +383,27 @@
 
       <section class="page__content" itemprop="text">
         
-        <p>What is Lorem Ipsum?
-<!--more--> 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-Why do we use it?</p>
+        <div class="lang-switcher">
+  <button onclick="showLang('en')">English</button>
+  <button onclick="showLang('nl')">Nederlands</button>
+</div>
 
-<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+<div class="lang-content lang-en">
+  <h2>About Me</h2>
+  <p>Hello! My name is Arthur...</p>
+</div>
 
-<p>Where does it come from?</p>
+<div class="lang-content lang-nl" style="display:none;">
+  <h2>Over mij</h2>
+  <p>Hallo! Mijn naam is Arthur...</p>
+</div>
 
-<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of “de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.</p>
+<script>
+function showLang(lang) {
+  document.querySelector('.lang-en').style.display = (lang === 'en') ? 'block' : 'none';
+  document.querySelector('.lang-nl').style.display = (lang === 'nl') ? 'block' : 'none';
+}
+</script>
 
 
         
@@ -392,7 +423,9 @@ Why do we use it?</p>
     
       <a href="/tag/post/" class="page__taxonomy-item p-category" rel="tag">#post</a><span class="sep">, </span>
     
-      <a href="/tag/zeep/" class="page__taxonomy-item p-category" rel="tag">#zeep</a>
+      <a href="/tag/taal/" class="page__taxonomy-item p-category" rel="tag">#taal</a><span class="sep">, </span>
+    
+      <a href="/tag/test/" class="page__taxonomy-item p-category" rel="tag">#test</a>
     
     </span>
   </p>
@@ -402,7 +435,7 @@ Why do we use it?</p>
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Bijgewerkt:</strong> <time class="dt-published" datetime="2025-06-25T00:00:00+02:00">June 25, 2025</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Bijgewerkt:</strong> <time class="dt-published" datetime="2025-07-04T00:00:00+02:00">July 4, 2025</time></p>
 
       </footer>
 
@@ -411,10 +444,10 @@ Why do we use it?</p>
       
   <nav class="pagination">
     
-      <a href="/dit-is-een-test-post-nr04/" class="pagination--pager" title="Dit is een test post nr 4">Vorige</a>
+      <a href="/dit-is-een-test-post-nr05/" class="pagination--pager" title="Dit is een test post nr 5">Vorige</a>
     
     
-      <a href="/2-talige-versie-test-post/" class="pagination--pager" title="2 Talige Versie Test Post">Volgende</a>
+      <a href="#" class="pagination--pager disabled">Volgende</a>
     
   </nav>
 
@@ -645,7 +678,7 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
     
     <h2 class="archive__item-title no_toc" itemprop="headline">
       
-        <a href="/2-talige-versie-test-post/" rel="permalink">2 Talige Versie Test Post
+        <a href="/dit-is-een-test-post-nr05/" rel="permalink">Dit is een test post nr 5
 </a>
       
     </h2>
@@ -657,7 +690,7 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
       <span class="page__meta-date">
         <i class="far fa-calendar-alt" aria-hidden="true"></i>
         
-        <time datetime="2025-07-04T00:00:00+02:00">July 4, 2025</time>
+        <time datetime="2025-06-25T00:00:00+02:00">June 25, 2025</time>
       </span>
     
 
@@ -668,22 +701,7 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
 
 
 
-    <p class="archive__item-excerpt" itemprop="description">
-  English
-  Nederlands
-
-
-
-  About Me
-  Hello! My name is Arthur...
-
-
-
-  Over mij
-  Hallo! Mijn naam is Arthur...
-
-
-
+    <p class="archive__item-excerpt" itemprop="description">What is Lorem Ipsum?
 
 </p>
      

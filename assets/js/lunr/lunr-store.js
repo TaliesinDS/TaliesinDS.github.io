@@ -40,4 +40,10 @@ var store = [{
         "tags": ["post","zeep"],
         "url": "/dit-is-een-test-post-nr05/",
         "teaser": "/assets/images/bull200px.webp"
+      },{
+        "title": "2 Talige Versie Test Post",
+        "excerpt":"   English   Nederlands      About Me    Hello! My name is Arthur...       Over mij    Hallo! Mijn naam is Arthur...      ","categories": [],
+        "tags": ["post","taal","test"],
+        "url": "/2-talige-versie-test-post/",
+        "teaser": "/assets/images/bull200px.webp"
       },,]

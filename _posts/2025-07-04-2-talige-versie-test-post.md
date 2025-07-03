@@ -11,7 +11,7 @@ header:
 comments: true
 ---
 
-Dit is de samenvatting of inleiding van je post.  
+Dit is de samenvatting of inleiding van je post.
 <!--more-->
 
 <div class="lang-switcher">

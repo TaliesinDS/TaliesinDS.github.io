@@ -11,6 +11,9 @@ header:
 comments: true
 ---
 
+Dit is de samenvatting of inleiding van je post.  
+<!--more-->
+
 <div class="lang-switcher">
   <button onclick="showLang('en')">English</button>
   <button onclick="showLang('nl')">Nederlands</button>

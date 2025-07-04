@@ -2,7 +2,7 @@
 title: "post generator test"
 layout: single
 author_profile: true
-tags: 
+tags: test
 excerpt_separator: <!--more-->
 header:
     overlay_image: random

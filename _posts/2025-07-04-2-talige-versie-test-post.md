@@ -20,7 +20,9 @@ Dit is de samenvatting of inleiding van je post.
 </style>
 
 <div class="lang-switcher">
-  <button id="lang-toggle" onclick="toggleLang()">Nederlands</button>
+  <button id="lang-toggle" onclick="toggleLang()" style="background:none;border:none;cursor:pointer;">
+    <img id="lang-flag" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg" alt="Dutch flag" style="width:24px;height:24px;vertical-align:middle;">
+  </button>
 </div>
 
 <div class="lang-content lang-en">
@@ -32,4 +34,3 @@ Dit is de samenvatting of inleiding van je post.
   <h2>Over mij</h2>
   <p>Hallo! Mijn naam is Arthur...</p>
 </div>
-

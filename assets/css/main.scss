@@ -916,6 +916,40 @@ textarea:focus, textarea:focus-visible {
   padding: 0em;
   margin: 0em;
 }
+/* Language Switcher Container */
+.lang-switcher {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1em;
+}
+
+/* Language Toggle Button */
+#lang-toggle {
+  background: #f3f3f3;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.3em 0.7em;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  display: flex;
+  align-items: center;
+}
+
+#lang-toggle:hover {
+  background: #e0e0e0;
+  border-color: #888;
+}
+
+/* Flag Image */
+#lang-flag {
+  width: 24px;
+  height: 18px;
+  vertical-align: middle;
+  margin: 0;
+  display: block;
+}
+
 
 /* Optional: Differentiate English and Dutch blocks if both are visible (for debugging) */
 /*

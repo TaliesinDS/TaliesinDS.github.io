@@ -46,4 +46,10 @@ var store = [{
         "tags": ["post","taal","test"],
         "url": "/2-talige-versie-test-post/",
         "teaser": "/assets/images/bull200px.webp"
+      },{
+        "title": "post generator test",
+        "excerpt":"Dit is de samenvatting of inleiding van je post.     ","categories": [],
+        "tags": [],
+        "url": "/post-generator-test/",
+        "teaser": "/assets/images/bull200px.webp"
       },,]

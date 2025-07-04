@@ -42,7 +42,7 @@ var store = [{
         "teaser": "/assets/images/bull200px.webp"
       },{
         "title": "2 Talige Versie Test Post",
-        "excerpt":"Dit is de samenvatting of inleiding van je post.             About Me                                        Hello! My name is Arthur...            Over mij                                        Hallo! Mijn naam is Arthur...   ","categories": [],
+        "excerpt":"Dit is de samenvatting of inleiding van je post.             Over mij                                        Hallo! Mijn naam is Arthur...            About Me                                        Hello! My name is Arthur...    ","categories": [],
         "tags": ["post","taal","test"],
         "url": "/2-talige-versie-test-post/",
         "teaser": "/assets/images/bull200px.webp"

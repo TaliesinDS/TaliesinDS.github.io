@@ -904,8 +904,8 @@ textarea:focus, textarea:focus-visible {
 .lang-content {
   font-size: 1em;
   line-height: 1;
-  padding: 1.5em 2em;
-  margin: 1em 0;
+  padding: 0em;
+  margin: 0em;
 }
 
 /* Optional: Differentiate English and Dutch blocks if both are visible (for debugging) */
@@ -918,7 +918,7 @@ textarea:focus, textarea:focus-visible {
 @media (max-width: 600px) {
   .lang-content {
     font-size: 1em;
-    padding: 1em 0.5em;
-    margin: 1em 0;
+    padding: 0em;
+    margin: 0em;
   }
 }

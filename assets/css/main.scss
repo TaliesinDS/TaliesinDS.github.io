@@ -922,16 +922,15 @@ textarea:focus, textarea:focus-visible {
 }
 .lang-header {
   display: flex;
-  align-items: center;
+  align-items: space-between;
   gap: 1em;
   margin-bottom: 0.5em;
 }
 
 /* Language Toggle Button */
 #lang-toggle {
-  background: #f3f3f3;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  background: none;
+  border: none;
   padding: 0.2em 0.5em;
   cursor: pointer;
   display: flex;

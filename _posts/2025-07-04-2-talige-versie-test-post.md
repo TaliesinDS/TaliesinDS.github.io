@@ -21,7 +21,7 @@ Dit is de samenvatting of inleiding van je post.
 
 <div class="lang-content lang-en">
   <div class="lang-header">
-    <h2>About Me</h2>
+    <h2 style="margin: 0.5em 0 0.5em;">About Me</h2>
     <div class="lang-switcher">
       <button id="lang-toggle" onclick="toggleLang()">
         <img id="lang-flag" src="/assets/images/ui/nl.svg" alt="Dutch flag">

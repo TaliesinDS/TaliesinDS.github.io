@@ -900,3 +900,25 @@ textarea:focus, textarea:focus-visible {
     margin: 0 auto;
   }
 }
+/* Style for language content blocks */
+.lang-content {
+  font-size: 1em;
+  line-height: 1;
+  padding: 1.5em 2em;
+  margin: 1em 0;
+}
+
+/* Optional: Differentiate English and Dutch blocks if both are visible (for debugging) */
+/*
+.lang-content.lang-en { border-left: 4px solid #0078d7; }
+.lang-content.lang-nl { border-left: 4px solid #e17000; }
+*/
+
+/* Responsive styles for screens less than 600px wide */
+@media (max-width: 600px) {
+  .lang-content {
+    font-size: 1em;
+    padding: 1em 0.5em;
+    margin: 1em 0;
+  }
+}

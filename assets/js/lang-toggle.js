@@ -1,4 +1,4 @@
-let currentLang = 'en';
+let currentLang = 'nl';
 function toggleLang() {
   const enBlocks = document.querySelectorAll('.lang-en');
   const nlBlocks = document.querySelectorAll('.lang-nl');

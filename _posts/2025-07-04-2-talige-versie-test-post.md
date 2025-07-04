@@ -33,19 +33,3 @@ Dit is de samenvatting of inleiding van je post.
   <p>Hallo! Mijn naam is Arthur...</p>
 </div>
 
-<script>
-let currentLang = 'en';
-function toggleLang() {
-  if (currentLang === 'en') {
-    document.querySelector('.lang-en').style.display = 'none';
-    document.querySelector('.lang-nl').style.display = 'block';
-    document.getElementById('lang-toggle').textContent = 'English';
-    currentLang = 'nl';
-  } else {
-    document.querySelector('.lang-en').style.display = 'block';
-    document.querySelector('.lang-nl').style.display = 'none';
-    document.getElementById('lang-toggle').textContent = 'Nederlands';
-    currentLang = 'en';
-  }
-}
-</script>

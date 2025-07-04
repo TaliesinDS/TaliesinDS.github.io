@@ -15,8 +15,7 @@ Dit is de samenvatting of inleiding van je post.
 <!--more-->
 
 <div class="lang-switcher">
-  <button onclick="showLang('en')">English</button>
-  <button onclick="showLang('nl')">Nederlands</button>
+  <button id="lang-toggle" onclick="toggleLang()">Nederlands</button>
 </div>
 
 <div class="lang-content lang-en">
@@ -30,8 +29,18 @@ Dit is de samenvatting of inleiding van je post.
 </div>
 
 <script>
-function showLang(lang) {
-  document.querySelector('.lang-en').style.display = (lang === 'en') ? 'block' : 'none';
-  document.querySelector('.lang-nl').style.display = (lang === 'nl') ? 'block' : 'none';
+let currentLang = 'en';
+function toggleLang() {
+  if (currentLang === 'en') {
+    document.querySelector('.lang-en').style.display = 'none';
+    document.querySelector('.lang-nl').style.display = 'block';
+    document.getElementById('lang-toggle').textContent = 'English';
+    currentLang = 'nl';
+  } else {
+    document.querySelector('.lang-en').style.display = 'block';
+    document.querySelector('.lang-nl').style.display = 'none';
+    document.getElementById('lang-toggle').textContent = 'Nederlands';
+    currentLang = 'en';
+  }
 }
 </script>

@@ -918,9 +918,13 @@ textarea:focus, textarea:focus-visible {
 }
 /* Language Switcher Container */
 .lang-switcher {
+  margin: 0;
+}
+.lang-header {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 1em;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 0.5em;
 }
 
 /* Language Toggle Button */
@@ -928,10 +932,8 @@ textarea:focus, textarea:focus-visible {
   background: #f3f3f3;
   border: 1px solid #ccc;
   border-radius: 6px;
-  padding: 0.3em 0.7em;
+  padding: 0.2em 0.5em;
   cursor: pointer;
-  transition: background 0.2s, border 0.2s;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
   display: flex;
   align-items: center;
 }

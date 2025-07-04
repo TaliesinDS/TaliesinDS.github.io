@@ -13,6 +13,9 @@ comments: true
 
 Dit is de samenvatting of inleiding van je post.
 <!--more-->
+<style>
+.page__excerpt { display: none; }
+</style>
 
 <div class="lang-switcher">
   <button id="lang-toggle" onclick="toggleLang()">Nederlands</button>

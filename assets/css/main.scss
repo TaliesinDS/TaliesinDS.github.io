@@ -902,8 +902,9 @@ textarea:focus, textarea:focus-visible {
 }
 /* Style for language content blocks */
 .lang-content {
-  font-size: 1em;
-  line-height: 1;
+  font-size: 0.9em;
+  font-weight: 450;
+  line-height: 1.2em;
   padding: 0em;
   margin: 0em;
 }
@@ -917,7 +918,9 @@ textarea:focus, textarea:focus-visible {
 /* Responsive styles for screens less than 600px wide */
 @media (max-width: 600px) {
   .lang-content {
-    font-size: 1em;
+    font-size: 0.9em;
+    font-weight: 450;
+    line-height: 1.2em;
     padding: 0em;
     margin: 0em;
   }

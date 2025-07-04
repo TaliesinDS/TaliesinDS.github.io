@@ -23,8 +23,8 @@ Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep
   <div class="lang-header">
     <h2 style="margin: 0.5em 0 0.5em;">Over mij</h2>
     <div class="lang-switcher">
-      <button class="lang-toggle" onclick="toggleLang()">
-        <img class="lang-flag" src="/assets/images/ui/gb.svg" alt="English flag">
+      <button id="lang-toggle" onclick="toggleLang()">
+        <img id="lang-flag" src="/assets/images/ui/gb.svg" alt="English flag">
       </button>
     </div>
   </div>
@@ -35,8 +35,8 @@ Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep
   <div class="lang-header">
     <h2 style="margin: 0.5em 0 0.5em;">About Me</h2>
     <div class="lang-switcher">
-      <button class="lang-toggle" onclick="toggleLang()">
-        <img class="lang-flag" src="/assets/images/ui/nl.svg" alt="Dutch flag">
+      <button id="lang-toggle" onclick="toggleLang()">
+        <img id="lang-flag" src="/assets/images/ui/nl.svg" alt="Dutch flag">
       </button>
     </div>
   </div>

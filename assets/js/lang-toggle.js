@@ -5,6 +5,10 @@ function toggleLang() {
   const nlBlocks = document.querySelectorAll('.lang-nl');
   const flag = document.querySelector('.lang-flag'); // Only one switcher per page
 
+  // Use computed style to check which language is currently visible
+  // (Optional: if you want to auto-detect instead of using currentLang variable)
+  // const nlVisible = nlBlocks.length && window.getComputedStyle(nlBlocks[0]).display !== "none";
+
   if (currentLang === 'nl') {
     nlBlocks.forEach(el => el.style.display = 'none');
     enBlocks.forEach(el => el.style.display = 'block');
@@ -27,3 +31,16 @@ function toggleLang() {
     currentLang = 'nl';
   }
 }
+
+// Optional: On page load, ensure only the correct language is visible
+document.addEventListener('DOMContentLoaded', function() {
+  const enBlocks = document.querySelectorAll('.lang-en');
+  const nlBlocks = document.querySelectorAll('.lang-nl');
+  if (currentLang === 'nl') {
+    nlBlocks.forEach(el => el.style.display = 'block');
+    enBlocks.forEach(el => el.style.display = 'none');
+  } else {
+    nlBlocks.forEach(el => el.style.display = 'none');
+    enBlocks.forEach(el => el.style.display = 'block');
+  }
+});

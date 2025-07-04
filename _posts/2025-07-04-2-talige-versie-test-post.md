@@ -19,6 +19,18 @@ Dit is de samenvatting of inleiding van je post.
 }
 </style>
 
+<div class="lang-content lang-nl" style="display:none;">
+  <div class="lang-header">
+    <h2 style="margin: 0.5em 0 0.5em;">Over mij</h2>
+    <div class="lang-switcher">
+      <button id="lang-toggle" onclick="toggleLang()">
+        <img id="lang-flag" src="/assets/images/ui/gb.svg" alt="English flag">
+      </button>
+    </div>
+  </div>
+  <p>Hallo! Mijn naam is Arthur...</p>
+</div>
+
 <div class="lang-content lang-en">
   <div class="lang-header">
     <h2 style="margin: 0.5em 0 0.5em;">About Me</h2>
@@ -31,14 +43,3 @@ Dit is de samenvatting of inleiding van je post.
   <p>Hello! My name is Arthur...</p>
 </div>
 
-<div class="lang-content lang-nl" style="display:none;">
-  <div class="lang-header">
-    <h2 style="margin: 0.5em 0 0.5em;">Over mij</h2>
-    <div class="lang-switcher">
-      <button id="lang-toggle" onclick="toggleLang()">
-        <img id="lang-flag" src="/assets/images/ui/gb.svg" alt="English flag">
-      </button>
-    </div>
-  </div>
-  <p>Hallo! Mijn naam is Arthur...</p>
-</div>

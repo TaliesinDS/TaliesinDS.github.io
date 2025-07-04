@@ -14,7 +14,9 @@ comments: true
 Dit is de samenvatting of inleiding van je post.
 <!--more-->
 <style>
-.page__excerpt { display: none; }
+.page__content > p:first-child {
+  display: none;
+}
 </style>
 
 <div class="lang-switcher">

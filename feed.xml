@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://taliesinds.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://taliesinds.github.io//" rel="alternate" type="text/html" /><updated>2025-07-04T16:51:37+02:00</updated><id>https://taliesinds.github.io//feed.xml</id><title type="html">Portfolio</title><subtitle>just a simple website to share some of the things i make</subtitle><author><name>Arthur Kortekaas</name></author><entry><title type="html">2 Talige Versie Test Post</title><link href="https://taliesinds.github.io//2-talige-versie-test-post/" rel="alternate" type="text/html" title="2 Talige Versie Test Post" /><published>2025-07-04T00:00:00+02:00</published><updated>2025-07-04T00:00:00+02:00</updated><id>https://taliesinds.github.io//2-talige-versie-test-post</id><content type="html" xml:base="https://taliesinds.github.io//2-talige-versie-test-post/"><![CDATA[<p>Dit is de samenvatting of inleiding van je post.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://taliesinds.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://taliesinds.github.io//" rel="alternate" type="text/html" /><updated>2025-07-04T16:59:17+02:00</updated><id>https://taliesinds.github.io//feed.xml</id><title type="html">Portfolio</title><subtitle>just a simple website to share some of the things i make</subtitle><author><name>Arthur Kortekaas</name></author><entry><title type="html">2 Talige Versie Test Post</title><link href="https://taliesinds.github.io//2-talige-versie-test-post/" rel="alternate" type="text/html" title="2 Talige Versie Test Post" /><published>2025-07-04T00:00:00+02:00</published><updated>2025-07-04T00:00:00+02:00</updated><id>https://taliesinds.github.io//2-talige-versie-test-post</id><content type="html" xml:base="https://taliesinds.github.io//2-talige-versie-test-post/"><![CDATA[<p>Dit is de samenvatting of inleiding van je post.
 <!--more--></p>
 <style>
 .page__content > p:first-child {
@@ -8,7 +8,7 @@
 
 <div class="lang-content lang-en">
   <div class="lang-header">
-    <h2>About Me</h2>
+    <h2 style="margin: 0.5em 0 0.5em;">About Me</h2>
     <div class="lang-switcher">
       <button id="lang-toggle" onclick="toggleLang()">
         <img id="lang-flag" src="/assets/images/ui/nl.svg" alt="Dutch flag" />

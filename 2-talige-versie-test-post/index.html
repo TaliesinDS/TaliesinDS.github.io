@@ -385,23 +385,6 @@
   <p>Hallo! Mijn naam is Arthur...</p>
 </div>
 
-<script>
-let currentLang = 'en';
-function toggleLang() {
-  if (currentLang === 'en') {
-    document.querySelector('.lang-en').style.display = 'none';
-    document.querySelector('.lang-nl').style.display = 'block';
-    document.getElementById('lang-toggle').textContent = 'English';
-    currentLang = 'nl';
-  } else {
-    document.querySelector('.lang-en').style.display = 'block';
-    document.querySelector('.lang-nl').style.display = 'none';
-    document.getElementById('lang-toggle').textContent = 'Nederlands';
-    currentLang = 'en';
-  }
-}
-</script>
-
 
         
       </section>
@@ -990,5 +973,6 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 
 
+    <script src="/assets/js/lang-toggle.js"></script>
   </body>
 </html>

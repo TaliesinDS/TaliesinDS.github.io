@@ -924,7 +924,8 @@ textarea:focus, textarea:focus-visible {
 }
 .lang-header {
   display: flex;
-  align-items: space-between;
+  justify-content: space-between;
+  align-items: center;
   gap: 1em;
   margin-bottom: 0.5em;
 }

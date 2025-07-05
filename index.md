@@ -29,6 +29,10 @@ author_profile: false
 body {
   overflow-x: hidden;
 }
+
+.page__footer {
+  margin: 0;
+}
 </style>
 
 <div class="hero-bg">

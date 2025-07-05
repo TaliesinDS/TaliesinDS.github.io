@@ -4,6 +4,7 @@ author_profile: false
 ---
 <style>
 
+
 .hero-bg {
   position: relative;
   width: 100%;              /* Changed from 100vw */
@@ -28,3 +29,8 @@ author_profile: false
 body {
   overflow-x: hidden;
 }
+</style>
+
+<div class="hero-bg">
+  <img class="hero-logo" src="/assets/images/ui/logobig.svg" alt="Logo">
+</div>

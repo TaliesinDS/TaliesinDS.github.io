@@ -32,6 +32,11 @@ body {
 .page__footer {
   margin: 0;
 }
+@media (max-width: 600px) {
+  .hero-bg {
+    height: calc(100vh - 64.8667px - 30.9999px);
+  }
+}
 </style>
 
 <div class="hero-bg">

@@ -6,7 +6,7 @@ author_profile: false
 
 .hero-bg {
   position: relative;
-  width: 100vw;
+  width: 100%;              /* Changed from 100vw */
   height: 90vh;
   min-height: 400px;
   background: url('/assets/images/hero1.webp') center center/cover no-repeat;
@@ -15,14 +15,16 @@ author_profile: false
   justify-content: center;
   overflow: hidden;
 }
+
 .hero-logo {
-  width: 500px;
-  max-width: 80vw;
+  width: 100%;              /* Let it scale with the container */
+  max-width: 600px;         /* Adjust as needed */
+  max-height: 80vh;         /* Prevents logo from overflowing vertically */
   height: auto;
   z-index: 2;
 }
-</style>
 
-<div class="hero-bg">
-  <img class="hero-logo" src="/assets/images/ui/logobig.svg" alt="Logo">
-</div>
+/* Prevent horizontal scroll on the whole page */
+body {
+  overflow-x: hidden;
+}

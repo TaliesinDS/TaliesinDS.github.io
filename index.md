@@ -3,10 +3,11 @@ layout: default
 author_profile: false
 ---
 <style>
+
 .hero-bg {
   position: relative;
   width: 100vw;
-  height: 80vh;
+  height: 90vh;
   min-height: 400px;
   background: url('/assets/images/hero1.webp') center center/cover no-repeat;
   display: flex;
@@ -15,7 +16,7 @@ author_profile: false
   overflow: hidden;
 }
 .hero-logo {
-  width: 300px;
+  width: 500px;
   max-width: 80vw;
   height: auto;
   z-index: 2;

@@ -8,7 +8,7 @@ author_profile: false
 .hero-bg {
   position: relative;
   width: 100%;
-  height: calc(100vh - 352px - 42.6333px);
+  height: calc(100vh - 88.8667px - 42.6333px);
   background: url('/assets/images/hero1.webp') center center/cover no-repeat;
   display: flex;
   align-items: center;

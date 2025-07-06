@@ -11,8 +11,9 @@ author_profile: false
   height: calc(100vh - 88.8667px - 42.6333px);
   background: url('/assets/images/hero1.webp') center center/cover no-repeat;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: column;      /* Add this line */
+  align-items: center;
+  justify-content: flex-start;
   overflow: hidden;
   padding-top: 7em;
 }

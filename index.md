@@ -43,7 +43,7 @@ body {
     max-width: 140px;
   }
   .hero-name {
-    font-family: $serif;
+    font-family: EB garamond, serif;
     font-size: 3rem;
     letter-spacing: 0.08em;
     margin-top: 0em;
@@ -60,7 +60,7 @@ body {
 <style>
 .hero-name {
   margin-top: 0em;
-  font-family: $serif;
+  font-family: EB garamond, serif;
   font-size: 3.5rem;
   font-weight: 540;
   letter-spacing: 0.14em;    /* Increase space between letters */

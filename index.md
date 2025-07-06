@@ -47,6 +47,7 @@ body {
     letter-spacing: 0.08em;
     margin-top: 0em;
     line-height: 1.2;
+    font-weight: 540;
   }
 }
 </style>

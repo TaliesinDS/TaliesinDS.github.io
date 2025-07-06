@@ -42,5 +42,5 @@ body {
 </style>
 
 <div class="hero-bg">
-  <img class="hero-logo" src="/assets/images/ui/logobig.svg" alt="Logo">
+  <img class="hero-logo" src="/assets/images/ui/logobig343434.svg" alt="Logo">
 </div>

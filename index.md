@@ -19,7 +19,7 @@ author_profile: false
 
 .hero-logo {
   width: 100%;              /* Let it scale with the container */
-  max-width: 600px;         /* Adjust as needed */
+  max-width: 250px;         /* Adjust as needed */
   max-height: 80vh;         /* Prevents logo from overflowing vertically */
   height: auto;
   z-index: 2;

@@ -34,12 +34,20 @@ body {
 .page__footer {
   margin: 0;
 }
-@media (max-width: 600px) {
+@media (max-width: 140px) {
   .hero-bg {
     height: calc(100vh - 64.8667px - 30.9999px);
-}
+    padding-top: 3em;
+  }
   .hero-logo {
-  max-width: 280px;
+    max-width: 280px;
+  }
+  .hero-name {
+    font-size: 3rem;
+    letter-spacing: 0.08em;
+    margin-top: 0em;
+    line-height: 1.2;
+  }
 }
 </style>
 
@@ -50,12 +58,13 @@ body {
 <style>
 .hero-name {
   margin-top: 0em;
-  font-family: georgia;
+  font-family: serif;
   font-size: 3.5rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;    /* Increase space between letters */
+  font-weight: 540;
+  letter-spacing: 0.14em;    /* Increase space between letters */
   color: #343434;              /* Adjust color as needed */
-  text-shadow: 0 0px 20px rgba(255,255,255,0.3); /* Optional: add some contrast */
+  text-shadow: 0 0px 40px rgba(255,255,255,0.3); /* Optional: add some contrast */
   text-align: center;
+  line-height: 1.4;
 }
 </style>

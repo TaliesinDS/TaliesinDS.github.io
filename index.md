@@ -20,7 +20,7 @@ author_profile: false
 
 .hero-logo {
   width: 100%;              /* Let it scale with the container */
-  max-width: 250px;         /* Adjust as needed */
+  max-width: 230px;         /* Adjust as needed */
   max-height: 80vh;         /* Prevents logo from overflowing vertically */
   height: auto;
   z-index: 2;
@@ -49,13 +49,13 @@ body {
 </div>
 <style>
 .hero-name {
-  margin-top: 0.25em;
+  margin-top: 0em;
   font-family: georgia;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 400;
   letter-spacing: 0.1em;    /* Increase space between letters */
-  color: $text-color;              /* Adjust color as needed */
-  text-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Optional: add some contrast */
+  color: #343434;              /* Adjust color as needed */
+  text-shadow: 0 0px 20px rgba(255,255,255,0.3); /* Optional: add some contrast */
   text-align: center;
 }
 </style>

@@ -3,7 +3,6 @@ permalink: /soap/
 title: "Handgemaakte Zeep"
 layout: single
 author_profile: true
-comments: true
 ---
 <style>
 .page__title {
@@ -85,6 +84,7 @@ comments: true
   </a>
 </div>
 
+{% include comments.html %}
 
 <div class="custom-list-container" style="box-sizing: border-box; width: 100%;">
 <ul style="list-style-type: none; padding: 0; margin: 0; box-sizing: border-box;">

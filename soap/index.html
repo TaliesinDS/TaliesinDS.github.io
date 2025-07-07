@@ -308,6 +308,19 @@
 .page__content > p:first-child {
   display: none;
 }
+.teaser-img-crop {
+  width: 100%;
+  height: 120px; /* adjust height as needed */
+  overflow: hidden;
+  border-radius: 8px;
+  display: block;
+}
+.teaser-img-crop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 </style>
 
 <p><img src="/assets/images/zeep1.jpg" alt="zeep verpakkingen" title="mooie zeepjes" /></p>
@@ -336,18 +349,23 @@
   <p>On this page I share my experiences with making handmade soap, designing packaging, and optimizing the production process. I am not an expert, but I enjoy experimenting with different recipes, techniques, and materials. Here you can read about my discoveries, successes, and sometimes also failures while learning and trying things out. Whether it’s finding the right ingredients, testing new shapes, or coming up with creative packaging, I’m happy to take you along in my personal learning process and experiments with artisanal soap.</p>
 </div>
 
-<!-- Three linked images in a row -->
 <div style="display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; margin-bottom: 2em;">
   <a href="/naturel-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
-    <img src="/assets/images/content/pages/wrapstandaard.webp" alt="First post teaser" style="width: 100%; height: auto; border-radius: 8px;" />
+    <div class="teaser-img-crop">
+      <img src="/assets/images/content/pages/wrapstandaard.webp" alt="First post teaser" />
+    </div>
     <div style="margin-top: 0.5em;">Naturel zeep</div>
   </a>
   <a href="/sering-en-lelietje-van-dalen-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
-    <img src="/assets/images/content/pages/wrapsering.webp" alt="Second post teaser" style="width: 100%; height: auto; border-radius: 8px;" />
+    <div class="teaser-img-crop">
+      <img src="/assets/images/content/pages/wrapsering.webp" alt="Second post teaser" />
+    </div>
     <div style="margin-top: 0.5em;">Sering en Lelietje-van-dalen</div>
   </a>
   <a href="/aqua-di-gio-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
-    <img src="/assets/images/content/pages/wrapaquadigio.webp" alt="Third post teaser" style="width: 100%; height: auto; border-radius: 8px;" />
+    <div class="teaser-img-crop">
+      <img src="/assets/images/content/pages/wrapaquadigio.webp" alt="Third post teaser" />
+    </div>
     <div style="margin-top: 0.5em;">Aqua di Gio</div>
   </a>
 </div>

@@ -13,6 +13,8 @@ author_profile: true
 }
 </style>
 
+![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
+
 Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep
 <!--more-->
 <style>
@@ -21,7 +23,7 @@ Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep
 }
 </style>
 
-![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
+
 
 <div class="lang-content lang-nl" style="display:none;">
   <div class="lang-header">

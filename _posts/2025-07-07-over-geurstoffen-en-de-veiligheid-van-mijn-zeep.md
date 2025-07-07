@@ -58,7 +58,7 @@ comments: true
   <p>
     Volledige veiligheidsinformatie van de gebruikte parfum olieën:
   </p>
-  <ul>
+  <ul class="allergen-list">
     <li>
       <a href="/assets/pdf/aquadigio/Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf" target="_blank" rel="noopener">
         Download de volledige veiligheidsinformatie (PDF)
@@ -155,7 +155,7 @@ comments: true
   <p>
   Full safety information of the fragrance oils used:
   </p>
-  <ul>
+  <ul class="allergen-list">
     <li>
       <a href="/assets/pdf/aquadigio/Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf" target="_blank" rel="noopener">
         Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired (PDF)

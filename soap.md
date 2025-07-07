@@ -13,7 +13,10 @@ author_profile: true
 }
 .teaser-img-crop {
   width: 100%;
-  height: 160px; /* adjust height as needed */
+  @media (max-width: 600px) {
+    height: 103px; /* adjust height for small screens */
+  }
+  height: 230px; /* adjust height as needed */
   overflow: hidden;
   border-radius: 8px;
   display: block;

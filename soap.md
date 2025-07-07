@@ -4,9 +4,6 @@ title: "Handgemaakte Zeep"
 layout: single
 author_profile: true
 ---
-
-/* Hide the page title for this page only */
-// filepath: c:\Users\akortekaas\Documents\GitHub\TaliesinDS.github.io\soap.md
 <style>
 .page__title {
   display: none;

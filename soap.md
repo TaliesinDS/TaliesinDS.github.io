@@ -3,6 +3,7 @@ permalink: /soap/
 title: "Handgemaakte Zeep"
 layout: single
 author_profile: true
+comments: true
 ---
 <style>
 .page__title {
@@ -41,7 +42,7 @@ author_profile: true
 
 <div class="lang-content lang-nl" style="display:none;">
   <div class="lang-header">
-    <h2 style="margin: 0.5em 0 0.5em;">Over mij</h2>
+    <h2 style="margin: 0.5em 0 0.5em;">Handgemaakte Zeep</h2>
     <div class="lang-switcher">
       <button id="lang-toggle" onclick="toggleLang()">
         <img id="lang-flag" src="/assets/images/ui/gb.svg" alt="English flag">
@@ -53,7 +54,7 @@ author_profile: true
 
 <div class="lang-content lang-en">
   <div class="lang-header">
-    <h2 style="margin: 0.5em 0 0.5em;">About Me</h2>
+    <h2 style="margin: 0.5em 0 0.5em;">Handmade Soap</h2>
     <div class="lang-switcher">
       <button id="lang-toggle" onclick="toggleLang()">
         <img id="lang-flag" src="/assets/images/ui/nl.svg" alt="Dutch flag">

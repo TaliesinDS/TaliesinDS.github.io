@@ -3,6 +3,7 @@ permalink: /soap/
 title: "Handgemaakte Zeep"
 layout: single
 author_profile: true
+tags: zeep
 ---
 <style>
 .page__title {

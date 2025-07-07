@@ -13,7 +13,7 @@ author_profile: true
 }
 .teaser-img-crop {
   width: 100%;
-  height: 120px; /* adjust height as needed */
+  height: 160px; /* adjust height as needed */
   overflow: hidden;
   border-radius: 8px;
   display: block;
@@ -22,6 +22,7 @@ author_profile: true
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
   display: block;
 }
 </style>

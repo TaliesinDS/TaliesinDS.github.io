@@ -55,13 +55,13 @@ var store = [{
       },{
         "title": "Aqua di Gio Zeep",
         "excerpt":"Dit is de samenvatting of inleiding van je post.     ","categories": [],
-        "tags": [],
+        "tags": ["zeep"],
         "url": "/aqua-di-gio-zeep/",
         "teaser": "/assets/images/bull200px.webp"
       },{
         "title": "Naturel Zeep",
         "excerpt":"Dit is de samenvatting of inleiding van je post.     ","categories": [],
-        "tags": [],
+        "tags": ["zeep"],
         "url": "/naturel-zeep/",
         "teaser": "/assets/images/bull200px.webp"
       },{
@@ -73,7 +73,7 @@ var store = [{
       },{
         "title": "Sering en Lelietje-van-dalen Zeep",
         "excerpt":"Dit is de samenvatting of inleiding van je post.     ","categories": [],
-        "tags": [],
+        "tags": ["zeep"],
         "url": "/sering-en-lelietje-van-dalen-zeep/",
         "teaser": "/assets/images/bull200px.webp"
       },,]

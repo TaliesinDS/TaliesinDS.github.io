@@ -61,7 +61,7 @@ comments: true
   <ul class="allergen-list">
     <li>
       <a href="/assets/pdf/aquadigio/Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf" target="_blank" rel="noopener">
-        Download de volledige veiligheidsinformatie (PDF)
+        Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired (PDF)
       </a>
     </li>
   </ul>

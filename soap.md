@@ -13,13 +13,15 @@ author_profile: true
 }
 .teaser-img-crop {
   width: 100%;
-  @media (max-width: 600px) {
-    height: 103px; /* adjust height for small screens */
-  }
   height: 230px; /* adjust height as needed */
   overflow: hidden;
   border-radius: 8px;
   display: block;
+}
+@media (max-width: 600px) {
+  .teaser-img-crop {
+    height: 103px; /* for small screens */
+  }
 }
 .teaser-img-crop img {
   width: 100%;

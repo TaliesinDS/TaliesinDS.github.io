@@ -17,7 +17,7 @@ Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep
 }
 </style>
 
-
+![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
 
 <div class="lang-content lang-nl" style="display:none;">
   <div class="lang-header">
@@ -44,7 +44,7 @@ Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep
 </div>
 
 
-![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
+
 
 <div class="custom-list-container" style="box-sizing: border-box; width: 100%;">
 <ul style="list-style-type: none; padding: 0; margin: 0; box-sizing: border-box;">

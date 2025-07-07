@@ -55,7 +55,7 @@ var store = [{
       },{
         "title": "Over Geurstoffen en de Veiligheid van Mijn Zeep",
         "excerpt":"Over Geurstoffen en de Veiligheid van Mijn Zeep Al mijn handgemaakte zepen worden met zorg samengesteld, met jouw veiligheid als hoogste prioriteit. Voor de geur gebruik ik hoogwaardige geurstoffen, waarbij elke ingrediënt zorgvuldig is gekozen op basis van geur én veiligheid. Over mij Over Geurstoffen en de Veiligheid van Mijn...","categories": [],
-        "tags": [],
+        "tags": ["zeep"],
         "url": "/over-geurstoffen-en-de-veiligheid-van-mijn-zeep/",
         "teaser": "/assets/images/bull200px.webp"
       },,]

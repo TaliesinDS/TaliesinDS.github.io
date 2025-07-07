@@ -48,7 +48,7 @@ comments: true
   <p>
     Bevat de volgende stoffen die mogelijk allergische reacties kunnen veroorzaken:
   </p>
-  <ul>
+  <ul class="allergen-list">
     <li>Benzyl Benzoate</li>
     <li>Linalool</li>
     <li>D-Limonene</li>

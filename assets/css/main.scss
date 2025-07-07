@@ -257,6 +257,22 @@ body { overflow-x: hidden; }
   background: #8e8b82;
 }
 
+#comments {
+  font-family: $serif;
+  font-size: 0.9em;
+}
+#comments div {
+  font-size: 1em;
+}
+#comments div em {
+  font-size: 0.8em;
+}
+#comments div p {
+  font-size: 0.9em;
+  line-height: 1.2em;
+  margin: 0.5em 0;
+}
+
 // =====================
 // Responsive Breakpoints
 // =====================

@@ -53,9 +53,27 @@ var store = [{
         "url": "/post-generator-test/",
         "teaser": "/assets/images/bull200px.webp"
       },{
+        "title": "Aqua di Gio Zeep",
+        "excerpt":"Dit is de samenvatting of inleiding van je post.     ","categories": [],
+        "tags": [],
+        "url": "/aqua-di-gio-zeep/",
+        "teaser": "/assets/images/bull200px.webp"
+      },{
+        "title": "Naturel Zeep",
+        "excerpt":"Dit is de samenvatting of inleiding van je post.     ","categories": [],
+        "tags": [],
+        "url": "/naturel-zeep/",
+        "teaser": "/assets/images/bull200px.webp"
+      },{
         "title": "Over Geurstoffen en de Veiligheid van Mijn Zeep",
         "excerpt":"Al mijn handgemaakte zepen worden met zorg samengesteld, met jouw veiligheid als hoogste prioriteit. Voor de geur gebruik ik hoogwaardige geurstoffen, waarbij elke ingrediënt zorgvuldig is gekozen op basis van geur én veiligheid. Over Geurstoffen en de Veiligheid van Mijn Zeep Al mijn handgemaakte zepen worden met zorg samengesteld, met...","categories": [],
         "tags": ["zeep"],
         "url": "/over-geurstoffen-en-de-veiligheid-van-mijn-zeep/",
         "teaser": "/assets/images/teaser/fragrance.webp"
+      },{
+        "title": "Sering en Lelietje-van-dalen Zeep",
+        "excerpt":"Dit is de samenvatting of inleiding van je post.     ","categories": [],
+        "tags": [],
+        "url": "/sering-en-lelietje-van-dalen-zeep/",
+        "teaser": "/assets/images/bull200px.webp"
       },,]

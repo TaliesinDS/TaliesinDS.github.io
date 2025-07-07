@@ -44,7 +44,21 @@ author_profile: true
   <p>On this page I share my experiences with making handmade soap, designing packaging, and optimizing the production process. I am not an expert, but I enjoy experimenting with different recipes, techniques, and materials. Here you can read about my discoveries, successes, and sometimes also failures while learning and trying things out. Whether it’s finding the right ingredients, testing new shapes, or coming up with creative packaging, I’m happy to take you along in my personal learning process and experiments with artisanal soap.</p>
 </div>
 
-
+<!-- Three linked images in a row -->
+<div style="display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; margin-bottom: 2em;">
+  <a href="/_posts/2025-07-07-naturel-zeep.md/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
+    <img src="assets/images/content/pages/wrapstandaard.webp" alt="First post teaser" style="width: 100%; height: auto; border-radius: 8px;">
+    <div style="margin-top: 0.5em;">First Post Title</div>
+  </a>
+  <a href="/_posts/2025-07-07-sering-en-lelietje-van-dalen-zeep.md/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
+    <img src="/assets/images/content/pages/wrapsering.webp" alt="Second post teaser" style="width: 100%; height: auto; border-radius: 8px;">
+    <div style="margin-top: 0.5em;">Second Post Title</div>
+  </a>
+  <a href="/_posts/2025-07-07-aqua-di-gio-zeep.md/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
+    <img src="/assets/images/content/pages/wrapaquadigio.webp" alt="Third post teaser" style="width: 100%; height: auto; border-radius: 8px;">
+    <div style="margin-top: 0.5em;">Third Post Title</div>
+  </a>
+</div>
 
 
 <div class="custom-list-container" style="box-sizing: border-box; width: 100%;">

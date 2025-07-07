@@ -217,7 +217,7 @@ body { overflow-x: hidden; }
 // =====================
 #google-comment-form {
   margin: 2em 0;
-  padding: 1.5em 1em;
+  padding: 1em 1em;
   border: 1px solid #d6d2c4;
   border-radius: 8px;
   background: none;
@@ -227,7 +227,7 @@ body { overflow-x: hidden; }
 #google-comment-form input,
 #google-comment-form textarea {
   width: 100%;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   padding: 0.5em;
   border: 1px solid #d6d2c4;
   border-radius: 4px;
@@ -240,7 +240,7 @@ body { overflow-x: hidden; }
   color: #fff;
   border: none;
   border-radius: 4px;
-  padding: 0.7em 1.5em;
+  padding: 0.25em 0.5em;
   font-size: 1em;
   cursor: pointer;
 }

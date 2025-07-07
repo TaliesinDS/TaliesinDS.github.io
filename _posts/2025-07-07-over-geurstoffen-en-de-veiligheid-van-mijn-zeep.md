@@ -41,7 +41,7 @@ comments: true
     Kortom: hoewel de namen soms wetenschappelijk klinken, zijn alle ingrediënten zorgvuldig gekozen om jouw zeep heerlijk te laten ruiken én veilig te houden voor dagelijks gebruik. Heb je vragen over specifieke ingrediënten? Laat het gerust weten!
   </p>
   <p>
-    Ondanks de zorgvuldige selectie van ingrediënten en het naleven van veiligheidsnormen, is het mogelijk dat sommige mensen allergische reacties krijgen op bepaalde bestanddelen in geurstoffen of andere ingrediënten. Heb je een gevoelige huid of bekende allergieën? Bekijk dan de ingrediëntenlijst goed en overweeg een patchtest voordat je het product regelmatig gebruikt.
+    Ondanks de zorgvuldige selectie van ingrediënten en het naleven van veiligheidsnormen, is het mogelijk dat sommige mensen allergische reacties krijgen op bepaalde bestanddelen in geurstoffen of andere ingrediënten. Heb je een gevoelige huid of bekende allergieën? Bekijk dan de ingrediëntenlijst goed.
   </p>
 
   <h3>Aqua di Gio</h3>
@@ -136,7 +136,7 @@ comments: true
   In short, while the names may sound scientific, each ingredient is there to make your soap smell wonderful and remain safe for everyday use. If you have any questions about specific ingredients, feel free to ask!
    </p>
   <p>
-  Despite careful selection of ingredients and adherence to safety standards, it is still possible for some individuals to experience allergic reactions to certain components in fragrance oils or other ingredients. If you have sensitive skin or known allergies, please review the ingredient list carefully and consider performing a patch test before regular use.
+  Despite careful selection of ingredients and adherence to safety standards, it is still possible for some individuals to experience allergic reactions to certain components in fragrance oils or other ingredients. If you have sensitive skin or known allergies, please review the ingredient list carefully.
    </p>
   <p>
 

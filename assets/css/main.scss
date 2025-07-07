@@ -211,8 +211,7 @@ body { overflow-x: hidden; }
   padding-left: 1.5em; 
 }
 .custom-list-container,
-.custom-list-container li,
-.custom-list-container p {
+.custom-list-container li{
   font-family: $serif !important;
   color: $text-color !important;
 }

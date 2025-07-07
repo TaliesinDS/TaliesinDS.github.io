@@ -126,44 +126,6 @@ img {
   font-size: 0.8em;
 }
 
-// =====================
-// Responsive Breakpoints
-// =====================
-@media (max-width: 600px) {
-  .custom-list-container li img {
-    max-width: 80px !important;
-    width: 80px !important;
-    height: auto !important;
-    object-fit: contain !important;
-    display: block;
-  }
-  .custom-list-container li > a > div {
-    align-items: flex-start !important;
-    min-height: 0 !important;
-    overflow: hidden !important;
-  }
-  .custom-list-container li > a > div > div {
-    flex: 1 1 auto;
-    min-height: 0 !important;
-  }
-  .custom-post-title { margin-top: 0.5em; font-size: 1.1em; }
-  .custom-post-date { margin-top: 0.65em; }
-  .custom-post-excerpt {
-    margin-top: 0.25em;
-    margin-bottom: 0 !important;
-    font-size: 0.7em;
-    -webkit-line-clamp: 3;
-    max-height: 6em;
-  }
-  .page__hero--overlay .page__lead {
-    -webkit-line-clamp: 2;
-    line-height: 1.1em;
-    font-size: 1.0em;
-  }
-  
-  .page__hero--overlay .page__title { font-size: 1.3em; }
-  .page__footer-copyright { font-size: 0.6em !important; }
-}
 
 // =====================
 // Focus Styles
@@ -248,10 +210,48 @@ body { overflow-x: hidden; }
   margin-bottom: 0.5em;
   padding-left: 1.5em; 
 }
-}
 .custom-list-container,
 .custom-list-container li,
 .custom-list-container p {
   font-family: $serif !important;
   color: $text-color !important;
+}
+
+// =====================
+// Responsive Breakpoints
+// =====================
+@media (max-width: 600px) {
+  .custom-list-container li img {
+    max-width: 80px !important;
+    width: 80px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+  }
+  .custom-list-container li > a > div {
+    align-items: flex-start !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+  .custom-list-container li > a > div > div {
+    flex: 1 1 auto;
+    min-height: 0 !important;
+  }
+  .custom-post-title { margin-top: 0.5em; font-size: 1.1em; }
+  .custom-post-date { margin-top: 0.65em; }
+  .custom-post-excerpt {
+    margin-top: 0.25em;
+    margin-bottom: 0 !important;
+    font-size: 0.7em;
+    -webkit-line-clamp: 3;
+    max-height: 6em;
+  }
+  .page__hero--overlay .page__lead {
+    -webkit-line-clamp: 2;
+    line-height: 1.1em;
+    font-size: 1.0em;
+  }
+  
+  .page__hero--overlay .page__title { font-size: 1.3em; }
+  .page__footer-copyright { font-size: 0.6em !important; }
 }

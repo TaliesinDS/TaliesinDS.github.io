@@ -11,17 +11,15 @@ author_profile: true
 .page__title {
   display: none;
 }
-</style>
-
-![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
-
-Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep
-<!--more-->
-<style>
 .page__content > p:first-child {
   display: none;
 }
 </style>
+
+![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
+
+
+
 
 
 
@@ -34,7 +32,7 @@ Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep
       </button>
     </div>
   </div>
-  <p>Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep, het ontwerpen van verpakkingen en het optimaliseren van het productieproces. Ik ben geen expert, maar vind het leuk om te experimenteren met verschillende recepten, technieken en materialen. Hier lees je over mijn ontdekkingen, successen en soms ook mislukkingen tijdens het leren en uitproberen. Of het nu gaat om het vinden van de juiste ingrediënten, het testen van nieuwe vormen of het bedenken van creatieve verpakkingen, ik neem je graag mee in mijn persoonlijke leerproces en experimenten rondom ambachtelijke zeep.</p>
+  <p>Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep<!--more-->, het ontwerpen van verpakkingen en het optimaliseren van het productieproces. Ik ben geen expert, maar vind het leuk om te experimenteren met verschillende recepten, technieken en materialen. Hier lees je over mijn ontdekkingen, successen en soms ook mislukkingen tijdens het leren en uitproberen. Of het nu gaat om het vinden van de juiste ingrediënten, het testen van nieuwe vormen of het bedenken van creatieve verpakkingen, ik neem je graag mee in mijn persoonlijke leerproces en experimenten rondom ambachtelijke zeep.</p>
 </div>
 
 <div class="lang-content lang-en">

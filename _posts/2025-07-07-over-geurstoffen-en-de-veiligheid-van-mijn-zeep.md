@@ -44,10 +44,22 @@ Over Geurstoffen en de Veiligheid van Mijn Zeep
   Aqua di Gio bevat de volgende stoffen die mogelijk allergische reacties kunnen veroorzaken: Benzyl Benzoate, Linalool, D-Limonene, Butylphenyl Methylpropoinal, Benzyl Salicylate
   
   Volledige veiligheidsinformatie van de gebruikte parfum olieen: 
+  <a href="assets\pdf\aquadigio\Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf" target="_blank" rel="noopener">
+  Download the full safety information (PDF)
+</a>
   
   Sering en Lelietje-van-dalen bevat de volgende stoffen die mogelijk allergische reacties kunnen veroorzaken: Limonene, Hexylcinnamal, Citronellol,  Hydroxycitronellal, Lilial, Propionald-Hyd, Benzyl Benzoate, Linalool, Benzyl Salicylate, Cinnamal, Citronellol, Eugenol, Benzyl Cinnamate, Geraniol
   
-  Volledige veiligheidsinformatie van de gebruikte parfum olieen: </p>
+  Volledige veiligheidsinformatie van de gebruikte parfum olieen:
+    <a href="assets\pdf\sering\80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf" target="_blank" rel="noopener">
+  Download the full safety information (PDF)
+</a>  <a href="assets\pdf\sering\Dossier_Fragrance-Oil-–-Lily-of-the-Valley.pdf" target="_blank" rel="noopener">
+  Download the full safety information (PDF)
+</a>  <a href="assets\pdf\sering\ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener">
+  Download the full safety information (PDF)
+</a>  <a href="assets\pdf\sering\SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener">
+  Download the full safety information (PDF)
+</a> </p>
 </div>
 
 <div class="lang-content lang-en">
@@ -73,9 +85,19 @@ Over Geurstoffen en de Veiligheid van Mijn Zeep
   
   Aqua di Gio contains the following substances that may cause allergic reactions: Benzyl Benzoate, Linalool, D-Limonene, Butylphenyl Methylpropoinal, Benzyl Salicylate
   
-  Full safety information of the fragrance oils used:
-  
+  Full safety information of the fragrance oils used:<a href="assets\pdf\aquadigio\Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf" target="_blank" rel="noopener">
+  Download the full safety information (PDF)
+  </a>
   Sering en Lelietje-van-dalen contains the following substances that may cause allergic reactions: Limonene, Hexylcinnamal, Citronellol,  Hydroxycitronellal, Lilial, Propionald-Hyd, Benzyl Benzoate, Linalool, Benzyl Salicylate, Cinnamal, Citronellol, Eugenol, Benzyl Cinnamate, Geraniol
   
-  Full safety information of the fragrance oils used:</p>
+  Full safety information of the fragrance oils used: <a href="assets\pdf\sering\80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf" target="_blank" rel="noopener">
+  Download the full safety information (PDF)
+</a>  <a href="assets\pdf\sering\Dossier_Fragrance-Oil-–-Lily-of-the-Valley.pdf" target="_blank" rel="noopener">
+  Download the full safety information (PDF)
+</a>  <a href="assets\pdf\sering\ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener">
+  Download the full safety information (PDF)
+</a>  <a href="assets\pdf\sering\SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener">
+  Download the full safety information (PDF)
+</a>
+</p>
 </div>

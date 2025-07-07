@@ -333,7 +333,7 @@
 
 <div class="lang-content lang-nl" style="display:none;">
   <div class="lang-header">
-    <h2 style="margin: 0.5em 0 0.5em;">Over mij</h2>
+    <h2 style="margin: 0.5em 0 0.5em;">Handgemaakte Zeep</h2>
     <div class="lang-switcher">
       <button id="lang-toggle" onclick="toggleLang()">
         <img id="lang-flag" src="/assets/images/ui/gb.svg" alt="English flag" />
@@ -345,7 +345,7 @@
 
 <div class="lang-content lang-en">
   <div class="lang-header">
-    <h2 style="margin: 0.5em 0 0.5em;">About Me</h2>
+    <h2 style="margin: 0.5em 0 0.5em;">Handmade Soap</h2>
     <div class="lang-switcher">
       <button id="lang-toggle" onclick="toggleLang()">
         <img id="lang-flag" src="/assets/images/ui/nl.svg" alt="Dutch flag" />
@@ -570,6 +570,205 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
     </div>
 
     
+      
+        <div class="page__comments">
+  
+  
+
+
+
+<div style="margin-top:1em;"></div>
+<form id="google-comment-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd-xZgVsbuQsLumpP_W1u97vPG7RbR9_awZ3XDQTpXegkB1XA/formResponse" method="POST">
+  <div style="display: flex; gap: 1em;">
+    <input type="text" id="name" name="entry.1922964266" required placeholder="Name" style="flex:1; box-sizing: border-box;" onkeydown="if(event.key==='Enter'){this.value += '\n'; event.preventDefault();}">
+    <input type="email" id="email" name="entry.1297944239" placeholder="Email (optional)" style="flex:1; box-sizing: border-box;">
+  </div>
+  <textarea id="comment" name="entry.503498009" required rows="4" placeholder="Comment"></textarea><br><br>
+  <!-- Hidden field for the page URL -->
+  <input type="hidden" id="page-url" name="entry.1587242798" value="">
+   
+  <div style="display: flex; justify-content: flex-end; align-items: center;">
+    <button type="submit">Submit</button>
+  </div>
+  <div id="comment-success" style="display:none;color:green;margin-top:10px;">
+    Thank you for your comment!
+  </div>
+  <script>
+    // Reload the page after showing the success message
+    document.addEventListener('DOMContentLoaded', function() {
+      var form = document.getElementById('google-comment-form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          setTimeout(function() {
+            window.location.reload();
+          }, 1200); // Wait 1.2s to show the success message before reload
+        });
+      }
+    });
+  </script>
+</form>
+
+<script>
+// Set the normalized page URL in the hidden field before submit
+document.addEventListener('DOMContentLoaded', function() {
+  var url = window.location.href.replace(/\/$/, '');
+  document.getElementById('page-url').value = url;
+});
+
+document.getElementById('google-comment-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = e.target;
+  // Always update the hidden field before submit
+  form.querySelector('#page-url').value = window.location.href.replace(/\/$/, '');
+  var data = new FormData(form);
+  fetch(form.action, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: data
+  }).then(function() {
+    form.reset();
+    document.getElementById('comment-success').style.display = 'block';
+  }).catch(function() {
+    alert('There was an error submitting your comment.');
+  });
+});
+</script>
+<div id="comments"></div>
+<script>
+  // Function to format the date and time from the data
+  function formatDate(stringDate) {
+    // Split the string into date and time parts
+    const dateTimeParts = stringDate.split(' ');
+    const datePart = dateTimeParts[0]; // Date part like "7/12/2024"
+    const timePart = dateTimeParts[1]; // Time part like "23:32:54"
+    // Parse date in MM/DD/YYYY format
+    const [month, day, year] = datePart.split('/');
+    // Create a Date object
+    const dateObj = new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${timePart}`);
+    // Format date as "25 June, 2025"
+    const months = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+    const formattedDate = `${dateObj.getDate()} ${months[dateObj.getMonth()]}, ${dateObj.getFullYear()}`;
+    // Format time as 24-hour "HH:mm:ss"
+    const formattedTime = dateObj.toISOString().substr(11, 8);
+    // Return the formatted date and time
+    return `${formattedDate} at ${formattedTime}`;
+  }
+
+  // CSV parsing function to handle quoted fields and commas
+  function parseCSV(text) {
+    const rows = [];
+    let row = [];
+    let cell = '';
+    let inQuotes = false;
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i];
+      if (char === '"') {
+        if (inQuotes && text[i + 1] === '"') {
+          cell += '"';
+          i++;
+        } else {
+          inQuotes = !inQuotes;
+        }
+      } else if (char === ',' && !inQuotes) {
+        row.push(cell);
+        cell = '';
+      } else if ((char === '\n' || char === '\r') && !inQuotes) {
+        if (cell !== '' || row.length > 0) {
+          row.push(cell);
+          rows.push(row);
+          row = [];
+          cell = '';
+        }
+        // Handle \r\n
+        if (char === '\r' && text[i + 1] === '\n') i++;
+      } else {
+        cell += char;
+      }
+    }
+    // Add the last cell if any
+    if (cell !== '' || row.length > 0) {
+      row.push(cell);
+      rows.push(row);
+    }
+    return rows;
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the current page URL and normalize it (remove trailing slash)
+    let thisPageUrl = window.location.href.replace(/\/$/, '');
+    // Fetch the data from the Google Sheets URL
+    const csvUrl = `https://docs.google.com/spreadsheets/d/1ZqE6ePnexceUrxq90JD6buZ1Zl3agU11_i_TDaCTCuU/gviz/tq?tqx=out:csv&sheet=Form_Responses1`;
+    fetch(csvUrl)
+      .then(response => response.text())
+      .then(csvText => {
+      const rows = parseCSV(csvText.trim());
+      const commentsContainer = document.getElementById('comments');
+      commentsContainer.innerHTML = '';
+      // Collect comments for this page
+      const comments = [];
+      rows.forEach((row, idx) => {
+      // Skip header row if it contains column names
+      if (idx === 0 && row[0].toLowerCase().includes('timestamp')) return;
+      // Ensure the row has at least 5 columns to avoid errors
+      if (row.length >= 5) {
+      const date = row[0]; // Timestamp
+      const name = row[1]; // Name
+      const email = row[2]; // Email
+      const comment = row[3]; // Comment
+      const pageUrl = row[4].replace(/\/$/, ''); // Page URL (normalized)
+      // Only show comments for this page
+      if (pageUrl === thisPageUrl) {
+      comments.push({ date, name, email, comment });
+      }
+      }
+      });
+      // Sort comments by date descending (newest first)
+      comments.sort((a, b) => new Date(b.date) - new Date(a.date));
+      // Helper to format date as "Month day, Year at HH:mm"
+      function formatDateSimpleWithTime(stringDate) {
+        // Split the string into date and time parts
+        const dateTimeParts = stringDate.split(' ');
+        const datePart = dateTimeParts[0]; // Date part like "7/12/2024"
+        const timePart = dateTimeParts[1] || "00:00:00"; // Time part like "15:34:12"
+        // Parse date in MM/DD/YYYY format
+        const [month, day, year] = datePart.split('/');
+        const dateObj = new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${timePart}`);
+        // Format as "Month day, Year at HH:mm"
+        const months = [
+          "January", "February", "March", "April", "May", "June",
+          "July", "August", "September", "October", "November", "December"
+        ];
+        const hours = dateObj.getHours().toString().padStart(2, '0');
+        const minutes = dateObj.getMinutes().toString().padStart(2, '0');
+        return `${months[dateObj.getMonth()]} ${dateObj.getDate()}, ${dateObj.getFullYear()} at ${hours}:${minutes}`;
+      }
+      // Helper to capitalize the first letter of each word
+      function capitalizeWords(str) {
+        return str.replace(/\b\w/g, c => c.toUpperCase());
+      }
+      // Render comments
+      comments.forEach(({ date, name, email, comment }) => {
+        const displayName = capitalizeWords(name || '');
+        const commentDiv = document.createElement('div');
+        // Replace \n with <br> for line breaks in comment text
+        const commentHtml = (comment || '').replace(/\r\n|\r|\n/g, '<br>');
+        // Use formatDateSimpleWithTime(date) for the date and time format
+        const formattedDate = formatDateSimpleWithTime(date);
+        const nameHtml = email ? `<a href="mailto:${email}">${displayName}</a>` : displayName;
+        commentDiv.innerHTML = `<strong>${nameHtml}</strong> <em><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> ${formattedDate}</em><p>${commentHtml}</p>`;
+        commentsContainer.appendChild(commentDiv);
+      });
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  });
+</script>
+
+
+      
+    
   </article>
 
   
@@ -651,6 +850,68 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 
 
+
+
+
+    <!-- start custom comments scripts -->
+<div id="comments"></div>
+<script>
+    // Function to format the date and time from the data
+    function formatDate(stringDate) {
+        // Split the string into date and time parts
+        const dateTimeParts = stringDate.split(' ');
+        const datePart = dateTimeParts[0]; // Date part like "7/12/2024"
+        let timePart = dateTimeParts[1]; // Time part like "23:32:54"
+        // Parse hours, minutes, and seconds from the time part
+        const [hours, minutes, seconds] = timePart.split(':');
+        // Convert hours to 12-hour format and determine AM/PM
+        let ampm = 'AM';
+        let formattedHours = parseInt(hours, 10);
+        if (formattedHours >= 12) {
+            ampm = 'PM';
+            if (formattedHours > 12) {
+                formattedHours -= 12;
+            }
+        }
+        if (formattedHours === 0) {
+            formattedHours = 12; // 12 AM case
+        }
+        // Format time in HH:mm:ss AM/PM format
+        timePart = `${formattedHours}:${minutes}:${seconds} ${ampm}`;
+        // Return the formatted date and time
+        return `${datePart} at ${timePart}`;
+    }
+    // Get the current page URL
+    const thisPageUrl = window.location.href;
+    // Encode the SQL statement to be used in the URL
+    const sqlStatement = encodeURIComponent(`SELECT A, C, D, E, F WHERE B = '${thisPageUrl}'`);
+    // Construct the URL for fetching the data
+    const csvUrl = `https://docs.google.com/spreadsheets/d/1ZqE6ePnexceUrxq90JD6buZ1Zl3agU11_i_TDaCTCuU/gviz/tq?tqx=out:csv&sheet=comments&tq=${sqlStatement}&headers=0`;
+    // Fetch the data from the Google Sheets URL
+    fetch(csvUrl)
+        .then(response => response.text()) // Get the response text (data)
+        .then(csvText => {
+            // Split the data into rows and then into individual cells
+            const rows = csvText.trim().split('\n').map(row => row.split(','));
+            // Get the container element for the comments
+            const commentsContainer = document.getElementById('comments');
+            // Loop through each row of the data
+            rows.forEach(row => {
+                const date = formatDate(row[0]); // Format the date and time
+                const name = row[1]; // Get the name
+                const comment = row[2]; // Get the comment
+                const email = row[4]; // Get the email
+                // Create a new div element for the comment
+                const commentDiv = document.createElement('div');
+                // Set the inner HTML of the div element
+                commentDiv.innerHTML = `<strong><a href="mailto:${email}">${name}</a></strong> <em>${date}</em>: <p>${comment}</p>`;
+                // Append the div element to the comments container
+                commentsContainer.appendChild(commentDiv);
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error)); // Handle any errors
+</script>
+<!-- end custom comments scripts -->
 
 
 

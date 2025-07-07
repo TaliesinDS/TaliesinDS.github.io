@@ -231,3 +231,10 @@ textarea:focus, textarea:focus-visible {
 body { overflow-x: hidden; }
 .page__footer { margin: 0; }
 .one { list-style-type: none; margin-left: 0; padding-left: 0; }
+
+.allergen-list {
+  font-size: 0.95em; // or any size you prefer
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 1.5em;
+}

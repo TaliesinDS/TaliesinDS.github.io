@@ -77,7 +77,13 @@ p { margin: 0; padding: 0; font-size: 1em; font-weight: 450; line-height: 1.2em;
 // =====================
 // Custom List Container
 // =====================
-.custom-list-container,
+.custom-list-container {
+  width: 100%;
+  clear: both;
+  display: block;
+  margin-top: 2em;
+  flex-basis: 100%;
+}
 .custom-list-container ul {
   margin-left: 0;
   padding-left: 0;

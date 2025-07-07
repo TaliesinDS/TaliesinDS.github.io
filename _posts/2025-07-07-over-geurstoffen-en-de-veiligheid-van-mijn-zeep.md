@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 header:
     overlay_image: random
     overlay_filter: 0.3
-    teaser: /assets/images/bull200px.webp
+    teaser: /assets/images/teaser/fragrance.webp
 comments: true
 ---  
   Al mijn handgemaakte zepen worden met zorg samengesteld, met jouw veiligheid als hoogste prioriteit. Voor de geur gebruik ik hoogwaardige geurstoffen, waarbij elke ingrediënt zorgvuldig is gekozen op basis van geur én veiligheid.

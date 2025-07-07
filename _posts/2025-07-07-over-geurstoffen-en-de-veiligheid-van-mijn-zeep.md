@@ -2,7 +2,7 @@
 title: "Over Geurstoffen en de Veiligheid van Mijn Zeep"
 layout: single
 author_profile: true
-tags: 
+tags: zeep
 excerpt_separator: <!--more-->
 header:
     overlay_image: random

@@ -50,7 +50,7 @@ author_profile: true
     <img src="/assets/images/content/pages/wrapstandaard.webp" alt="First post teaser" style="width: 100%; height: auto; border-radius: 8px;">
     <div style="margin-top: 0.5em;">Naturel zeep</div>
   </a>
-  <a href="/2025/07/07/sering-en-lelietje-van-dalen-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
+  <a href="/sering-en-lelietje-van-dalen-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
     <img src="/assets/images/content/pages/wrapsering.webp" alt="Second post teaser" style="width: 100%; height: auto; border-radius: 8px;">
     <div style="margin-top: 0.5em;">Sering en Lelietje-van-dalen</div>
   </a>

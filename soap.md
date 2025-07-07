@@ -46,15 +46,15 @@ author_profile: true
 
 <!-- Three linked images in a row -->
 <div style="display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; margin-bottom: 2em;">
-  <a href="/2025-07-07-naturel-zeep.md/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
+  <a href="/naturel-zeep.md/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
     <img src="/assets/images/content/pages/wrapstandaard.webp" alt="First post teaser" style="width: 100%; height: auto; border-radius: 8px;">
     <div style="margin-top: 0.5em;">Naturel zeep</div>
   </a>
-  <a href="/2025-07-07-sering-en-lelietje-van-dalen-zeep.md/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
+  <a href="/sering-en-lelietje-van-dalen-zeep.md/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
     <img src="/assets/images/content/pages/wrapsering.webp" alt="Second post teaser" style="width: 100%; height: auto; border-radius: 8px;">
     <div style="margin-top: 0.5em;">Sering en Lelietje-van-dalen</div>
   </a>
-  <a href="/2025-07-07-aqua-di-gio-zeep.md/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
+  <a href="/aqua-di-gio-zeep.md/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
     <img src="/assets/images/content/pages/wrapaquadigio.webp" alt="Third post teaser" style="width: 100%; height: auto; border-radius: 8px;">
     <div style="margin-top: 0.5em;">Aqua di Gio</div>
   </a>

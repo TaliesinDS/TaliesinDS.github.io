@@ -2,7 +2,7 @@
 title: "Sering en Lelietje-van-dalen Zeep"
 layout: single
 author_profile: true
-tags: 
+tags: zeep 
 excerpt_separator: <!--more-->
 header:
     overlay_image: random

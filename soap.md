@@ -69,23 +69,25 @@ tags: zeep
     <div class="teaser-img-crop">
       <img src="/assets/images/content/pages/wrapstandaard.webp" alt="First post teaser">
     </div>
-    <div style="margin-top: 0.5em;">Naturel zeep</div>
+    <div class="teaser-title" style="margin-top: 0.5em;">Naturel zeep</div>
   </a>
   <a href="/sering-en-lelietje-van-dalen-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
     <div class="teaser-img-crop">
       <img src="/assets/images/content/pages/wrapsering.webp" alt="Second post teaser">
     </div>
-    <div style="margin-top: 0.5em;">Sering en Lelietje-van-dalen</div>
+    <div class="teaser-title" style="margin-top: 0.5em;">Sering en Lelietje-van-dalen</div>
   </a>
   <a href="/aqua-di-gio-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
     <div class="teaser-img-crop">
       <img src="/assets/images/content/pages/wrapaquadigio.webp" alt="Third post teaser">
     </div>
-    <div style="margin-top: 0.5em;">Aqua di Gio</div>
+    <div class="teaser-title" style="margin-top: 0.5em;">Aqua di Gio</div>
   </a>
 </div>
 
-{% include comments.html %}
+<div class="comments-spacing">
+  {% include comments.html %}
+</div>
 
 <div class="custom-list-container" style="box-sizing: border-box; width: 100%;">
 <ul style="list-style-type: none; padding: 0; margin: 0; box-sizing: border-box;">

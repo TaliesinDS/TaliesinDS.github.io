@@ -288,6 +288,18 @@ body { overflow-x: hidden; }
 }
 
 // =====================
+// Teaser Titles
+// =====================
+
+.teaser-title {
+  font-size: 1em;
+  font-weight: 600;
+  color: $text-color;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+// =====================
 // Responsive Breakpoints
 // =====================
 @media (max-width: 600px) {

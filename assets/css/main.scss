@@ -31,6 +31,14 @@ search: false
   }
 }
 
+.page__related,
+.page__related p,
+.page__related li,
+.page__related dl {
+  font-family: $serif;
+  color: $text-color;
+}
+
 h1, h2, h3, h4, h5, h6 {
   margin: 2em 0 0.5em;
   line-height: 1.2;
@@ -240,4 +248,10 @@ body { overflow-x: hidden; }
   margin-bottom: 0.5em;
   padding-left: 1.5em; 
 }
+}
+.custom-list-container,
+.custom-list-container li,
+.custom-list-container p {
+  font-family: $serif !important;
+  color: $text-color !important;
 }

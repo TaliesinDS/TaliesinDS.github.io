@@ -9,9 +9,7 @@ header:
     overlay_filter: 0.3
     teaser: /assets/images/bull200px.webp
 comments: true
----
-Over Geurstoffen en de Veiligheid van Mijn Zeep
-  
+---  
   Al mijn handgemaakte zepen worden met zorg samengesteld, met jouw veiligheid als hoogste prioriteit. Voor de geur gebruik ik hoogwaardige geurstoffen, waarbij elke ingrediënt zorgvuldig is gekozen op basis van geur én veiligheid.
 <!--more-->
 <style>
@@ -22,14 +20,14 @@ Over Geurstoffen en de Veiligheid van Mijn Zeep
 
 <div class="lang-content lang-nl" style="display:none;">
   <div class="lang-header">
-    <h2 style="margin: 0.5em 0 0.5em;">Over mij</h2>
+    <h2 style="margin: 0.5em 0 0.5em;">Over Geurstoffen en de Veiligheid van Mijn Zeep</h2>
     <div class="lang-switcher">
       <button id="lang-toggle" onclick="toggleLang()">
         <img id="lang-flag" src="/assets/images/ui/gb.svg" alt="English flag">
       </button>
     </div>
   </div>
-  <p>Over Geurstoffen en de Veiligheid van Mijn Zeep
+  <p>
   
   Al mijn handgemaakte zepen worden met zorg samengesteld, met jouw veiligheid als hoogste prioriteit. Voor de geur gebruik ik hoogwaardige geurstoffen, waarbij elke ingrediënt zorgvuldig is gekozen op basis van geur én veiligheid.
   
@@ -64,14 +62,14 @@ Over Geurstoffen en de Veiligheid van Mijn Zeep
 
 <div class="lang-content lang-en">
   <div class="lang-header">
-    <h2 style="margin: 0.5em 0 0.5em;">About Me</h2>
+    <h2 style="margin: 0.5em 0 0.5em;">About Fragrance Oils and Soap Safety</h2>
     <div class="lang-switcher">
       <button id="lang-toggle" onclick="toggleLang()">
         <img id="lang-flag" src="/assets/images/ui/nl.svg" alt="Dutch flag">
       </button>
     </div>
   </div>
-  <p>About Fragrance Oils and Soap Safety
+  <p>
   
   All my handmade soaps are carefully formulated with your safety in mind. I use high-quality fragrance oils to scent my soaps, and each ingredient is chosen for both its aroma and its safety.
   

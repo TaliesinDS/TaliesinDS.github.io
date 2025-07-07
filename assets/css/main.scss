@@ -181,15 +181,21 @@ p { margin: 0; padding: 0; font-size: 1em; font-weight: 450; line-height: 1.2em;
 }
 
 .page__related .archive__item-teaser img {
-  max-width: 120px;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0;
-  border-radius: 4px;
-  box-shadow: none;
+    max-width: 80px !important;
+    width: 80px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
 }
+  .grid__wrapper li > a > div {
+    align-items: flex-start !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+  .grid__wrapper li > a > div > div {
+    flex: 1 1 auto;
+    min-height: 0 !important;
+  }
 
 .page__related .archive__item-title {
   font-size: 1.1em;

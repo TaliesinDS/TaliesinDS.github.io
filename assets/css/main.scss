@@ -304,6 +304,7 @@ body { overflow-x: hidden; }
   align-items: flex-start;
   width: 140px; /* adjust as needed */
   box-shadow: none;
+  justify-content: flex-start;
 }
 
 #comments .comment-body {
@@ -311,7 +312,7 @@ body { overflow-x: hidden; }
   box-shadow: none;
 }
 #comments div Strong {
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 500;
   line-height: 1em;
   color: $muted-text-color;

@@ -306,7 +306,7 @@ body { overflow-x: hidden; }
   justify-content: flex-start;
 }
 #comments .comment-meta strong {
-  margin-bottom: 0.1em; // or 0, or any small value you like
+  margin-bottom: 0.1em !important; // or 0, or any small value you like
   overflow-wrap: anywhere;
   word-break: break-all;
   max-width: 100%;
@@ -314,9 +314,9 @@ body { overflow-x: hidden; }
 }
 
 #comments .comment-meta em {
-  margin-top: 0; // ensure no extra space above em
-  margin-bottom: 0;
-  padding: 0;
+  margin-top: 0 !important; // ensure no extra space above em
+  margin-bottom: 0 !important;
+  padding: 0 !important;
 }
 #comments .comment-body {
   flex: 1 1 0;

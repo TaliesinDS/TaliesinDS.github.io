@@ -315,16 +315,18 @@ body { overflow-x: hidden; }
 
 #comments .comment-meta em {
   margin-top: 0; // ensure no extra space above em
+  margin-bottom: 0;
+  padding: 0;
 }
 #comments .comment-body {
   flex: 1 1 0;
   box-shadow: none;
 }
-#comments Strong {
+#comments strong {
   font-size: 1.1em;
   font-weight: 500;
   color: $muted-text-color;
-  margin-bottom: 0em;
+  margin-bottom: 0;
   line-height: 1em;
   margin-top: 2px;
   word-break: break-all; // or use 'break-word' for softer wrapping

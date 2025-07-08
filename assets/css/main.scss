@@ -287,19 +287,20 @@ body { overflow-x: hidden; }
   font-size: 0.9em;
 }
 #comments div {
-  font-size: 1.1em;
+  font-size: 1em;
+  color: $muted-text-color;
 }
 
 #comments div em i {
   color: $muted-text-color;
 }
 #comments div em {
-  font-size: 0.8em;
+  font-size: 0.6em;
   color: $muted-text-color;
 }
 #comments div p {
-  font-size: 1em;
-  line-height: 1.2em;
+  font-size: 0.9em;
+  line-height: 1em;
   margin: 0.5em 0;
 }
 

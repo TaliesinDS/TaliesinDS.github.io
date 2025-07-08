@@ -269,7 +269,7 @@ body { overflow-x: hidden; }
 #comments:empty {
   display: none;
 }
-#comments {
+#comments div {
   width: 100%;
   margin-bottom: 0.5em;
   padding: 0.5em;

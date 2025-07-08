@@ -285,6 +285,10 @@ body { overflow-x: hidden; }
   box-sizing: border-box;
   font-family: $serif;
   font-size: 0.9em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; // optional, for left alignment
+  gap: 0.25em;            // optional, space between items
 }
 #comments div {
   font-size: 1em;

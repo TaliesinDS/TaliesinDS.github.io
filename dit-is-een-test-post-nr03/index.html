@@ -612,9 +612,15 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
         // Use formatDateSimpleWithTime(date) for the date and time format
         const formattedDate = formatDateSimpleWithTime(date);
         const nameHtml = email ? `<a href="mailto:${email}">${displayName}</a>` : displayName;
-        commentDiv.innerHTML = `<strong>${nameHtml}</strong> <em><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> ${formattedDate}</em><p>${commentHtml}</p>`;
-        commentsContainer.appendChild(commentDiv);
-      });
+        commentDiv.innerHTML = `
+  <div class="comment-meta">
+    <strong>${nameHtml}</strong>
+    <em><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> ${formattedDate}</em>
+  </div>
+  <div class="comment-body">
+    <p>${commentHtml}</p>
+  </div>
+`;
       })
       .catch(error => console.error('Error fetching data:', error));
   });

@@ -319,9 +319,10 @@ body { overflow-x: hidden; }
 #comments Strong {
   font-size: 1.1em;
   font-weight: 500;
-  line-height: 1em;
   color: $muted-text-color;
   margin-bottom: 0em;
+  line-height: 0em;
+  margin-top: 2px;
 }
 #comments div em i {
   color: $muted-text-color;

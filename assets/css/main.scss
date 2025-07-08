@@ -242,6 +242,7 @@ body { overflow-x: hidden; }
 
 #google-comment-form input,
 #google-comment-form textarea {
+  resize: none;
   width: 100%;
   margin-bottom: 0.5em;
   padding: 0.5em;

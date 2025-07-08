@@ -294,7 +294,12 @@ body { overflow-x: hidden; }
   font-size: 1em;
   color: $muted-text-color;
 }
-
+#comments div Strong {
+  font-size: 1.1em;
+  font-weight: 500;
+  line-height: 1.2em;
+  color: $muted-text-color;
+}
 #comments div em i {
   color: $muted-text-color;
 }
@@ -304,8 +309,8 @@ body { overflow-x: hidden; }
 }
 #comments div p {
   font-size: 0.9em;
-  line-height: 1em;
-  margin: 0.5em 0;
+  line-height: 1.1em;
+  margin: 0em 0;
 }
 
 // =====================

@@ -265,6 +265,9 @@ body { overflow-x: hidden; }
   background: #8e8b82;
 }
 
+#comments:empty {
+  display: none;
+}
 #comments {
   width: 100%;
   margin-bottom: 0.5em;

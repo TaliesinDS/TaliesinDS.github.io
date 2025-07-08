@@ -359,6 +359,12 @@ body { overflow-x: hidden; }
   text-align: center;
 }
 
+.teaser-img-crop + .teaser-title,
+.teaser-img-crop + .teaser-title a,
+div[style*="display: flex"] > a {
+  text-decoration: none !important;
+  color: inherit;
+}
 // =====================
 // Responsive Breakpoints
 // =====================

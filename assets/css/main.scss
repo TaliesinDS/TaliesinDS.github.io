@@ -307,8 +307,10 @@ body { overflow-x: hidden; }
 }
 #comments .comment-meta strong {
   margin-bottom: 0.1em; // or 0, or any small value you like
-  word-break: break-all; // or use 'break-word' for softer wrapping
   overflow-wrap: anywhere;
+  word-break: break-all;
+  max-width: 100%;
+  display: block;
 }
 
 #comments .comment-meta em {
@@ -323,7 +325,7 @@ body { overflow-x: hidden; }
   font-weight: 500;
   color: $muted-text-color;
   margin-bottom: 0em;
-  line-height: 0em;
+  line-height: 1em;
   margin-top: 2px;
   word-break: break-all; // or use 'break-word' for softer wrapping
   overflow-wrap: anywhere;

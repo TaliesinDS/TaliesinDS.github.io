@@ -8,6 +8,7 @@ header:
     overlay_filter: 0.3
     teaser: /assets/images/teaser/fragrance.webp
 comments: true
+tags: zeep
 ---  
   Al mijn handgemaakte zepen worden met zorg samengesteld, met jouw veiligheid als hoogste prioriteit. Voor de geur gebruik ik hoogwaardige geurstoffen, waarbij elke ingrediënt zorgvuldig is gekozen op basis van geur én veiligheid.
 <!--more-->

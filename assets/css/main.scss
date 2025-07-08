@@ -302,11 +302,13 @@ body { overflow-x: hidden; }
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 140px; /* adjust as needed */
+  width: 140px; /* adjust as needed */
+  box-shadow: none;
 }
 
 #comments .comment-body {
   flex: 1 1 0;
+  box-shadow: none;
 }
 #comments div Strong {
   font-size: 1em;

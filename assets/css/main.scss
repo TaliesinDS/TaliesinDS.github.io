@@ -310,21 +310,21 @@ body { overflow-x: hidden; }
   flex: 1 1 0;
   box-shadow: none;
 }
-#comments div Strong {
+#comments-meta Strong {
   font-size: 1.1em;
   font-weight: 500;
   line-height: 1em;
   color: $muted-text-color;
   margin-bottom: 0em;
 }
-#comments div em i {
+#comments-meta em i {
   color: $muted-text-color;
 }
-#comments div em {
+#comments-meta em {
   font-size: 0.6em;
   color: $muted-text-color;
 }
-#comments div p {
+#comments-meta p {
   font-size: 0.9em;
   line-height: 1.1em;
   margin: 0em 0;

@@ -84,6 +84,9 @@ author_profile: true
   </a>
 </div>
 
+<div class="empty-box">
+</div>
+
 <div class="comments-spacing">
   {% include comments.html %}
 </div>
@@ -113,6 +116,7 @@ author_profile: true
 {% endfor %}
 </ul>
 </div>
+
 
 {% if page.tags %}
   <div class="post-tags">

@@ -305,26 +305,32 @@ body { overflow-x: hidden; }
   box-shadow: none;
   justify-content: flex-start;
 }
+#comments .comment-meta strong {
+  margin-bottom: 0.1em; // or 0, or any small value you like
+}
 
+#comments .comment-meta em {
+  margin-top: 0; // ensure no extra space above em
+}
 #comments .comment-body {
   flex: 1 1 0;
   box-shadow: none;
 }
-#comments-meta Strong {
+#comments Strong {
   font-size: 1.1em;
   font-weight: 500;
   line-height: 1em;
   color: $muted-text-color;
   margin-bottom: 0em;
 }
-#comments-meta em i {
+#comments div em i {
   color: $muted-text-color;
 }
-#comments-meta em {
+#comments div em {
   font-size: 0.6em;
   color: $muted-text-color;
 }
-#comments-meta p {
+#comments div p {
   font-size: 0.9em;
   line-height: 1.1em;
   margin: 0em 0;

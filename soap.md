@@ -63,7 +63,7 @@ author_profile: true
   <p>On this page I share my experiences with making handmade soap, designing packaging, and optimizing the production process. I am not an expert, but I enjoy experimenting with different recipes, techniques, and materials. Here you can read about my discoveries, successes, and sometimes also failures while learning and trying things out. Whether it’s finding the right ingredients, testing new shapes, or coming up with creative packaging, I’m happy to take you along in my personal learning process and experiments with artisanal soap.</p>
 </div>
 
-<div style="display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; margin-bottom: 2em;">
+<div style="display: flex; gap: 1em; justify-content: space-around; flex-wrap: wrap; margin-bottom: 2em;">
   <a href="/naturel-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
     <div class="teaser-img-crop">
       <img src="/assets/images/content/pages/wrapstandaard.webp" alt="First post teaser">

@@ -288,11 +288,7 @@ body { overflow-x: hidden; }
   font-size: 0.8em;
   box-sizing: border-box;
   font-family: $serif;
-  font-size: 0.9em;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; // optional, for left alignment
-  gap: 0.25em;            // optional, space between items
+  font-size: 0.9em;            // optional, space between items
 }
 #comments div {
   display: flex;

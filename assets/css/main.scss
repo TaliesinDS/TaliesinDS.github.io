@@ -307,6 +307,8 @@ body { overflow-x: hidden; }
 }
 #comments .comment-meta strong {
   margin-bottom: 0.1em; // or 0, or any small value you like
+  word-break: break-all; // or use 'break-word' for softer wrapping
+  overflow-wrap: anywhere;
 }
 
 #comments .comment-meta em {

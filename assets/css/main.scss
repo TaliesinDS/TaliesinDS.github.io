@@ -294,7 +294,7 @@ body { overflow-x: hidden; }
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  margin-left: 2em;
+  margin-left: 0em;
   margin-bottom: 1em;
 }
 #comments .comment-meta {
@@ -321,6 +321,7 @@ body { overflow-x: hidden; }
 #comments .comment-body {
   flex: 1 1 0;
   box-shadow: none;
+  margin-left: 1em;
 }
 #comments strong {
   font-size: 1.1em;

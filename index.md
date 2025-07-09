@@ -64,8 +64,22 @@ body {
 <div class="hero-bg">
   <img class="hero-logo" src="/assets/images/makersmark343434.svg" alt="Logo">
   <div class="hero-name">Arthur Kortekaas</div>
-   <div class="hero-subtitle" style="max-width: 80%; margin: 12em auto 0 auto; text-align: center; font-size: 1.6em; box-shadow: 0 2px 8px rgba(255, 255, 255, 0.08); transition: background 0.2s;">Welkom! Ik ben Arthur, een gepassioneerde hobby zeepmaker en liefhebber van ambachtelijk handwerk.
-   </div>
+<div class="hero-subtitle" style="
+  max-width: 80%;
+  margin: 1em auto 0 auto;
+  text-align: center;
+  font-size: 1.6em;
+  background: rgba(255,255,245,0.85);
+  color: #343434;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  font-style: italic;
+  font-family: 'EB Garamond', serif;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.12), 0 0px 1px #fff;
+">
+  Welkom! Ik ben Arthur, een gepassioneerde hobby zeepmaker en liefhebber van ambachtelijk handwerk.
+</div>
 </div>
 
    <div class="intro-text" style="max-width: 80%; margin: 2em auto 0 auto; text-align: center; font-size: 1.2em;">

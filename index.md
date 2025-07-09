@@ -64,10 +64,12 @@ body {
 <div class="hero-bg">
   <img class="hero-logo" src="/assets/images/makersmark343434.svg" alt="Logo">
   <div class="hero-name">Arthur Kortekaas</div>
+   <div class="hero-subtitle" style="max-width: 80%; margin: 12em auto 0 auto; text-align: center; font-size: 1.6em; box-shadow: 0 2px 8px rgba(255, 255, 255, 0.08); transition: background 0.2s;">Welkom! Ik ben Arthur, een gepassioneerde hobby zeepmaker en liefhebber van ambachtelijk handwerk.
+   </div>
 </div>
 
-   <div class="intro-text" style="max-width: 100%; margin: 2em auto 0 auto; text-align: center; font-size: 1.2em;">
-     Welkom! Ik ben Arthur, een gepassioneerde hobby zeepmaker en liefhebber van ambachtelijk handwerk. Op deze site vind je mijn avonturen met handgemaakte zeep,3D-printen, leerbewerking, naaien en meer. Ook deel ik persoonlijke verhalen en reflecties als iemand met autisme. Of je nu nieuwsgierig bent naar mijn zepen of gewoon van creatieve projecten houdt, ik hoop dat je hier iets inspirerends vindt!
+   <div class="intro-text" style="max-width: 80%; margin: 2em auto 0 auto; text-align: center; font-size: 1.2em;">
+     Welkom! Ik ben Arthur, een gepassioneerde hobby zeepmaker en liefhebber van ambachtelijk handwerk. Op deze site vind je mijn avonturen met handgemaakte zeep, 3D-printen, leerbewerking, naaien en meer. Ook deel ik persoonlijke verhalen en reflecties als iemand met autisme. Of je nu nieuwsgierig bent naar mijn zepen of gewoon van creatieve projecten houdt, ik hoop dat je hier iets inspirerends vindt!
   </div>
 
 <div style="display: flex; justify-content: center; margin-top: 2em;">

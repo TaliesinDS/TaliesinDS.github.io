@@ -66,17 +66,16 @@ body {
   <div class="hero-name">Arthur Kortekaas</div>
 <div class="hero-subtitle" style="
   max-width: 80%;
-  margin: 1em auto 0 auto;
+  margin: 13em auto 0 auto;
   text-align: center;
   font-size: 1.6em;
-  background: rgba(255,255,245,0.85);
+  background: rgba(255,255,245,0.60);
   color: #343434;
-  padding: 0.5em 1em;
-  border-radius: 8px;
+  padding: 0.25em 1em;
+  border-radius: 4px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   font-style: italic;
   font-family: 'EB Garamond', serif;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.12), 0 0px 1px #fff;
 ">
   Welkom! Ik ben Arthur, een gepassioneerde hobby zeepmaker en liefhebber van ambachtelijk handwerk.
 </div>

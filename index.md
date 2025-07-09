@@ -69,7 +69,7 @@ body {
   margin: 13em auto 0 auto;
   text-align: center;
   font-size: 1.6em;
-  background: rgba(255,255,245,0.60);
+  background: rgba(243,243,243,0.60);
   color: #343434;
   padding: 0.25em 1em;
   border-radius: 4px;

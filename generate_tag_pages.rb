@@ -42,7 +42,7 @@ all_tags.uniq.each do |tag|
           {% for post in tagged_posts %}
               <a href="{{ post.url | relative_url }}" class="tag-post-item-link" style="text-decoration: none; color: inherit;">
                   <div class="tag-post-item" style="display: flex; align-items: flex-start; margin-bottom: 2em;">
-                      <div class="tag-post-teaser" style="flex: 0 0 120px; margin-right: 1em;">
+                      <div class="tag-post-teaser" style="flex: 0 0 120px; margin-right: 1em; border-radius: 4px;">
                           <img src="{{ post.teaser | default: '/assets/images/bull200px.webp' }}" alt="Teaser" style="max-width: 120px; height: auto; display: block;">
                       </div>
                       <div class="tag-post-content" style="flex: 1 1 0%;">

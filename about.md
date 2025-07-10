@@ -22,6 +22,9 @@ tag: about
   <p>Ik vind het leuk om mijn creaties te delen met anderen en hoop dat ze gewaardeerd worden.</p>
   <p>Deze website is bedoeld als een plek om mijn projecten, ontdekkingen en gedachten te delen met vrienden, familie en iedereen die geïnteresseerd is in handwerk, creativiteit of persoonlijke verhalen.</p>
   <p>Bedankt voor je bezoek aan mijn site. Ik hoop dat je hier iets vindt dat je inspireert of nieuwsgierig maakt!</p>
+  <div class="page-image-center">
+  <img src="/assets/images/marginalia/catread1.webp" alt="Cat reading marginalia" />
+</div>
 </div>
 
 <div class="lang-content lang-en" style="display: none;">
@@ -40,6 +43,9 @@ tag: about
   <p>I enjoy sharing my creations with others and hope they are appreciated.</p>
   <p>This website is meant as a place to share my projects, discoveries, and thoughts with friends, family, and anyone interested in crafts, creativity, or personal stories.</p>
   <p>Thank you for visiting my site. I hope you find something here that inspires you or sparks your curiosity!</p>
+  <div class="page-image-center">
+  <img src="/assets/images/marginalia/catread1.webp" alt="Cat reading marginalia" />
+</div>
 </div>
 
 

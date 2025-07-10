@@ -433,6 +433,22 @@ div[style*="display: flex"] > a {
   text-decoration: none !important;
   color: inherit;
 }
+
+// =====================
+// Marginalia
+// =====================
+
+.page-image-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 4em;
+}
+.page-image-center img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 // =====================
 // Responsive Breakpoints
 // =====================

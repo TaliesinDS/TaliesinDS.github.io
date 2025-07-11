@@ -113,6 +113,19 @@ hr {
 
 .page__title { display: none; }
 
+/* Style <q> elements with curly quotes */
+q {
+  quotes: "“" "”" "‘" "’";
+}
+
+q::before {
+  content: open-quote;
+}
+
+q::after {
+  content: close-quote;
+}
+
 // =====================
 // Custom Post Date
 // =====================

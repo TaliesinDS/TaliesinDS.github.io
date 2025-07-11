@@ -18,7 +18,7 @@ var store = [{
         "teaser": "/assets/images/bull200px.webp"
       },{
         "title": "Dit is een test post",
-        "excerpt":"What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived...","categories": [],
+        "excerpt":"Arthur Kortekaas What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It...","categories": [],
         "tags": ["post","webdev"],
         "url": "/dit-is-een-test-post/",
         "teaser": "/assets/images/bull200px.webp"

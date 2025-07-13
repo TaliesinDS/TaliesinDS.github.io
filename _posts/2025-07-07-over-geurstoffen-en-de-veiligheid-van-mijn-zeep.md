@@ -45,7 +45,7 @@ tags: zeep
   </p>
 
   <h3>Aqua di Gio</h3>
-  <p>
+  <p class="sc">
     Bevat de volgende stoffen die mogelijk allergische reacties kunnen veroorzaken:
   </p>
   <ul class="allergen-list">
@@ -67,7 +67,7 @@ tags: zeep
   </ul>
 
   <h3>Sering en Lelietje-van-dalen</h3>
-  <p>
+  <p class="sc">
     Bevat de volgende stoffen die mogelijk allergische reacties kunnen veroorzaken:
   </p>
   <ul class="allergen-list">
@@ -141,7 +141,7 @@ tags: zeep
   <p>
 
   <h3>Aqua di Gio</h3> 
-  <p>
+  <p class="sc">
   contains the following substances that may cause allergic reactions:
   </p> 
   <ul class="allergen-list">
@@ -164,7 +164,7 @@ tags: zeep
   </ul>
 
  <h3> Sering en Lelietje-van-dalen</h3>
- <p>
+ <p class="sc">
   contains the following substances that may cause allergic reactions:
   </p>
 <ul class="allergen-list">

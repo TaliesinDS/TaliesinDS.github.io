@@ -1,15 +1,82 @@
 /* ==========================================================================
-   Variables
+   Custom Font Faces
    ========================================================================== */
 
+@font-face {
+  font-family: 'EB Garamond 08';
+  src: url('/assets/fonts/EBGaramond08-Regular.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramond08-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond 12';
+  src: url('/assets/fonts/EBGaramond12-Regular.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramond12-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond 08';
+  src: url('/assets/fonts/EBGaramond08-Italic.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramond08-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond 12 All SC';
+  src: url('/assets/fonts/EBGaramond12-AllSC.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramond12-AllSC.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond SC 12';
+  src: url('/assets/fonts/EBGaramondSC12-Regular.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramondSC12-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond 12';
+  src: url('/assets/fonts/EBGaramond12-Italic.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramond12-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EB Garamond SC 08';
+  src: url('/assets/fonts/EBGaramondSC08-Regular.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramondSC08-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+// ...existing code...
 /*
    Typography
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css?family=Oswald:400,500,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,500,700&display=swap');
+/*@import url('https://fonts.googleapis.com/css?family=EB+Garamond:400,500,700&display=swap'); */
 @import url('https://fonts.googleapis.com/css?family=Courier+Prime:400,700&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playwrite+NL+Guides&display=swap");
+/*@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playwrite+NL+Guides&display=swap"); */
 
 
 
@@ -62,7 +129,7 @@ $handwritten: 'Playwrite NL Guides', 'Segoe Print', 'Bradley Hand', Chilanka, TS
 
 /* Defaults used in Minimal mistakes */
 $default-sans-serif: "Oswald", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
-$default-serif: 'EB Garamond', Georgia, Times, serif;
+$default-serif: 'EB Garamond 12', 'EB Garamond', Georgia, Times, serif;
 $default-monospace: "Courier" Monaco, Consolas, "Lucida Console", monospace;
 
 /* Emoji native from modern font stack - add to the end of the font-face for native emojis */
@@ -79,6 +146,7 @@ $header-font-family: $default-serif !default;
 $caption-font-family: $serif !default;
 
 /* type scale */
+
 $type-size-1: 2.441em !default; // ~39.056px
 $type-size-2: 1.953em !default; // ~31.248px
 $type-size-3: 1.563em !default; // ~25.008px

@@ -23,11 +23,6 @@
           {%- endfor -%}
         </ul>
         {% if site.search == true %}
-        <noscript>
-          <span style="color: #b77; background: #fffbe6; border: 1px solid #e6d6c4; padding: 0.25em 0.5em; margin-right: 0.5em; font-size: 0.95em; border-radius: 4px; vertical-align: middle;">
-            Search requires JavaScript.
-          </span>
-        </noscript>
         <button class="search__toggle" type="button">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>
           <span class="search-icon" aria-hidden="true">

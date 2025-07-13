@@ -334,10 +334,8 @@ body { overflow-x: hidden; }
   padding-left: 1em; 
 }
 
-/* Remove bottom margin from <p> directly above allergen lists */
-.page__content p + .allergen-list {
+.page__content p:has(+ .allergen-list) {
   margin-bottom: 0 !important;
-  margin-top: 0 !important;
 }
 
 .empty-box {

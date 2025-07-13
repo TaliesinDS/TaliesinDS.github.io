@@ -339,8 +339,7 @@ body { overflow-x: hidden; }
   font-family: 'EB Garamond SC 12', serif;
   font-variant: small-caps;
   font-weight: 400;
-  text-decoration: none;
-  color: inherit;
+  font-size: 0.9em;
 }
 
 .page__content p:has(+ .allergen-list) {

@@ -38,6 +38,18 @@ search: false
   display: block;
   border-radius: 4px;
 }
+/* Icon styling for inline SVGs */
+.search-icon svg,
+.icon-calendar svg,
+.icon-spinner svg,
+.icon-link svg,
+.icon-rss svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: middle;
+  display: inline-block;
+}
 .tag-post-content {
   flex: 1 1 0%;
 }

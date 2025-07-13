@@ -9,13 +9,13 @@
     {% if site.footer.links %}
       {% for link in site.footer.links %}
         {% if link.label and link.url %}
-          <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer">{% include_relative ../assets/icons/fontawesome/link.svg %} {{ link.label }}</a></li>
+          <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer">{% include icons/fontawesome/link.svg %} {{ link.label }}</a></li>
         {% endif %}
       {% endfor %}
     {% endif %}
 
     {% unless site.atom_feed.hide %}
-      <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}">{% include_relative ../assets/icons/fontawesome/rss-square.svg %} {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
+      <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}">{% include icons/fontawesome/rss-square.svg %} {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
     {% endunless %}
   </ul>
 </div>

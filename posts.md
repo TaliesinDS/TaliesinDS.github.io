@@ -21,7 +21,7 @@ Deze pagina toont een volledig overzicht van alle berichten op de site, met de n
           <div style="box-sizing: border-box; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
              <div class="custom-post-title">{{ post.title }}</div>
               <div id="custom-post-date">
-                  {% include_relative assets/icons/fontawesome/calendar-alt.svg %}
+                  {% include icons/fontawesome/calendar-days.svg %}
                   {{ post.date | date: "%B %-d, %Y" }}
               </div>
               <div class="custom-post-excerpt">{{ post.excerpt | strip_html }}</div>

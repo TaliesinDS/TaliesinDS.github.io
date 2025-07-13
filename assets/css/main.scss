@@ -1,20 +1,15 @@
-.icon-calendar svg {
-  height: 1em;
-  width: auto;
-  fill: currentColor;
-  vertical-align: middle;
-  display: inline-block;
-}
-.custom-post-date .icon-calendar svg {
-  font-size: inherit;
-  height: 1em;
-  width: auto;
-  fill: currentColor;
-}
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 search: false
 ---
+// Only the main Sass file needs front matter (the dashes are enough)
+/* Calendar icon sizing for post date */
+.icon-calendar svg {
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  vertical-align: text-bottom;
+  display: inline-block;
+}
 // =====================
 // Tag Post List Styles (moved to end for override)
 // =====================
@@ -53,7 +48,6 @@ search: false
 }
 /* Icon styling for inline SVGs */
 .search-icon svg,
-.icon-calendar svg,
 .icon-spinner svg,
 .icon-link svg,
 .icon-rss svg {
@@ -63,6 +57,8 @@ search: false
   vertical-align: middle;
   display: inline-block;
 }
+
+/* Remove duplicate icon-calendar svg rule above, handled separately for calendar */
 .tag-post-content {
   flex: 1 1 0%;
 }

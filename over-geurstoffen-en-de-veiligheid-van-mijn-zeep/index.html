@@ -140,11 +140,6 @@
               >Over mij</a>
             </li></ul>
         
-        <noscript>
-          <span style="color: #b77; background: #fffbe6; border: 1px solid #e6d6c4; padding: 0.25em 0.5em; margin-right: 0.5em; font-size: 0.95em; border-radius: 4px; vertical-align: middle;">
-            Search requires JavaScript.
-          </span>
-        </noscript>
         <button class="search__toggle" type="button">
           <span class="visually-hidden">Toggle search</span>
           <span class="search-icon" aria-hidden="true">
@@ -603,11 +598,6 @@
 
 
 <div style="margin-top:1em;"></div>
-<noscript>
-  <div style="color: #b77; background: #fffbe6; border: 1px solid #e6d6c4; padding: 0.5em; margin-bottom: 1em; font-size: 0.95em; border-radius: 4px;">
-    Note: If you submit a comment, you will be redirected to Google. Please return to this page to see your comment appear.
-  </div>
-</noscript>
 <form id="google-comment-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd-xZgVsbuQsLumpP_W1u97vPG7RbR9_awZ3XDQTpXegkB1XA/formResponse" method="POST">
   <div style="display: flex; gap: 1em;">
     <input type="text" id="name" name="entry.1922964266" required placeholder="Name" style="flex:1; box-sizing: border-box;" onkeydown="if(event.key==='Enter'){this.value += '\n'; event.preventDefault();}">
@@ -791,7 +781,7 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
         commentDiv.innerHTML = `
           <div class="comment-meta">
             <strong>${nameHtml}</strong>
-            <em><span class="icon-calendar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M128 0c17.7 0 32 14.3 32 32l0 32 128 0 0-32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 32 48 0c26.5 0 48 21.5 48 48l0 48L0 160l0-48C0 85.5 21.5 64 48 64l48 0 0-32c0-17.7 14.3-32 32-32zM0 192l448 0 0 272c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 192zm64 80l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm128 0l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM64 400l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16z"/></svg></span> ${formattedDate}</em>
+            <em><span class="icon-calendar" aria-hidden="true">{% include icons/fontawesome/calendar-days.svg %}</span> ${formattedDate}</em>
           </div>
           <div class="comment-body">
             <p>${commentHtml}</p>

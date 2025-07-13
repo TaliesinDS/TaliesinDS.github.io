@@ -335,6 +335,14 @@ body { overflow-x: hidden; }
   padding-left: 1em; 
 }
 
+.allergen-url {
+  font-family: 'EB Garamond SC 12', serif;
+  font-variant: small-caps;
+  font-weight: 400;
+  text-decoration: none;
+  color: inherit;
+}
+
 .page__content p:has(+ .allergen-list) {
   margin-bottom: 0 !important;
 }

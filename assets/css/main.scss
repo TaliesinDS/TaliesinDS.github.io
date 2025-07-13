@@ -133,10 +133,17 @@ q::after {
 }
 
 .sc {
-  font-family: 'EB Garamond SC 12', serif;
-  font-variant: small-caps;
-  font-size: 0.9em; 
-  font-weight: 600;
+  font-family: 'EB Garamond SC 12', serif !important;
+  font-variant: small-caps !important;
+  font-size: 0.9em !important;
+  font-weight: 600 !important;
+}
+
+p.sc {
+  font-family: 'EB Garamond SC 12', serif !important;
+  font-variant: small-caps !important;
+  font-size: 0.9em !important;
+  font-weight: 600 !important;
 }
 
 // =====================

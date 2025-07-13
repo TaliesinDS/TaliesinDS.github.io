@@ -60,9 +60,7 @@ tags: zeep
   </p>
   <ul class="allergen-list">
     <li>
-      <a href="/assets/pdf/aquadigio/Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf" target="_blank" rel="noopener">
-        Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired (PDF)
-      </a>
+      <a class="allergen-url" href="/assets/pdf/aquadigio/Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf" target="_blank" rel="noopener">Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired (PDF)</a>
     </li>
   </ul>
 
@@ -179,24 +177,16 @@ tags: zeep
   
 <ul class="allergen-list">
     <li>
-        <a href="/assets/pdf/sering/80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf" target="_blank" rel="noopener">
-            80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1 (PDF)
-        </a>
+        <a class="allergen-url" href="/assets/pdf/sering/80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf" target="_blank" rel="noopener">80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1 (PDF)</a>
     </li>
     <li>
-        <a href="/assets/pdf/sering/Dossier_Fragrance-Oil-–-Lily-of-the-Valley.pdf" target="_blank" rel="noopener">
-            sering/Dossier_Fragrance-Oil-–-Lily-of-the-Valley (PDF)
-        </a>
+        <a class="allergen-url" href="/assets/pdf/sering/Dossier_Fragrance-Oil-–-Lily-of-the-Valley.pdf" target="_blank" rel="noopener">sering/Dossier_Fragrance-Oil-–-Lily-of-the-Valley (PDF)</a>
     </li>
     <li>
-        <a href="/assets/pdf/sering/ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener">
-            ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL (PDF)
-        </a>
+        <a class="allergen-url" href="/assets/pdf/sering/ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener">ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL (PDF)</a>
     </li>
     <li>
-        <a href="/assets/pdf/sering/SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener">
-            SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL (PDF)
-        </a>
+        <a class="allergen-url" href="/assets/pdf/sering/SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener">SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL (PDF)</a>
     </li>
 </ul>
 </p>

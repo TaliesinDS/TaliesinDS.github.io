@@ -19,7 +19,7 @@ header: false
                         {{ post.title }}
                     </h2>
                     <div class="tag-post-date">
-                        <i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                        <span class="icon-calendar" aria-hidden="true">{% include icons/fontawesome/calendar-days.svg %}</span>
                         {{ post.date | date: "%b %-d, %Y" }}
                     </div>
                     <p>{{ post.excerpt | strip_html | truncatewords: 40 }}</p>

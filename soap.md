@@ -104,7 +104,7 @@ author_profile: true
                 <div style="box-sizing: border-box; flex: 1; display: flex; flex-direction: column; justify-content: flex-start;">
                     <div class="custom-post-title">{{ post.title }}</div>
                     <div id="custom-post-date">
-                        <i class="fas fa-fw fa-calendar-alt"></i>
+                        <span class="icon-calendar" aria-hidden="true">{% include icons/fontawesome/calendar-days.svg %}</span>
                         {{ post.date | date: "%B %-d, %Y" }}
                     </div>
                     <div class="custom-post-excerpt">{{ post.excerpt | strip_html }}</div>

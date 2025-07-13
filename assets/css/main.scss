@@ -334,9 +334,7 @@ body { overflow-x: hidden; }
 }
 
 /* Remove bottom margin from <p> directly above allergen lists */
-p + .allergen-list {
-  margin-top: 0;
-}
+
 p + .allergen-list,
 p + .allergen-list {
   margin-bottom: 0;

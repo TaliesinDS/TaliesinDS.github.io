@@ -145,6 +145,7 @@ p.sc {
   font-variant: small-caps !important;
   font-size: 0.9em !important;
   font-weight: 600 !important;
+  margin-bottom: 0.5em !important;
 }
 
 // =====================
@@ -330,6 +331,15 @@ body { overflow-x: hidden; }
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   padding-left: 1em; 
+}
+
+/* Remove bottom margin from <p> directly above allergen lists */
+p + .allergen-list {
+  margin-top: 0;
+}
+p + .allergen-list,
+p + .allergen-list {
+  margin-bottom: 0;
 }
 
 .empty-box {

@@ -73,9 +73,6 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
-
 
 <!-- start custom head snippets -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -145,7 +142,10 @@
         
         <button class="search__toggle" type="button">
           <span class="visually-hidden">Toggle search</span>
-          <i class="fas fa-search"></i>
+          <span class="search-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 114.9-93.1 208-208 208S0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zm-48 0c0-88.2-71.8-160-160-160S48 119.8 48 208s71.8 160 160 160s160-71.8 160-160zM504.9 471l-99.7-99.7c-4.7-4.7-12.3-4.7-17 0l-28.3 28.3c-4.7 4.7-4.7 12.3 0 17l99.7 99.7c4.7 4.7 12.3 4.7 17 0l28.3-28.3c4.7-4.7 4.7-12.3 0-17z"/></svg>
+
+          </span>
         </button>
         
         <button class="greedy-nav__toggle hidden" type="button">
@@ -615,7 +615,7 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
         commentDiv.innerHTML = `
           <div class="comment-meta">
             <strong>${nameHtml}</strong>
-            <em><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> ${formattedDate}</em>
+            <em><span class="icon-calendar" aria-hidden="true">{% include icons/fontawesome/calendar-days.svg %}</span> ${formattedDate}</em>
           </div>
           <div class="comment-body">
             <p>${commentHtml}</p>

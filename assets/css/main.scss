@@ -1,0 +1,583 @@
+/* Ensure calendar icon in custom post date is sized correctly */
+#custom-post-date .icon-calendar svg {
+  font-size: 0.8em;
+  height: 1em;
+  width: 1em;
+  vertical-align: text-bottom;
+  fill: currentColor;
+  display: inline-block;
+}
+---
+search: false
+---
+// Only the main Sass file needs front matter (the dashes are enough)
+/* Calendar icon sizing for post date */
+.icon-calendar svg {
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  vertical-align: text-bottom;
+  display: inline-block;
+}
+// =====================
+// Tag Post List Styles (moved to end for override)
+// =====================
+
+.tag-post-list {
+  width: 100%;
+  margin-top: 2em;
+}
+.tag-post-item-link {
+  text-decoration: none;
+  color: inherit;
+}
+.tag-post-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2em;
+  border-radius: 4px;
+  max-width: 100%;
+  border: 0;
+  transition: box-shadow 0.2s;
+}
+.tag-post-item:focus-within, .tag-post-item:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px #afa58f;
+}
+.tag-post-teaser {
+  flex: 0 0 120px;
+  margin-right: 1em;
+  border-radius: 4px;
+}
+.tag-post-img {
+  max-width: 120px;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+/* Icon styling for inline SVGs */
+.search-icon svg,
+.icon-spinner svg,
+.icon-link svg,
+.icon-rss svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* Remove duplicate icon-calendar svg rule above, handled separately for calendar */
+.tag-post-content {
+  flex: 1 1 0%;
+}
+.tag-post-title {
+  margin-top: 0;
+}
+.tag-post-date {
+  color: #888;
+  font-size: 0.9em;
+  margin-bottom: 0.5em;
+}
+
+
+
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+// =====================
+// Typography & Headings
+// =====================
+.page__content {
+  p, li, dl {
+    font-family: $serif;
+    color: $text-color;
+  }
+  p {
+    font-size: 0.95em;
+    font-weight: 450;
+    line-height: 1.474;
+  }
+  li {
+    font-size: 1.1em;
+    font-weight: 450;
+    line-height: 1em;
+  }
+  dl {
+    font-size: 1em;
+  }
+  padding: 2em;
+}
+
+.page__related,
+.page__related p,
+.page__related li,
+.page__related dl {
+  font-family: $serif;
+  color: $text-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 2em 0 0.5em;
+  line-height: 1.2;
+  font-family: $serif;
+}
+// Heading styles
+
+h1 { margin-top: 0; font-size: 2em; font-weight: 600; }
+h2 { font-size: 1.6em; font-weight: 500; }
+h3 { font-size: 1.4em; font-weight: 400; }
+h4 { font-size: 1.25em; font-weight: 400; }
+h5 { font-size: 1.1em; font-weight: 400; }
+h6 { font-size: 1em; font-weight: 400; }
+
+small, .small { font-size: .75em; }
+p { margin: 0; padding: 0; font-size: 1em; font-weight: 450; line-height: 1.2em; }
+
+hr {
+  border: none;
+}hr::before {
+  content: '***';
+  display: block;
+  text-align: center;
+}
+
+.page__title { display: none; }
+
+/* Style <q> elements with curly quotes */
+q {
+  quotes: "“" "”" "‘" "’";
+}
+
+q::before {
+  content: open-quote;
+}
+
+q::after {
+  content: close-quote;
+}
+
+.smallcaps {
+  font-family: 'EB Garamond SC 12', serif;
+  font-variant: small-caps;
+}
+
+.sc {
+  font-family: 'EB Garamond SC 12', serif !important;
+  font-variant: small-caps !important;
+  font-size: 0.9em !important;
+  font-weight: 600 !important;
+}
+
+p.sc {
+  font-family: 'EB Garamond SC 12', serif !important;
+  font-variant: small-caps !important;
+  font-size: 0.9em !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5em !important;
+}
+
+// =====================
+// Custom Post Date
+// =====================
+.custom-post-date {
+  font-size: 0.6em !important;
+  font-weight: lighter;
+  color: $muted-text-color;
+  font-family: $serif;
+  margin-top: 0.5em;
+}
+#custom-post-date {
+  font-size: 0.6em !important;
+  font-weight: lighter;
+  color: $muted-text-color;
+  font-family: $serif;
+  margin-top: 0.5em;
+}
+.intro-text {
+  font-size: 1.2em;
+  font-weight: 450;
+  color: $text-color;
+  font-family: $serif;
+  margin-top: 0.5em;
+}
+
+// =====================
+// Custom List Container
+// =====================
+.custom-list-container {
+  width: 100%;
+  clear: both;
+  display: block;
+  margin-top: 2em;
+  flex-basis: 100%;
+}
+.custom-list-container ul {
+  margin-left: 0;
+  padding-left: 0;
+  list-style-type: none;
+  margin-top: 2em;
+}
+.custom-list-container li {
+  margin-bottom: 2em;
+  border-radius: 4px;
+  max-width: 100%;
+  border: 0;
+  transition: box-shadow 0.2s;
+  &:focus-within, &:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 2px #afa58f;
+    border-color: $footer-background-color;
+  }
+  a:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+  img {
+    box-shadow: none !important;
+    transition: none !important;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+  }
+}
+.custom-list-container li img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  flex-shrink: 1;
+  border-radius: 4px;
+}
+
+
+// =====================
+// Custom Post Excerpt
+// =====================
+.custom-post-excerpt {
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  max-height: 4.5em;
+  line-height: 1.5em;
+  font-size: 0.8em;
+}
+
+
+// =====================
+// Focus Styles
+// =====================
+a:focus, a:focus-visible,
+button:focus, button:focus-visible,
+input:focus, input:focus-visible,
+textarea:focus, textarea:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 2px #afa58f;
+  border-color: $footer-background-color;
+  border-radius: 4px;
+  transition: box-shadow 0.2s;
+}
+
+// =====================
+// Language Switcher
+// =====================
+.lang-content {
+  font-size: 1em;
+  font-weight: 450;
+  line-height: 1.2em;
+  padding: 0;
+  margin: 0;
+}
+.lang-switcher {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+.lang-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 0.5em;
+}
+#lang-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+#lang-toggle:hover {
+  background: #e0e0e0;
+  border-color: #888;
+}
+#lang-flag {
+  width: 24px;
+  height: 18px;
+  vertical-align: middle;
+  margin: 0;
+  display: block;
+  border-radius: 4px;
+}
+.lang-content h2 {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+@media (max-width: 600px) {
+  .lang-content {
+    font-size: 1em;
+    font-weight: 450;
+    line-height: 1.2em;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+// =====================
+// Miscellaneous
+// =====================
+body { overflow-x: hidden; }
+.page__footer { margin: 0; }
+.one { list-style-type: none; margin-left: 0; padding-left: 0; }
+
+.allergen-list {
+  list-style-type: circle;
+  padding-left: 1em; // or try a small value  like 10px
+  margin-left: 0;
+  margin-bottom: 1.3em;
+  margin-top: 0em;
+}
+
+.allergen-list li {
+  font-size: 0.95em; // or any size you prefer
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding-left: 1em; 
+}
+
+.allergen-url {
+  font-family: 'EB Garamond SC 12', serif;
+  font-variant: small-caps;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+.page__content p:has(+ .allergen-list) {
+  margin-bottom: 0 !important;
+}
+
+.empty-box {
+  border-bottom: 1px solid #d6d2c4;
+  padding: 1em;
+}
+
+
+// =====================
+// Comments
+// =====================
+#google-comment-form {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  padding: 0.5em 0.5em;
+  border: 1px solid #d6d2c4;
+  border-radius: 4px;
+  background: none;
+  max-width: 100%;
+}
+
+#google-comment-form input,
+#google-comment-form textarea {
+  resize: none;
+  width: 100%;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  border: 1px solid #d6d2c4;
+  border-radius: 4px;
+  font-size: 0.8em;
+  box-sizing: border-box;
+}
+
+#google-comment-form button {
+  background: #afa58f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.25em 0.5em;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+#google-comment-form button:hover {
+  background: #8e8b82;
+}
+
+#comments:empty {
+  display: none;
+}
+#comments {
+  padding: 0em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid #d6d2c4;
+}
+#comments div {
+  width: 100%;
+  margin-bottom: 0.5em;
+  padding: 0.25em;
+  border: 0px solid #d6d2c4;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  font-size: 0.8em;
+  box-sizing: border-box;
+  font-family: $serif;
+  font-size: 0.9em;            // optional, space between items
+}
+#comments div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-left: 0em;
+  margin-bottom: 0.5em;
+}
+#comments .comment-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 25%; /* adjust as needed */
+  box-shadow: none;
+  justify-content: flex-start;
+}
+#comments .comment-meta strong {
+  margin-bottom: 0.1em !important; // or 0, or any small value you like
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  max-width: 100%;
+  display: block;
+}
+
+#comments .comment-meta em {
+  margin-top: 0 !important; // ensure no extra space above em
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+}
+#comments .comment-body {
+  flex: 1 1 0;
+  box-shadow: none;
+  margin-left: 1em;
+}
+#comments strong {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: $muted-text-color;
+  margin-bottom: 0;
+  line-height: 1em;
+  margin-top: 2px;
+  word-break: break-all; // or use 'break-word' for softer wrapping
+  overflow-wrap: anywhere;
+}
+#comments div em i {
+  color: $muted-text-color;
+}
+#comments div em {
+  font-size: 0.6em;
+  color: $muted-text-color;
+}
+#comments div p {
+  font-size: 1em;
+  line-height: 1.1em;
+  margin: 0em 0;
+}
+#comments > div:last-child {
+  margin-bottom: 2em; // or any value you prefer
+}
+
+// =====================
+// Teaser Titles
+// =====================
+
+.teaser-title {
+  color: $text-color;
+  margin-top: 0.5em;
+  text-align: center;
+  font-family: eb garamond;
+  font-size: 1em;
+  font-weight: 470;
+}
+
+.teaser-img-crop + .teaser-title,
+.teaser-img-crop + .teaser-title a,
+div[style*="display: flex"] > a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+// =====================
+// Marginalia
+// =====================
+
+.page-image-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 4em;
+}
+.page-image-center img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// =====================
+// Responsive Breakpoints
+// =====================
+@media (max-width: 600px) {
+  .custom-list-container li img {
+    max-width: 80px !important;
+    width: 80px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+  }
+  .custom-list-container li > a > div {
+    align-items: flex-start !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+  }
+  .custom-list-container li > a > div > div {
+    flex: 1 1 auto;
+    min-height: 0 !important;
+  }
+  .custom-post-title {
+    margin-top: 0;
+    font-size: 1em;
+  }
+  .custom-post-date {
+    margin-top: 0.5em;
+    font-size: 0.6em;
+    font-weight: lighter;
+    color: #8e8b82;
+  }
+  .custom-post-excerpt {
+    margin-top: 0.25em;
+    margin-bottom: 0 !important;
+    font-size: 0.7em;
+    -webkit-line-clamp: 3;
+    max-height: 6em;
+  }
+  .page__hero--overlay .page__lead {
+    -webkit-line-clamp: 2;
+    line-height: 1.1em;
+    font-size: 1.0em;
+  }
+  
+  .page__hero--overlay .page__title { font-size: 1.3em; }
+  .page__footer-copyright { font-size: 0.6em !important; }
+}

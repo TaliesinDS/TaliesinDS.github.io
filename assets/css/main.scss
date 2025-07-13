@@ -299,6 +299,11 @@ body { overflow-x: hidden; }
 .page__footer { margin: 0; }
 .one { list-style-type: none; margin-left: 0; padding-left: 0; }
 
+.allergen-list {
+  padding-left: 0; // or try a small value like 10px
+  margin-left: 0;
+}
+
 .allergen-list li {
   font-size: 0.95em; // or any size you prefer
   margin-top: 0.5em;

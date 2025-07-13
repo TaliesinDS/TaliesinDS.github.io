@@ -300,6 +300,7 @@ body { overflow-x: hidden; }
 .one { list-style-type: none; margin-left: 0; padding-left: 0; }
 
 .allergen-list {
+  list-style-type: circle;
   padding-left: 1em; // or try a small value like 10px
   margin-left: 0;
 }
@@ -308,7 +309,7 @@ body { overflow-x: hidden; }
   font-size: 0.95em; // or any size you prefer
   margin-top: 0.5em;
   margin-bottom: 0.5em;
-  padding-left: 1.5em; 
+  padding-left: 1em; 
 }
 
 .empty-box {

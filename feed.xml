@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://taliesinds.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://taliesinds.github.io//" rel="alternate" type="text/html" /><updated>2025-07-13T18:32:28+02:00</updated><id>https://taliesinds.github.io//feed.xml</id><title type="html">Portfolio</title><subtitle>just a simple website to share some of the things i make</subtitle><author><name>Arthur Kortekaas</name></author><entry><title type="html">Aqua di Gio Zeep</title><link href="https://taliesinds.github.io//aqua-di-gio-zeep/" rel="alternate" type="text/html" title="Aqua di Gio Zeep" /><published>2025-07-07T00:00:00+02:00</published><updated>2025-07-07T00:00:00+02:00</updated><id>https://taliesinds.github.io//aqua-di-gio-zeep</id><content type="html" xml:base="https://taliesinds.github.io//aqua-di-gio-zeep/"><![CDATA[<p>Dit is de samenvatting of inleiding van je post.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://taliesinds.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://taliesinds.github.io//" rel="alternate" type="text/html" /><updated>2025-07-13T18:39:19+02:00</updated><id>https://taliesinds.github.io//feed.xml</id><title type="html">Portfolio</title><subtitle>just a simple website to share some of the things i make</subtitle><author><name>Arthur Kortekaas</name></author><entry><title type="html">Aqua di Gio Zeep</title><link href="https://taliesinds.github.io//aqua-di-gio-zeep/" rel="alternate" type="text/html" title="Aqua di Gio Zeep" /><published>2025-07-07T00:00:00+02:00</published><updated>2025-07-07T00:00:00+02:00</updated><id>https://taliesinds.github.io//aqua-di-gio-zeep</id><content type="html" xml:base="https://taliesinds.github.io//aqua-di-gio-zeep/"><![CDATA[<p>Dit is de samenvatting of inleiding van je post.
 <!--more--></p>
 
 <!-- Write your post content here -->]]></content><author><name>Arthur Kortekaas</name></author><category term="zeep" /><summary type="html"><![CDATA[Dit is de samenvatting of inleiding van je post.]]></summary></entry><entry><title type="html">Naturel Zeep</title><link href="https://taliesinds.github.io//naturel-zeep/" rel="alternate" type="text/html" title="Naturel Zeep" /><published>2025-07-07T00:00:00+02:00</published><updated>2025-07-07T00:00:00+02:00</updated><id>https://taliesinds.github.io//naturel-zeep</id><content type="html" xml:base="https://taliesinds.github.io//naturel-zeep/"><![CDATA[<p>Dit is de samenvatting of inleiding van je post.
@@ -54,9 +54,7 @@
   </p>
   <ul class="allergen-list">
     <li>
-      <a href="/assets/pdf/aquadigio/Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf" target="_blank" rel="noopener">
-        Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired (PDF)
-      </a>
+      <a class="allergen-url" href="/assets/pdf/aquadigio/Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf" target="_blank" rel="noopener">Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired (PDF)</a>
     </li>
   </ul>
 
@@ -173,24 +171,16 @@
   
 <ul class="allergen-list">
     <li>
-        <a href="/assets/pdf/sering/80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf" target="_blank" rel="noopener">
-            80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1 (PDF)
-        </a>
+        <a class="allergen-url" href="/assets/pdf/sering/80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf" target="_blank" rel="noopener">80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1 (PDF)</a>
     </li>
     <li>
-        <a href="/assets/pdf/sering/Dossier_Fragrance-Oil-–-Lily-of-the-Valley.pdf" target="_blank" rel="noopener">
-            sering/Dossier_Fragrance-Oil-–-Lily-of-the-Valley (PDF)
-        </a>
+        <a class="allergen-url" href="/assets/pdf/sering/Dossier_Fragrance-Oil-–-Lily-of-the-Valley.pdf" target="_blank" rel="noopener">sering/Dossier_Fragrance-Oil-–-Lily-of-the-Valley (PDF)</a>
     </li>
     <li>
-        <a href="/assets/pdf/sering/ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener">
-            ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL (PDF)
-        </a>
+        <a class="allergen-url" href="/assets/pdf/sering/ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener">ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL (PDF)</a>
     </li>
     <li>
-        <a href="/assets/pdf/sering/SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener">
-            SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL (PDF)
-        </a>
+        <a class="allergen-url" href="/assets/pdf/sering/SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener">SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL (PDF)</a>
     </li>
 </ul>
 </p>

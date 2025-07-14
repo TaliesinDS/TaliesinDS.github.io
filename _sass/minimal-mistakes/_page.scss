@@ -347,8 +347,8 @@ body {
   border: 1px solid mix(#000, $border-color, 25%);
   border-radius: $border-radius;
   font-variant: small-caps;
-  font-size: 0.85em !important;
-  font-weight: 500 !important;
+  font-size: 1em !important;
+  font-weight: 600 !important;
 
   &:hover {
     text-decoration: none;

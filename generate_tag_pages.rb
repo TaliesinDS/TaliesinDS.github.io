@@ -46,14 +46,14 @@ all_tags.uniq.each do |tag|
                           <img src="{{ post.teaser | default: '/assets/images/bull200px.webp' }}" alt="Teaser" class="tag-post-img">
                       </div>
                       <div class="tag-post-content">
-                          <h2 class="tag-post-title">
+                          <h4 class="tag-post-title">
                               {{ post.title }}
-                          </h2>
+                          </h4>
                           <div class="tag-post-date">
                               <span class="icon-calendar" aria-hidden="true">{% include icons/fontawesome/calendar-days.svg %}</span>
                               {{ post.date | date: "%b %-d, %Y" }}
                           </div>
-                          <p>{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+                          <div class="tag-post-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</div>
                       </div>
                   </div>
               </a>

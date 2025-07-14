@@ -71,7 +71,18 @@ search: false
   font-size: 0.8em;
   margin-bottom: 0.25em;
 }
-
+.tag-post-excerpt {
+  white-space: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	word-break: break-word;
+	max-height: 4.5em;
+	line-height: 1.5em;
+  font-size: 0.8em;
+}
 
 
 

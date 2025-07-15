@@ -35,7 +35,7 @@ tags: zeep
     Je zult misschien merken dat de ingrediëntenlijst van geurstoffen soms lange of onbekende chemische namen bevat. Dit komt doordat geurstoffen bestaan uit veel verschillende componenten—sommige natuurlijk, sommige synthetisch—die samen zorgen voor een aangename en langdurige geur. Veel van deze namen klinken misschien spannend, maar ze komen vaak van nature voor in etherische oliën, fruit of bloemen, of het zijn veilige synthetische varianten die uitgebreid zijn getest.
   </p>
   <p>
-    Elke geurstof die ik gebruik is speciaal ontwikkeld voor gebruik in cosmetica en zeep, en voldoet aan strenge veiligheidsnormen van organisaties zoals de International Fragrance Association (IFRA). Deze normen zorgen ervoor dat de ingrediënten veilig zijn voor contact met de huid, mits ze op de juiste manier worden gebruikt.
+    Elke geurstof die ik gebruik is speciaal ontwikkeld voor gebruik in cosmetica en zeep, en voldoet aan strenge veiligheidsnormen van organisaties zoals de *International Fragrance Association (IFRA)*. Deze normen zorgen ervoor dat de ingrediënten veilig zijn voor contact met de huid, mits ze op de juiste manier worden gebruikt.
   </p>
   <p>
     Kortom: hoewel de namen soms wetenschappelijk klinken, zijn alle ingrediënten zorgvuldig gekozen om jouw zeep heerlijk te laten ruiken én veilig te houden voor dagelijks gebruik. Heb je vragen over specifieke ingrediënten? Laat het gerust weten!
@@ -120,7 +120,7 @@ tags: zeep
   You may notice that the ingredient list for fragrance oils sometimes includes long or unfamiliar chemical names. This is because fragrance oils are made up of many different components—some natural, some synthetic—that together create a pleasant and lasting scent. Many of these names sound intimidating, but they are often naturally occurring in essential oils, fruits, or flowers, or are safe synthetic versions that have been thoroughly tested.
    </p>
   <p>
-  Every fragrance oil I use is specifically designed for use in cosmetics and soaps, and meets strict safety standards set by organizations like the International Fragrance Association (IFRA). These standards ensure that the ingredients are safe for skin contact when used as directed.
+  Every fragrance oil I use is specifically designed for use in cosmetics and soaps, and meets strict safety standards set by organizations like the *International Fragrance Association (IFRA)*. These standards ensure that the ingredients are safe for skin contact when used as directed.
    </p>
   <p>
   In short, while the names may sound scientific, each ingredient is there to make your soap smell wonderful and remain safe for everyday use. If you have any questions about specific ingredients, feel free to ask!

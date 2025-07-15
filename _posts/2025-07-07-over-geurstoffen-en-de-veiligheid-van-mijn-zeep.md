@@ -60,7 +60,7 @@ tags: zeep
   </p>
   <ul class="allergen-list">
     <li>
-      <a class="allergen-url" href="/assets/pdf/aquadigio/Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf" target="_blank" rel="noopener" title="Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf">Veiligheidsinformatie Acqua di Gio (PDF)</a>
+      <a class="allergen-url" href="/assets/pdf/aquadigio/Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf" target="_blank" rel="noopener" title="Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf"><span class="icon-pdf" aria-hidden="true">{% include icons/fontawesome/file-pdf.svg %}</span> Veiligheidsinformatie Acqua di Gio (PDF)</a>
     </li>
   </ul>
 
@@ -89,16 +89,16 @@ tags: zeep
   </p>
   <ul class="allergen-list">
     <li>
-      <a class="allergen-url" href="/assets/pdf/sering/80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf" target="_blank" rel="noopener" title="80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf">Veiligheidsinformatie Lilac Blossoms (PDF)</a>
+      <a class="allergen-url" href="/assets/pdf/sering/80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf" target="_blank" rel="noopener" title="80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf"><span class="icon-pdf" aria-hidden="true">{% include icons/fontawesome/file-pdf.svg %}</span> Veiligheidsinformatie Lilac Blossoms (PDF)</a>
     </li>
     <li>
-      <a class="allergen-url" href="/assets/pdf/sering/Dossier_Fragrance-Oil-–-Lily-of-the-Valley.pdf" target="_blank" rel="noopener" title="Dossier_Fragrance-Oil-–-Lily-of-the-Valley.pdf">Veiligheidsinformatie Lily of the Valley (PDF)</a>
+      <a class="allergen-url" href="/assets/pdf/sering/Dossier_Fragrance-Oil-–-Lily-of-the-Valley.pdf" target="_blank" rel="noopener" title="Dossier_Fragrance-Oil-–-Lily-of-the-Valley.pdf"><span class="icon-pdf" aria-hidden="true">{% include icons/fontawesome/file-pdf.svg %}</span> Veiligheidsinformatie Lily of the Valley (PDF)</a>
     </li>
     <li>
-      <a class="allergen-url" href="/assets/pdf/sering/ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener" title="ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf">IFRA Veiligheidsblad Birchwood Oud (PDF)</a>
+      <a class="allergen-url" href="/assets/pdf/sering/ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener" title="ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf"><span class="icon-pdf" aria-hidden="true">{% include icons/fontawesome/file-pdf.svg %}</span> IFRA Veiligheidsblad Birchwood Oud (PDF)</a>
     </li>
     <li>
-      <a class="allergen-url" href="/assets/pdf/sering/SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener" title="SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf">SDS Veiligheidsblad Birchwood Oud (PDF)</a>
+      <a class="allergen-url" href="/assets/pdf/sering/SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener" title="SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf"><span class="icon-pdf" aria-hidden="true">{% include icons/fontawesome/file-pdf.svg %}</span> SDS Veiligheidsblad Birchwood Oud (PDF)</a>
     </li>
   </ul>
 </div>
@@ -147,7 +147,7 @@ tags: zeep
   </p>
   <ul class="allergen-list">
     <li>
-      <a class="allergen-url" href="/assets/pdf/aquadigio/Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf" target="_blank" rel="noopener" title="Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf">Safety Sheet Acqua di Gio (PDF)</a>
+      <a class="allergen-url" href="/assets/pdf/aquadigio/Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf" target="_blank" rel="noopener" title="Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf"><span class="icon-pdf" aria-hidden="true">{% include icons/fontawesome/file-pdf.svg %}</span> Safety Sheet Acqua di Gio (PDF)</a>
     </li>
   </ul>
 
@@ -177,16 +177,16 @@ tags: zeep
   
 <ul class="allergen-list">
     <li>
-        <a class="allergen-url" href="/assets/pdf/sering/80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf" target="_blank" rel="noopener" title="80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf">Safety Sheet Lilac Blossoms (PDF)</a>
+        <a class="allergen-url" href="/assets/pdf/sering/80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf" target="_blank" rel="noopener" title="80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf"><span class="icon-pdf" aria-hidden="true">{% include icons/fontawesome/file-pdf.svg %}</span> Safety Sheet Lilac Blossoms (PDF)</a>
     </li>
     <li>
-        <a class="allergen-url" href="/assets/pdf/sering/Dossier_Fragrance-Oil-–-Lily-of-the-Valley.pdf" target="_blank" rel="noopener" title="Dossier_Fragrance-Oil-–-Lily-of-the-Valley.pdf">Safety Sheet Lily of the Valley (PDF)</a>
+        <a class="allergen-url" href="/assets/pdf/sering/Dossier_Fragrance-Oil-–-Lily-of-the-Valley.pdf" target="_blank" rel="noopener" title="Dossier_Fragrance-Oil-–-Lily-of-the-Valley.pdf"><span class="icon-pdf" aria-hidden="true">{% include icons/fontawesome/file-pdf.svg %}</span> Safety Sheet Lily of the Valley (PDF)</a>
     </li>
     <li>
-        <a class="allergen-url" href="/assets/pdf/sering/ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener" title="ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf">IFRA Safety Sheet Birchwood Oud (PDF)</a>
+        <a class="allergen-url" href="/assets/pdf/sering/ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener" title="ifra_eu_prop65_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf"><span class="icon-pdf" aria-hidden="true">{% include icons/fontawesome/file-pdf.svg %}</span> IFRA Safety Sheet Birchwood Oud (PDF)</a>
     </li>
     <li>
-        <a class="allergen-url" href="/assets/pdf/sering/SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener" title="SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf">SDS Safety Sheet Birchwood Oud (PDF)</a>
+        <a class="allergen-url" href="/assets/pdf/sering/SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf" target="_blank" rel="noopener" title="SDS_V000224_BIRCHWOOD_OUD_FRAGRANCE_OIL-1.pdf"><span class="icon-pdf" aria-hidden="true">{% include icons/fontawesome/file-pdf.svg %}</span> SDS Safety Sheet Birchwood Oud (PDF)</a>
     </li>
 </ul>
 </p>

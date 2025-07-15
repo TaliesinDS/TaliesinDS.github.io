@@ -83,14 +83,14 @@ search: false
 }
 .tag-post-excerpt {
   white-space: normal;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	display: -webkit-box;
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-	word-break: break-word;
-	max-height: 4.5em;
-	line-height: 1.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  max-height: 4.5em;
+  line-height: 1.5em;
   font-size: 0.8em;
 }
 
@@ -402,6 +402,10 @@ body { overflow-x: hidden; }
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   padding-left: 0em; 
+}
+
+.allergen-list-url .allergen-url {
+  text-decoration: none;
 }
 
 .page__content p:has(+ .allergen-list-url) {

@@ -23,8 +23,7 @@ tag: about
   <p>Deze website is bedoeld als een plek om mijn projecten, ontdekkingen en gedachten te delen met vrienden, familie en iedereen die geïnteresseerd is in handwerk, creativiteit of persoonlijke verhalen.</p>
   <p>Bedankt voor je bezoek aan mijn site. Ik hoop dat je hier iets vindt dat je inspireert of nieuwsgierig maakt!</p>
   <div class="page-image-center">
-    <img src="/assets/icons/fontawesome/GaramondFleuron.svg" alt="Garamond fleuron divider" style="display:block;margin:2em auto 1em;max-width:120px;" />
-    <img src="/assets/images/marginalia/catread1.webp" alt="Cat reading marginalia" />
+  <img src="/assets/images/marginalia/catread1.webp" alt="Cat reading marginalia" />
   </div>
 </div>
 

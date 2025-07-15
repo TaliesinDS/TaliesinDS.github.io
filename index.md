@@ -20,7 +20,7 @@ author_profile: false
 .hero-subtitle {
   position: absolute;
   left: 50%;
-  top: 55%;
+  top: 85%;
   transform: translate(-50%, -50%);
   max-width: 80%;
   text-align: center;
@@ -52,7 +52,7 @@ author_profile: false
 /* Galaxy Tab S8 Plus landscape viewport: 1680x907 */
 @media (min-width: 1100px) and (max-width: 1700px) and (min-aspect-ratio: 16/9) and (max-aspect-ratio: 2/1) {
   .hero-subtitle {
-    top: 62%;
+    top: 85%;
     font-size: 1.3em;
     padding: 0.25em 0.7em;
   }

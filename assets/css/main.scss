@@ -1,8 +1,3 @@
-// Remove bullets from allergen-list items that contain document links
-.allergen-list li:has(> .allergen-url) {
-  list-style-type: none;
-  padding-left: 0;
-}
 ---
 search: false
 ---
@@ -22,7 +17,6 @@ search: false
   fill: currentColor;
   vertical-align: text-bottom;
   display: inline-block;
-  margin-right: 0.5em;
 }
 // =====================
 // Tag Post List Styles (moved to end for override)
@@ -88,14 +82,14 @@ search: false
 }
 .tag-post-excerpt {
   white-space: normal;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  word-break: break-word;
-  max-height: 4.5em;
-  line-height: 1.5em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	word-break: break-word;
+	max-height: 4.5em;
+	line-height: 1.5em;
   font-size: 0.8em;
 }
 

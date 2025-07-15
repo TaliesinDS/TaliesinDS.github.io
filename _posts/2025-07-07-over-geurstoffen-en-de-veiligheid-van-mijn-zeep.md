@@ -58,7 +58,7 @@ tags: zeep
   <p>
     Volledige veiligheidsinformatie van de gebruikte parfum olieën:
   </p>
-  <ul class="allergen-list">
+  <ul class="allergen-list-url">
     <li>
       <a class="allergen-url" href="/assets/pdf/aquadigio/Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf" target="_blank" rel="noopener" title="Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf"><span class="icon-pdf" aria-hidden="true">{% include icons/fontawesome/file-pdf.svg %}</span> Veiligheidsinformatie Acqua di Gio (PDF)</a>
     </li>
@@ -87,7 +87,7 @@ tags: zeep
   <p>
     Volledige veiligheidsinformatie van de gebruikte parfum olieën:
   </p>
-  <ul class="allergen-list">
+  <ul class="allergen-list-url">
     <li>
       <a class="allergen-url" href="/assets/pdf/sering/80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf" target="_blank" rel="noopener" title="80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf"><span class="icon-pdf" aria-hidden="true">{% include icons/fontawesome/file-pdf.svg %}</span> Veiligheidsinformatie Lilac Blossoms (PDF)</a>
     </li>
@@ -145,7 +145,7 @@ tags: zeep
   <p>
   Full safety information of the fragrance oils used:
   </p>
-  <ul class="allergen-list">
+  <ul class="allergen-list-url">
     <li>
       <a class="allergen-url" href="/assets/pdf/aquadigio/Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf" target="_blank" rel="noopener" title="Dossier_Fragrance-oil-–-Acqua-Di-Gio-Inspired.pdf"><span class="icon-pdf" aria-hidden="true">{% include icons/fontawesome/file-pdf.svg %}</span> Safety Sheet Acqua di Gio (PDF)</a>
     </li>
@@ -175,7 +175,7 @@ tags: zeep
   <p>
   Full safety information of the fragrance oils used:</p>
   
-<ul class="allergen-list">
+<ul class="allergen-list-url">
     <li>
         <a class="allergen-url" href="/assets/pdf/sering/80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf" target="_blank" rel="noopener" title="80400-DOSSIER-engels-PARFUM-LILAC-BLOSSOMS-1.pdf"><span class="icon-pdf" aria-hidden="true">{% include icons/fontawesome/file-pdf.svg %}</span> Safety Sheet Lilac Blossoms (PDF)</a>
     </li>

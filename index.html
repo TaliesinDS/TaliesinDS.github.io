@@ -225,9 +225,15 @@ body {
 <div class="hero-bg">
   <img class="hero-logo" src="/assets/images/makersmark343434.svg" alt="Logo" />
   <div class="hero-name">Arthur Kortekaas</div>
-<div class="hero-subtitle" style="
+<div class="hero-subtitle">
+  Welkom! Ik ben Arthur, een gepassioneerde hobby zeepmaker en liefhebber van ambachtelijk handwerk.
+</div>
+.hero-subtitle {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
   max-width: 80%;
-  margin: 300px auto 0 auto;
   text-align: center;
   font-size: 1.6em;
   background: rgba(243,243,243,0.60);
@@ -237,9 +243,31 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   font-style: italic;
   font-family: 'EB Garamond', serif;
-">
-  Welkom! Ik ben Arthur, een gepassioneerde hobby zeepmaker en liefhebber van ambachtelijk handwerk.
-</div>
+  z-index: 3;
+}
+
+@media (max-width: 600px) {
+  .hero-subtitle {
+    display: none;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1100px) {
+  .hero-subtitle {
+    top: 60%;
+    font-size: 1.2em;
+    padding: 0.25em 0.5em;
+  }
+}
+
+/* Galaxy Tab S8 Plus landscape viewport: 1680x907 */
+@media (min-width: 1101px) and (max-width: 1700px) and (max-height: 950px) and (orientation: landscape) {
+  .hero-subtitle {
+    top: 62%;
+    font-size: 1.3em;
+    padding: 0.25em 0.7em;
+  }
+}
 </div>
 
 <div class="intro-text" style="max-width: 80%; margin: 2em auto 0 auto; text-align: center; font-size: 1.2em;">

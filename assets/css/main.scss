@@ -94,9 +94,6 @@ search: false
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
-
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
   word-break: break-word;
   max-height: 4.5em;
   line-height: 1.5em;

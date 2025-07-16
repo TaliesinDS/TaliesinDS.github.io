@@ -11,18 +11,18 @@ header:
 comments: true
 ---
 
-<!--more-->
+
 
 <div class="lang-content lang-nl" style="display:block;">
-  <div class="lang-header">
+  <div class="lang-header" style="display: flex; align-items: center; gap: 1em;">
     <h2 style="margin: 0.5em 0 0.5em;">Handgemaakte Zeep</h2>
-    <h3 style="margin: 0.2em 0 1em; font-weight: normal; font-size: 1.15em; color: #555;">Traditionele Talg-, Kokos- & Olijfoliezeep – Hydraterend, Duurzaam en Huidvriendelijk</h3>
     <div class="lang-switcher">
-      <button id="lang-toggle" onclick="toggleLang()">
-        <img id="lang-flag" src="/assets/images/ui/gb.svg" alt="English flag">
+      <button id="lang-toggle" onclick="toggleLang()" style="background: none; border: none; padding: 0; cursor: pointer;">
+        <img id="lang-flag" src="/assets/images/ui/gb.svg" alt="English flag" style="height: 1.5em; vertical-align: middle;">
       </button>
     </div>
-  </div> <!--more-->
+  </div>
+  <h3 style="margin: 0.2em 0 1em; font-weight: normal; font-size: 1.15em; color: #555;">Traditionele Talg-, Kokos- & Olijfoliezeep – Hydraterend, Duurzaam en Huidvriendelijk</h3>
   <p>Ervaar het verschil van een zorgvuldig gemaakte, ambachtelijke zeep op basis van een klassieke mix van rundertalg, kokosolie en olijfolie. Deze formule is ontworpen voor een uitgebalanceerde zeep die effectief reinigt en toch mild en hydraterend blijft.</p>
   <h3>Hoogwaardige ingrediënten</h3>
   <p><b>40% rundertalg</b> voor hardheid en romigheid.<br>
@@ -41,15 +41,15 @@ comments: true
 </div>
 
 <div class="lang-content lang-en" style="display:none;">
-  <div class="lang-header">
+  <div class="lang-header" style="display: flex; align-items: center; gap: 1em;">
     <h2 style="margin: 0.5em 0 0.5em;">Handmade Soap</h2>
-    <h3 style="margin: 0.2em 0 1em; font-weight: normal; font-size: 1.15em; color: #555;">Traditional Tallow, Coconut & Olive Oil Soap – Moisturizing, Long-Lasting, and Skin-Friendly</h3>
     <div class="lang-switcher">
-      <button id="lang-toggle" onclick="toggleLang()">
-        <img id="lang-flag" src="/assets/images/ui/nl.svg" alt="Dutch flag">
+      <button id="lang-toggle" onclick="toggleLang()" style="background: none; border: none; padding: 0; cursor: pointer;">
+        <img id="lang-flag" src="/assets/images/ui/nl.svg" alt="Dutch flag" style="height: 1.5em; vertical-align: middle;">
       </button>
     </div>
   </div>
+  <h3 style="margin: 0.2em 0 1em; font-weight: normal; font-size: 1.15em; color: #555;">Traditional Tallow, Coconut & Olive Oil Soap – Moisturizing, Long-Lasting, and Skin-Friendly</h3>
   <p>Experience the difference of a carefully crafted, small-batch soap made from a classic blend of beef tallow, coconut oil, and olive oil. This formula is designed to deliver a balanced bar that cleanses effectively while remaining gentle and moisturizing.</p>
   <h3>Premium Ingredients</h3>
   <p><b>40% beef tallow</b> for hardness and creaminess.<br>

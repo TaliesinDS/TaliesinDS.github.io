@@ -132,7 +132,7 @@ search: false
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 2em 0 0.5em;
+  margin: 1.5em 0 0.5em;
   line-height: 1.2;
   font-family: $serif;
 }
@@ -364,7 +364,8 @@ textarea:focus, textarea:focus-visible {
   display:block; 
   margin:1em auto; 
   max-width:80%; 
-  border-radius:8px
+  border-radius:4px;
+  overflow: hidden;
 }
 
 // =====================

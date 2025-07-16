@@ -16,6 +16,7 @@ comments: true
   <p>Hydraterend, duurzaam en huidvriendelijk</p>
 </div>
 <!--more-->
+<style>
 .page__content > .body-post-excerpt {
   display: none;
 }
@@ -23,6 +24,7 @@ comments: true
   font-size: 1.5em; /* or whatever size you want */
   font-weight: bold;
 }
+</style>
 
 <div class="lang-content lang-nl">
   <div class="lang-header">

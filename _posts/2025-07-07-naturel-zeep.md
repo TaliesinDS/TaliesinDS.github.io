@@ -28,6 +28,7 @@ Handgemaakte Zeep
     </div>
   </div>
   <h3 style="margin: 0.2em 0 1em; font-weight: normal; font-size: 1.15em; color: #555;">Traditionele Talg-, Kokos- & Olijfoliezeep – Hydraterend, Duurzaam en Huidvriendelijk</h3>
+    <img src="/assets/images/content/posts/bullsmaller.webp" alt="Handgemaakte Zeep" title="Bull small" style="display:block; margin:1em auto; max-width:100%; border-radius:8px;" />
   <p>Ervaar het verschil van een zorgvuldig gemaakte, ambachtelijke zeep op basis van een klassieke mix van rundertalg, kokosolie en olijfolie. Deze formule is ontworpen voor een uitgebalanceerde zeep die effectief reinigt en toch mild en hydraterend blijft.</p>
   <h3>Hoogwaardige ingrediënten</h3>
   <p><b>40% rundertalg</b> voor hardheid en romigheid.<br>
@@ -55,6 +56,7 @@ Handgemaakte Zeep
     </div>
   </div>
   <h3 style="margin: 0.2em 0 1em; font-weight: normal; font-size: 1.15em; color: #555;">Traditional Tallow, Coconut & Olive Oil Soap – Moisturizing, Long-Lasting, and Skin-Friendly</h3>
+      <img src="/assets/images/content/posts/bullsmaller.webp" alt="Handgemaakte Zeep" title="Bull small" style="display:block; margin:1em auto; max-width:100%; border-radius:8px;" />
   <p>Experience the difference of a carefully crafted, small-batch soap made from a classic blend of beef tallow, coconut oil, and olive oil. This formula is designed to deliver a balanced bar that cleanses effectively while remaining gentle and moisturizing.</p>
   <h3>Premium Ingredients</h3>
   <p><b>40% beef tallow</b> for hardness and creaminess.<br>

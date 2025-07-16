@@ -1,7 +1,7 @@
+--- 
+search: false
 ---
----
-
-// DO NOT EDIT OR REMOVE THE FIRST 3 LINES! JEKYLL/SASS FRONT MATTER AND IMPORTS REQUIRED FOR SITE TO BUILD.
+// Only the main Sass file needs front matter (the dashes are enough)
 
 /* Calendar icon sizing for post date */
 
@@ -95,6 +95,10 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+
+@import "minimal-mistakes/variables";
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
   word-break: break-word;
   max-height: 4.5em;
   line-height: 1.5em;

@@ -318,7 +318,8 @@ textarea:focus, textarea:focus-visible {
 .lang-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
   gap: 1em;
   margin-bottom: 0.5em;
 }

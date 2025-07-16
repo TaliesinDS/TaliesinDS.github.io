@@ -11,7 +11,6 @@ header:
 comments: true
 ---
 
-Dit is de samenvatting of inleiding van je post.
 <!--more-->
 
 <div class="lang-content lang-nl" style="display:block;">
@@ -23,7 +22,7 @@ Dit is de samenvatting of inleiding van je post.
         <img id="lang-flag" src="/assets/images/ui/gb.svg" alt="English flag">
       </button>
     </div>
-  </div>
+  </div> <!--more-->
   <p>Ervaar het verschil van een zorgvuldig gemaakte, ambachtelijke zeep op basis van een klassieke mix van rundertalg, kokosolie en olijfolie. Deze formule is ontworpen voor een uitgebalanceerde zeep die effectief reinigt en toch mild en hydraterend blijft.</p>
   <h3>Hoogwaardige ingrediënten</h3>
   <p><b>40% rundertalg</b> voor hardheid en romigheid.<br>

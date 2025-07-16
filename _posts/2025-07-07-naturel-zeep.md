@@ -78,4 +78,4 @@ Handgemaakte Zeep
   <div class="safety-info-link">
   <a href="/over-geurstoffen-en-de-veiligheid-van-mijn-zeep/">Read more about fragrance safety in my soap</a>
   </div>
-</div>
+

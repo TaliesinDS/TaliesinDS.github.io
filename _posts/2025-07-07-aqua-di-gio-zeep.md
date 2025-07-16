@@ -11,7 +11,7 @@ header:
 comments: true
 ---
 <div class="body-post-excerpt">
-  <p class="body-excerpt-title">Aqua di Gio</p>
+  <p class="body-excerpt-title">Aqua di Gio</p><br>
   <p>Traditionele talg, kokos en olijfoliezeep met luxe geur</p>
   <p>Hydraterend, duurzaam en huidvriendelijk</p>
 </div>

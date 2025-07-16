@@ -10,10 +10,11 @@ header:
     teaser: /assets/images/bull200px.webp
 comments: true
 ---
-####Aqua di Gio<br>
-Traditionele talg, kokos en olijfoliezeep met luxe geur<br>
+<p>Aqua di Gio</p>
+<p>Traditionele talg, kokos en olijfoliezeep met luxe geur</p>
 Hydraterend, duurzaam en huidvriendelijk
 <!--more-->
+<h1 class="product-title">Aqua di Gio Zeep</h1>
 <style>
 .page__content > p:first-child {
   display: none;

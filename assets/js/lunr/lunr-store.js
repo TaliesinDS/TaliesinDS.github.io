@@ -72,7 +72,7 @@ var store = [{
         "teaser": "/assets/images/teaser/fragrance.webp"
       },{
         "title": "Sering en Lelietje-van-dalen Zeep",
-        "excerpt":"Sering en Lelietje-van-dalen Sering en Lelietje-van-dalen Traditionele talg, kokos en olijfoliezeep met luxe geur Hydraterend, duurzaam en huidvriendelijk Sering en lelietje-van-dalen zweven op een koele lentebries onder een hoge cipres. Diepe tonen van zee-mos, oud en barnsteen brengen stille diepte. Geur geïnspireerd door Armani Acqua di Gio Deze zeep is...","categories": [],
+        "excerpt":"Sering en Lelietje-van-dalen Sering en Lelietje-van-dalen Traditionele talg, kokos en olijfoliezeep met luxe geur Hydraterend, duurzaam en huidvriendelijk Sering en lelietje-van-dalen zweven op een koele lentebries onder een hoge cipres. Diepe tonen van zee-mos, oud en barnsteen brengen stille diepte. Herinnering aan de tuin De inspiratie voor deze geur komt...","categories": [],
         "tags": ["zeep"],
         "url": "/sering-en-lelietje-van-dalen-zeep/",
         "teaser": "/assets/images/bull200px.webp"

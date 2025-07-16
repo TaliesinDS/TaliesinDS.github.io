@@ -18,16 +18,16 @@ Aqua di Gio Zeep
 }
 </style>
 
-<div class="lang-content lang-nl" style="display:block;">
-  <div class="lang-header" style="display: flex; align-items: center; gap: 1em;">
-    <h2 style="margin: 0.5em 0 0.5em;">Aqua di Gio Zeep</h2>
+<div class="lang-content lang-nl">
+  <div class="lang-header">
+    <h2>Aqua di Gio Zeep</h2>
     <div class="lang-switcher">
-      <button id="lang-toggle" onclick="toggleLang()" style="background: none; border: none; padding: 0; cursor: pointer;">
-        <img id="lang-flag" src="/assets/images/ui/gb.svg" alt="English flag" style="height: 1.5em; vertical-align: middle;">
+      <button id="lang-toggle" onclick="toggleLang()">
+        <img id="lang-flag" src="/assets/images/ui/gb.svg" alt="English flag">
       </button>
     </div>
   </div>
-  <h4 style="margin: 0.2em 0 1em; font-weight: normal; font-size: 1.15em; color: #555;">
+  <h4>
     Traditionele talg, kokos en olijfoliezeep met luxe geur<br>
     Hydraterend, duurzaam en huidvriendelijk
   </h4>
@@ -54,15 +54,15 @@ Aqua di Gio Zeep
 </div>
 
 <div class="lang-content lang-en" style="display:none;">
-  <div class="lang-header" style="display: flex; align-items: center; gap: 1em;">
-    <h2 style="margin: 0.5em 0 0.5em;">Aqua di Gio Soap</h2>
+  <div class="lang-header">
+    <h2>Aqua di Gio Soap</h2>
     <div class="lang-switcher">
-      <button id="lang-toggle" onclick="toggleLang()" style="background: none; border: none; padding: 0; cursor: pointer;">
-        <img id="lang-flag" src="/assets/images/ui/nl.svg" alt="Dutch flag" style="height: 1.5em; vertical-align: middle;">
+      <button id="lang-toggle" onclick="toggleLang()">
+        <img id="lang-flag" src="/assets/images/ui/nl.svg" alt="Dutch flag">
       </button>
     </div>
   </div>
-  <h4 style="margin: 0.2em 0 1em; font-weight: normal; font-size: 1.15em; color: #555;">
+  <h4>
     Traditional tallow, coconut and olive oil soap with luxurious fragrance<br>
     Moisturizing, long-lasting and skin-friendly
   </h4>

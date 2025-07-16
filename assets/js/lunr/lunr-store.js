@@ -54,7 +54,7 @@ var store = [{
         "teaser": "/assets/images/bull200px.webp"
       },{
         "title": "Aqua di Gio Zeep",
-        "excerpt":"Aqua di Gio Zeep Traditionele talg, kokos en olijfoliezeep met luxe geur&lt;br&gt; Hydraterend, duurzaam en huidvriendelijk &lt;!--more--&gt; Aqua di Gio Zeep Traditionele talg, kokos en olijfoliezeep met luxe geur Hydraterend, duurzaam en huidvriendelijk Lange zomerdagen aan zee, de zonnestralen op de huid en de verfrissende bries die van de oceaan...","categories": [],
+        "excerpt":"Aqua di Gio Zeep Traditionele talg, kokos en olijfoliezeep met luxe geur Hydraterend, duurzaam en huidvriendelijk Aqua di Gio Zeep Traditionele talg, kokos en olijfoliezeep met luxe geur Hydraterend, duurzaam en huidvriendelijk Lange zomerdagen aan zee, de zonnestralen op de huid en de verfrissende bries die van de oceaan komt....","categories": [],
         "tags": ["zeep"],
         "url": "/aqua-di-gio-zeep/",
         "teaser": "/assets/images/bull200px.webp"

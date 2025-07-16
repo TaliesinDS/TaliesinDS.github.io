@@ -13,7 +13,7 @@
   fill: currentColor;
   vertical-align: middle;
   display: inline-block;
-// Removed stray closing brace
+}
 
 .icon-calendar svg {
   height: 1em !important;
@@ -679,7 +679,6 @@ div[style*="display: flex"] > a {
     line-height: 1.1em;
     font-size: 1.0em;
   }
-  
   .page__hero--overlay .page__title { font-size: 1.3em; }
   .page__footer-copyright { font-size: 0.6em !important; }
 }

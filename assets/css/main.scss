@@ -5,6 +5,18 @@ search: false
 // Only the main Sass file needs front matter (the dashes are enough)
 
 /* Calendar icon sizing for post date */
+
+.search-icon svg,
+.icon-spinner svg,
+.icon-link svg,
+.icon-rss svg {
+  width: 24px !important;
+  height: 24px !important;
+  fill: currentColor;
+  vertical-align: middle;
+  display: inline-block;
+}
+
 .icon-calendar svg {
   height: 24px !important;
   width: 24px !important;

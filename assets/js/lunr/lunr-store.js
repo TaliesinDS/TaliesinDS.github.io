@@ -60,7 +60,7 @@ var store = [{
         "teaser": "/assets/images/bull200px.webp"
       },{
         "title": "Naturel Zeep",
-        "excerpt":"Dit is de samenvatting of inleiding van je post. Traditionele Talg-, Kokos- &amp; Olijfoliezeep – Hydraterend, Duurzaam en Huidvriendelijk Ervaar het verschil van een zorgvuldig gemaakte, ambachtelijke zeep op basis van een klassieke mix van rundertalg, kokosolie en olijfolie. Deze formule is ontworpen voor een uitgebalanceerde zeep die effectief reinigt...","categories": [],
+        "excerpt":"Dit is de samenvatting of inleiding van je post. Handgemaakte Zeep Traditionele Talg-, Kokos- &amp; Olijfoliezeep – Hydraterend, Duurzaam en Huidvriendelijk Ervaar het verschil van een zorgvuldig gemaakte, ambachtelijke zeep op basis van een klassieke mix van rundertalg, kokosolie en olijfolie. Deze formule is ontworpen voor een uitgebalanceerde zeep die...","categories": [],
         "tags": ["zeep"],
         "url": "/naturel-zeep/",
         "teaser": "/assets/images/bull200px.webp"

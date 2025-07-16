@@ -370,7 +370,15 @@ textarea:focus, textarea:focus-visible {
 // =====================
 // Post Content
 // =====================
+.body-post-excerpt {
+  color: $navicon-link-color-hover; // sets the color for all text in the excerpt
+}
 
+.body-excerpt-title {
+  font-size: 2em;
+  font-weight: bold;
+  color: $navicon-link-color-hover; // sets the color for the title
+}
 .post-image {
 margin-bottom: 2em;
 display: block;

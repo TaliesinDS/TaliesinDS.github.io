@@ -72,7 +72,7 @@ var store = [{
         "teaser": "/assets/images/teaser/fragrance.webp"
       },{
         "title": "Sering en Lelietje-van-dalen Zeep",
-        "excerpt":"Dit is de samenvatting of inleiding van je post.     ","categories": [],
+        "excerpt":"Aqua di Gio Aqua di Gio Zeep Traditionele talg, kokos en olijfoliezeep met luxe geur Hydraterend, duurzaam en huidvriendelijk Sering en lelietje-van-dalen zweven op een koele lentebries onder een hoge cipres. Diepe tonen van zee-mos, oud en barnsteen brengen stille diepte. Geur geïnspireerd door Armani Acqua di Gio Deze zeep...","categories": [],
         "tags": ["zeep"],
         "url": "/sering-en-lelietje-van-dalen-zeep/",
         "teaser": "/assets/images/bull200px.webp"

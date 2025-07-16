@@ -56,7 +56,7 @@ comments: true
   <div class="safety-info-link">
   <a href="/over-geurstoffen-en-de-veiligheid-van-mijn-zeep/">Lees meer over veiligheid en geurstoffen in mijn zeep</a>
   </div>
-</div>
+
 
 <div class="lang-content lang-en" style="display:none;">
   <div class="lang-header">

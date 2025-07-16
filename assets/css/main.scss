@@ -6,8 +6,8 @@ search: false
 
 /* Calendar icon sizing for post date */
 .icon-calendar svg {
-  height: 1em;
-  width: 1em;
+  height: 1em !important;
+  width: 1em !important;
   fill: currentColor;
   vertical-align: text-bottom;
   display: inline-block;
@@ -361,12 +361,21 @@ textarea:focus, textarea:focus-visible {
 // =====================
 
 .post-image {
-  margin-bottom: 2em;
-  display:block; 
-  margin:1em auto; 
-  max-width:80%; 
-  border-radius:4px;
-  overflow: hidden;
+margin-bottom: 2em;
+display: block;
+margin: 1em auto;
+max-width: 100%;
+border-radius: 4px;
+overflow: hidden;
+}
+
+.post-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 31 / 21;
+  object-fit: contain;
+  border-radius: 4px;
 }
 
 // Flavor text styling for product pages

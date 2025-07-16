@@ -57,7 +57,7 @@ var store = [{
         "excerpt":"Aqua di Gio Aqua di Gio Zeep Traditionele talg, kokos en olijfoliezeep met luxe geur Hydraterend, duurzaam en huidvriendelijk Lange zomerdagen aan zee, de zonnestralen op de huid en de verfrissende bries die van de oceaan komt. Een contrast van sprankelende kruiden en pittige grapefruit, energiek gemaakt door de knapperigheid...","categories": [],
         "tags": ["zeep"],
         "url": "/aqua-di-gio-zeep/",
-        "teaser": "/assets/images/bull200px.webp"
+        "teaser": "/assets/images/teaser/ArtAquaDiGioTeaser.webp"
       },{
         "title": "Naturel Zeep",
         "excerpt":"Handgemaakte Zeep Handgemaakte Zeep Traditionele Talg-, Kokos- &amp; Olijfoliezeep – Hydraterend, Duurzaam en Huidvriendelijk Ervaar het verschil van een zorgvuldig gemaakte, ambachtelijke zeep op basis van een klassieke mix van rundertalg, kokosolie en olijfolie. Deze formule is ontworpen voor een uitgebalanceerde zeep die effectief reinigt en toch mild en hydraterend...","categories": [],
@@ -75,5 +75,5 @@ var store = [{
         "excerpt":"Sering en Lelietje-van-dalen Sering en Lelietje-van-dalen Traditionele talg, kokos en olijfoliezeep met luxe geur Hydraterend, duurzaam en huidvriendelijk Sering en lelietje-van-dalen zweven op een koele lentebries onder een hoge cipres. Diepe tonen van zee-mos, oud en barnsteen brengen stille diepte. Herinnering aan de tuin De inspiratie voor deze geur komt...","categories": [],
         "tags": ["zeep"],
         "url": "/sering-en-lelietje-van-dalen-zeep/",
-        "teaser": "/assets/images/bull200px.webp"
+        "teaser": "/assets/images/teaser/ArtSeringTeaser.webp"
       },,]

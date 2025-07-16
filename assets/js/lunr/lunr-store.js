@@ -54,7 +54,7 @@ var store = [{
         "teaser": "/assets/images/bull200px.webp"
       },{
         "title": "Aqua di Gio Zeep",
-        "excerpt":"Dit is de samenvatting of inleiding van je post.     ","categories": [],
+        "excerpt":"Aqua di Gio Zeep Aqua di Gio Zeep Traditionele Talg-, Kokos- &amp; Olijfoliezeep met Luxe Geur – Hydraterend, Duurzaam en Huidvriendelijk Lange zomerdagen aan zee, de zonnestralen op de huid en de verfrissende bries die van de oceaan komt. Een contrast van sprankelende kruiden en pittige grapefruit, energiek gemaakt door...","categories": [],
         "tags": ["zeep"],
         "url": "/aqua-di-gio-zeep/",
         "teaser": "/assets/images/bull200px.webp"

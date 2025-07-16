@@ -29,7 +29,7 @@ Aqua di Gio Zeep
   </div>
   <h4 style="margin: 0.2em 0 1em; font-weight: normal; font-size: 1.15em; color: #555;">Traditionele Talg-, Kokos- & Olijfoliezeep met Luxe Geur – Hydraterend, Duurzaam en Huidvriendelijk</h4>
   <img src="/assets/images/content/posts/ArtAquaDiGio.webp" alt="Aqua di Gio Zeep" title="Aqua di Gio" style="display:block; margin:1em auto; max-width:80%; border-radius:8px;" />
-  <p>Lange zomerdagen aan zee, de zonnestralen op de huid en de verfrissende bries die van de oceaan komt. Een contrast van sprankelende kruiden en pittige grapefruit, energiek gemaakt door de knapperigheid van cipres en de kruidige diepte van lavandin.</p>
+  <p><em>Lange zomerdagen aan zee, de zonnestralen op de huid en de verfrissende bries die van de oceaan komt. Een contrast van sprankelende kruiden en pittige grapefruit, energiek gemaakt door de knapperigheid van cipres en de kruidige diepte van lavandin.</em></p>
   <h4>Geur geïnspireerd door Armani Acqua di Gio</h4>
   <p>Deze zeep is gebaseerd op het klassieke recept van rundertalg, kokosolie en olijfolie, verrijkt met een verfijnde geur die doet denken aan het iconische parfum van Armani.</p>
   <h4>Hoogwaardige ingrediënten</h4>
@@ -59,7 +59,7 @@ Aqua di Gio Zeep
   </div>
   <h4 style="margin: 0.2em 0 1em; font-weight: normal; font-size: 1.15em; color: #555;">Traditional Tallow, Coconut & Olive Oil Soap with Luxurious Fragrance – Moisturizing, Long-Lasting, and Skin-Friendly</h4>
   <img src="/assets/images/content/posts/ArtAquaDiGio.webp" alt="Aqua di Gio Soap" title="Aqua di Gio" style="display:block; margin:1em auto; max-width:80%; border-radius:8px;" />
-  <p>Long summer days by the sea, sunbeams on your skin, and the refreshing ocean breeze. A contrast of sparkling herbs and zesty grapefruit, energized by the crispness of cypress and the aromatic depth of lavandin.</p>
+  <p><em>Long summer days by the sea, sunbeams on your skin, and the refreshing ocean breeze. A contrast of sparkling herbs and zesty grapefruit, energized by the crispness of cypress and the aromatic depth of lavandin.</em></p>
   <h4>Fragrance inspired by Armani Acqua di Gio</h4>
   <p>This soap is based on the classic recipe of beef tallow, coconut oil, and olive oil, enriched with a refined scent reminiscent of Armani's iconic fragrance.</p>
   <h4>Premium Ingredients</h4>

@@ -10,16 +10,19 @@ header:
     teaser: /assets/images/bull200px.webp
 comments: true
 ---
-<p>Aqua di Gio</p>
-<p>Traditionele talg, kokos en olijfoliezeep met luxe geur</p>
-Hydraterend, duurzaam en huidvriendelijk
+<div class="body-post-excerpt">
+  <p class="body-excerpt-title">Aqua di Gio</p>
+  <p>Traditionele talg, kokos en olijfoliezeep met luxe geur</p>
+  <p>Hydraterend, duurzaam en huidvriendelijk</p>
+</div>
 <!--more-->
-<h1 class="product-title">Aqua di Gio Zeep</h1>
-<style>
-.page__content > p:first-child {
+.page__content > .body-post-excerpt {
   display: none;
 }
-</style>
+.body-excerpt-title {
+  font-size: 1.5em; /* or whatever size you want */
+  font-weight: bold;
+}
 
 <div class="lang-content lang-nl">
   <div class="lang-header">

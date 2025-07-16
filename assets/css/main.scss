@@ -4,6 +4,7 @@
 @import "minimal-mistakes/variables";
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
+// DO NOT EDIT OR REMOVE THE FIRST 6 LINES! JEKYLL/SASS FRONT MATTER AND IMPORTS REQUIRED FOR SITE TO BUILD.
 
 /* Calendar icon sizing for post date */
 

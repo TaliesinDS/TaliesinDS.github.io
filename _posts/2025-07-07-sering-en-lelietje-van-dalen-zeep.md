@@ -11,7 +11,7 @@ header:
 comments: true
 ---
 <div class="body-post-excerpt">
-  <p class="body-excerpt-title">Aqua di Gio</p>
+  <p class="body-excerpt-title">Sering en Lelietje-van-dalen</p>
 </div>
 <!--more-->
 <style>
@@ -22,7 +22,7 @@ comments: true
 
 <div class="lang-content lang-nl">
   <div class="lang-header">
-    <h2>Aqua di Gio Zeep</h2>
+    <h2>Sering en Lelietje-van-dalen</h2>
     <div class="lang-switcher">
       <button id="lang-toggle" onclick="toggleLang()">
         <img id="lang-flag" src="/assets/images/ui/gb.svg" alt="English flag">

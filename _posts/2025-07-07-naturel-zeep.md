@@ -10,8 +10,13 @@ header:
     teaser: /assets/images/bull200px.webp
 comments: true
 ---
-
-
+Handgemaakte Zeep
+<!--more-->
+<style>
+.page__content > p:first-child {
+  display: none;
+}
+</style>
 
 <div class="lang-content lang-nl" style="display:block;">
   <div class="lang-header" style="display: flex; align-items: center; gap: 1em;">

@@ -1,3 +1,4 @@
+
 ---
 search: false
 ---
@@ -366,6 +367,14 @@ textarea:focus, textarea:focus-visible {
   max-width:80%; 
   border-radius:4px;
   overflow: hidden;
+}
+
+// Flavor text styling for product pages
+.flavor-text {
+  text-align: center;
+  margin: 1em 0;
+  font-style: italic;
+  color: #444;
 }
 
 // =====================

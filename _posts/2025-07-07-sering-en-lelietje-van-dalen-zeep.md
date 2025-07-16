@@ -58,7 +58,7 @@ comments: true
   </div>
 </div>
 
-</div>
+
 
 <div class="lang-content lang-en" style="display:none;">
   <div class="lang-header">
@@ -96,6 +96,4 @@ comments: true
   <div class="safety-info-link">
   <a href="/over-geurstoffen-en-de-veiligheid-van-mijn-zeep/">Read more about fragrance safety in my soap</a>
   </div>
-</div>
-
 </div>

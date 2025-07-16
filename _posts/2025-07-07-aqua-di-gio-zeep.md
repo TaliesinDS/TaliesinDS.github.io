@@ -93,5 +93,5 @@ comments: true
   <p>Inspired by time-tested soapmaking methods, this bar is made in small batches with attention to quality and detail.</p>
   <div class="safety-info-link">
   <a href="/over-geurstoffen-en-de-veiligheid-van-mijn-zeep/">Read more about fragrance safety in my soap</a>
-  </div
-</div>
+ </div
+

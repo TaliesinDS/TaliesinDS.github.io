@@ -1,4 +1,4 @@
---- 
+---
 search: false
 ---
 // Only the main Sass file needs front matter (the dashes are enough)
@@ -36,29 +36,34 @@ search: false
 // =====================
 
 .tag-post-list {
-.lang-header {
+  width: 100%;
+  margin-top: 2em;
+}
+.tag-post-item-link {
+  text-decoration: none;
+  color: inherit;
+}
+.tag-post-item {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1em;
-  margin-bottom: 0.5em;
+  align-items: flex-start;
+  margin-bottom: 2em;
+  border-radius: 4px;
+  max-width: 100%;
+  border: 0;
+  transition: box-shadow 0.2s;
 }
-.lang-switcher {
-  margin: 0;
-  display: flex;
-  align-items: center;
+.tag-post-item:focus-within, .tag-post-item:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px #afa58f;
 }
-.lang-switcher button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
+.tag-post-teaser {
+  flex: 0 0 120px;
+  margin-right: 1em;
+  border-radius: 4px;
 }
-#lang-flag {
-  width: 24px;
-  height: 18px;
-  vertical-align: middle;
-  margin: 0;
+.tag-post-img {
+  max-width: 120px;
+  height: auto;
   display: block;
   border-radius: 4px;
 }
@@ -94,6 +99,7 @@ search: false
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
   word-break: break-word;
   max-height: 4.5em;
   line-height: 1.5em;
@@ -316,37 +322,6 @@ textarea:focus, textarea:focus-visible {
   padding: 0;
   margin: 0;
 }
-
-.page__content > p:first-child {
-  display: none;
-}
-
-.lang-header {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  margin-bottom: 0.5em;
-}
-
-.lang-content h4 {
-  margin: 0.2em 0 1em;
-  font-weight: normal;
-  font-size: 1.15em;
-  color: #555;
-}
-
-.lang-switcher button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-#lang-flag {
-  height: 1.5em;
-  vertical-align: middle;
-}
-}
 .lang-switcher {
   margin: 0;
   display: flex;
@@ -417,7 +392,7 @@ overflow: hidden;
 // Flavor text styling for product pages
 .flavor-text {
   text-align: center;
-  margin: 2em 0 4em;
+  margin: 1em 0;
   font-style: italic;
   color: #444;
 }
@@ -679,6 +654,7 @@ div[style*="display: flex"] > a {
     line-height: 1.1em;
     font-size: 1.0em;
   }
+  
   .page__hero--overlay .page__title { font-size: 1.3em; }
   .page__footer-copyright { font-size: 0.6em !important; }
 }

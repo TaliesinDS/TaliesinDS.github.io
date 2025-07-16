@@ -53,6 +53,9 @@ comments: true
   <p>Vrij van agressieve reinigers en onnodige toevoegingen, geschikt voor alle huidtypes, ook de gevoelige huid.</p>
   <h4>Traditioneel vakmanschap</h4>
   <p>Geïnspireerd door beproefde zeepmaakmethoden, in kleine batches gemaakt met aandacht voor kwaliteit en detail.</p>
+  <div class="safety-info-link">
+  <a href="/over-geurstoffen-en-de-veiligheid-van-mijn-zeep/">Lees meer over veiligheid en geurstoffen in mijn zeep</a>
+  </div>
 </div>
 
 <div class="lang-content lang-en" style="display:none;">
@@ -88,4 +91,7 @@ comments: true
   <p>Free from harsh detergents and unnecessary additives, this soap is ideal for all skin types, including sensitive skin.</p>
   <h4>Traditional Craftsmanship</h4>
   <p>Inspired by time-tested soapmaking methods, this bar is made in small batches with attention to quality and detail.</p>
+  <div class="safety-info-link">
+  <a href="/over-geurstoffen-en-de-veiligheid-van-mijn-zeep/">Read more about fragrance safety in my soap</a>
+  </div
 </div>

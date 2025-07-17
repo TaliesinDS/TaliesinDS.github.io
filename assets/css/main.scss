@@ -309,7 +309,9 @@ p.sc {
 .page__lead, page__meta-date {
   color: $navicon-link-color-hover !important;
 }
-
+page__meta-date {
+  color: $navicon-link-color-hover !important;
+}
 // =====================
 // Focus Styles
 // =====================

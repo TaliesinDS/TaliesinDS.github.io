@@ -301,15 +301,15 @@ p.sc {
 .archive__item-title,
 .archive__item-excerpt,
 .page__title {
-  color: $navicon-link-color-hover !important;
+  color: #d6d6d6 !important;
 }
-.page__hero--overlay .page__title {
-  color: $navicon-link-color-hover !important;
+.page__hero--overlay {
+  color: #d6d6d6 !important;
 }
-.page__lead, page__meta {
-  color: $navicon-link-color-hover !important;
+.page__lead {
+  color: #d6d6d6 !important;
 }
-page__meta {
+.page__meta {
   color: #d6d6d6 !important;
 }
 // =====================

@@ -392,7 +392,7 @@ textarea:focus, textarea:focus-visible {
   font-size: 2em;
   font-weight: 400;
   color: $navicon-link-color-hover; // sets the color for the title
-  text-shadow: 2px 2px 6px #222, 0 0 2px #000;
+  text-shadow: 0px 0px 60px #222, 0 0 10px #000;
 }
 .post-image {
 margin-bottom: 2em;

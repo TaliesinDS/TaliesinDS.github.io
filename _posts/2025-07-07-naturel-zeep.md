@@ -10,7 +10,10 @@ header:
     teaser: /assets/images/bull200px.webp
 comments: true
 ---
-Handgemaakte Zeep
+
+<div class="body-post-excerpt">
+  <p class="body-excerpt-title">Handgemaakte Zeep</p>
+</div>
 <!--more-->
 <style>
 .page__content > p:first-child {
@@ -78,4 +81,4 @@ Handgemaakte Zeep
   <div class="safety-info-link">
   <a href="/over-geurstoffen-en-de-veiligheid-van-mijn-zeep/">Read more about fragrance safety in my soap</a>
   </div>
-
+ </div>

@@ -303,7 +303,12 @@ p.sc {
 .page__title {
   color: $navicon-link-color-hover !important;
 }
-
+.page__hero--overlay .page__title {
+  color: $navicon-link-color-hover !important;
+}
+.page__footer-copyright {
+  color: $navicon-link-color-hover !important;
+}
 
 // =====================
 // Focus Styles

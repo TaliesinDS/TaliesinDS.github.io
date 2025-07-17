@@ -10,13 +10,12 @@ header:
     teaser: /assets/images/bull200px.webp
 comments: true
 ---
-
 <div class="body-post-excerpt">
   <p class="body-excerpt-title">Handgemaakte Zeep</p>
 </div>
 <!--more-->
 <style>
-.page__content > p:first-child {
+.page__content > .body-post-excerpt {
   display: none;
 }
 </style>

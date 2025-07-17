@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://taliesinds.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://taliesinds.github.io//" rel="alternate" type="text/html" /><updated>2025-07-17T17:07:08+02:00</updated><id>https://taliesinds.github.io//feed.xml</id><title type="html">Portfolio</title><subtitle>just a simple website to share some of the things i make</subtitle><author><name>Arthur Kortekaas</name></author><entry><title type="html">Aqua di Gio Zeep</title><link href="https://taliesinds.github.io//aqua-di-gio-zeep/" rel="alternate" type="text/html" title="Aqua di Gio Zeep" /><published>2025-07-07T00:00:00+02:00</published><updated>2025-07-07T00:00:00+02:00</updated><id>https://taliesinds.github.io//aqua-di-gio-zeep</id><content type="html" xml:base="https://taliesinds.github.io//aqua-di-gio-zeep/"><![CDATA[<div class="body-post-excerpt">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://taliesinds.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://taliesinds.github.io//" rel="alternate" type="text/html" /><updated>2025-07-17T17:14:05+02:00</updated><id>https://taliesinds.github.io//feed.xml</id><title type="html">Portfolio</title><subtitle>just a simple website to share some of the things i make</subtitle><author><name>Arthur Kortekaas</name></author><entry><title type="html">Aqua di Gio Zeep</title><link href="https://taliesinds.github.io//aqua-di-gio-zeep/" rel="alternate" type="text/html" title="Aqua di Gio Zeep" /><published>2025-07-07T00:00:00+02:00</published><updated>2025-07-07T00:00:00+02:00</updated><id>https://taliesinds.github.io//aqua-di-gio-zeep</id><content type="html" xml:base="https://taliesinds.github.io//aqua-di-gio-zeep/"><![CDATA[<div class="body-post-excerpt">
   <p class="body-excerpt-title">Aqua di Gio</p>
 </div>
 <!--more-->
@@ -417,73 +417,4 @@
   <div class="safety-info-link">
   <a href="/over-geurstoffen-en-de-veiligheid-van-mijn-zeep/">Read more about fragrance safety in my soap</a>
   </div>
-</div>]]></content><author><name>Arthur Kortekaas</name></author><category term="zeep" /><summary type="html"><![CDATA[Sering en Lelietje-van-dalen]]></summary></entry><entry><title type="html">2 Talige Versie Test Post</title><link href="https://taliesinds.github.io//2-talige-versie-test-post/" rel="alternate" type="text/html" title="2 Talige Versie Test Post" /><published>2025-07-04T00:00:00+02:00</published><updated>2025-07-04T00:00:00+02:00</updated><id>https://taliesinds.github.io//2-talige-versie-test-post</id><content type="html" xml:base="https://taliesinds.github.io//2-talige-versie-test-post/"><![CDATA[<p>Dit is de samenvatting of inleiding van je post.
-<!--more--></p>
-<style>
-.page__content > p:first-child {
-  display: none;
-}
-</style>
-
-<div class="lang-content lang-nl" style="display:none;">
-  <div class="lang-header">
-    <h2 style="margin: 0.5em 0 0.5em;">Over mij</h2>
-    <div class="lang-switcher">
-      <button id="lang-toggle" onclick="toggleLang()">
-        <img id="lang-flag" src="/assets/images/ui/gb.svg" alt="English flag" />
-      </button>
-    </div>
-  </div>
-  <p>Hallo! Mijn naam is Arthur...</p>
-</div>
-
-<div class="lang-content lang-en">
-  <div class="lang-header">
-    <h2 style="margin: 0.5em 0 0.5em;">About Me</h2>
-    <div class="lang-switcher">
-      <button id="lang-toggle" onclick="toggleLang()">
-        <img id="lang-flag" src="/assets/images/ui/nl.svg" alt="Dutch flag" />
-      </button>
-    </div>
-  </div>
-  <p>Hello! My name is Arthur...</p>
-</div>]]></content><author><name>Arthur Kortekaas</name></author><category term="post" /><category term="taal" /><category term="test" /><summary type="html"><![CDATA[Dit is de samenvatting of inleiding van je post.]]></summary></entry><entry><title type="html">post generator test</title><link href="https://taliesinds.github.io//post-generator-test/" rel="alternate" type="text/html" title="post generator test" /><published>2025-07-04T00:00:00+02:00</published><updated>2025-07-04T00:00:00+02:00</updated><id>https://taliesinds.github.io//post-generator-test</id><content type="html" xml:base="https://taliesinds.github.io//post-generator-test/"><![CDATA[<p>Dit is de samenvatting of inleiding van je post.
-<!--more--></p>
-
-<!-- Write your post content here -->]]></content><author><name>Arthur Kortekaas</name></author><category term="test" /><summary type="html"><![CDATA[Dit is de samenvatting of inleiding van je post.]]></summary></entry><entry><title type="html">Dit is een test post nr 5</title><link href="https://taliesinds.github.io//dit-is-een-test-post-nr05/" rel="alternate" type="text/html" title="Dit is een test post nr 5" /><published>2025-06-25T00:00:00+02:00</published><updated>2025-06-25T00:00:00+02:00</updated><id>https://taliesinds.github.io//dit-is-een-test-post-nr05</id><content type="html" xml:base="https://taliesinds.github.io//dit-is-een-test-post-nr05/"><![CDATA[<p>What is Lorem Ipsum?
-<!--more--> 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-Why do we use it?</p>
-
-<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-
-<p>Where does it come from?</p>
-
-<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of “de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.</p>]]></content><author><name>Arthur Kortekaas</name></author><category term="post" /><category term="zeep" /><summary type="html"><![CDATA[What is Lorem Ipsum?]]></summary></entry><entry><title type="html">Dit is een test post nr 4</title><link href="https://taliesinds.github.io//dit-is-een-test-post-nr04/" rel="alternate" type="text/html" title="Dit is een test post nr 4" /><published>2025-06-24T00:00:00+02:00</published><updated>2025-06-24T00:00:00+02:00</updated><id>https://taliesinds.github.io//dit-is-een-test-post-nr04</id><content type="html" xml:base="https://taliesinds.github.io//dit-is-een-test-post-nr04/"><![CDATA[<p>What is Lorem Ipsum?
-<!--more-->
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-Why do we use it?</p>
-
-<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-
-<p>Where does it come from?</p>
-
-<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of “de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.</p>]]></content><author><name>Arthur Kortekaas</name></author><category term="post" /><category term="webdev" /><summary type="html"><![CDATA[What is Lorem Ipsum?]]></summary></entry><entry><title type="html">Dit is een test post nr 3</title><link href="https://taliesinds.github.io//dit-is-een-test-post-nr03/" rel="alternate" type="text/html" title="Dit is een test post nr 3" /><published>2025-06-23T00:00:00+02:00</published><updated>2025-06-23T00:00:00+02:00</updated><id>https://taliesinds.github.io//dit-is-een-test-post-nr03</id><content type="html" xml:base="https://taliesinds.github.io//dit-is-een-test-post-nr03/"><![CDATA[<p>What is Lorem Ipsum?</p>
-
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<!--more--> It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-Why do we use it?</p>
-
-<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-
-<p>Where does it come from?</p>
-
-<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of “de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.</p>]]></content><author><name>Arthur Kortekaas</name></author><category term="post" /><category term="zeep" /><summary type="html"><![CDATA[What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.]]></summary></entry><entry><title type="html">Dit is een test post</title><link href="https://taliesinds.github.io//dit-is-een-test-post/" rel="alternate" type="text/html" title="Dit is een test post" /><published>2025-06-22T00:00:00+02:00</published><updated>2025-06-22T00:00:00+02:00</updated><id>https://taliesinds.github.io//dit-is-een-test-post</id><content type="html" xml:base="https://taliesinds.github.io//dit-is-een-test-post/"><![CDATA[<p>What is Lorem Ipsum?
-<!--more-->
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-Why do we use it?</p>
-
-<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-
-<p>Where does it come from?</p>
-
-<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of “de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, “Lorem ipsum dolor sit amet..”, comes from a line in section 1.10.32.</p>]]></content><author><name>Arthur Kortekaas</name></author><category term="post" /><category term="webdev" /><summary type="html"><![CDATA[What is Lorem Ipsum?]]></summary></entry></feed>
+</div>]]></content><author><name>Arthur Kortekaas</name></author><category term="zeep" /><summary type="html"><![CDATA[Sering en Lelietje-van-dalen]]></summary></entry></feed>

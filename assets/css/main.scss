@@ -296,6 +296,13 @@ p.sc {
   line-height: 1.5em;
   font-size: 0.8em;
 }
+.body-excerpt-title,
+.body-post-excerpt,
+.archive__item-title,
+.archive__item-excerpt,
+.page__title {
+  color: $navicon-link-color-hover !important;
+}
 
 
 // =====================

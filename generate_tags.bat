@@ -1,3 +1,4 @@
 @echo off
-ruby generate_tag_pages.rb
+echo Running Ruby tag generator...
+ruby generate_tag_pages.rb 2>&1
 pause

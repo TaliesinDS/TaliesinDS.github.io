@@ -7,8 +7,9 @@ $title = Read-Host "Enter post title"
 $slug = $title.ToLower() -replace '[^a-z0-9\s-]', '' -replace '\s+', '-' -replace '-+', '-'
 $date = Get-Date -Format "yyyy-MM-dd"
 $filename = "$postsDir\$date-$slug.md"
+$teaser = "/assets/images/bull200px.webp" # Default teaser image
 
-@"
+$postContent = @"
 ---
 title: "$title"
 layout: single
@@ -18,14 +19,44 @@ excerpt_separator: <!--more-->
 header:
     overlay_image: random
     overlay_filter: 0.3
-    teaser: /assets/images/bull200px.webp
+    teaser: $teaser
 comments: true
 ---
-
-Dit is de samenvatting of inleiding van je post.
+<div class="body-post-excerpt">
+  <p class="body-excerpt-title">$title</p>
+</div>
 <!--more-->
+<style>
+.page__content > .body-post-excerpt {
+  display: none;
+}
+</style>
 
-<!-- Write your post content here -->
-"@ | Out-File -Encoding UTF8 $filename
+<div class="lang-content lang-nl">
+  <div class="lang-header">
+    <h2 style="margin: 0.5em 0 0.5em;">$title</h2>
+    <div class="lang-switcher">
+      <button id="lang-toggle" onclick="toggleLang()">
+        <img id="lang-flag" src="/assets/images/ui/gb.svg" alt="English flag">
+      </button>
+    </div>
+  </div>
+  <!-- Schrijf hier je Nederlandse tekst -->
+</div>
+
+<div class="lang-content lang-en" style="display:none;">
+  <div class="lang-header">
+    <h2 style="margin: 0.5em 0 0.5em;">$title</h2>
+    <div class="lang-switcher">
+      <button id="lang-toggle" onclick="toggleLang()">
+        <img id="lang-flag" src="/assets/images/ui/nl.svg" alt="Dutch flag">
+      </button>
+    </div>
+  </div>
+  <!-- Write your English text here -->
+</div>
+"@
+
+$postContent | Out-File -Encoding UTF8 $filename
 
 Write-Host "Created $filename"

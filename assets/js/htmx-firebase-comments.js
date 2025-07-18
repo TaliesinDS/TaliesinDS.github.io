@@ -14,6 +14,20 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
 
+// --- HTML Escape Utility ---
+function escapeHTML(str) {
+  return String(str).replace(/[&<>"']/g, function(tag) {
+    const chars = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    };
+    return chars[tag] || tag;
+  });
+}
+
 // --- Google Auth ---
 function updateAuthUI(user) {
   const loginBtn = document.getElementById('firebase-login-btn');
@@ -24,7 +38,7 @@ function updateAuthUI(user) {
     loginBtn.style.display = 'none';
     logoutBtn.style.display = 'inline-block';
     commentForm.style.display = 'block';
-    userInfo.innerHTML = `<img src="${user.photoURL}" class="comment-avatar"> ${user.displayName}`;
+    userInfo.innerHTML = `<img src="${user.photoURL}" class="comment-avatar" alt="${escapeHTML(user.displayName)}"> ${escapeHTML(user.displayName)}`;
   } else {
     loginBtn.style.display = 'inline-block';
     logoutBtn.style.display = 'none';
@@ -80,10 +94,10 @@ document.addEventListener('DOMContentLoaded', function() {
       snapshot.forEach(doc => {
         const c = doc.data();
         html += `<div class="comment">
-          <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar"></div>
+          <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div>
           <div class="comment-body">
-            <div class="comment-meta"><span class="comment-author">${c.user.name}</span> <span class="comment-date">${c.created && c.created.toDate ? c.created.toDate().toLocaleString() : ''}</span></div>
-            <div class="comment-text">${c.text.replace(/</g, '&lt;')}</div>
+            <div class="comment-meta"><span class="comment-author">${escapeHTML(c.user.name)}</span> <span class="comment-date">${c.created && c.created.toDate ? c.created.toDate().toLocaleString() : ''}</span></div>
+            <div class="comment-text">${escapeHTML(c.text)}</div>
           </div>
         </div>`;
       });

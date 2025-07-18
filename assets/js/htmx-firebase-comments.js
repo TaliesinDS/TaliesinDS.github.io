@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Determine if current user is admin or owner
         const currentUser = auth.currentUser;
         // TODO: Replace with your admin UID(s)
-        const ADMIN_UIDS = ["YOUR_ADMIN_UID_HERE"];
+        const ADMIN_UIDS = ["SeV4YgBfa2e2ojIJspY8eSavPRy2"];
         let isOwner = false, isAdmin = false;
         if (currentUser) {
           isOwner = currentUser.uid === c.user.uid;

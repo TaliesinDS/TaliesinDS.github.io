@@ -31,20 +31,34 @@ function escapeHTML(str) {
 // --- Google Auth ---
 function updateAuthUI(user) {
   const loginBtn = document.getElementById('firebase-login-btn');
+  const anonBtn = document.getElementById('firebase-anon-btn');
   const logoutBtn = document.getElementById('firebase-logout-btn');
   const commentForm = document.getElementById('firebase-comment-form');
   const userInfo = document.getElementById('firebase-user-info');
   if (user) {
     loginBtn.style.display = 'none';
+    if (anonBtn) anonBtn.style.display = 'none';
     logoutBtn.style.display = 'inline-block';
     commentForm.style.display = 'block';
-    userInfo.innerHTML = `<img src="${user.photoURL}" class="comment-avatar" alt="${escapeHTML(user.displayName)}"> ${escapeHTML(user.displayName)}`;
+    if (user.isAnonymous) {
+      userInfo.innerHTML = `<img src="https://www.gravatar.com/avatar/?d=mp&s=40" class="comment-avatar" alt="Guest"> Signed in as Guest`;
+    } else {
+      userInfo.innerHTML = `<img src="${user.photoURL}" class="comment-avatar" alt="${escapeHTML(user.displayName)}"> ${escapeHTML(user.displayName)}`;
+    }
   } else {
     loginBtn.style.display = 'inline-block';
+    if (anonBtn) anonBtn.style.display = 'inline-block';
     logoutBtn.style.display = 'none';
     commentForm.style.display = 'none';
     userInfo.innerHTML = '';
   }
+}
+// --- Anonymous Auth ---
+function loginAnonymously() {
+  auth.signInAnonymously()
+    .catch((error) => {
+      alert('Anonymous login failed: ' + error.message);
+    });
 }
 
 function loginWithGoogle() {
@@ -62,6 +76,16 @@ auth.onAuthStateChanged(user => {
 
 // --- Comment Submission ---
 document.addEventListener('DOMContentLoaded', function() {
+  // Add Anonymous Login button if not present
+  const authDiv = document.querySelector('.comments-auth');
+  if (authDiv && !document.getElementById('firebase-anon-btn')) {
+    const anonBtn = document.createElement('button');
+    anonBtn.id = 'firebase-anon-btn';
+    anonBtn.className = 'btn btn--primary';
+    anonBtn.textContent = 'Sign in as Guest';
+    anonBtn.onclick = loginAnonymously;
+    authDiv.insertBefore(anonBtn, document.getElementById('firebase-logout-btn'));
+  }
       const mainForm = document.getElementById('firebase-comment-form');
       if (mainForm) {
         mainForm.addEventListener('submit', function(e) {
@@ -70,12 +94,19 @@ document.addEventListener('DOMContentLoaded', function() {
           if (!user) return;
           const text = mainForm.elements['comment'].value.trim();
           if (!text) return;
+          // Support anonymous user info
+          let name = user.displayName;
+          let avatar = user.photoURL;
+          if (user.isAnonymous) {
+            name = 'Guest';
+            avatar = 'https://www.gravatar.com/avatar/?d=mp&s=40';
+          }
           db.collection('comments').add({
             post: window.location.pathname,
             text: text,
             user: {
-              name: user.displayName,
-              avatar: user.photoURL,
+              name: name,
+              avatar: avatar,
               uid: user.uid
             },
             created: firebase.firestore.FieldValue.serverTimestamp(),
@@ -104,12 +135,18 @@ document.addEventListener('DOMContentLoaded', function() {
           if (!user) return;
           const text = textarea.value.trim();
           if (!text) return;
+          let name = user.displayName;
+          let avatar = user.photoURL;
+          if (user.isAnonymous) {
+            name = 'Guest';
+            avatar = 'https://www.gravatar.com/avatar/?d=mp&s=40';
+          }
           db.collection('comments').add({
             post: window.location.pathname,
             text: text,
             user: {
-              name: user.displayName,
-              avatar: user.photoURL,
+              name: name,
+              avatar: avatar,
               uid: user.uid
             },
             created: firebase.firestore.FieldValue.serverTimestamp(),

@@ -413,12 +413,29 @@ document.addEventListener('DOMContentLoaded', function() {
         const container = document.createElement('div');
         container.className = 'comment';
         container.style.marginLeft = (depth * 2) + 'em';
+        // Determine if current user is admin or owner
+        const currentUser = auth.currentUser;
+        // TODO: Replace with your admin UID(s)
+        const ADMIN_UIDS = ["YOUR_ADMIN_UID_HERE"];
+        let isOwner = false, isAdmin = false;
+        if (currentUser) {
+          isOwner = currentUser.uid === c.user.uid;
+          isAdmin = ADMIN_UIDS.includes(currentUser.uid);
+        }
+        // Build action buttons
+        let actionBtns = '';
+        if (isOwner || isAdmin) {
+          actionBtns += `<button class="btn btn--danger btn-delete" data-comment-id="${c.id}">Delete</button>`;
+        }
+        if (isOwner || isAdmin) {
+          actionBtns += `<button class="btn btn--primary btn-edit" data-comment-id="${c.id}">Edit</button>`;
+        }
         container.innerHTML = `
           <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div>
           <div class="comment-body">
             <div class="comment-meta"><span class="comment-author">${escapeHTML(c.user.name)}</span> <span class="comment-date">${c.created && c.created.toDate ? c.created.toDate().toLocaleString() : ''}</span></div>
             <div class="comment-text">${escapeHTML(c.text)}</div>
-            <button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button>
+            <div class="comment-actions">${actionBtns}<button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button></div>
           </div>
         `;
         // Reply form logic
@@ -431,6 +448,176 @@ document.addEventListener('DOMContentLoaded', function() {
           container.appendChild(replyForm);
           replyForm.querySelector('textarea').focus();
         };
+        // Delete button logic
+        const deleteBtn = container.querySelector('.btn-delete');
+        if (deleteBtn) {
+          deleteBtn.onclick = function() {
+            // Accessible custom confirmation dialog
+            showAccessibleConfirmDialog({
+              message: 'Are you sure you want to delete this comment? This will also delete all replies.',
+              onConfirm: () => {
+                deleteCommentAndChildren(c.id)
+                  .then(() => {})
+                  .catch(err => {
+                    showAccessibleAlertDialog('Failed to delete comment: ' + err.message);
+                  });
+              }
+            });
+          };
+// Accessible confirmation dialog
+function showAccessibleConfirmDialog({ message, onConfirm }) {
+  // Remove any existing dialog
+  const oldDialog = document.getElementById('firebase-accessible-dialog');
+  if (oldDialog) oldDialog.remove();
+  // Create dialog
+  const dialog = document.createElement('div');
+  dialog.id = 'firebase-accessible-dialog';
+  dialog.setAttribute('role', 'dialog');
+  dialog.setAttribute('aria-modal', 'true');
+  dialog.setAttribute('tabindex', '-1');
+  dialog.style.position = 'fixed';
+  dialog.style.top = '0';
+  dialog.style.left = '0';
+  dialog.style.width = '100vw';
+  dialog.style.height = '100vh';
+  dialog.style.background = 'rgba(0,0,0,0.5)';
+  dialog.style.display = 'flex';
+  dialog.style.alignItems = 'center';
+  dialog.style.justifyContent = 'center';
+  dialog.style.zIndex = '9999';
+  dialog.innerHTML = `
+    <div style="background: #fff; padding: 2em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);" role="document">
+      <h3 id="firebase-accessible-dialog-title">Confirm Delete</h3>
+      <p id="firebase-accessible-dialog-desc">${message}</p>
+      <button id="firebase-accessible-dialog-confirm" class="btn btn--danger">Delete</button>
+      <button id="firebase-accessible-dialog-cancel" class="btn btn--secondary">Cancel</button>
+    </div>
+  `;
+  document.body.appendChild(dialog);
+  // Focus management
+  const confirmBtn = document.getElementById('firebase-accessible-dialog-confirm');
+  const cancelBtn = document.getElementById('firebase-accessible-dialog-cancel');
+  confirmBtn.focus();
+  // Keyboard navigation
+  dialog.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      dialog.remove();
+    } else if (e.key === 'Tab') {
+      // Trap focus
+      if (document.activeElement === confirmBtn && !e.shiftKey) {
+        e.preventDefault();
+        cancelBtn.focus();
+      } else if (document.activeElement === cancelBtn && e.shiftKey) {
+        e.preventDefault();
+        confirmBtn.focus();
+      }
+    }
+  });
+  confirmBtn.onclick = function() {
+    dialog.remove();
+    if (onConfirm) onConfirm();
+  };
+  cancelBtn.onclick = function() {
+    dialog.remove();
+  };
+}
+
+// Accessible alert dialog
+function showAccessibleAlertDialog(message) {
+  // Remove any existing dialog
+  const oldDialog = document.getElementById('firebase-accessible-dialog');
+  if (oldDialog) oldDialog.remove();
+  // Create dialog
+  const dialog = document.createElement('div');
+  dialog.id = 'firebase-accessible-dialog';
+  dialog.setAttribute('role', 'alertdialog');
+  dialog.setAttribute('aria-modal', 'true');
+  dialog.setAttribute('tabindex', '-1');
+  dialog.style.position = 'fixed';
+  dialog.style.top = '0';
+  dialog.style.left = '0';
+  dialog.style.width = '100vw';
+  dialog.style.height = '100vh';
+  dialog.style.background = 'rgba(0,0,0,0.5)';
+  dialog.style.display = 'flex';
+  dialog.style.alignItems = 'center';
+  dialog.style.justifyContent = 'center';
+  dialog.style.zIndex = '9999';
+  dialog.innerHTML = `
+    <div style="background: #fff; padding: 2em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);" role="document">
+      <h3 id="firebase-accessible-dialog-title">Error</h3>
+      <p id="firebase-accessible-dialog-desc">${message}</p>
+      <button id="firebase-accessible-dialog-close" class="btn btn--primary">Close</button>
+    </div>
+  `;
+  document.body.appendChild(dialog);
+  const closeBtn = document.getElementById('firebase-accessible-dialog-close');
+  closeBtn.focus();
+  dialog.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' || e.key === 'Enter') {
+      dialog.remove();
+    }
+  });
+  closeBtn.onclick = function() {
+    dialog.remove();
+  };
+}
+        }
+// Recursively delete a comment and all its children (replies)
+async function deleteCommentAndChildren(commentId) {
+  // Find all direct children
+  const childrenSnap = await db.collection('comments').where('parent', '==', commentId).get();
+  // Recursively delete all children
+  for (const doc of childrenSnap.docs) {
+    await deleteCommentAndChildren(doc.id);
+  }
+  // Delete the comment itself
+  await db.collection('comments').doc(commentId).delete();
+}
+        // Edit button logic
+        const editBtn = container.querySelector('.btn-edit');
+        if (editBtn) {
+          editBtn.onclick = function() {
+            // Remove any existing edit forms
+            document.querySelectorAll('.edit-form').forEach(f => f.parentNode && f.parentNode.removeChild(f));
+            // Hide comment text
+            const commentTextDiv = container.querySelector('.comment-text');
+            if (commentTextDiv) commentTextDiv.style.display = 'none';
+            // Create edit form
+            const form = document.createElement('form');
+            form.className = 'edit-form';
+            form.innerHTML = `
+              <textarea name="edit-comment" rows="2" required class="comment-form-textarea">${escapeHTML(c.text)}</textarea>
+              <button type="submit" class="btn btn--primary">Save</button>
+              <button type="button" class="btn btn--secondary btn-cancel-edit">Cancel</button>
+            `;
+            // Save handler
+            form.onsubmit = function(e) {
+              e.preventDefault();
+              const newText = form.elements['edit-comment'].value.trim();
+              if (!newText) return;
+              db.collection('comments').doc(c.id).update({ text: newText })
+                .then(() => {
+                  // Remove form, show updated text
+                  form.remove();
+                  if (commentTextDiv) {
+                    commentTextDiv.textContent = newText;
+                    commentTextDiv.style.display = '';
+                  }
+                })
+                .catch(err => {
+                  alert('Failed to update comment: ' + err.message);
+                });
+            };
+            // Cancel handler
+            form.querySelector('.btn-cancel-edit').onclick = function() {
+              form.remove();
+              if (commentTextDiv) commentTextDiv.style.display = '';
+            };
+            commentTextDiv.parentNode.insertBefore(form, commentTextDiv.nextSibling);
+            form.querySelector('textarea').focus();
+          };
+        }
         // Render replies
         if (c.replies && c.replies.length) {
           // Sort replies by oldest first (ascending)

@@ -67,11 +67,51 @@ function upgradeAnonymousToGoogle() {
     })
     .catch((error) => {
       if (error.code === 'auth/credential-already-in-use') {
-        alert('This Google account is already linked to another user.');
+        // Show a custom dialog with explanation and a Sign in with Google button
+        showUpgradeFailedDialog();
       } else {
         alert('Upgrade failed: ' + error.message);
       }
     });
+
+// Show a custom dialog when upgrade fails due to existing link
+function showUpgradeFailedDialog() {
+  // Remove any existing dialog
+  const oldDialog = document.getElementById('firebase-upgrade-failed-dialog');
+  if (oldDialog) oldDialog.remove();
+  // Create dialog
+  const dialog = document.createElement('div');
+  dialog.id = 'firebase-upgrade-failed-dialog';
+  dialog.style.position = 'fixed';
+  dialog.style.top = '0';
+  dialog.style.left = '0';
+  dialog.style.width = '100vw';
+  dialog.style.height = '100vh';
+  dialog.style.background = 'rgba(0,0,0,0.5)';
+  dialog.style.display = 'flex';
+  dialog.style.alignItems = 'center';
+  dialog.style.justifyContent = 'center';
+  dialog.style.zIndex = '9999';
+  dialog.innerHTML = `
+    <div style="background: #fff; padding: 2em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);">
+      <h3>Upgrade Failed</h3>
+      <p>This Google account is already linked to another user.<br><br>
+      <strong>Tip:</strong> If you want to keep your comments and replies, please upgrade to Google <em>before</em> posting as a guest.<br><br>
+      You can sign in with your Google account now, but your guest comments will not transfer.</p>
+      <button id="firebase-switch-to-google-btn" class="btn btn--primary" style="margin: 1em 0;">Sign in with Google</button><br>
+      <button id="firebase-upgrade-failed-close" class="btn">Close</button>
+    </div>
+  `;
+  document.body.appendChild(dialog);
+  document.getElementById('firebase-upgrade-failed-close').onclick = function() {
+    dialog.remove();
+  };
+  document.getElementById('firebase-switch-to-google-btn').onclick = function() {
+    dialog.remove();
+    logout();
+    setTimeout(loginWithGoogle, 300); // Give sign-out a moment
+  };
+}
 }
 // --- Anonymous Auth ---
 function loginAnonymously() {

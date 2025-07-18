@@ -32,12 +32,14 @@ function escapeHTML(str) {
 function updateAuthUI(user) {
   const loginBtn = document.getElementById('firebase-login-btn');
   const anonBtn = document.getElementById('firebase-anon-btn');
+  const upgradeBtn = document.getElementById('firebase-upgrade-btn');
   const logoutBtn = document.getElementById('firebase-logout-btn');
   const commentForm = document.getElementById('firebase-comment-form');
   const userInfo = document.getElementById('firebase-user-info');
   if (user) {
     loginBtn.style.display = 'none';
     if (anonBtn) anonBtn.style.display = 'none';
+    if (upgradeBtn) upgradeBtn.style.display = user.isAnonymous ? 'inline-block' : 'none';
     logoutBtn.style.display = 'inline-block';
     commentForm.style.display = 'block';
     if (user.isAnonymous) {
@@ -48,10 +50,28 @@ function updateAuthUI(user) {
   } else {
     loginBtn.style.display = 'inline-block';
     if (anonBtn) anonBtn.style.display = 'inline-block';
+    if (upgradeBtn) upgradeBtn.style.display = 'none';
     logoutBtn.style.display = 'none';
     commentForm.style.display = 'none';
     userInfo.innerHTML = '';
   }
+}
+// --- Upgrade Anonymous to Google ---
+function upgradeAnonymousToGoogle() {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  auth.currentUser.linkWithPopup(provider)
+    .then((result) => {
+      // Upgraded successfully
+      alert('Your guest account has been upgraded to Google!');
+      updateAuthUI(result.user);
+    })
+    .catch((error) => {
+      if (error.code === 'auth/credential-already-in-use') {
+        alert('This Google account is already linked to another user.');
+      } else {
+        alert('Upgrade failed: ' + error.message);
+      }
+    });
 }
 // --- Anonymous Auth ---
 function loginAnonymously() {
@@ -76,6 +96,17 @@ auth.onAuthStateChanged(user => {
 
 // --- Comment Submission ---
 document.addEventListener('DOMContentLoaded', function() {
+  // Add Upgrade button if not present
+  const authDiv2 = document.querySelector('.comments-auth');
+  if (authDiv2 && !document.getElementById('firebase-upgrade-btn')) {
+    const upgradeBtn = document.createElement('button');
+    upgradeBtn.id = 'firebase-upgrade-btn';
+    upgradeBtn.className = 'btn btn--primary';
+    upgradeBtn.textContent = 'Upgrade to Google account';
+    upgradeBtn.onclick = upgradeAnonymousToGoogle;
+    upgradeBtn.style.display = 'none';
+    authDiv2.insertBefore(upgradeBtn, document.getElementById('firebase-logout-btn'));
+  }
   // Add Anonymous Login button if not present
   const authDiv = document.querySelector('.comments-auth');
   if (authDiv && !document.getElementById('firebase-anon-btn')) {

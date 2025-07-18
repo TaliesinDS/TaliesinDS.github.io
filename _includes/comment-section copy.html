@@ -2,28 +2,38 @@
 <script>
     // Function to format the date and time from the data
     function formatDate(stringDate) {
-        // Split the string into date and time parts
+        // Defensive: handle missing or malformed input
+        if (!stringDate || typeof stringDate !== 'string') return '';
         const dateTimeParts = stringDate.split(' ');
-        const datePart = dateTimeParts[0]; // Date part like "7/12/2024"
-        let timePart = dateTimeParts[1]; // Time part like "23:32:54"
-        // Parse hours, minutes, and seconds from the time part
-        const [hours, minutes, seconds] = timePart.split(':');
+        const datePart = dateTimeParts[0] || '';
+        let timePart = dateTimeParts[1] || '00:00:00';
+        let hours = '00', minutes = '00', seconds = '00';
+        if (typeof timePart === 'string' && timePart.includes(':')) {
+            [hours, minutes, seconds] = timePart.split(':');
+            hours = hours || '00';
+            minutes = minutes || '00';
+            seconds = seconds || '00';
+        }
         // Convert hours to 12-hour format and determine AM/PM
         let ampm = 'AM';
         let formattedHours = parseInt(hours, 10);
-        if (formattedHours >= 12) {
-            ampm = 'PM';
-            if (formattedHours > 12) {
-                formattedHours -= 12;
+        if (!isNaN(formattedHours)) {
+            if (formattedHours >= 12) {
+                ampm = 'PM';
+                if (formattedHours > 12) {
+                    formattedHours -= 12;
+                }
             }
-        }
-        if (formattedHours === 0) {
-            formattedHours = 12; // 12 AM case
+            if (formattedHours === 0) {
+                formattedHours = 12; // 12 AM case
+            }
+        } else {
+            formattedHours = '00';
         }
         // Format time in HH:mm:ss AM/PM format
         timePart = `${formattedHours}:${minutes}:${seconds} ${ampm}`;
         // Return the formatted date and time
-        return `${datePart} at ${timePart}`;
+        return datePart ? `${datePart} at ${timePart}` : '';
     }
     // Get the current page URL
     const thisPageUrl = window.location.href;

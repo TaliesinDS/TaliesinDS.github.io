@@ -238,12 +238,19 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
 <script>
   // Function to format the date and time from the data
   function formatDate(stringDate) {
-    // Split the string into date and time parts
+    // Defensive: handle missing or malformed input
+    if (!stringDate || typeof stringDate !== 'string') return '';
     const dateTimeParts = stringDate.split(' ');
-    const datePart = dateTimeParts[0]; // Date part like "7/12/2024"
-    const timePart = dateTimeParts[1]; // Time part like "23:32:54"
+    const datePart = dateTimeParts[0] || '';
+    const timePart = dateTimeParts[1] || '00:00:00';
     // Parse date in MM/DD/YYYY format
-    const [month, day, year] = datePart.split('/');
+    let month = '01', day = '01', year = '1970';
+    if (datePart.includes('/')) {
+      [month, day, year] = datePart.split('/');
+      month = month || '01';
+      day = day || '01';
+      year = year || '1970';
+    }
     // Create a Date object
     const dateObj = new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${timePart}`);
     // Format date as "25 June, 2025"
@@ -253,9 +260,12 @@ document.getElementById('google-comment-form').addEventListener('submit', functi
     ];
     const formattedDate = `${dateObj.getDate()} ${months[dateObj.getMonth()]}, ${dateObj.getFullYear()}`;
     // Format time as 24-hour "HH:mm:ss"
-    const formattedTime = dateObj.toISOString().substr(11, 8);
+    let formattedTime = '00:00:00';
+    if (!isNaN(dateObj.getTime())) {
+      formattedTime = dateObj.toISOString().substr(11, 8);
+    }
     // Return the formatted date and time
-    return `${formattedDate} at ${formattedTime}`;
+    return datePart ? `${formattedDate} at ${formattedTime}` : '';
   }
 
   // CSV parsing function to handle quoted fields and commas

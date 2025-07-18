@@ -106,17 +106,51 @@ function showUpgradeFailedDialog() {
   document.getElementById('firebase-upgrade-failed-close').onclick = function() {
     dialog.remove();
   };
-  document.getElementById('firebase-switch-to-google-btn').onclick = async function() {
+  document.getElementById('firebase-switch-to-google-btn').onclick = function() {
     dialog.remove();
-    // Log out, then wait for sign-out to complete, then prompt Google login
-    try {
-      await auth.signOut();
-      // Now, immediately trigger Google login as part of the same user gesture
-      loginWithGoogle();
-    } catch (e) {
+    // Log out, then show a new dialog with a button to continue with Google
+    auth.signOut().then(() => {
+      showContinueWithGoogleDialog();
+    }).catch((e) => {
       alert('Sign out failed: ' + e.message);
-    }
+    });
   };
+
+// Show a dialog with a button to continue with Google login
+function showContinueWithGoogleDialog() {
+  // Remove any existing dialog
+  const oldDialog = document.getElementById('firebase-continue-google-dialog');
+  if (oldDialog) oldDialog.remove();
+  // Create dialog
+  const dialog = document.createElement('div');
+  dialog.id = 'firebase-continue-google-dialog';
+  dialog.style.position = 'fixed';
+  dialog.style.top = '0';
+  dialog.style.left = '0';
+  dialog.style.width = '100vw';
+  dialog.style.height = '100vh';
+  dialog.style.background = 'rgba(0,0,0,0.5)';
+  dialog.style.display = 'flex';
+  dialog.style.alignItems = 'center';
+  dialog.style.justifyContent = 'center';
+  dialog.style.zIndex = '9999';
+  dialog.innerHTML = `
+    <div style="background: #fff; padding: 2em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);">
+      <h3>Continue with Google</h3>
+      <p>You have been signed out as guest.<br>To sign in with your Google account, click below:</p>
+      <button id="firebase-continue-google-btn" class="btn btn--primary" style="margin: 1em 0;">Continue with Google</button><br>
+      <button id="firebase-continue-google-close" class="btn">Close</button>
+    </div>
+  `;
+  document.body.appendChild(dialog);
+  document.getElementById('firebase-continue-google-close').onclick = function() {
+    dialog.remove();
+  };
+  document.getElementById('firebase-continue-google-btn').onclick = function() {
+    dialog.remove();
+    loginWithGoogle();
+  };
+}
 }
 }
 // --- Anonymous Auth ---

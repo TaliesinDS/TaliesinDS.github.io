@@ -124,7 +124,11 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
         </div>`;
         if (c.replies && c.replies.length) {
-          c.replies.sort((a, b) => b.created && a.created && b.created.seconds - a.created.seconds); // newest first
+          // Sort replies by oldest first (ascending)
+          c.replies.sort((a, b) => {
+            if (!a.created || !b.created) return 0;
+            return a.created.seconds - b.created.seconds;
+          });
           html += c.replies.map(r => renderComment(r, depth + 1)).join('');
         }
         return html;

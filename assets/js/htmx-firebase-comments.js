@@ -106,10 +106,16 @@ function showUpgradeFailedDialog() {
   document.getElementById('firebase-upgrade-failed-close').onclick = function() {
     dialog.remove();
   };
-  document.getElementById('firebase-switch-to-google-btn').onclick = function() {
+  document.getElementById('firebase-switch-to-google-btn').onclick = async function() {
     dialog.remove();
-    logout();
-    setTimeout(loginWithGoogle, 300); // Give sign-out a moment
+    // Log out, then wait for sign-out to complete, then prompt Google login
+    try {
+      await auth.signOut();
+      // Now, immediately trigger Google login as part of the same user gesture
+      loginWithGoogle();
+    } catch (e) {
+      alert('Sign out failed: ' + e.message);
+    }
   };
 }
 }

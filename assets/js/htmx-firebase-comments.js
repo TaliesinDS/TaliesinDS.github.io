@@ -430,10 +430,23 @@ document.addEventListener('DOMContentLoaded', function() {
         if (isOwner || isAdmin) {
           actionBtns += `<button class="btn btn--primary btn-edit" data-comment-id="${c.id}">Edit</button>`;
         }
+        // Format date as 'July 5, 2025 at 19:45'
+        let formattedDate = '';
+        if (c.created && c.created.toDate) {
+          const d = c.created.toDate();
+          formattedDate = d.toLocaleString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false
+          }).replace(',', ' at');
+        }
         container.innerHTML = `
           <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div>
           <div class="comment-body">
-            <div class="comment-meta"><span class="comment-author">${escapeHTML(c.user.name)}</span> <span class="comment-date">${c.created && c.created.toDate ? c.created.toDate().toLocaleString() : ''}</span></div>
+            <div class="comment-meta"><span class="comment-author">${escapeHTML(c.user.name)}</span> <span class="comment-date">${formattedDate}</span></div>
             <div class="comment-text">${escapeHTML(c.text)}</div>
             <div class="comment-actions">${actionBtns}<button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button></div>
           </div>

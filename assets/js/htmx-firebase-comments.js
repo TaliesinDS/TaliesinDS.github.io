@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!user) return;
       const text = form.elements['comment'].value.trim();
       if (!text) return;
+      const parentId = form.dataset.parentId || null;
       db.collection('comments').add({
         post: window.location.pathname,
         text: text,
@@ -78,9 +79,12 @@ document.addEventListener('DOMContentLoaded', function() {
           avatar: user.photoURL,
           uid: user.uid
         },
-        created: firebase.firestore.FieldValue.serverTimestamp()
+        created: firebase.firestore.FieldValue.serverTimestamp(),
+        parent: parentId
       }).then(() => {
         form.reset();
+        form.removeAttribute('data-parent-id');
+        form.querySelector('button[type="submit"]').textContent = 'Post Comment';
       });
     });
   }
@@ -88,19 +92,55 @@ document.addEventListener('DOMContentLoaded', function() {
   const commentList = document.getElementById('firebase-comment-list');
   db.collection('comments')
     .where('post', '==', window.location.pathname)
-    .orderBy('created', 'asc')
+    .orderBy('created', 'desc')
     .onSnapshot(snapshot => {
-      let html = '';
+      // Build a map of comments by ID
+      const commentsById = {};
+      const topLevel = [];
       snapshot.forEach(doc => {
         const c = doc.data();
-        html += `<div class="comment">
+        c.id = doc.id;
+        c.replies = [];
+        commentsById[c.id] = c;
+      });
+      // Assign replies to their parent
+      Object.values(commentsById).forEach(c => {
+        if (c.parent) {
+          if (commentsById[c.parent]) {
+            commentsById[c.parent].replies.push(c);
+          }
+        } else {
+          topLevel.push(c);
+        }
+      });
+      // Render comments recursively
+      function renderComment(c, depth = 0) {
+        let html = `<div class="comment" style="margin-left:${depth * 2}em">
           <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div>
           <div class="comment-body">
             <div class="comment-meta"><span class="comment-author">${escapeHTML(c.user.name)}</span> <span class="comment-date">${c.created && c.created.toDate ? c.created.toDate().toLocaleString() : ''}</span></div>
             <div class="comment-text">${escapeHTML(c.text)}</div>
+            <button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button>
           </div>
         </div>`;
-      });
+        if (c.replies && c.replies.length) {
+          c.replies.sort((a, b) => b.created && a.created && b.created.seconds - a.created.seconds); // newest first
+          html += c.replies.map(r => renderComment(r, depth + 1)).join('');
+        }
+        return html;
+      }
+      let html = topLevel.map(c => renderComment(c)).join('');
       commentList.innerHTML = html || '<div class="no-comments">No comments yet.</div>';
+
+      // Add reply button listeners
+      document.querySelectorAll('.btn-reply').forEach(btn => {
+        btn.onclick = function() {
+          const parentId = btn.getAttribute('data-comment-id');
+          form.style.display = 'block';
+          form.dataset.parentId = parentId;
+          form.querySelector('button[type="submit"]').textContent = 'Post Reply';
+          btn.scrollIntoView({behavior: 'smooth', block: 'center'});
+        };
+      });
     });
 });

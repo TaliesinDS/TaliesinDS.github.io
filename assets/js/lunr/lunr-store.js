@@ -22,4 +22,10 @@ var store = [{
         "tags": ["zeep"],
         "url": "/sering-en-lelietje-van-dalen-zeep/",
         "teaser": "/assets/images/teaser/ArtSeringTeaser.webp"
+      },{
+        "title": "htmx comment system test page",
+        "excerpt":"   htmx comment system test page                    Test Comments              Sign in with Google     Sign out                Post Comment           ","categories": [],
+        "tags": [],
+        "url": "/htmx-comment-system-test-page/",
+        "teaser": "/assets/images/bull200px.webp"
       },,]

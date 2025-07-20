@@ -28,4 +28,10 @@ var store = [{
         "tags": [],
         "url": "/htmx-comment-system-test-page/",
         "teaser": "/assets/images/bull200px.webp"
+      },{
+        "title": "comment test page v1",
+        "excerpt":"   htmx comment system test page                    Test Comments              Sign in with Google     Sign out                Post Comment           ","categories": [],
+        "tags": [],
+        "url": "/comment-test-page-v1/",
+        "teaser": "/assets/images/bull200px.webp"
       },,]

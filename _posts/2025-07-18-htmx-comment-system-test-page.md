@@ -48,7 +48,7 @@ comments: true
 .comments-auth { margin-bottom: 1em; }
 .comment-form { margin-bottom: 1.5em; }
 .comment-form-textarea { width: 100%; border-radius: 4px; border: 1px solid #ccc; padding: 0.5em; margin-bottom: 0.5em; resize: none; }
-.btn { padding: 0.5em 1.2em; border: none; border-radius: 4px; cursor: pointer; font-size: 1em; }
+.btn { padding: 0em 0.5em 0.25em; border: none; border-radius: 4px; cursor: pointer; font-size: 0.8em; }
 .btn--primary { background: #007bff; color: #fff; }
 .btn--danger { background: #dc3545; color: #fff; }
 .comment-list { margin-top: 1em; }
@@ -57,10 +57,11 @@ comments: true
 .comment-avatar { width: 40px; height: 40px; border-radius: 50%; }
 .comment-body { flex: 1; }
 .comment-meta { font-size: 0.95em; color: #555; margin-bottom: 0.2em; }
-.comment-author { font-weight: bold; }
+.comment-author { font-weight: 400; }
 .comment-date { margin-left: 0.5em; color: #888; font-size: 0.9em; }
 .comment-text { font-size: 1.1em; }
 .no-comments { color: #888; text-align: center; margin: 2em 0; }
 </style>
 
 
+sola model 1980

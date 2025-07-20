@@ -2,7 +2,7 @@
 title: Privacy Policy
 description: How I handle your data and privacy on this site.
 permalink: /privacy/
-layout: default
+layout: single
 ---
 
 # Privacy Policy
@@ -55,3 +55,5 @@ I use a cookie banner to ask for your consent before enabling analytics cookies.
 ## Contact
 
 If you have questions about this policy, contact Arthur Kortekaas at: contact@arthurkortekaas.nl
+
+<br><br><br><br>

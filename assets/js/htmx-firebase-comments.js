@@ -475,14 +475,45 @@ document.addEventListener('DOMContentLoaded', function() {
             hour12: false
           }).replace(',', ' at');
         }
+        // Add 3-dots menu button for owner/admin
+        let menuBtn = '';
+        if (isOwner || isAdmin) {
+          menuBtn = `<span style="position:relative;float:right;"><button class="comment-menu-btn" aria-label="Comment actions" style="background:none;border:none;cursor:pointer;padding:0 0.5em;font-size:1.5em;line-height:1;">&#8942;</button><div class="comment-menu-popup" style="display:none;position:absolute;right:0;top:2em;z-index:1000;background:#fff;border:1px solid #ccc;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-width:120px;"><div class="comment-menu-item">Edit (placeholder)</div><div class="comment-menu-item">Delete (placeholder)</div></div></span>`;
+        }
         container.innerHTML = `
           <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div>
           <div class="comment-body">
-            <div class="comment-meta"><span class="comment-author">${escapeHTML(c.user.name)}</span> <span class="comment-date">${formattedDate}</span></div>
+            <div class="comment-meta"><span class="comment-author">${escapeHTML(c.user.name)}</span> <span class="comment-date">${formattedDate}</span>${menuBtn}</div>
             <div class="comment-text">${escapeHTML(c.text)}</div>
             <div class="comment-actions">${actionBtns}<button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button></div>
           </div>
         `;
+
+        // Add menu popup logic for 3-dots button
+        if (isOwner || isAdmin) {
+          const menuBtnEl = container.querySelector('.comment-menu-btn');
+          const menuPopup = container.querySelector('.comment-menu-popup');
+          if (menuBtnEl && menuPopup) {
+            menuBtnEl.addEventListener('click', function(e) {
+              e.stopPropagation();
+              // Hide any other open menus
+              document.querySelectorAll('.comment-menu-popup').forEach(p => { if (p !== menuPopup) p.style.display = 'none'; });
+              menuPopup.style.display = (menuPopup.style.display === 'block') ? 'none' : 'block';
+            });
+            // Hide menu when clicking outside
+            document.addEventListener('mousedown', function handler(ev) {
+              if (!menuPopup.contains(ev.target) && ev.target !== menuBtnEl) {
+                menuPopup.style.display = 'none';
+              }
+            });
+            // Hide menu when clicking a menu item
+            menuPopup.querySelectorAll('.comment-menu-item').forEach(item => {
+              item.addEventListener('click', function() {
+                menuPopup.style.display = 'none';
+              });
+            });
+          }
+        }
         // Reply form logic
         const replyBtn = container.querySelector('.btn-reply');
         replyBtn.onclick = function() {

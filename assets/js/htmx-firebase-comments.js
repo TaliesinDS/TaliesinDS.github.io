@@ -568,25 +568,44 @@ document.addEventListener('DOMContentLoaded', function() {
               const form = document.createElement('form');
               form.className = 'edit-form';
               form.innerHTML = `<div class="edit-form-wrap"><textarea name="edit-comment" rows="2" required class="comment-form-textarea">${escapeHTML(c.text)}</textarea><button type="submit" class="btn btn--primary">Save</button><button type="button" class="btn btn-cancel-edit">Cancel</button></div>`;
-        // Build 3-dots menu for Edit/Delete
-        let actionMenu = '';
-        if (isOwner || isAdmin) {
-          actionMenu = `<div class="comment-menu-wrap"><button class="comment-menu-btn" aria-label="More actions" data-comment-id="${c.id}" tabindex="0"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;"><circle cx="4" cy="10" r="2" fill="#888"/><circle cx="10" cy="10" r="2" fill="#888"/><circle cx="16" cy="10" r="2" fill="#888"/></svg></button><div class="comment-menu-popup" style="display:none;"><button class="comment-menu-edit" data-comment-id="${c.id}">Edit</button><button class="comment-menu-delete" data-comment-id="${c.id}">Delete</button></div></div>`;
-        }
-        // Format date as 'July 5, 2025 at 19:45'
-        let formattedDate = '';
-        if (c.created && c.created.toDate) {
-          const d = c.created.toDate();
-          formattedDate = d.toLocaleString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: false
-          }).replace(',', ' at');
-        }
-        container.innerHTML = `<div class="comment-main-wrap"><div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div><div class="comment-body"><div class="comment-meta" style="display:flex;align-items:center;gap:0.5em;"><span class="comment-author">${escapeHTML(c.user.name)}</span><span class="comment-date">${formattedDate}</span><span style="margin-left:auto;">${actionMenu}</span></div><div class="comment-text">${escapeHTML(c.text)}</div><div class="comment-actions"><button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button></div></div></div>`;
+              // Save handler
+              form.onsubmit = function(e) {
+                e.preventDefault();
+                const newText = form.elements['edit-comment'].value.trim();
+                if (!newText) return;
+                db.collection('comments').doc(c.id).update({ text: newText })
+                  .then(() => {
+                    form.remove();
+                    if (commentTextDiv) {
+                      commentTextDiv.textContent = newText;
+                      commentTextDiv.style.display = '';
+                    }
+                  })
+                  .catch(err => {
+                    alert('Failed to update comment: ' + err.message);
+                  });
+              };
+              // Cancel handler
+              form.querySelector('.btn-cancel-edit').onclick = function() {
+                form.remove();
+                if (commentTextDiv) commentTextDiv.style.display = '';
+              };
+              commentTextDiv.parentNode.insertBefore(form, commentTextDiv.nextSibling);
+              form.querySelector('textarea').focus();
+            };
+          }
+          // Delete action
+          const deleteBtn = menuPopup.querySelector('.comment-menu-delete');
+          if (deleteBtn) {
+            deleteBtn.onclick = function() {
+              menuPopup.style.display = 'none';
+              showAccessibleConfirmDialog({
+                message: 'Are you sure you want to delete this comment? This will also delete all replies.',
+                onConfirm: () => {
+                  deleteCommentAndChildren(c.id)
+                    .then(() => {})
+                    .catch(err => {
+                      showAccessibleAlertDialog('Failed to delete comment: ' + err.message);
                     });
                 }
               });

@@ -2,6 +2,7 @@
 title: Privacy Policy
 description: How I handle your data and privacy on this site.
 permalink: /privacy/
+layout: default
 ---
 
 # Privacy Policy

@@ -672,7 +672,7 @@ async function deleteCommentAndChildren(commentId) {
               });
             };
           }
-            // removed stray backtick
+            `;
             // Save handler
             form.onsubmit = function(e) {
               e.preventDefault();

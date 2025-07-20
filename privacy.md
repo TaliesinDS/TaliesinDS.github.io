@@ -20,7 +20,7 @@ layout: single
 _Last updated: July 20, 2025_
 
 
-This website “www.arthurkortekaas.nl” is operated by Arthur Kortekaas. Your privacy is important to me. This policy explains what information I collect, how I use it, and your rights.
+This website “**www.arthurkortekaas.nl**” is operated by Arthur Kortekaas. Your privacy is important to me. This policy explains what information I collect, how I use it, and your rights.
 
 
 ## What Information I Collect

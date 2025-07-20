@@ -454,20 +454,13 @@ document.addEventListener('DOMContentLoaded', function() {
           isOwner = currentUser.uid === c.user.uid;
           isAdmin = ADMIN_UIDS.includes(currentUser.uid);
         }
-        // Build 3-dots menu for Edit/Delete
-        let actionMenu = '';
+        // Build action buttons
+        let actionBtns = '';
         if (isOwner || isAdmin) {
-          actionMenu = `
-            <div class="comment-menu-wrap">
-              <button class="comment-menu-btn" aria-label="More actions" data-comment-id="${c.id}" tabindex="0">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;"><circle cx="4" cy="10" r="2" fill="#888"/><circle cx="10" cy="10" r="2" fill="#888"/><circle cx="16" cy="10" r="2" fill="#888"/></svg>
-              </button>
-              <div class="comment-menu-popup" style="display:none;">
-                <button class="comment-menu-edit" data-comment-id="${c.id}">Edit</button>
-                <button class="comment-menu-delete" data-comment-id="${c.id}">Delete</button>
-              </div>
-            </div>
-          `;
+          actionBtns += `<button class="btn btn--danger btn-delete" data-comment-id="${c.id}">Delete</button>`;
+        }
+        if (isOwner || isAdmin) {
+          actionBtns += `<button class="btn btn--primary btn-edit" data-comment-id="${c.id}">Edit</button>`;
         }
         // Format date as 'July 5, 2025 at 19:45'
         let formattedDate = '';
@@ -485,13 +478,9 @@ document.addEventListener('DOMContentLoaded', function() {
         container.innerHTML = `
           <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div>
           <div class="comment-body">
-            <div class="comment-meta" style="display:flex;align-items:center;gap:0.5em;">
-              <span class="comment-author">${escapeHTML(c.user.name)}</span> 
-              <span class="comment-date">${formattedDate}</span>
-              <span style="margin-left:auto;">${actionMenu}</span>
-            </div>
+            <div class="comment-meta"><span class="comment-author">${escapeHTML(c.user.name)}</span> <span class="comment-date">${formattedDate}</span></div>
             <div class="comment-text">${escapeHTML(c.text)}</div>
-            <div class="comment-actions"><button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button></div>
+            <div class="comment-actions">${actionBtns}<button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button></div>
           </div>
         `;
         // Reply form logic
@@ -630,48 +619,22 @@ async function deleteCommentAndChildren(commentId) {
   // Delete the comment itself
   await db.collection('comments').doc(commentId).delete();
 }
-        // 3-dots menu logic
-        const menuBtn = container.querySelector('.comment-menu-btn');
-        const menuPopup = container.querySelector('.comment-menu-popup');
-        if (menuBtn && menuPopup) {
-          menuBtn.onclick = function(e) {
-            e.stopPropagation();
-            // Hide any other open menus
-            document.querySelectorAll('.comment-menu-popup').forEach(p => { if (p !== menuPopup) p.style.display = 'none'; });
-            menuPopup.style.display = (menuPopup.style.display === 'block') ? 'none' : 'block';
-          };
-          // Hide menu when clicking outside
-          document.addEventListener('click', function hideMenu(e) {
-            if (!container.contains(e.target)) menuPopup.style.display = 'none';
-          });
-          // Edit action
-          const editBtn = menuPopup.querySelector('.comment-menu-edit');
-          if (editBtn) {
-            editBtn.onclick = function() {
-              menuPopup.style.display = 'none';
-              // Call edit logic
-              if (typeof window.editComment === 'function') {
-                window.editComment(c.id);
-              }
-            };
-          }
-          // Delete action
-          const deleteBtn = menuPopup.querySelector('.comment-menu-delete');
-          if (deleteBtn) {
-            deleteBtn.onclick = function() {
-              menuPopup.style.display = 'none';
-              showAccessibleConfirmDialog({
-                message: 'Are you sure you want to delete this comment? This will also delete all replies.',
-                onConfirm: () => {
-                  deleteCommentAndChildren(c.id)
-                    .then(() => {})
-                    .catch(err => {
-                      showAccessibleAlertDialog('Failed to delete comment: ' + err.message);
-                    });
-                }
-              });
-            };
-          }
+        // Edit button logic
+        const editBtn = container.querySelector('.btn-edit');
+        if (editBtn) {
+          editBtn.onclick = function() {
+            // Remove any existing edit forms
+            document.querySelectorAll('.edit-form').forEach(f => f.parentNode && f.parentNode.removeChild(f));
+            // Hide comment text
+            const commentTextDiv = container.querySelector('.comment-text');
+            if (commentTextDiv) commentTextDiv.style.display = 'none';
+            // Create edit form
+            const form = document.createElement('form');
+            form.className = 'edit-form';
+            form.innerHTML = `
+              <textarea name="edit-comment" rows="2" required class="comment-form-textarea">${escapeHTML(c.text)}</textarea>
+              <button type="submit" class="btn btn--primary">Save</button>
+              <button type="button" class="btn btn--secondary btn-cancel-edit">Cancel</button>
             `;
             // Save handler
             form.onsubmit = function(e) {

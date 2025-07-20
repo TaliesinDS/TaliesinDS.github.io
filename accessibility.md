@@ -9,6 +9,10 @@ layout: single
 .page__content li {
   line-height: normal !important;
 }
+/* Hide heading permalinks on this page only */
+.page__content .header-link {
+  display: none !important;
+}
 </style>
 
 # Accessibility Statement

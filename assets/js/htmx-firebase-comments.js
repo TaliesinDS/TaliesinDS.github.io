@@ -101,7 +101,7 @@ function showUpgradeFailedDialog() {
     <div style="background: #fff; padding: 2em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);">
       <h3>Upgrade Failed</h3>
       <p>This Google account is already linked to another user.<br><br>
-      <strong>Tip:</strong> If you want to keep your comments and replies, please upgrade to Google <em>before</em> posting as a guest.<br><br>
+      <strong>Tip:</strong> If you want to keep your comments and replies, please sign in with Google <em>before</em> posting as a guest.<br><br>
       You can sign in with your Google account now, but your guest comments will not transfer.</p>
       <button id="firebase-switch-to-google-btn" class="btn btn--primary" style="margin: 1em 0;">Sign in with Google</button><br>
       <button id="firebase-upgrade-failed-close" class="btn">Close</button>
@@ -201,13 +201,25 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.appendChild(script);
     }
   }
+
+  // Add Name field for guests if not present
+  if (mainForm && !document.getElementById('firebase-guest-name')) {
+    const nameDiv = document.createElement('div');
+    nameDiv.id = 'firebase-guest-name-wrap';
+    nameDiv.style.display = 'none';
+    nameDiv.style.marginBottom = '0.5em';
+    nameDiv.innerHTML = `
+      <input type="text" id="firebase-guest-name" name="guestName" maxlength="32" placeholder="Your name (optional)" class="comment-form-textarea" style="resize:none;" autocomplete="off">
+    `;
+    mainForm.insertBefore(nameDiv, mainForm.querySelector('textarea'));
+  }
   // Add Upgrade button if not present
   const authDiv2 = document.querySelector('.comments-auth');
   if (authDiv2 && !document.getElementById('firebase-upgrade-btn')) {
     const upgradeBtn = document.createElement('button');
     upgradeBtn.id = 'firebase-upgrade-btn';
     upgradeBtn.className = 'btn btn--primary';
-    upgradeBtn.textContent = 'Upgrade to Google account';
+    upgradeBtn.textContent = 'sign in with Google';
     upgradeBtn.onclick = upgradeAnonymousToGoogle;
     upgradeBtn.style.display = 'none';
     authDiv2.insertBefore(upgradeBtn, document.getElementById('firebase-logout-btn'));
@@ -243,6 +255,12 @@ document.addEventListener('DOMContentLoaded', function() {
       if (user && user.isAnonymous) renderCaptcha();
     });
 
+    // Show/hide name field for guests
+    auth.onAuthStateChanged(user => {
+      const nameDiv = document.getElementById('firebase-guest-name-wrap');
+      if (nameDiv) nameDiv.style.display = (user && user.isAnonymous) ? 'block' : 'none';
+    });
+
     mainForm.addEventListener('submit', function(e) {
       e.preventDefault();
       const user = auth.currentUser;
@@ -274,7 +292,11 @@ document.addEventListener('DOMContentLoaded', function() {
       let name = user.displayName;
       let avatar = user.photoURL;
       if (user.isAnonymous) {
-        name = 'Guest';
+        // Use entered guest name if provided, else 'Guest'
+        const guestNameInput = document.getElementById('firebase-guest-name');
+        let guestName = guestNameInput ? guestNameInput.value.trim() : '';
+        if (!guestName) guestName = 'Guest';
+        name = guestName;
         avatar = 'https://www.gravatar.com/avatar/?d=mp&s=40';
       }
       db.collection('comments').add({
@@ -329,6 +351,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const form = document.createElement('form');
         form.className = 'comment-form reply-form';
         form.innerHTML = `
+          <input type="text" id="firebase-guest-reply-name" name="guestReplyName" maxlength="32" placeholder="Your name (optional)" class="comment-form-textarea" style="resize:none; margin-bottom:0.5em; display:none;" autocomplete="off">
           <textarea name="comment" rows="2" placeholder="Write a reply..." required class="comment-form-textarea"></textarea>
           <button type="submit" class="btn btn--primary">Post Reply</button>
         `;
@@ -345,7 +368,11 @@ document.addEventListener('DOMContentLoaded', function() {
           let name = user.displayName;
           let avatar = user.photoURL;
           if (user.isAnonymous) {
-            name = 'Guest';
+            // Use entered guest name if provided, else 'Guest'
+            const guestNameInput = form.querySelector('#firebase-guest-reply-name');
+            let guestName = guestNameInput ? guestNameInput.value.trim() : '';
+            if (!guestName) guestName = 'Guest';
+            name = guestName;
             avatar = 'https://www.gravatar.com/avatar/?d=mp&s=40';
           }
           db.collection('comments').add({
@@ -380,6 +407,11 @@ document.addEventListener('DOMContentLoaded', function() {
           if (onClose) onClose();
         }
         document.addEventListener('mousedown', handleClickOutside);
+        // Show/hide name field for guests
+        auth.onAuthStateChanged(user => {
+          const nameDiv = form.querySelector('#firebase-guest-reply-name');
+          if (nameDiv) nameDiv.style.display = (user && user.isAnonymous) ? 'block' : 'none';
+        });
         return form;
       }
   // --- Real-time comment loading ---

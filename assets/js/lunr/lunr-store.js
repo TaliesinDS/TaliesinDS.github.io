@@ -24,7 +24,7 @@ var store = [{
         "teaser": "/assets/images/teaser/ArtSeringTeaser.webp"
       },{
         "title": "htmx comment system test page",
-        "excerpt":"   htmx comment system test page                    Test Comments              Sign in with Google     Sign out                Post Comment           sola model 1980  ","categories": [],
+        "excerpt":"   htmx comment system test page                    Test Comments              Sign in with Google     Sign out                Post Comment           ","categories": [],
         "tags": [],
         "url": "/htmx-comment-system-test-page/",
         "teaser": "/assets/images/bull200px.webp"

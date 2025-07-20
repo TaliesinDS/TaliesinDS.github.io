@@ -33,6 +33,51 @@ search: false
 }
 // =====================
 // Tag Post List Styles (moved to end for override)
+// Comment 3-dots menu styles
+.comment-menu-wrap {
+  position: relative;
+  display: inline-block;
+}
+.comment-menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2em 0.4em;
+  border-radius: 50%;
+  transition: background 0.2s;
+  margin-left: 0.5em;
+}
+.comment-menu-btn:focus,
+.comment-menu-btn:hover {
+  background: #eee;
+}
+.comment-menu-popup {
+  position: absolute;
+  right: 0;
+  top: 1.8em;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px #0002;
+  z-index: 10;
+  min-width: 100px;
+  padding: 0.3em 0;
+}
+.comment-menu-popup button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer;
+  color: #333;
+  border-radius: 0;
+}
+.comment-menu-popup button:hover {
+  background: #f5f5f5;
+}
 // =====================
 
 .tag-post-list {

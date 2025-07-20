@@ -65,8 +65,9 @@ I use a cookie banner to ask for your consent before enabling analytics cookies.
 ## Contact
 
 If you have questions about this policy, contact Arthur Kortekaas at: contact@arthurkortekaas.nl
+<br><br>
 <div class="page-image-center">
-  <img src="/assets/images/marginalia/catlawyer.webp" alt="Cat practising law marginalia" />
+  <img src="/assets/images/marginalia/catlawyer.webp" alt="Cat practising law marginalia" style="max-width: 40%;" />
 </div>
 
 <br><br><br>

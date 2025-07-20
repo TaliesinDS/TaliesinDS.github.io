@@ -78,6 +78,7 @@ function upgradeAnonymousToGoogle() {
         alert('Upgrade failed: ' + error.message);
       }
     });
+}
 
 // Show a custom dialog when upgrade fails due to existing link
 function showUpgradeFailedDialog() {
@@ -120,6 +121,7 @@ function showUpgradeFailedDialog() {
       alert('Sign out failed: ' + e.message);
     });
   };
+}
 
 // Show a dialog with a button to continue with Google login
 function showContinueWithGoogleDialog() {
@@ -156,8 +158,6 @@ function showContinueWithGoogleDialog() {
     loginWithGoogle();
   };
 }
-}
-}
 // --- Anonymous Auth ---
 function loginAnonymously() {
   auth.signInAnonymously()
@@ -178,6 +178,7 @@ function logout() {
 auth.onAuthStateChanged(user => {
   updateAuthUI(user);
 });
+// End of file
 
 // --- Comment Submission ---
 document.addEventListener('DOMContentLoaded', function() {

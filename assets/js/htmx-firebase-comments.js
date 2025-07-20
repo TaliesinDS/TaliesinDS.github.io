@@ -22,152 +22,146 @@ function escapeHTML(str) {
       '<': '&lt;',
       '>': '&gt;',
       '"': '&quot;',
-      "'": '&#39;'
-    };
+// Minimal Firebase + htmx comment system (clean overwrite)
+const firebaseConfig = {
+  apiKey: "AIzaSyA9VGslfcHzQs2kPA8uGX3mkGjph4vXG90",
+  authDomain: "htmx-comments-test.firebaseapp.com",
+  projectId: "htmx-comments-test"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+const auth = firebase.auth();
+
+function escapeHTML(str) {
+  return String(str).replace(/[&<>"]/g, function(tag) {
+    const chars = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' };
     return chars[tag] || tag;
-  // End of DOMContentLoaded
+  });
 }
 
-// --- Google Auth ---
+function loginWithGoogle() {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  auth.signInWithPopup(provider);
+}
+
+function loginAnonymously() {
+  auth.signInAnonymously();
+}
+
+function logout() {
+  auth.signOut();
+}
+
 function updateAuthUI(user) {
   const loginBtn = document.getElementById('firebase-login-btn');
   const anonBtn = document.getElementById('firebase-anon-btn');
-  const upgradeBtn = document.getElementById('firebase-upgrade-btn');
   const logoutBtn = document.getElementById('firebase-logout-btn');
   const commentForm = document.getElementById('firebase-comment-form');
   const userInfo = document.getElementById('firebase-user-info');
+  if (!loginBtn || !anonBtn || !logoutBtn || !commentForm || !userInfo) return;
   if (user) {
     loginBtn.style.display = 'none';
-    if (anonBtn) anonBtn.style.display = 'none';
-    if (upgradeBtn) upgradeBtn.style.display = user.isAnonymous ? 'inline-block' : 'none';
+    anonBtn.style.display = 'none';
     logoutBtn.style.display = 'inline-block';
     commentForm.style.display = 'block';
-    // Show/hide reCAPTCHA for guests only
-    const captchaDiv = document.getElementById('firebase-captcha-wrap');
-    if (captchaDiv) captchaDiv.style.display = user.isAnonymous ? 'block' : 'none';
     if (user.isAnonymous) {
-      userInfo.innerHTML = `<img src="https://www.gravatar.com/avatar/?d=mp&s=40" class="comment-avatar" alt="Guest"> Signed in as Guest`;
+      userInfo.innerHTML = `<img src="https://www.gravatar.com/avatar/?d=mp&s=40" class="comment-avatar" alt="Guest"> Guest`;
     } else {
       userInfo.innerHTML = `<img src="${user.photoURL}" class="comment-avatar" alt="${escapeHTML(user.displayName)}"> ${escapeHTML(user.displayName)}`;
     }
   } else {
     loginBtn.style.display = 'inline-block';
-    if (anonBtn) anonBtn.style.display = 'inline-block';
-    if (upgradeBtn) upgradeBtn.style.display = 'none';
+    anonBtn.style.display = 'inline-block';
     logoutBtn.style.display = 'none';
     commentForm.style.display = 'none';
     userInfo.innerHTML = '';
-    const captchaDiv = document.getElementById('firebase-captcha-wrap');
-    if (captchaDiv) captchaDiv.style.display = 'none';
   }
 }
-// --- Upgrade Anonymous to Google ---
-function upgradeAnonymousToGoogle() {
-  const provider = new firebase.auth.GoogleAuthProvider();
-  auth.currentUser.linkWithPopup(provider)
-    .then((result) => {
-      // Upgraded successfully
-      alert('Your guest account has been upgraded to Google!');
-      updateAuthUI(result.user);
-    })
-    .catch((error) => {
-      if (error.code === 'auth/credential-already-in-use') {
-        // Show a custom dialog with explanation and a Sign in with Google button
-        showUpgradeFailedDialog();
-      } else {
-        alert('Upgrade failed: ' + error.message);
+
+auth.onAuthStateChanged(updateAuthUI);
+
+document.addEventListener('DOMContentLoaded', function() {
+  const mainForm = document.getElementById('firebase-comment-form');
+  if (mainForm) {
+    mainForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = auth.currentUser;
+      if (!user) return;
+      const text = mainForm.elements['comment'].value.trim();
+      if (!text) return;
+      let name = user.displayName;
+      let avatar = user.photoURL;
+      if (user.isAnonymous) {
+        const guestNameInput = document.getElementById('firebase-guest-name');
+        let guestName = guestNameInput ? guestNameInput.value.trim() : '';
+        if (!guestName) guestName = 'Guest';
+        name = guestName;
+        avatar = 'https://www.gravatar.com/avatar/?d=mp&s=40';
       }
+      db.collection('comments').add({
+        post: window.location.pathname,
+        text: text,
+        user: { name, avatar, uid: user.uid },
+        created: firebase.firestore.FieldValue.serverTimestamp(),
+        parent: null
+      }).then(() => {
+        mainForm.reset();
+      });
     });
+  }
 
-// Show a custom dialog when upgrade fails due to existing link
-function showUpgradeFailedDialog() {
-  // Remove any existing dialog
-  const oldDialog = document.getElementById('firebase-upgrade-failed-dialog');
-  if (oldDialog) oldDialog.remove();
-  // Create dialog
-  const dialog = document.createElement('div');
-  dialog.id = 'firebase-upgrade-failed-dialog';
-  dialog.style.position = 'fixed';
-  dialog.style.top = '0';
-  dialog.style.left = '0';
-  dialog.style.width = '100vw';
-  dialog.style.height = '100vh';
-  dialog.style.background = 'rgba(0,0,0,0.5)';
-  dialog.style.display = 'flex';
-  dialog.style.alignItems = 'center';
-  dialog.style.justifyContent = 'center';
-  dialog.style.zIndex = '9999';
-  dialog.innerHTML = `
-    <div style="background: #fff; padding: 2em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);">
-      <h3>Upgrade Failed</h3>
-      <p>This Google account is already linked to another user.<br><br>
-      <strong>Tip:</strong> If you want to keep your comments and replies, please sign in with Google <em>before</em> posting as a guest.<br><br>
-      You can sign in with your Google account now, but your guest comments will not transfer.</p>
-      <button id="firebase-switch-to-google-btn" class="btn btn--primary" style="margin: 1em 0;">Sign in with Google</button><br>
-      <button id="firebase-upgrade-failed-close" class="btn">Close</button>
-    </div>
-  `;
-  document.body.appendChild(dialog);
-  document.getElementById('firebase-upgrade-failed-close').onclick = function() {
-    dialog.remove();
-  };
-  document.getElementById('firebase-switch-to-google-btn').onclick = function() {
-    dialog.remove();
-    // Log out, then show a new dialog with a button to continue with Google
-    auth.signOut().then(() => {
-      showContinueWithGoogleDialog();
-    }).catch((e) => {
-      alert('Sign out failed: ' + e.message);
+  // Add Name field for guests if not present
+  if (mainForm && !document.getElementById('firebase-guest-name')) {
+    const nameDiv = document.createElement('div');
+    nameDiv.id = 'firebase-guest-name-wrap';
+    nameDiv.style.display = 'none';
+    nameDiv.style.marginBottom = '0.5em';
+    nameDiv.innerHTML = `
+      <input type="text" id="firebase-guest-name" name="guestName" maxlength="32" placeholder="Your name (optional)" class="comment-form-textarea" style="resize:none;" autocomplete="off">
+    `;
+    mainForm.insertBefore(nameDiv, mainForm.querySelector('textarea'));
+  }
+
+  // Show/hide name field for guests
+  auth.onAuthStateChanged(user => {
+    const nameDiv = document.getElementById('firebase-guest-name-wrap');
+    if (nameDiv) nameDiv.style.display = (user && user.isAnonymous) ? 'block' : 'none';
+  });
+
+  // Load and render comments
+  const commentList = document.getElementById('firebase-comment-list');
+  db.collection('comments')
+    .where('post', '==', window.location.pathname)
+    .orderBy('created', 'desc')
+    .onSnapshot(snapshot => {
+      if (!commentList) return;
+      commentList.innerHTML = '';
+      if (snapshot.empty) {
+        commentList.innerHTML = '<div class="no-comments">No comments yet.</div>';
+        return;
+      }
+      snapshot.forEach(doc => {
+        const c = doc.data();
+        let formattedDate = '';
+        if (c.created && c.created.toDate) {
+          const d = c.created.toDate();
+          formattedDate = d.toLocaleString('en-US', {
+            year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false
+          }).replace(',', ' at');
+        }
+        const div = document.createElement('div');
+        div.className = 'comment';
+        div.innerHTML = `
+          <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div>
+          <div class="comment-body">
+            <div class="comment-meta"><span class="comment-author">${escapeHTML(c.user.name)}</span> <span class="comment-date">${formattedDate}</span></div>
+            <div class="comment-text">${escapeHTML(c.text)}</div>
+          </div>
+        `;
+        commentList.appendChild(div);
+      });
     });
-  };
-
-// Show a dialog with a button to continue with Google login
-function showContinueWithGoogleDialog() {
-  // Remove any existing dialog
-  const oldDialog = document.getElementById('firebase-continue-google-dialog');
-  if (oldDialog) oldDialog.remove();
-  // Create dialog
-  const dialog = document.createElement('div');
-  dialog.id = 'firebase-continue-google-dialog';
-  dialog.style.position = 'fixed';
-  dialog.style.top = '0';
-  dialog.style.left = '0';
-  dialog.style.width = '100vw';
-  dialog.style.height = '100vh';
-  dialog.style.background = 'rgba(0,0,0,0.5)';
-  dialog.style.display = 'flex';
-  dialog.style.alignItems = 'center';
-  dialog.style.justifyContent = 'center';
-  dialog.style.zIndex = '9999';
-  dialog.innerHTML = `
-    <div style="background: #fff; padding: 2em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);">
-      <h3>Continue with Google</h3>
-      <p>You have been signed out as guest.<br>To sign in with your Google account, click below:</p>
-      <button id="firebase-continue-google-btn" class="btn btn--primary" style="margin: 1em 0;">Continue with Google</button><br>
-      <button id="firebase-continue-google-close" class="btn">Close</button>
-    </div>
-  `;
-  document.body.appendChild(dialog);
-  document.getElementById('firebase-continue-google-close').onclick = function() {
-    dialog.remove();
-  };
-  document.getElementById('firebase-continue-google-btn').onclick = function() {
-    dialog.remove();
-    loginWithGoogle();
-  };
-}
-}
-}
-// --- Anonymous Auth ---
-function loginAnonymously() {
-  auth.signInAnonymously()
-    .catch((error) => {
-      alert('Anonymous login failed: ' + error.message);
-    });
-}
-
-function loginWithGoogle() {
-  const provider = new firebase.auth.GoogleAuthProvider();
+});
   auth.signInWithPopup(provider);
 }
 
@@ -480,6 +474,11 @@ document.addEventListener('DOMContentLoaded', function() {
             hour12: false
           }).replace(',', ' at');
         }
+        // Add 3-dots menu button for owner/admin
+        let menuBtn = '';
+        if (isOwner || isAdmin) {
+          menuBtn = `<span style="position:relative;float:right;"><button class="comment-menu-btn" aria-label="Comment actions" style="background:none;border:none;cursor:pointer;padding:0 0.5em;font-size:1.5em;line-height:1;">&#8942;</button><div class="comment-menu-popup" style="display:none;position:absolute;right:0;top:2em;z-index:1000;background:#fff;border:1px solid #ccc;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.15);min-width:120px;"><div class="comment-menu-item">Edit (placeholder)</div><div class="comment-menu-item">Delete (placeholder)</div></div></span>`;
+        }
         container.innerHTML = `
           <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div>
           <div class="comment-body">
@@ -492,6 +491,32 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="comment-actions"><button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button></div>
           </div>
         `;
+
+        // Add menu popup logic for 3-dots button
+        if (isOwner || isAdmin) {
+          const menuBtnEl = container.querySelector('.comment-menu-btn');
+          const menuPopup = container.querySelector('.comment-menu-popup');
+          if (menuBtnEl && menuPopup) {
+            menuBtnEl.addEventListener('click', function(e) {
+              e.stopPropagation();
+              // Hide any other open menus
+              document.querySelectorAll('.comment-menu-popup').forEach(p => { if (p !== menuPopup) p.style.display = 'none'; });
+              menuPopup.style.display = (menuPopup.style.display === 'block') ? 'none' : 'block';
+            });
+            // Hide menu when clicking outside
+            document.addEventListener('mousedown', function handler(ev) {
+              if (!menuPopup.contains(ev.target) && ev.target !== menuBtnEl) {
+                menuPopup.style.display = 'none';
+              }
+            });
+            // Hide menu when clicking a menu item
+            menuPopup.querySelectorAll('.comment-menu-item').forEach(item => {
+              item.addEventListener('click', function() {
+                menuPopup.style.display = 'none';
+              });
+            });
+          }
+        }
         // Reply form logic
         const replyBtn = container.querySelector('.btn-reply');
         replyBtn.onclick = function() {

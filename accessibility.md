@@ -5,6 +5,12 @@ permalink: /accessibility/
 layout: single
 ---
 
+<style>
+.page__content li {
+  line-height: normal !important;
+}
+</style>
+
 # Accessibility Statement
 
 _Last updated: July 20, 2025_

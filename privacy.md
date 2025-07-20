@@ -5,6 +5,12 @@ permalink: /privacy/
 layout: single
 ---
 
+<style>
+.page__content li {
+  line-height: normal !important;
+}
+</style>
+
 # Privacy Policy
 
 _Last updated: July 20, 2025_

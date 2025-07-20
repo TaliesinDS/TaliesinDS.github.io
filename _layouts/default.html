@@ -33,5 +33,13 @@
 
     {% include scripts.html %}
     <script src="{{ '/assets/js/lang-toggle.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/cookie-consent.js' | relative_url }}"></script>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#222;color:#fff;padding:1em;z-index:9999;display:none;justify-content:center;align-items:center;gap:1em;font-size:1em;">
+      <span>
+        This site uses cookies for analytics. See our <a href="/privacy" style="color:#ffd700;text-decoration:underline;">Privacy Policy</a>.
+      </span>
+      <button id="cookie-accept-btn" style="background:#4caf50;color:#fff;border:none;padding:0.5em 1em;border-radius:4px;cursor:pointer;">Accept</button>
+    </div>
   </body>
 </html>

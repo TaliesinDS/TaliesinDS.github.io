@@ -1,5 +1,6 @@
 // Cookie consent and analytics loader for Minimal Mistakes Jekyll theme
-(function() {
+
+document.addEventListener('DOMContentLoaded', function() {
   var banner = document.getElementById('cookie-consent-banner');
   var acceptBtn = document.getElementById('cookie-accept-btn');
   var consentKey = 'cookie_consent_accepted';
@@ -11,6 +12,10 @@
   function showBanner() {
     if (banner) banner.style.display = 'block';
   }
+
+  // Expose for debugging
+  window.showBanner = showBanner;
+  window.hideBanner = hideBanner;
 
   function setConsent() {
     try {
@@ -53,4 +58,4 @@
       });
     }
   }
-})();
+});

@@ -62,6 +62,3 @@ comments: true
 .comment-text { font-size: 1.1em; }
 .no-comments { color: #888; text-align: center; margin: 2em 0; }
 </style>
-
-
-sola model 1980

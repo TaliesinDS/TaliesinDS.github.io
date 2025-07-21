@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
       function renderComment(c, depth = 0) {
         const container = document.createElement('div');
         container.className = 'comment';
-        container.style.marginLeft = (depth * 2) + 'em';
+        container.style.marginLeft = (depth * 2) + 'em'; // Keep dynamic indent for replies
         const currentUser = auth.currentUser;
         const ADMIN_UIDS = ["SeV4YgBfa2e2ojIJspY8eSavPRy2"];
         let isOwner = false, isAdmin = false;
@@ -366,20 +366,20 @@ document.addEventListener('DOMContentLoaded', function() {
         let actionMenu = '';
         if (isOwner || isAdmin) {
           actionMenu = `
-            <div class="comment-menu-wrap" style="position:relative;display:inline-block;">
-              <button class="comment-menu-btn" aria-label="Comment actions" style="background:none;border:none;cursor:pointer;padding:0 0.5em;">
-                <span style="font-size:1.5em;line-height:1;">&#8942;</span>
+            <div class="comment-menu-wrap">
+              <button class="comment-menu-btn" aria-label="Comment actions">
+                <span class="comment-menu-icon">&#8942;</span>
               </button>
-              <div class="comment-menu-popup" style="display:none;position:absolute;right:0;top:2em;background:#fff;border:1px solid #ccc;box-shadow:0 2px 8px rgba(0,0,0,0.15);z-index:10;min-width:120px;border-radius:4px;">
-                <button class="comment-menu-edit" data-comment-id="${c.id}" style="display:block;width:100%;padding:0.5em 1em;text-align:left;background:none;border:none;cursor:pointer;">Edit</button>
-                <button class="comment-menu-delete" data-comment-id="${c.id}" style="display:block;width:100%;padding:0.5em 1em;text-align:left;background:none;border:none;cursor:pointer;color:#c00;">Delete</button>
+              <div class="comment-menu-popup">
+                <button class="comment-menu-edit" data-comment-id="${c.id}">Edit</button>
+                <button class="comment-menu-delete" data-comment-id="${c.id}">Delete</button>
               </div>
             </div>
           `;
         } else {
-          actionMenu = `<div class="comment-menu-wrap" style="position:relative;display:inline-block;">
-            <button class="comment-menu-btn" aria-label="Comment actions" style="background:none;border:none;cursor:pointer;padding:0 0.5em;" disabled>
-              <span style="font-size:1.5em;line-height:1;opacity:0.3;">&#8942;</span>
+          actionMenu = `<div class="comment-menu-wrap">
+            <button class="comment-menu-btn disabled" aria-label="Comment actions" disabled>
+              <span class="comment-menu-icon">&#8942;</span>
             </button>
           </div>`;
         }
@@ -393,16 +393,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         container.innerHTML = `
           <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div>
-          <div class="comment-row" style="display:flex;justify-content:space-between;align-items:flex-start;width: 100%;">
-            <div class="comment-body" style="flex:1;">
-              <div class="comment-meta" style="display:flex;align-items:center;gap:0.5em;">
+          <div class="comment-row">
+            <div class="comment-body">
+              <div class="comment-meta">
                 <span class="comment-author">${escapeHTML(c.user.name)}</span>
                 <span class="comment-date">${formattedDate}</span>
               </div>
               <div class="comment-text">${escapeHTML(c.text)}</div>
               <div class="comment-actions"><button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button></div>
             </div>
-            <div class="comment-menu-align" style="margin-left:2em;">${actionMenu}</div>
+            <div class="comment-menu-align">${actionMenu}</div>
           </div>
         `;
         // 3-dots menu logic

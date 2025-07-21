@@ -31,6 +31,71 @@ search: false
   display: inline-block;
   margin-right: 1em;
 }
+
+
+// =====================
+// Firebase Comment System Styles
+// =====================
+.comment-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+.comment-body {
+  flex: 1;
+}
+.comment-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.comment-menu-align {
+  margin-left: 2em;
+}
+.comment-menu-wrap {
+  position: relative;
+  display: inline-block;
+}
+.comment-menu-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 0.5em;
+}
+.comment-menu-btn.disabled span {
+  opacity: 0.3;
+}
+.comment-menu-btn span {
+  font-size: 1.5em;
+  line-height: 1;
+}
+.comment-menu-popup {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 2em;
+  background: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 10;
+  min-width: 120px;
+  border-radius: 4px;
+}
+.comment-menu-edit,
+.comment-menu-delete {
+  display: block;
+  width: 100%;
+  padding: 0.5em 1em;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.comment-menu-delete {
+  color: #c00;
+}
+
 // =====================
 // Tag Post List Styles (moved to end for override)
 // =====================
@@ -78,6 +143,7 @@ search: false
   vertical-align: middle;
   display: inline-block;
 }
+
 
 /* Remove duplicate icon-calendar svg rule above, handled separately for calendar */
 .tag-post-content {

@@ -120,13 +120,16 @@ search: false
   margin: 2em 0; 
 }
 .comment-row {
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-  position: relative;
+display: flex;
+align-items: flex-start;
+width: 100%;
+position: relative;
+}
+/* Remove indentation from .comment-row, always full width */
 }
 .comment-body {
-  flex: 1;
+flex: 1;
+/* No indentation here, revert to .comment */
 }
 .comment-meta {
   display: flex;
@@ -134,7 +137,11 @@ search: false
   gap: 0.5em;
 }
 .comment-menu-align {
-  margin-left: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-left: 0;
+  z-index: 2;
 }
 .comment-menu-wrap {
   position: relative;
@@ -856,7 +863,7 @@ div[style*="display: flex"] > a {
   }
 
   .comment {
-  margin-left: min(1em, 1vw) !important; /* Cap indent to 10vw or 1em */
+    margin-left: min(1em, 1vw) !important; /* Cap indent to 10vw or 1em */
   }
 }
 }

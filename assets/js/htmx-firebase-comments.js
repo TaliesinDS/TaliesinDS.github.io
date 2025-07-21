@@ -67,6 +67,15 @@ auth.onAuthStateChanged(user => {
 
 document.addEventListener('DOMContentLoaded', function() {
   // --- Real-time comment loading ---
+
+  // Guest login button event handler
+  const anonBtn = document.getElementById('firebase-anon-btn');
+  if (anonBtn) {
+    anonBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      loginAnonymously();
+    });
+  }
   const commentList = document.getElementById('firebase-comment-list');
   db.collection('comments')
     .where('post', '==', window.location.pathname)

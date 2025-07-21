@@ -1,3 +1,27 @@
+  // Add Upgrade button if not present
+  const authDiv2 = document.querySelector('.comments-auth');
+  if (authDiv2 && !document.getElementById('firebase-upgrade-btn')) {
+    const upgradeBtn = document.createElement('button');
+    upgradeBtn.id = 'firebase-upgrade-btn';
+    upgradeBtn.className = 'btn btn--primary';
+    upgradeBtn.textContent = 'Upgrade to Google account';
+    upgradeBtn.onclick = upgradeAnonymousToGoogle;
+    upgradeBtn.style.display = 'none';
+    authDiv2.insertBefore(upgradeBtn, document.getElementById('firebase-logout-btn'));
+  }
+  // Add Anonymous Login button if not present
+  const authDiv = document.querySelector('.comments-auth');
+  if (authDiv && !document.getElementById('firebase-anon-btn')) {
+    const anonBtn = document.createElement('button');
+    anonBtn.id = 'firebase-anon-btn';
+    anonBtn.className = 'btn btn--primary';
+    anonBtn.textContent = 'Sign in as Guest';
+    anonBtn.onclick = loginAnonymously;
+    authDiv.insertBefore(anonBtn, document.getElementById('firebase-logout-btn'));
+  }
+// ...existing code...
+// ...existing code...
+// ...existing code...
 // htmx + Firebase comment system with 3-dots menu for actions
 const firebaseConfig = {
   apiKey: "AIzaSyA9VGslfcHzQs2kPA8uGX3mkGjph4vXG90",
@@ -173,6 +197,149 @@ auth.onAuthStateChanged(user => {
 });
 document.addEventListener('DOMContentLoaded', function() {
   // --- Real-time comment loading ---
+  
+  // Add reCAPTCHA widget to comment form (hidden by default, shown for guests)
+  const mainForm = document.getElementById('firebase-comment-form');
+  if (mainForm && !document.getElementById('firebase-captcha-wrap')) {
+    const captchaDiv = document.createElement('div');
+    captchaDiv.id = 'firebase-captcha-wrap';
+    captchaDiv.style.display = 'none';
+    captchaDiv.style.margin = '1em 0';
+    captchaDiv.innerHTML = `
+      <div id="firebase-captcha"></div>
+    `;
+    mainForm.insertBefore(captchaDiv, mainForm.querySelector('button[type="submit"]'));
+    // Load reCAPTCHA script if not already present
+    if (!window.grecaptcha) {
+      const script = document.createElement('script');
+      script.src = 'https://www.google.com/recaptcha/api.js';
+      script.async = true;
+      script.defer = true;
+      document.body.appendChild(script);
+    }
+  }
+  // Add Upgrade button if not present
+  const authDiv2 = document.querySelector('.comments-auth');
+  if (authDiv2 && !document.getElementById('firebase-upgrade-btn')) {
+    const upgradeBtn = document.createElement('button');
+    upgradeBtn.id = 'firebase-upgrade-btn';
+    upgradeBtn.className = 'btn btn--primary';
+    upgradeBtn.textContent = 'Upgrade to Google account';
+    upgradeBtn.onclick = upgradeAnonymousToGoogle;
+    upgradeBtn.style.display = 'none';
+    authDiv2.insertBefore(upgradeBtn, document.getElementById('firebase-logout-btn'));
+  }
+  // Add Anonymous Login button if not present
+  const authDiv = document.querySelector('.comments-auth');
+  if (authDiv && !document.getElementById('firebase-anon-btn')) {
+    const anonBtn = document.createElement('button');
+    anonBtn.id = 'firebase-anon-btn';
+    anonBtn.className = 'btn btn--primary';
+    anonBtn.textContent = 'Sign in as Guest';
+    anonBtn.onclick = loginAnonymously;
+    authDiv.insertBefore(anonBtn, document.getElementById('firebase-logout-btn'));
+  }
+  // --- Guest Rate Limiting ---
+  let lastGuestCommentTime = 0;
+  if (mainForm) {
+    // Render reCAPTCHA when needed
+    function renderCaptcha() {
+      if (window.grecaptcha && document.getElementById('firebase-captcha')) {
+        if (!document.getElementById('firebase-captcha').hasChildNodes()) {
+          window.grecaptcha.render('firebase-captcha', {
+            sitekey: '6LetuIcrAAAAAGPPCi6aWlBupDna_FV4Us-z22CO', // <-- Replace with your site key
+            theme: 'light'
+          });
+        }
+      } else {
+        setTimeout(renderCaptcha, 500);
+      }
+    }
+    // Show captcha for guests
+    auth.onAuthStateChanged(user => {
+      if (user && user.isAnonymous) renderCaptcha();
+    });
+
+    mainForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = auth.currentUser;
+      if (!user) return;
+      const text = mainForm.elements['comment'].value.trim();
+      if (!text) return;
+      // --- Guest rate limiting ---
+      if (user.isAnonymous) {
+        const now = Date.now();
+        if (now - lastGuestCommentTime < 15000) {
+          showRateLimitWarning();
+          return;
+        }
+        // reCAPTCHA check
+        if (!window.grecaptcha || !window.grecaptcha.getResponse) {
+          alert('reCAPTCHA not loaded. Please try again.');
+          return;
+        }
+        const captchaResponse = window.grecaptcha.getResponse();
+        if (!captchaResponse) {
+          alert('Please complete the CAPTCHA.');
+          return;
+        }
+        // Optionally: verify captchaResponse with your backend for extra security
+        lastGuestCommentTime = now;
+        window.grecaptcha.reset();
+      }
+      // Support anonymous user info
+      let name = user.displayName;
+      let avatar = user.photoURL;
+      if (user.isAnonymous) {
+        name = 'Guest';
+        avatar = 'https://www.gravatar.com/avatar/?d=mp&s=40';
+      }
+      db.collection('comments').add({
+        post: window.location.pathname,
+        text: text,
+        user: {
+          name: name,
+          avatar: avatar,
+          uid: user.uid
+        },
+        created: firebase.firestore.FieldValue.serverTimestamp(),
+        parent: null
+      }).then(() => {
+        mainForm.reset();
+      });
+    });
+  }
+
+  // Show popup warning for guest rate limit
+  function showRateLimitWarning() {
+    // Remove any existing dialog
+    const oldDialog = document.getElementById('firebase-rate-limit-dialog');
+    if (oldDialog) oldDialog.remove();
+    // Create dialog
+    const dialog = document.createElement('div');
+    dialog.id = 'firebase-rate-limit-dialog';
+    dialog.style.position = 'fixed';
+    dialog.style.top = '0';
+    dialog.style.left = '0';
+    dialog.style.width = '100vw';
+    dialog.style.height = '100vh';
+    dialog.style.background = 'rgba(0,0,0,0.5)';
+    dialog.style.display = 'flex';
+    dialog.style.alignItems = 'center';
+    dialog.style.justifyContent = 'center';
+    dialog.style.zIndex = '9999';
+    dialog.innerHTML = `
+      <div style="background: #fff; padding: 2em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);">
+        <h3>Rate Limit</h3>
+        <p>As a guest, you can only post one comment every 15 seconds.<br>Please wait before posting again.</p>
+        <button id="firebase-rate-limit-close" class="btn">Close</button>
+      </div>
+    `;
+    document.body.appendChild(dialog);
+    document.getElementById('firebase-rate-limit-close').onclick = function() {
+      dialog.remove();
+    };
+  }
 
   // Guest login button event handler
   const anonBtn = document.getElementById('firebase-anon-btn');

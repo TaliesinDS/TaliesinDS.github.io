@@ -277,6 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
         parent: parentId
       }).then(() => {
         if (onClose) onClose();
+        textarea.value = '';
       });
     });
     function handleClickOutside(e) {
@@ -297,6 +298,39 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     document.addEventListener('mousedown', handleClickOutside);
     return form;
+  }
+
+  // Main comment form handler (prevent reload, post via JS)
+  const mainCommentForm = document.getElementById('firebase-comment-form');
+  if (mainCommentForm) {
+    mainCommentForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = auth.currentUser;
+      if (!user) return;
+      const textarea = mainCommentForm.querySelector('textarea[name="comment"]');
+      if (!textarea) return;
+      const text = textarea.value.trim();
+      if (!text) return;
+      let name = user.displayName;
+      let avatar = user.photoURL;
+      if (user.isAnonymous) {
+        name = 'Guest';
+        avatar = 'https://www.gravatar.com/avatar/?d=mp&s=40';
+      }
+      db.collection('comments').add({
+        post: window.location.pathname,
+        text: text,
+        user: {
+          name: name,
+          avatar: avatar,
+          uid: user.uid
+        },
+        created: firebase.firestore.FieldValue.serverTimestamp(),
+        parent: null
+      }).then(() => {
+        textarea.value = '';
+      });
+    });
   }
 
   // Recursively delete a comment and all its children (replies)

@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span class="comment-author">${escapeHTML(c.user.name)}</span>
               <span class="comment-date">${formattedDate}</span>
             </div>
-            <span class="comment-menu-align" style="position:absolute;right:1em;top:1em;">${actionMenu}</span>
+            <div class="comment-menu-align" style="position:absolute;right:1em;top:1em;">${actionMenu}</div>
             <div class="comment-text">${escapeHTML(c.text)}</div>
             <div class="comment-actions"><button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button></div>
           </div>

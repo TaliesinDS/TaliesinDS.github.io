@@ -1,27 +1,4 @@
-  // Add Upgrade button if not present
-  const authDiv2 = document.querySelector('.comments-auth');
-  if (authDiv2 && !document.getElementById('firebase-upgrade-btn')) {
-    const upgradeBtn = document.createElement('button');
-    upgradeBtn.id = 'firebase-upgrade-btn';
-    upgradeBtn.className = 'btn btn--primary';
-    upgradeBtn.textContent = 'Upgrade to Google account';
-    upgradeBtn.onclick = upgradeAnonymousToGoogle;
-    upgradeBtn.style.display = 'none';
-    authDiv2.insertBefore(upgradeBtn, document.getElementById('firebase-logout-btn'));
-  }
-  // Add Anonymous Login button if not present
-  const authDiv = document.querySelector('.comments-auth');
-  if (authDiv && !document.getElementById('firebase-anon-btn')) {
-    const anonBtn = document.createElement('button');
-    anonBtn.id = 'firebase-anon-btn';
-    anonBtn.className = 'btn btn--primary';
-    anonBtn.textContent = 'Sign in as Guest';
-    anonBtn.onclick = loginAnonymously;
-    authDiv.insertBefore(anonBtn, document.getElementById('firebase-logout-btn'));
-  }
-// ...existing code...
-// ...existing code...
-// ...existing code...
+
 // htmx + Firebase comment system with 3-dots menu for actions
 const firebaseConfig = {
   apiKey: "AIzaSyA9VGslfcHzQs2kPA8uGX3mkGjph4vXG90",

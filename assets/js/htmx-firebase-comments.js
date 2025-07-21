@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
       function renderComment(c, depth = 0) {
         const container = document.createElement('div');
         container.className = 'comment';
-        container.style.marginLeft = (depth === 0 ? 0 : depth) + 'em'; // Replies: 1em, 2em, 3em, ...
+        container.style.marginLeft = (depth === 0 ? 0 : 1) + 'em'; // Replies always 1em relative to parent
         const currentUser = auth.currentUser;
         const ADMIN_UIDS = ["SeV4YgBfa2e2ojIJspY8eSavPRy2"];
         let isOwner = false, isAdmin = false;

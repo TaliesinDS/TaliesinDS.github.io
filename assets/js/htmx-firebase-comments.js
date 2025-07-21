@@ -393,7 +393,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         container.innerHTML = `
           <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div>
-          <div class="comment-row" style="display:flex;justify-content:space-between;align-items:flex-start;">
+          <div class="comment-row" style="display:flex;justify-content:space-between;align-items:flex-start;width: 100%;">
             <div class="comment-body" style="flex:1;">
               <div class="comment-meta" style="display:flex;align-items:center;gap:0.5em;">
                 <span class="comment-author">${escapeHTML(c.user.name)}</span>

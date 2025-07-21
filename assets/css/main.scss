@@ -120,16 +120,13 @@ search: false
   margin: 2em 0; 
 }
 .comment-row {
-display: flex;
-align-items: flex-start;
-width: 100%;
-position: relative;
-/* Remove indentation from .comment-row, always full width */
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
 }
 .comment-body {
-flex: 1;
-/* Indentation for replies applied here instead of .comment-row */
-/* Inline style or class from JS should set margin-left based on depth */
+  flex: 1;
 }
 .comment-meta {
   display: flex;
@@ -858,8 +855,8 @@ div[style*="display: flex"] > a {
     margin-top: 0.5em;
   }
 
-  .comment-body {
-    margin-left: min(1em, 1vw) !important; /* Cap indent to 10vw or 1em */
+  .comment {
+  margin-left: min(1em, 1vw) !important; /* Cap indent to 10vw or 1em */
   }
 }
 }

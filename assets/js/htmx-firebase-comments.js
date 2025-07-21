@@ -394,10 +394,10 @@ document.addEventListener('DOMContentLoaded', function() {
         container.innerHTML = `
           <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div>
           <div class="comment-body">
-            <div class="comment-meta" style="display:flex;align-items:center;gap:0.5em;">
+            <div class="comment-meta" style="position:relative;display:flex;align-items:center;gap:0.5em;">
               <span class="comment-author">${escapeHTML(c.user.name)}</span>
               <span class="comment-date">${formattedDate}</span>
-              <span style="margin-left:auto;">${actionMenu}</span>
+              <span class="comment-menu-align" style="position:absolute;right:0;top:0;">${actionMenu}</span>
             </div>
             <div class="comment-text">${escapeHTML(c.text)}</div>
             <div class="comment-actions"><button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button></div>

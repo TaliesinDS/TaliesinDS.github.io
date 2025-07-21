@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
       function renderComment(c, depth = 0) {
         const container = document.createElement('div');
         container.className = 'comment';
-        container.style.marginLeft = (depth === 0 ? 0 : 1) + 'em'; // Replies always 1em relative to parent
+        // Remove marginLeft from .comment, will set on .comment-body below
         const currentUser = auth.currentUser;
         const ADMIN_UIDS = ["SeV4YgBfa2e2ojIJspY8eSavPRy2"];
         let isOwner = false, isAdmin = false;
@@ -405,6 +405,11 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="comment-menu-align">${actionMenu}</div>
           </div>
         `;
+        // Set indentation on .comment-body based on depth
+        const body = container.querySelector('.comment-body');
+        if (body) {
+          body.style.marginLeft = (depth === 0 ? 0 : 1) + 'em';
+        }
         // 3-dots menu logic
         const menuBtn = container.querySelector('.comment-menu-btn');
         const menuPopup = container.querySelector('.comment-menu-popup');

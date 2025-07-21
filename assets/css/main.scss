@@ -38,13 +38,15 @@ search: false
 // =====================
 
 /* Minimal styling for test, based on _includes/comments.html after line 181 */
-.comments--testpage { 
-  max-width: 100%; 
-  margin: 2em auto; 
-  background: #fff; 
-  border-radius: 8px; 
-  box-shadow: 0 2px 8px #0001; 
-  padding: 1em; 
+.comments--testpage, .firebase-comments-section {
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  margin: 2em auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+  padding: 1em;
 }
 .comments-title { 
   font-size: 1.5em; 

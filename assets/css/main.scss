@@ -121,9 +121,9 @@ search: false
 }
 .comment-row {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
   width: 100%;
+  position: relative;
 }
 .comment-body {
   flex: 1;
@@ -134,7 +134,7 @@ search: false
   gap: 0.5em;
 }
 .comment-menu-align {
-  margin-left: 1em;
+  margin-left: auto;
 }
 .comment-menu-wrap {
   position: relative;

@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
           isOwner = currentUser.uid === c.user.uid;
           isAdmin = ADMIN_UIDS.includes(currentUser.uid);
         }
-        // 3-dots menu for actions
+        // 3-dots menu for actions (Edit/Delete only)
         let actionMenu = '';
         if (isOwner || isAdmin) {
           actionMenu = `
@@ -112,7 +112,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span style="font-size:1.5em;line-height:1;">&#8942;</span>
               </button>
               <div class="comment-menu-popup" style="display:none;position:absolute;right:0;top:2em;background:#fff;border:1px solid #ccc;box-shadow:0 2px 8px rgba(0,0,0,0.15);z-index:10;min-width:120px;border-radius:4px;">
-                <button class="comment-menu-reply" data-comment-id="${c.id}" style="display:block;width:100%;padding:0.5em 1em;text-align:left;background:none;border:none;cursor:pointer;">Reply</button>
                 <button class="comment-menu-edit" data-comment-id="${c.id}" style="display:block;width:100%;padding:0.5em 1em;text-align:left;background:none;border:none;cursor:pointer;">Edit</button>
                 <button class="comment-menu-delete" data-comment-id="${c.id}" style="display:block;width:100%;padding:0.5em 1em;text-align:left;background:none;border:none;cursor:pointer;color:#c00;">Delete</button>
               </div>
@@ -142,6 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <span style="margin-left:auto;">${actionMenu}</span>
             </div>
             <div class="comment-text">${escapeHTML(c.text)}</div>
+            <div class="comment-actions"><button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button></div>
           </div>
         `;
         // 3-dots menu logic
@@ -150,11 +150,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (menuBtn && menuPopup) {
           menuBtn.onclick = function(e) {
             e.stopPropagation();
-            // Hide any other open menus
             document.querySelectorAll('.comment-menu-popup').forEach(p => { if (p !== menuPopup) p.style.display = 'none'; });
             menuPopup.style.display = (menuPopup.style.display === 'block') ? 'none' : 'block';
           };
-          // Hide menu when clicking outside
           document.addEventListener('click', function hideMenu(e) {
             if (!container.contains(e.target)) menuPopup.style.display = 'none';
           });
@@ -163,23 +161,18 @@ document.addEventListener('DOMContentLoaded', function() {
           if (editBtn) {
             editBtn.onclick = function() {
               menuPopup.style.display = 'none';
-              // Remove any existing edit forms
               document.querySelectorAll('.edit-form').forEach(f => f.parentNode && f.parentNode.removeChild(f));
-              // Hide comment text
               const commentTextDiv = container.querySelector('.comment-text');
               if (commentTextDiv) commentTextDiv.style.display = 'none';
-              // Create edit form
               const form = document.createElement('form');
               form.className = 'edit-form';
               form.innerHTML = `<textarea name="edit-comment" rows="2" required class="comment-form-textarea">${escapeHTML(c.text)}</textarea><button type="submit" class="btn btn--primary">Save</button><button type="button" class="btn btn--secondary btn-cancel-edit">Cancel</button>`;
-              // Save handler
               form.onsubmit = function(e) {
                 e.preventDefault();
                 const newText = form.elements['edit-comment'].value.trim();
                 if (!newText) return;
                 db.collection('comments').doc(c.id).update({ text: newText })
                   .then(() => {
-                    // Remove form, show updated text
                     form.remove();
                     if (commentTextDiv) {
                       commentTextDiv.textContent = newText;
@@ -190,7 +183,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     alert('Failed to update comment: ' + err.message);
                   });
               };
-              // Cancel handler
               form.querySelector('.btn-cancel-edit').onclick = function() {
                 form.remove();
                 if (commentTextDiv) commentTextDiv.style.display = '';
@@ -216,19 +208,16 @@ document.addEventListener('DOMContentLoaded', function() {
               });
             };
           }
-          // Reply action
-          const replyBtn = menuPopup.querySelector('.comment-menu-reply');
-          if (replyBtn) {
-            replyBtn.onclick = function() {
-              menuPopup.style.display = 'none';
-              // Remove any existing reply forms
-              document.querySelectorAll('.reply-form').forEach(f => f.parentNode && f.parentNode.removeChild(f));
-              // Insert a new reply form after this comment
-              const replyForm = createReplyForm(c.id, () => {});
-              container.appendChild(replyForm);
-              replyForm.querySelector('textarea').focus();
-            };
-          }
+        }
+        // Reply button logic (outside menu)
+        const replyBtn = container.querySelector('.btn-reply');
+        if (replyBtn) {
+          replyBtn.onclick = function() {
+            document.querySelectorAll('.reply-form').forEach(f => f.parentNode && f.parentNode.removeChild(f));
+            const replyForm = createReplyForm(c.id, () => {});
+            container.appendChild(replyForm);
+            replyForm.querySelector('textarea').focus();
+          };
         }
         // Render replies
         if (c.replies && c.replies.length) {

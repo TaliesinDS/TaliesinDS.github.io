@@ -123,6 +123,7 @@ search: false
   display: flex;
   align-items: flex-start;
   width: 100%;
+  max-width: 100%;
   position: relative;
 }
 .comment-body {
@@ -135,6 +136,7 @@ search: false
 }
 .comment-menu-align {
   margin-left: auto;
+  width: auto;
 }
 .comment-menu-wrap {
   position: relative;

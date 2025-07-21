@@ -124,6 +124,8 @@ search: false
   align-items: flex-start;
   width: 100%;
   max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   position: relative;
 }
 .comment-body {

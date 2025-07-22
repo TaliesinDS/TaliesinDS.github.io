@@ -30,6 +30,7 @@ function updateAuthUI(user) {
   const logoutBtn = document.getElementById('firebase-logout-btn');
   const commentForm = document.getElementById('firebase-comment-form');
   const userInfo = document.getElementById('firebase-user-info');
+  const guestNameWrap = document.getElementById('firebase-guest-name-wrap');
   if (user) {
     loginBtn.style.display = 'none';
     if (anonBtn) anonBtn.style.display = 'none';
@@ -39,6 +40,7 @@ function updateAuthUI(user) {
     // Show/hide reCAPTCHA for guests only
     const captchaDiv = document.getElementById('firebase-captcha-wrap');
     if (captchaDiv) captchaDiv.style.display = user.isAnonymous ? 'block' : 'none';
+    if (guestNameWrap) guestNameWrap.style.display = user.isAnonymous ? 'block' : 'none';
     if (user.isAnonymous) {
       userInfo.innerHTML = `<img src="https://www.gravatar.com/avatar/?d=mp&s=40" class="comment-avatar" alt="Guest"> Signed in as Guest`;
     } else {
@@ -53,6 +55,7 @@ function updateAuthUI(user) {
     userInfo.innerHTML = '';
     const captchaDiv = document.getElementById('firebase-captcha-wrap');
     if (captchaDiv) captchaDiv.style.display = 'none';
+    if (guestNameWrap) guestNameWrap.style.display = 'none';
   }
 }
 // --- Upgrade Anonymous to Google ---
@@ -195,6 +198,16 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.appendChild(script);
     }
   }
+  // Add guest name field if not present
+  if (mainForm && !document.getElementById('firebase-guest-name')) {
+    const nameDiv = document.createElement('div');
+    nameDiv.id = 'firebase-guest-name-wrap';
+    nameDiv.style.display = 'none';
+    nameDiv.innerHTML = `
+      <input type="text" id="firebase-guest-name" name="guestName" class="comment-form-textarea" maxlength="32" placeholder="Your name (optional)">
+    `;
+    mainForm.insertBefore(nameDiv, mainForm.querySelector('textarea'));
+  }
   // Add Upgrade button if not present
   const authDiv2 = document.querySelector('.comments-auth');
   if (authDiv2 && !document.getElementById('firebase-upgrade-btn')) {
@@ -268,7 +281,9 @@ document.addEventListener('DOMContentLoaded', function() {
       let name = user.displayName;
       let avatar = user.photoURL;
       if (user.isAnonymous) {
-        name = 'Guest';
+        const guestNameInput = document.getElementById('firebase-guest-name');
+        const guestName = guestNameInput ? guestNameInput.value.trim() : '';
+        name = guestName || 'Guest';
         avatar = 'https://www.gravatar.com/avatar/?d=mp&s=40';
       }
       db.collection('comments').add({
@@ -396,7 +411,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <div class="comment-row">
             <div class="comment-body">
               <div class="comment-meta">
-                <span class="comment-author">${escapeHTML(c.user.name)}</span>
+                <span class="comment-author">${escapeHTML(c.user.name) || 'Guest'}</span>
                 <span class="comment-date">${formattedDate}</span>
               </div>
               <div class="comment-text">${escapeHTML(c.text)}</div>
@@ -523,7 +538,10 @@ document.addEventListener('DOMContentLoaded', function() {
       let name = user.displayName;
       let avatar = user.photoURL;
       if (user.isAnonymous) {
-        name = 'Guest';
+        // Try to get the main guest name field if present, else fallback to 'Guest'
+        const guestNameInput = document.getElementById('firebase-guest-name');
+        const guestName = guestNameInput ? guestNameInput.value.trim() : '';
+        name = guestName || 'Guest';
         avatar = 'https://www.gravatar.com/avatar/?d=mp&s=40';
       }
       db.collection('comments').add({

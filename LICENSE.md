@@ -1,7 +1,7 @@
 ---
 title: License
 description: licensing information
-permalink: /LICENSE/
+permalink: /license/
 layout: single
 ---
 

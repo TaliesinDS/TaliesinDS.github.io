@@ -58,7 +58,7 @@ search: false
 .comment-form { 
   margin-bottom: 0; 
   padding: 0;
-  background-color: none;
+  background-color: transparent;
 }
 .comment-form-textarea { 
   width: 100%; 
@@ -76,8 +76,8 @@ search: false
   font-weight: 400 !important;
 }
 .btn--primary { 
-  background: #007bff; 
-  color: #fff; 
+  background-color: #f2f2f2;
+  color: #343434; 
 }
 .btn--danger { 
   background: #dc3545; 

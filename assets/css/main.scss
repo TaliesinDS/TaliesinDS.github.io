@@ -86,8 +86,9 @@ search: false
 }
 .comment { 
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
   margin-bottom: 1.2em;
-  flex-direction: column;
   width: auto;
   max-width: 100%;
   min-width: 0;
@@ -97,7 +98,9 @@ search: false
   margin-bottom: 0; // No extra margin for nested replies
 }
 .comment-avatar-wrap { 
-  margin-right: 0.8em; 
+  margin-right: 0.8em;
+  width: 40px;
+  flex-shrink: 0;
 }
 .comment-avatar { 
   width: 40px; 
@@ -105,7 +108,8 @@ search: false
   border-radius: 50%; 
 }
 .comment-body { 
-  flex: 1; 
+  flex: 1;
+  min-width: 0;
 }
 .comment-meta { 
   font-size: 0.95em; 
@@ -132,13 +136,11 @@ search: false
   margin: 2em 0; 
 }
 .comment-row {
-  display: flex;
-  align-items: flex-start;
+  display: block;
   width: 100%;
   max-width: 100%;
   min-width: 0;
   box-sizing: border-box;
-  align-self: stretch;
   position: relative;
 }
 .comment-body {

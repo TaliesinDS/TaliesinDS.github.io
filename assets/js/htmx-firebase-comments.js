@@ -406,10 +406,11 @@ document.addEventListener('DOMContentLoaded', function() {
             year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false
           }).replace(',', ' at');
         }
+        // Avatar left, content right
         container.innerHTML = `
           <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div>
-          <div class="comment-row">
-            <div class="comment-body">
+          <div class="comment-body">
+            <div class="comment-row">
               <div class="comment-meta">
                 <span class="comment-author">${escapeHTML(c.user.name) || 'Guest'}</span>
                 <span class="comment-date">${formattedDate}</span>

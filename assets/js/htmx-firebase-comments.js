@@ -8,6 +8,18 @@ const guestAvatars = [
   '/assets/images/avatars/avatar4.webp',
   '/assets/images/avatars/avatar5.webp'
 ];
+
+// Deterministic avatar selection based on UID
+function getGuestAvatar(uid) {
+  if (!uid) return guestAvatars[0];
+  let hash = 0;
+  for (let i = 0; i < uid.length; i++) {
+    hash = ((hash << 5) - hash) + uid.charCodeAt(i);
+    hash |= 0;
+  }
+  const idx = Math.abs(hash) % guestAvatars.length;
+  return guestAvatars[idx];
+}
 const firebaseConfig = {
   apiKey: "AIzaSyA9VGslfcHzQs2kPA8uGX3mkGjph4vXG90",
   authDomain: "htmx-comments-test.firebaseapp.com",
@@ -50,9 +62,9 @@ function updateAuthUI(user) {
     if (captchaDiv) captchaDiv.style.display = user.isAnonymous ? 'block' : 'none';
     if (guestNameWrap) guestNameWrap.style.display = user.isAnonymous ? 'block' : 'none';
     if (user.isAnonymous) {
-      // Use a random custom avatar for guests
-      const randomAvatar = guestAvatars[Math.floor(Math.random() * guestAvatars.length)];
-      userInfo.innerHTML = `<img src="${randomAvatar}" class="comment-avatar" alt="Guest"> Signed in as Guest`;
+      // Use a deterministic avatar for guests based on UID
+      const avatar = getGuestAvatar(user.uid);
+      userInfo.innerHTML = `<img src="${avatar}" class="comment-avatar" alt="Guest"> Signed in as Guest`;
     } else {
       userInfo.innerHTML = `<img src="${user.photoURL}" class="comment-avatar" alt="${escapeHTML(user.displayName)}"> ${escapeHTML(user.displayName)}`;
     }
@@ -294,8 +306,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const guestNameInput = document.getElementById('firebase-guest-name');
         const guestName = guestNameInput ? guestNameInput.value.trim() : '';
         name = guestName || 'Guest';
-        // Pick a random avatar from global array
-        avatar = guestAvatars[Math.floor(Math.random() * guestAvatars.length)];
+        // Pick a deterministic avatar based on UID
+        avatar = getGuestAvatar(user.uid);
       }
       db.collection('comments').add({
         post: window.location.pathname,
@@ -569,8 +581,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const guestNameInput = document.getElementById('firebase-guest-name');
         const guestName = guestNameInput ? guestNameInput.value.trim() : '';
         name = guestName || 'Guest';
-        // Pick a random avatar from global array
-        avatar = guestAvatars[Math.floor(Math.random() * guestAvatars.length)];
+        // Pick a deterministic avatar based on UID
+        avatar = getGuestAvatar(user.uid);
       }
       db.collection('comments').add({
         post: window.location.pathname,

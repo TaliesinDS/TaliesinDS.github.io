@@ -159,6 +159,7 @@ search: false
 }
 .comment-body {
   flex: 1;
+  flex-direction: column;
 }
 .comment-meta {
   display: flex;

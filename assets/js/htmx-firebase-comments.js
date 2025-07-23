@@ -407,17 +407,19 @@ document.addEventListener('DOMContentLoaded', function() {
           }).replace(',', ' at');
         }
         container.innerHTML = `
-          <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div>
-          <div class="comment-row">
+          <div class="comment-main">
+            <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div>
             <div class="comment-body">
-              <div class="comment-meta">
-                <span class="comment-author">${escapeHTML(c.user.name) || 'Guest'}</span>
-                <span class="comment-date">${formattedDate}</span>
+              <div class="comment-row">
+                <div class="comment-meta">
+                  <span class="comment-author">${escapeHTML(c.user.name) || 'Guest'}</span>
+                  <span class="comment-date">${formattedDate}</span>
+                </div>
+                <div class="comment-text">${escapeHTML(c.text)}</div>
+                <div class="comment-actions"><button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button></div>
               </div>
-              <div class="comment-text">${escapeHTML(c.text)}</div>
-              <div class="comment-actions"><button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button></div>
+              <div class="comment-menu-align">${actionMenu}</div>
             </div>
-            <div class="comment-menu-align">${actionMenu}</div>
           </div>
         `;
         // 3-dots menu logic

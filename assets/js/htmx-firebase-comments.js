@@ -1,5 +1,13 @@
 
 // htmx + Firebase comment system with 3-dots menu for actions
+// Global guest avatar array
+const guestAvatars = [
+  '/assets/images/avatars/avatar1.webp',
+  '/assets/images/avatars/avatar2.webp',
+  '/assets/images/avatars/avatar3.webp',
+  '/assets/images/avatars/avatar4.webp',
+  '/assets/images/avatars/avatar5.webp'
+];
 const firebaseConfig = {
   apiKey: "AIzaSyA9VGslfcHzQs2kPA8uGX3mkGjph4vXG90",
   authDomain: "htmx-comments-test.firebaseapp.com",
@@ -42,7 +50,9 @@ function updateAuthUI(user) {
     if (captchaDiv) captchaDiv.style.display = user.isAnonymous ? 'block' : 'none';
     if (guestNameWrap) guestNameWrap.style.display = user.isAnonymous ? 'block' : 'none';
     if (user.isAnonymous) {
-      userInfo.innerHTML = `<img src="https://www.gravatar.com/avatar/?d=mp&s=40" class="comment-avatar" alt="Guest"> Signed in as Guest`;
+      // Use a random custom avatar for guests
+      const randomAvatar = guestAvatars[Math.floor(Math.random() * guestAvatars.length)];
+      userInfo.innerHTML = `<img src="${randomAvatar}" class="comment-avatar" alt="Guest"> Signed in as Guest`;
     } else {
       userInfo.innerHTML = `<img src="${user.photoURL}" class="comment-avatar" alt="${escapeHTML(user.displayName)}"> ${escapeHTML(user.displayName)}`;
     }
@@ -284,15 +294,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const guestNameInput = document.getElementById('firebase-guest-name');
         const guestName = guestNameInput ? guestNameInput.value.trim() : '';
         name = guestName || 'Guest';
-        // Array of avatar image URLs from your repo
-        const guestAvatars = [
-          '/assets/images/avatars/avatar1.webp',
-          '/assets/images/avatars/avatar2.webp',
-          '/assets/images/avatars/avatar3.webp',
-          '/assets/images/avatars/avatar4.webp',
-          '/assets/images/avatars/avatar5.webp'
-        ];
-        // Pick a random avatar
+        // Pick a random avatar from global array
         avatar = guestAvatars[Math.floor(Math.random() * guestAvatars.length)];
       }
       db.collection('comments').add({
@@ -567,7 +569,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const guestNameInput = document.getElementById('firebase-guest-name');
         const guestName = guestNameInput ? guestNameInput.value.trim() : '';
         name = guestName || 'Guest';
-        avatar = 'https://www.gravatar.com/avatar/?d=mp&s=40';
+        // Pick a random avatar from global array
+        avatar = guestAvatars[Math.floor(Math.random() * guestAvatars.length)];
       }
       db.collection('comments').add({
         post: window.location.pathname,

@@ -113,6 +113,7 @@ search: false
 }
 .comment-body { 
   flex: 1; 
+  display: flex;
 }
 .comment-meta { 
   font-size: 0.95em; 
@@ -147,6 +148,7 @@ search: false
   box-sizing: border-box;
   align-self: stretch;
   position: relative;
+  flex-direction: column;
 }
 .comment-body {
   flex: 1;

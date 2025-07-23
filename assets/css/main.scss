@@ -86,12 +86,19 @@ search: false
 }
 .comment { 
   display: flex;
-  margin-bottom: 1.2em;
   flex-direction: column;
+  margin-bottom: 1.2em;
   width: auto;
   max-width: 100%;
   min-width: 0;
   box-sizing: border-box;
+// Avatar and main content row
+.comment-main {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+}
 }
 .comment .comment {
   margin-bottom: 0; // No extra margin for nested replies

@@ -147,15 +147,15 @@ search: false
   margin: 2em 0; 
 }
 .comment-row {
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-  align-self: stretch;
-  position: relative;
-  flex-direction: column;
+display: flex;
+flex-direction: row;
+align-items: center;
+width: 100%;
+max-width: 100%;
+min-width: 0;
+box-sizing: border-box;
+align-self: stretch;
+position: relative;
 }
 .comment-body {
   flex: 1;
@@ -167,8 +167,13 @@ search: false
   gap: 0.5em;
 }
 .comment-menu-align {
-  margin-left: auto;
-  width: auto;
+margin-left: 1em;
+align-self: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+height: 100%;
+width: auto;
 }
 .comment-menu-wrap {
   position: relative;
@@ -895,4 +900,6 @@ div[style*="display: flex"] > a {
   margin-left: min(1em, 1vw) !important; /* Cap indent to 10vw or 1em */
   }
 }
+  display: flex;
+  flex-direction: column;
 }

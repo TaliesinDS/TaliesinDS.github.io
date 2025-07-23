@@ -107,17 +107,21 @@ search: false
 .comment-meta { 
   font-size: 0.95em; 
   color: #555; 
-  margin-bottom: 0.2em; 
+  margin-bottom: 0; 
 }
 .comment-author { 
-  font-weight: 400; 
+  font-weight: 500; 
+  margin-bottom: 0.15em;
 }
 .comment-date { 
-  margin-left: 0.5em; color: #888; 
-  font-size: 0.9em; 
+  margin-left: 0; 
+  color: #888; 
+  font-size: 0.8em; 
 }
 .comment-text { 
-  font-size: 1.1em; 
+  font-size: 0.95em; 
+  line-height: 1.2em;
+  margin-bottom: 0.25em;
 }
 .no-comments { 
   color: #888; 

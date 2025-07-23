@@ -1,3 +1,20 @@
+---
+title: License
+description: licensing information
+permalink: /LICENSE/
+layout: single
+---
+
+<style>
+.page__content li {
+  line-height: normal !important;
+}
+/* Hide heading permalinks on this page only */
+.page__content .header-link {
+  display: none !important;
+}
+</style>
+
 # License
 
 

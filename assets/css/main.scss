@@ -79,6 +79,11 @@ search: false
   background-color: #f2f2f2;
   color: #343434; 
 }
+.btn btn--primary {
+  background-color: #f2f2f2 !important;
+  color: #343434 !important; 
+  font-weight: 500 !important;
+}
 .btn--danger { 
   background: #dc3545; 
   color: #fff; 

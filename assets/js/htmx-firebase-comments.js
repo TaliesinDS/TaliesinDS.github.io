@@ -493,7 +493,13 @@ document.addEventListener('DOMContentLoaded', function() {
           replyBtn.onclick = function() {
             document.querySelectorAll('.reply-form').forEach(f => f.parentNode && f.parentNode.removeChild(f));
             const replyForm = createReplyForm(c.id, () => {});
-            container.appendChild(replyForm);
+            // Insert reply form directly after the .comment-row element
+            const commentRow = container.querySelector('.comment-row');
+            if (commentRow && commentRow.parentNode) {
+              commentRow.parentNode.insertBefore(replyForm, commentRow.nextSibling);
+            } else {
+              container.appendChild(replyForm);
+            }
             replyForm.querySelector('textarea').focus();
           };
         }

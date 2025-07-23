@@ -284,7 +284,16 @@ document.addEventListener('DOMContentLoaded', function() {
         const guestNameInput = document.getElementById('firebase-guest-name');
         const guestName = guestNameInput ? guestNameInput.value.trim() : '';
         name = guestName || 'Guest';
-        avatar = 'https://www.gravatar.com/avatar/?d=mp&s=40';
+        // Array of avatar image URLs from your repo
+        const guestAvatars = [
+          '/assets/images/avatars/avatar1.webp',
+          '/assets/images/avatars/avatar2.webp',
+          '/assets/images/avatars/avatar3.webp',
+          '/assets/images/avatars/avatar4.webp',
+          '/assets/images/avatars/avatar5.webp'
+        ];
+        // Pick a random avatar
+        avatar = guestAvatars[Math.floor(Math.random() * guestAvatars.length)];
       }
       db.collection('comments').add({
         post: window.location.pathname,

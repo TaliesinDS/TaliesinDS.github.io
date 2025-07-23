@@ -455,220 +455,25 @@
 
     
       
-        <div class="page__comments">
-  
-  
-
-
-
-<div style="margin-top:1em;"></div>
-<form id="google-comment-form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSd-xZgVsbuQsLumpP_W1u97vPG7RbR9_awZ3XDQTpXegkB1XA/formResponse" method="POST">
-  <div style="display: flex; gap: 1em;">
-    <input type="text" id="name" name="entry.1922964266" required placeholder="Name" style="flex:1; box-sizing: border-box;" onkeydown="if(event.key==='Enter'){this.value += '\n'; event.preventDefault();}">
-    <input type="email" id="email" name="entry.1297944239" placeholder="Email (optional)" style="flex:1; box-sizing: border-box;">
+        <!-- Firebase/htmx comment system include for all pages -->
+<div id="firebase-comments-section" class="comments comments--testpage">
+  <h3 class="comments-title">Comments</h3>
+  <div class="comments-auth">
+    <span id="firebase-user-info"></span>
+    <button id="firebase-login-btn" onclick="loginWithGoogle()" class="btn btn--primary">Sign in with Google</button>
+    <button id="firebase-logout-btn" onclick="logout()" class="btn btn--danger" style="display:none;">Sign out</button>
   </div>
-  <textarea id="comment" name="entry.503498009" required rows="4" placeholder="Comment"></textarea><br><br>
-  <!-- Hidden field for the page URL -->
-  <input type="hidden" id="page-url" name="entry.1587242798" value="">
-   
-  <div style="display: flex; justify-content: flex-end; align-items: center;">
-    <button type="submit">Submit</button>
-  </div>
-  <div id="comment-success" style="display:none;color:green;margin-top:10px;">
-    Thank you for your comment!
-  </div>
-  <script>
-    // Reload the page after showing the success message
-    document.addEventListener('DOMContentLoaded', function() {
-      var form = document.getElementById('google-comment-form');
-      if (form) {
-        form.addEventListener('submit', function(e) {
-          setTimeout(function() {
-            window.location.reload();
-          }, 1200); // Wait 1.2s to show the success message before reload
-        });
-      }
-    });
-  </script>
-</form>
-
-<script>
-// Set the normalized page URL in the hidden field before submit
-document.addEventListener('DOMContentLoaded', function() {
-  var url = window.location.href.replace(/\/$/, '');
-  document.getElementById('page-url').value = url;
-});
-
-document.getElementById('google-comment-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var form = e.target;
-  // Always update the hidden field before submit
-  form.querySelector('#page-url').value = window.location.href.replace(/\/$/, '');
-  var data = new FormData(form);
-  fetch(form.action, {
-    method: 'POST',
-    mode: 'no-cors',
-    body: data
-  }).then(function() {
-    form.reset();
-    document.getElementById('comment-success').style.display = 'block';
-  }).catch(function() {
-    alert('There was an error submitting your comment.');
-  });
-});
-</script>
-<div id="comments"></div>
-<script>
-  // Function to format the date and time from the data
-  function formatDate(stringDate) {
-    // Defensive: handle missing or malformed input
-    if (!stringDate || typeof stringDate !== 'string') return '';
-    const dateTimeParts = stringDate.split(' ');
-    const datePart = dateTimeParts[0] || '';
-    const timePart = dateTimeParts[1] || '00:00:00';
-    // Parse date in MM/DD/YYYY format
-    let month = '01', day = '01', year = '1970';
-    if (datePart.includes('/')) {
-      [month, day, year] = datePart.split('/');
-      month = month || '01';
-      day = day || '01';
-      year = year || '1970';
-    }
-    // Create a Date object
-    const dateObj = new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${timePart}`);
-    // Format date as "25 June, 2025"
-    const months = [
-      "January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
-    ];
-    const formattedDate = `${dateObj.getDate()} ${months[dateObj.getMonth()]}, ${dateObj.getFullYear()}`;
-    // Format time as 24-hour "HH:mm:ss"
-    let formattedTime = '00:00:00';
-    if (!isNaN(dateObj.getTime())) {
-      formattedTime = dateObj.toISOString().substr(11, 8);
-    }
-    // Return the formatted date and time
-    return datePart ? `${formattedDate} at ${formattedTime}` : '';
-  }
-
-  // CSV parsing function to handle quoted fields and commas
-  function parseCSV(text) {
-    const rows = [];
-    let row = [];
-    let cell = '';
-    let inQuotes = false;
-    for (let i = 0; i < text.length; i++) {
-      const char = text[i];
-      if (char === '"') {
-        if (inQuotes && text[i + 1] === '"') {
-          cell += '"';
-          i++;
-        } else {
-          inQuotes = !inQuotes;
-        }
-      } else if (char === ',' && !inQuotes) {
-        row.push(cell);
-        cell = '';
-      } else if ((char === '\n' || char === '\r') && !inQuotes) {
-        if (cell !== '' || row.length > 0) {
-          row.push(cell);
-          rows.push(row);
-          row = [];
-          cell = '';
-        }
-        // Handle \r\n
-        if (char === '\r' && text[i + 1] === '\n') i++;
-      } else {
-        cell += char;
-      }
-    }
-    // Add the last cell if any
-    if (cell !== '' || row.length > 0) {
-      row.push(cell);
-      rows.push(row);
-    }
-    return rows;
-  }
-
-  document.addEventListener('DOMContentLoaded', function() {
-    // Get the current page URL and normalize it (remove trailing slash)
-    let thisPageUrl = window.location.href.replace(/\/$/, '');
-    // Fetch the data from the Google Sheets URL
-    const csvUrl = `https://docs.google.com/spreadsheets/d/1ZqE6ePnexceUrxq90JD6buZ1Zl3agU11_i_TDaCTCuU/gviz/tq?tqx=out:csv&sheet=Form_Responses1`;
-    fetch(csvUrl)
-      .then(response => response.text())
-      .then(csvText => {
-      const rows = parseCSV(csvText.trim());
-      const commentsContainer = document.getElementById('comments');
-      commentsContainer.innerHTML = '';
-      // Collect comments for this page
-      const comments = [];
-      rows.forEach((row, idx) => {
-      // Skip header row if it contains column names
-      if (idx === 0 && row[0].toLowerCase().includes('timestamp')) return;
-      // Ensure the row has at least 5 columns to avoid errors
-      if (row.length >= 5) {
-      const date = row[0]; // Timestamp
-      const name = row[1]; // Name
-      const email = row[2]; // Email
-      const comment = row[3]; // Comment
-      const pageUrl = row[4].replace(/\/$/, ''); // Page URL (normalized)
-      // Only show comments for this page
-      if (pageUrl === thisPageUrl) {
-      comments.push({ date, name, email, comment });
-      }
-      }
-      });
-      // Sort comments by date descending (newest first)
-      comments.sort((a, b) => new Date(b.date) - new Date(a.date));
-      // Helper to format date as "Month day, Year at HH:mm"
-      function formatDateSimpleWithTime(stringDate) {
-        // Split the string into date and time parts
-        const dateTimeParts = stringDate.split(' ');
-        const datePart = dateTimeParts[0]; // Date part like "7/12/2024"
-        const timePart = dateTimeParts[1] || "00:00:00"; // Time part like "15:34:12"
-        // Parse date in MM/DD/YYYY format
-        const [month, day, year] = datePart.split('/');
-        const dateObj = new Date(`${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}T${timePart}`);
-        // Format as "Month day, Year at HH:mm"
-        const months = [
-          "January", "February", "March", "April", "May", "June",
-          "July", "August", "September", "October", "November", "December"
-        ];
-        const hours = dateObj.getHours().toString().padStart(2, '0');
-        const minutes = dateObj.getMinutes().toString().padStart(2, '0');
-        return `${months[dateObj.getMonth()]} ${dateObj.getDate()}, ${dateObj.getFullYear()} at ${hours}:${minutes}`;
-      }
-      // Helper to capitalize the first letter of each word
-      function capitalizeWords(str) {
-        return str.replace(/\b\w/g, c => c.toUpperCase());
-      }
-      // Render comments
-      comments.forEach(({ date, name, email, comment }) => {
-        const displayName = capitalizeWords(name || '');
-        const commentDiv = document.createElement('div');
-        // Replace \n with <br> for line breaks in comment text
-        const commentHtml = (comment || '').replace(/\r\n|\r|\n/g, '<br>');
-        // Use formatDateSimpleWithTime(date) for the date and time format
-        const formattedDate = formatDateSimpleWithTime(date);
-        const nameHtml = email ? `<a href="mailto:${email}">${displayName}</a>` : displayName;
-        commentDiv.innerHTML = `
-          <div class="comment-meta">
-            <strong>${nameHtml}</strong>
-            <em><span class="icon-calendar" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc. --><path d="M128 0c17.7 0 32 14.3 32 32l0 32 128 0 0-32c0-17.7 14.3-32 32-32s32 14.3 32 32l0 32 48 0c26.5 0 48 21.5 48 48l0 48L0 160l0-48C0 85.5 21.5 64 48 64l48 0 0-32c0-17.7 14.3-32 32-32zM0 192l448 0 0 272c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 192zm64 80l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm128 0l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zM64 400l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0zm112 16l0 32c0 8.8 7.2 16 16 16l32 0c8.8 0 16-7.2 16-16l0-32c0-8.8-7.2-16-16-16l-32 0c-8.8 0-16 7.2-16 16z"/></svg></span> ${formattedDate}</em>
-          </div>
-          <div class="comment-body">
-            <p>${commentHtml}</p>
-          </div>
-        `;
-  // Append the comment to the container
-        commentsContainer.appendChild(commentDiv);
-      });
-      })
-      .catch(error => console.error('Error fetching data:', error));
-  });
-</script>
-
+  <form id="firebase-comment-form" style="display:none;" class="comment-form">
+    <textarea name="comment" rows="3" placeholder="Write a comment..." required class="comment-form-textarea"></textarea>
+    <button type="submit" class="btn btn--primary">Post Comment</button>
+  </form>
+  <div id="firebase-comment-list" class="comment-list"></div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<script src="/assets/js/htmx-firebase-comments.js"></script>
 
       
     

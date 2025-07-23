@@ -93,6 +93,9 @@ search: false
   min-width: 0;
   box-sizing: border-box;
 }
+.comment .comment {
+  margin-bottom: 0; // No extra margin for nested replies
+}
 .comment-avatar-wrap { 
   margin-right: 0.8em; 
 }

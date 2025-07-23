@@ -493,8 +493,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const replyBtn = container.querySelector('.btn-reply');
         if (replyBtn) {
           replyBtn.onclick = function() {
+            // Remove any existing reply forms
             document.querySelectorAll('.reply-form').forEach(f => f.parentNode && f.parentNode.removeChild(f));
-            const replyForm = createReplyForm(c.id, () => {});
+            // Hide the reply button while the reply form is active
+            replyBtn.style.display = 'none';
+            const replyForm = createReplyForm(c.id, () => {
+              // When reply form is closed (on submit or cancel), show the reply button again
+              replyBtn.style.display = '';
+            });
             // Insert reply form directly after the .comment-row element
             const commentRow = container.querySelector('.comment-row');
             if (commentRow && commentRow.parentNode) {

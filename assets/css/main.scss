@@ -747,6 +747,9 @@ body { overflow-x: hidden; }
   display: block;
 }
 
+.comment:not(:last-child) { 
+  border-bottom: none !important; }
+
 #comments .comment-meta em {
   margin-top: 0 !important; // ensure no extra space above em
   margin-bottom: 0 !important;

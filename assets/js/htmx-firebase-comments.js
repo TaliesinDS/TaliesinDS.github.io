@@ -417,8 +417,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="comment-text">${escapeHTML(c.text)}</div>
                 <div class="comment-actions"><button class="btn btn--primary btn-reply" data-comment-id="${c.id}">Reply</button></div>
+                <div class="comment-menu-align">${actionMenu}</div>
               </div>
-              <div class="comment-menu-align">${actionMenu}</div>
             </div>
           </div>
         `;

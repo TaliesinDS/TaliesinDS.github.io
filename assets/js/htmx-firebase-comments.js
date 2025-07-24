@@ -229,6 +229,15 @@ document.addEventListener('DOMContentLoaded', function() {
       <input type="text" id="firebase-guest-name" name="guestName" class="comment-form-textarea" maxlength="32" placeholder="Your name (optional)">
     `;
     mainForm.insertBefore(nameDiv, mainForm.querySelector('textarea'));
+    // Auto-fill guest name from localStorage if available
+    const guestNameInput = nameDiv.querySelector('#firebase-guest-name');
+    if (guestNameInput && window.localStorage) {
+      const savedName = localStorage.getItem('firebase-guest-name');
+      if (savedName) guestNameInput.value = savedName;
+      guestNameInput.addEventListener('input', function() {
+        localStorage.setItem('firebase-guest-name', guestNameInput.value.trim());
+      });
+    }
   }
   // Add Upgrade button if not present
   const authDiv2 = document.querySelector('.comments-auth');
@@ -570,6 +579,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const textarea = form.querySelector('textarea');
     textarea.addEventListener('input', () => { dirty = textarea.value.trim().length > 0; });
 
+    // Auto-fill guest name if available (for reply forms)
+    let guestName = '';
+    if (window.localStorage) {
+      guestName = localStorage.getItem('firebase-guest-name') || '';
+    }
+
     // Helper to render reCAPTCHA in reply form for guests
     let replyWidgetId = null;
     function renderReplyCaptcha() {
@@ -597,9 +612,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const replyCaptchaWrap = form.querySelector('#firebase-reply-captcha-wrap');
     const replyCaptcha = form.querySelector('#firebase-reply-captcha');
 
-    // Show captcha for guests
+    // Add guest name field to reply form if guest is logged in
+    let guestNameInput = null;
     auth.onAuthStateChanged(user => {
       if (user && user.isAnonymous) {
+        // Add guest name field if not present
+        if (!form.querySelector('#firebase-reply-guest-name')) {
+          const nameDiv = document.createElement('div');
+          nameDiv.id = 'firebase-reply-guest-name-wrap';
+          nameDiv.innerHTML = `<input type="text" id="firebase-reply-guest-name" name="guestName" class="comment-form-textarea" maxlength="32" placeholder="Your name (optional)">`;
+          form.insertBefore(nameDiv, textarea);
+          guestNameInput = nameDiv.querySelector('#firebase-reply-guest-name');
+          if (guestNameInput && guestName) guestNameInput.value = guestName;
+          if (guestNameInput && window.localStorage) {
+            guestNameInput.addEventListener('input', function() {
+              localStorage.setItem('firebase-guest-name', guestNameInput.value.trim());
+            });
+          }
+        }
         renderReplyCaptcha();
       }
     });
@@ -634,10 +664,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         window.lastGuestReplyTime = now;
         if (replyWidgetId !== null) window.grecaptcha.reset(replyWidgetId);
-        // Try to get the main guest name field if present, else fallback to 'Guest'
-        const guestNameInput = document.getElementById('firebase-guest-name');
-        const guestName = guestNameInput ? guestNameInput.value.trim() : '';
-        name = guestName || 'Guest';
+        // Try to get the guest name from reply form, else fallback to main guest name, else 'Guest'
+        let replyName = '';
+        if (guestNameInput) replyName = guestNameInput.value.trim();
+        if (!replyName) {
+          const mainGuestNameInput = document.getElementById('firebase-guest-name');
+          replyName = mainGuestNameInput ? mainGuestNameInput.value.trim() : '';
+        }
+        name = replyName || 'Guest';
         // Pick a deterministic avatar based on UID
         avatar = getGuestAvatar(user.uid);
       }

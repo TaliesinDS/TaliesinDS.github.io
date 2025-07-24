@@ -625,6 +625,10 @@ body { overflow-x: hidden; }
 .page__footer { margin: 0; }
 .one { list-style-type: none; margin-left: 0; padding-left: 0; }
 
+.page__inner-wrap {
+margin-bottom: 2em;
+}
+
 .allergen-list {
   list-style-type: circle;
   padding-left: 1em; // or try a small value  like 10px

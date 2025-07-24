@@ -576,7 +576,27 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!text) return;
       let name = user.displayName;
       let avatar = user.photoURL;
+      // --- Guest protections ---
       if (user.isAnonymous) {
+        // Rate limiting for replies
+        if (!window.lastGuestReplyTime) window.lastGuestReplyTime = 0;
+        const now = Date.now();
+        if (now - window.lastGuestReplyTime < 15000) {
+          showRateLimitWarning();
+          return;
+        }
+        // reCAPTCHA check for replies
+        if (!window.grecaptcha || !window.grecaptcha.getResponse) {
+          alert('reCAPTCHA not loaded. Please try again.');
+          return;
+        }
+        const captchaResponse = window.grecaptcha.getResponse();
+        if (!captchaResponse) {
+          alert('Please complete the CAPTCHA.');
+          return;
+        }
+        window.lastGuestReplyTime = now;
+        window.grecaptcha.reset();
         // Try to get the main guest name field if present, else fallback to 'Guest'
         const guestNameInput = document.getElementById('firebase-guest-name');
         const guestName = guestNameInput ? guestNameInput.value.trim() : '';

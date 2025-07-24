@@ -799,6 +799,32 @@ body { overflow-x: hidden; }
   margin-bottom: 2em; // or any value you prefer
 }
 
+/* Flex row for captcha and submit button in comment form */
+#firebase-captcha-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+#firebase-captcha-wrap {
+  margin: 0;
+}
+#firebase-captcha-row button[type="submit"] {
+  margin-left: auto;
+  min-width: 120px;
+}
+@media (max-width: 600px) {
+  #firebase-captcha-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5em;
+  }
+  #firebase-captcha-row button[type="submit"] {
+    width: 100%;
+    margin-left: 0;
+  }
+}
 // =====================
 // Teaser Titles
 // =====================

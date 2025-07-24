@@ -563,11 +563,46 @@ document.addEventListener('DOMContentLoaded', function() {
     form.className = 'comment-form reply-form';
     form.innerHTML = `
       <textarea name="comment" rows="2" placeholder="Write a reply..." required class="comment-form-textarea"></textarea>
+      <div id="firebase-reply-captcha-wrap" style="display:none; margin:1em 0;"><div id="firebase-reply-captcha"></div></div>
       <button type="submit" class="btn btn--primary">Post Reply</button>
     `;
     let dirty = false;
     const textarea = form.querySelector('textarea');
     textarea.addEventListener('input', () => { dirty = textarea.value.trim().length > 0; });
+
+    // Helper to render reCAPTCHA in reply form for guests
+    function renderReplyCaptcha() {
+      // Hide any other visible captchas
+      document.querySelectorAll('#firebase-captcha-wrap, #firebase-reply-captcha-wrap').forEach(div => {
+        if (div !== replyCaptchaWrap) div.style.display = 'none';
+      });
+      if (window.grecaptcha && replyCaptcha && !replyCaptcha.hasChildNodes()) {
+        window.grecaptcha.render('firebase-reply-captcha', {
+          sitekey: '6LetuIcrAAAAAGPPCi6aWlBupDna_FV4Us-z22CO',
+          theme: 'light'
+        });
+      } else if (!window.grecaptcha) {
+        // Load reCAPTCHA script if not present
+        const script = document.createElement('script');
+        script.src = 'https://www.google.com/recaptcha/api.js';
+        script.async = true;
+        script.defer = true;
+        document.body.appendChild(script);
+        setTimeout(renderReplyCaptcha, 500);
+      }
+      replyCaptchaWrap.style.display = 'block';
+    }
+
+    const replyCaptchaWrap = form.querySelector('#firebase-reply-captcha-wrap');
+    const replyCaptcha = form.querySelector('#firebase-reply-captcha');
+
+    // Show captcha for guests
+    auth.onAuthStateChanged(user => {
+      if (user && user.isAnonymous) {
+        renderReplyCaptcha();
+      }
+    });
+
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       const user = auth.currentUser;
@@ -585,11 +620,21 @@ document.addEventListener('DOMContentLoaded', function() {
           showRateLimitWarning();
           return;
         }
-        // reCAPTCHA check for replies
+        // reCAPTCHA check for replies (use reply form's captcha)
         if (!window.grecaptcha || !window.grecaptcha.getResponse) {
           alert('reCAPTCHA not loaded. Please try again.');
           return;
         }
+        // Find the widget ID for this reply form's captcha
+        let widgetId = null;
+        if (replyCaptcha && replyCaptcha.hasChildNodes() && window.grecaptcha.render) {
+          // Try to get widgetId by traversing children
+          const iframes = replyCaptcha.getElementsByTagName('iframe');
+          if (iframes.length > 0) {
+            widgetId = iframes[0].parentNode.getAttribute('data-widget-id');
+          }
+        }
+        // Fallback: just use getResponse() (will work if only one captcha is visible)
         const captchaResponse = window.grecaptcha.getResponse();
         if (!captchaResponse) {
           alert('Please complete the CAPTCHA.');
@@ -617,6 +662,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }).then(() => {
         if (onClose) onClose();
         textarea.value = '';
+        // Hide the reply captcha after submit
+        if (replyCaptchaWrap) replyCaptchaWrap.style.display = 'none';
       });
     });
     function handleClickOutside(e) {
@@ -634,6 +681,8 @@ document.addEventListener('DOMContentLoaded', function() {
       document.removeEventListener('mousedown', handleClickOutside);
       if (form.parentNode) form.parentNode.removeChild(form);
       if (onClose) onClose();
+      // Hide the reply captcha if present
+      if (replyCaptchaWrap) replyCaptchaWrap.style.display = 'none';
     }
     document.addEventListener('mousedown', handleClickOutside);
     return form;

@@ -571,13 +571,14 @@ document.addEventListener('DOMContentLoaded', function() {
     textarea.addEventListener('input', () => { dirty = textarea.value.trim().length > 0; });
 
     // Helper to render reCAPTCHA in reply form for guests
+    let replyWidgetId = null;
     function renderReplyCaptcha() {
       // Hide any other visible captchas
       document.querySelectorAll('#firebase-captcha-wrap, #firebase-reply-captcha-wrap').forEach(div => {
         if (div !== replyCaptchaWrap) div.style.display = 'none';
       });
       if (window.grecaptcha && replyCaptcha && !replyCaptcha.hasChildNodes()) {
-        window.grecaptcha.render('firebase-reply-captcha', {
+        replyWidgetId = window.grecaptcha.render('firebase-reply-captcha', {
           sitekey: '6LetuIcrAAAAAGPPCi6aWlBupDna_FV4Us-z22CO',
           theme: 'light'
         });
@@ -621,27 +622,18 @@ document.addEventListener('DOMContentLoaded', function() {
           return;
         }
         // reCAPTCHA check for replies (use reply form's captcha)
-        if (!window.grecaptcha || !window.grecaptcha.getResponse) {
+        if (!window.grecaptcha || typeof window.grecaptcha.getResponse !== 'function') {
           alert('reCAPTCHA not loaded. Please try again.');
           return;
         }
-        // Find the widget ID for this reply form's captcha
-        let widgetId = null;
-        if (replyCaptcha && replyCaptcha.hasChildNodes() && window.grecaptcha.render) {
-          // Try to get widgetId by traversing children
-          const iframes = replyCaptcha.getElementsByTagName('iframe');
-          if (iframes.length > 0) {
-            widgetId = iframes[0].parentNode.getAttribute('data-widget-id');
-          }
-        }
-        // Fallback: just use getResponse() (will work if only one captcha is visible)
-        const captchaResponse = window.grecaptcha.getResponse();
+        // Use the reply form's widget ID
+        const captchaResponse = replyWidgetId !== null ? window.grecaptcha.getResponse(replyWidgetId) : '';
         if (!captchaResponse) {
           alert('Please complete the CAPTCHA.');
           return;
         }
         window.lastGuestReplyTime = now;
-        window.grecaptcha.reset();
+        if (replyWidgetId !== null) window.grecaptcha.reset(replyWidgetId);
         // Try to get the main guest name field if present, else fallback to 'Guest'
         const guestNameInput = document.getElementById('firebase-guest-name');
         const guestName = guestNameInput ? guestNameInput.value.trim() : '';

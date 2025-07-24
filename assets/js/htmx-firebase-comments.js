@@ -345,6 +345,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Remove any existing dialog
     const oldDialog = document.getElementById('firebase-rate-limit-dialog');
     if (oldDialog) oldDialog.remove();
+    // Calculate seconds remaining
+    let now = Date.now();
+    let secondsLeft = 15;
+    if (window.lastGuestCommentTime) {
+      secondsLeft = Math.ceil((window.lastGuestCommentTime + 15000 - now) / 1000);
+      if (secondsLeft < 1) secondsLeft = 1;
+    }
     // Create dialog
     const dialog = document.createElement('div');
     dialog.id = 'firebase-rate-limit-dialog';
@@ -361,14 +368,28 @@ document.addEventListener('DOMContentLoaded', function() {
     dialog.innerHTML = `
       <div style="background: #fff; padding: 2em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);">
         <h3>Rate Limit</h3>
-        <p>As a guest, you can only post one comment every 15 seconds.<br>Please wait before posting again.</p>
+        <p id="firebase-rate-limit-msg">As a guest, you can only post one comment every 15 seconds.<br>Please wait <span id="firebase-rate-limit-seconds">${secondsLeft}</span> seconds before posting again.</p>
         <button id="firebase-rate-limit-close" class="btn">Close</button>
       </div>
     `;
     document.body.appendChild(dialog);
-    document.getElementById('firebase-rate-limit-close').onclick = function() {
+    const closeBtn = document.getElementById('firebase-rate-limit-close');
+    closeBtn.onclick = function() {
       dialog.remove();
+      if (interval) clearInterval(interval);
     };
+    // Update seconds remaining every second
+    const secondsSpan = document.getElementById('firebase-rate-limit-seconds');
+    let interval = setInterval(() => {
+      now = Date.now();
+      let left = Math.ceil((window.lastGuestCommentTime + 15000 - now) / 1000);
+      if (left < 1) left = 0;
+      if (secondsSpan) secondsSpan.textContent = left;
+      if (left <= 0) {
+        if (interval) clearInterval(interval);
+        dialog.remove();
+      }
+    }, 1000);
   }
 
   // Guest login button event handler

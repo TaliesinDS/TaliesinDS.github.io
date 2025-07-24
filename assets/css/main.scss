@@ -806,7 +806,7 @@ body { overflow-x: hidden; }
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 0em 0px 0.25em;
+  margin: 0em 0px 0.25em !important;
 }
 #firebase-captcha-wrap {
   margin: 0;

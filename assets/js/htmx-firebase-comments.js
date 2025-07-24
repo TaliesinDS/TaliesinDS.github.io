@@ -202,15 +202,34 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Add reCAPTCHA widget to comment form (hidden by default, shown for guests)
   const mainForm = document.getElementById('firebase-comment-form');
-  if (mainForm && !document.getElementById('firebase-captcha-wrap')) {
+  if (mainForm && !document.getElementById('firebase-captcha-row')) {
+    // Create a flex row for captcha and button
+    const captchaRow = document.createElement('div');
+    captchaRow.id = 'firebase-captcha-row';
+    captchaRow.style.display = 'flex';
+    captchaRow.style.flexDirection = 'row';
+    captchaRow.style.alignItems = 'center';
+    captchaRow.style.justifyContent = 'space-between';
+    captchaRow.style.margin = '1em 0';
+    // Captcha container
     const captchaDiv = document.createElement('div');
     captchaDiv.id = 'firebase-captcha-wrap';
     captchaDiv.style.display = 'none';
-    captchaDiv.style.margin = '1em 0';
-    captchaDiv.innerHTML = `
-      <div id="firebase-captcha"></div>
-    `;
-    mainForm.insertBefore(captchaDiv, mainForm.querySelector('button[type="submit"]'));
+    captchaDiv.style.margin = '0';
+    captchaDiv.innerHTML = `<div id="firebase-captcha"></div>`;
+    // Move the submit button into the row
+    const submitBtn = mainForm.querySelector('button[type="submit"]');
+    submitBtn.style.marginLeft = 'auto';
+    // Remove the button from its old place and add to row
+    captchaRow.appendChild(captchaDiv);
+    captchaRow.appendChild(submitBtn);
+    // Insert the row after the textarea
+    const textarea = mainForm.querySelector('textarea');
+    if (textarea && textarea.nextSibling) {
+      textarea.parentNode.insertBefore(captchaRow, textarea.nextSibling);
+    } else {
+      mainForm.appendChild(captchaRow);
+    }
     // Load reCAPTCHA script if not already present
     if (!window.grecaptcha) {
       const script = document.createElement('script');

@@ -330,6 +330,12 @@ document.addEventListener('DOMContentLoaded', function() {
         parent: null
       }).then(() => {
         mainForm.reset();
+        // Restore guest name after reset
+        const guestNameInput = document.getElementById('firebase-guest-name');
+        if (guestNameInput && window.localStorage) {
+          const savedName = localStorage.getItem('firebase-guest-name');
+          if (savedName) guestNameInput.value = savedName;
+        }
       });
     });
   }

@@ -675,6 +675,23 @@ document.addEventListener('DOMContentLoaded', function() {
       if (onClose) onClose();
       // Hide the reply captcha if present
       if (replyCaptchaWrap) replyCaptchaWrap.style.display = 'none';
+      // If no other reply forms are open, re-show and re-render the main captcha for guests
+      setTimeout(() => {
+        if (!document.querySelector('.reply-form')) {
+          const user = auth.currentUser;
+          const captchaDiv = document.getElementById('firebase-captcha-wrap');
+          if (user && user.isAnonymous && captchaDiv) {
+            captchaDiv.style.display = 'block';
+            // Re-render if not present
+            if (window.grecaptcha && document.getElementById('firebase-captcha') && !document.getElementById('firebase-captcha').hasChildNodes()) {
+              window.grecaptcha.render('firebase-captcha', {
+                sitekey: '6LetuIcrAAAAAGPPCi6aWlBupDna_FV4Us-z22CO',
+                theme: 'light'
+              });
+            }
+          }
+        }
+      }, 100);
     }
     document.addEventListener('mousedown', handleClickOutside);
     return form;

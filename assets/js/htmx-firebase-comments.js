@@ -261,7 +261,8 @@ document.addEventListener('DOMContentLoaded', function() {
     authDiv.insertBefore(anonBtn, document.getElementById('firebase-logout-btn'));
   }
   // --- Guest Rate Limiting ---
-  let lastGuestCommentTime = 0;
+  // Use window-scoped variable for guest comment rate limiting
+  if (typeof window.lastGuestCommentTime === 'undefined') window.lastGuestCommentTime = 0;
   if (mainForm) {
     // Render reCAPTCHA when needed
     function renderCaptcha() {
@@ -290,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // --- Guest rate limiting ---
       if (user.isAnonymous) {
         const now = Date.now();
-        if (now - lastGuestCommentTime < 15000) {
+        if (now - window.lastGuestCommentTime < 15000) {
           showRateLimitWarning();
           return;
         }
@@ -305,7 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
           return;
         }
         // Optionally: verify captchaResponse with your backend for extra security
-        lastGuestCommentTime = now;
+        window.lastGuestCommentTime = now;
         window.grecaptcha.reset();
       }
       // Support anonymous user info
@@ -348,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Calculate seconds remaining
     let now = Date.now();
     let secondsLeft = 15;
-    if (window.lastGuestCommentTime) {
+    if (typeof window.lastGuestCommentTime === 'number' && window.lastGuestCommentTime > 0) {
       secondsLeft = Math.ceil((window.lastGuestCommentTime + 15000 - now) / 1000);
       if (secondsLeft < 1) secondsLeft = 1;
     }
@@ -382,7 +383,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const secondsSpan = document.getElementById('firebase-rate-limit-seconds');
     let interval = setInterval(() => {
       now = Date.now();
-      let left = Math.ceil((window.lastGuestCommentTime + 15000 - now) / 1000);
+      let left = 15;
+      if (typeof window.lastGuestCommentTime === 'number' && window.lastGuestCommentTime > 0) {
+        left = Math.ceil((window.lastGuestCommentTime + 15000 - now) / 1000);
+      }
       if (left < 1) left = 0;
       if (secondsSpan) secondsSpan.textContent = left;
       if (left <= 0) {

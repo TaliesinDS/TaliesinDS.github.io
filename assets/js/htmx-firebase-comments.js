@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div style="background: #fff; padding: 1em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);">
         <h3 style="margin-top: 0.5em;">Rate Limit</h3>
         <p id="firebase-rate-limit-msg" style="margin-bottom: 0.5em;">As a guest, you can only post one comment every 15 seconds.<br>Please wait <span id="firebase-rate-limit-seconds">${secondsLeft}</span> seconds before posting again.</p>
-        <button id="firebase-rate-limit-close" class="btn" style="font-size: 1em; font-weight: 500 !important;">Close</button>
+        <button id="firebase-rate-limit-close" class="btn btn-rate-limit-close">Close</button>
       </div>
     `;
     document.body.appendChild(dialog);

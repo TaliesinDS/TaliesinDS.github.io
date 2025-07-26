@@ -192,9 +192,7 @@ auth.onAuthStateChanged(user => {
   updateAuthUI(user);
 });
 document.addEventListener('DOMContentLoaded', function() {
-  // --- Real-time comment loading ---
-  // Add reCAPTCHA widget to comment form (hidden by default, shown for guests)
-  // Add accessible label to main comment textarea if not present (must be after mainForm declaration)
+  // Add accessible label to main comment textarea if not present
   if (mainForm) {
     const textarea = mainForm.querySelector('textarea[name="comment"]');
     if (textarea && !mainForm.querySelector('label[for="firebase-main-textarea"]')) {

@@ -111,7 +111,7 @@ function showUpgradeFailedDialog() {
   dialog.style.justifyContent = 'center';
   dialog.style.zIndex = '9999';
   dialog.innerHTML = `
-    <div style="background: #fff; padding: 2em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);">
+    <div style="background: #fff; padding: 1em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);">
       <h3>Upgrade Failed</h3>
       <p>This Google account is already linked to another user.<br><br>
       <strong>Tip:</strong> If you want to keep your comments and replies, please upgrade to Google <em>before</em> posting as a guest.<br><br>
@@ -153,7 +153,7 @@ function showContinueWithGoogleDialog() {
   dialog.style.justifyContent = 'center';
   dialog.style.zIndex = '9999';
   dialog.innerHTML = `
-    <div style="background: #fff; padding: 2em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);">
+    <div style="background: #fff; padding: 1em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);">
       <h3>Continue with Google</h3>
       <p>You have been signed out as guest.<br>To sign in with your Google account, click below:</p>
       <button id="firebase-continue-google-btn" class="btn btn--primary" style="margin: 1em 0;">Continue with Google</button><br>
@@ -806,7 +806,7 @@ document.addEventListener('DOMContentLoaded', function() {
     dialog.style.justifyContent = 'center';
     dialog.style.zIndex = '9999';
     dialog.innerHTML = `
-      <div style="background: #fff; padding: 2em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);" role="document">
+      <div style="background: #fff; padding: 1em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);" role="document">
         <h3 id="firebase-accessible-dialog-title">Confirm Delete</h3>
         <p id="firebase-accessible-dialog-desc">${message}</p>
         <button id="firebase-accessible-dialog-confirm" class="btn btn--danger">Delete</button>
@@ -859,7 +859,7 @@ document.addEventListener('DOMContentLoaded', function() {
     dialog.style.justifyContent = 'center';
     dialog.style.zIndex = '9999';
     dialog.innerHTML = `
-      <div style="background: #fff; padding: 2em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);" role="document">
+      <div style="background: #fff; padding: 1em; border-radius: 8px; max-width: 400px; text-align: center; box-shadow: 0 2px 16px rgba(0,0,0,0.2);" role="document">
         <h3 id="firebase-accessible-dialog-title">Error</h3>
         <p id="firebase-accessible-dialog-desc">${message}</p>
         <button id="firebase-accessible-dialog-close" class="btn btn--primary">Close</button>

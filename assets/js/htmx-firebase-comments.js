@@ -1,13 +1,7 @@
 
 // htmx + Firebase comment system with 3-dots menu for actions
 // Global guest avatar array
-const guestAvatars = [
-  '/assets/images/avatars/avatar1.webp',
-  '/assets/images/avatars/avatar2.webp',
-  '/assets/images/avatars/avatar3.webp',
-  '/assets/images/avatars/avatar4.webp',
-  '/assets/images/avatars/avatar5.webp'
-];
+const guestAvatars = Array.from({length: 24}, (_, i) => `/assets/images/avatars/avatar${i+1}.webp`);
 
 // Deterministic avatar selection based on UID
 function getGuestAvatar(uid) {

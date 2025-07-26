@@ -38,7 +38,8 @@ author_profile: true
 
 
 
-
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<!-- ... -->
 <div class="lang-content lang-nl" style="display:none;">
   <div class="lang-header">
     <h2 style="margin: 0.5em 0 0.5em;">Handgemaakte Zeep</h2>
@@ -84,6 +85,7 @@ author_profile: true
     </div>
     <div class="teaser-title" style="margin-top: 0.5em;">Aqua di Gio</div>
   </a>
+</div>
 </div>
 
 <div class="empty-box">

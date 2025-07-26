@@ -574,6 +574,31 @@ textarea:focus, textarea:focus-visible {
 }
 
 // =====================
+// skip link
+// =====================
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  background: #fff;
+  color: #000;
+  z-index: 1000;
+}
+.skip-link:focus {
+  left: 8px;
+  top: 8px;
+  width: auto;
+  height: auto;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px #0002;
+}
+
+// =====================
 // Post Content
 // =====================
 .body-post-excerpt {

@@ -624,7 +624,10 @@ overflow: hidden;
 // Miscellaneous
 // =====================
 body { overflow-x: hidden; }
-.page__footer { margin: 0; }
+.page__footer { 
+  margin: 0;
+  color: #63625A !important; 
+}
 .one { list-style-type: none; margin-left: 0; padding-left: 0; }
 
 .page__inner-wrap {
@@ -722,7 +725,7 @@ margin-bottom: 2em;
 }
 
 #google-comment-form button:hover {
-  background: #8e8b82;
+  background: #706E66;
 }
 
 #comments:empty {
@@ -906,7 +909,7 @@ div[style*="display: flex"] > a {
     margin-top: 0.5em;
     font-size: 0.6em;
     font-weight: lighter;
-    color: #8e8b82;
+    color: #706E66;
   }
   .custom-post-excerpt {
     margin-top: 0.25em;
@@ -922,7 +925,9 @@ div[style*="display: flex"] > a {
   }
   
   .page__hero--overlay .page__title { font-size: 1.3em; }
-  .page__footer-copyright { font-size: 0.6em !important; }
+  .page__footer-copyright { 
+    font-size: 0.6em !important; 
+  }
 // Footer links right alignment
 .footer-links {
   text-align: right;

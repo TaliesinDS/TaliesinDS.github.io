@@ -209,11 +209,13 @@ width: auto;
 .comment-menu-delete {
   display: block;
   width: 100%;
-  padding: 0.5em 1em;
+  padding: 0.25em 0.75em;
   text-align: left;
   background: none;
   border: none;
   cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 500;
 }
 .comment-menu-delete {
   color: #c00;

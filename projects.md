@@ -9,10 +9,10 @@ Op deze pagina vind je een overzicht van uiteenlopende projecten waar ik aan wer
 
 ![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
 
+{% assign visible_posts = site.posts | where_exp: "post", "post.hidden != true and (post.tags == nil or post.tags contains 'zeep' == false)" %}
 <div class="custom-list-container" style="box-sizing: border-box; width: 100%;">
 <ul style="list-style-type: none; padding: 0; margin: 0; box-sizing: border-box;">
-{% for post in site.posts %}
-{% unless post.tags contains "zeep" %}
+{% for post in visible_posts %}
     <li style="margin-bottom: 2em; box-sizing: border-box;">
         <a href="{{ post.url }}" style="text-decoration:none;">
             <div style="display: flex; align-items: flex-start; box-sizing: border-box;">
@@ -30,7 +30,6 @@ Op deze pagina vind je een overzicht van uiteenlopende projecten waar ik aan wer
             </div>
         </a>
     </li>
-{% endunless %}
 {% endfor %}
 </ul>
 </div>

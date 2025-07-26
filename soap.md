@@ -93,10 +93,10 @@ author_profile: true
   {% include comments.html %}
 </div>
 
+{% assign visible_posts = site.posts | where_exp: "post", "post.hidden != true and post.tags contains 'zeep'" %}
 <div class="custom-list-container" style="box-sizing: border-box; width: 100%;">
 <ul style="list-style-type: none; padding: 0; margin: 0; box-sizing: border-box;">
-{% for post in site.posts %}
-{% if post.tags and post.tags contains 'zeep' %}
+{% for post in visible_posts %}
     <li style="margin-bottom: 2em; box-sizing: border-box;">
         <a href="{{ post.url }}" style="text-decoration:none;">
             <div style="display: flex; align-items: flex-start; box-sizing: border-box;">
@@ -114,7 +114,6 @@ author_profile: true
             </div>
         </a>
     </li>
-{% endif %}
 {% endfor %}
 </ul>
 </div>

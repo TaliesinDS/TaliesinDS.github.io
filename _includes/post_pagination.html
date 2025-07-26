@@ -1,7 +1,19 @@
 {% assign visible_posts = site.posts | where_exp: "post", "post.hidden != true" %}
-{% assign current_index = visible_posts | index_of: page %}
-{% assign prev_post = visible_posts[current_index | minus: 1] %}
-{% assign next_post = visible_posts[current_index | plus: 1] %}
+{% assign prev_post = nil %}
+{% assign next_post = nil %}
+{% for p in visible_posts %}
+  {% if p.url == page.url %}
+    {% assign prev_index = forloop.index0 | minus: 1 %}
+    {% assign next_index = forloop.index0 | plus: 1 %}
+    {% if prev_index >= 0 %}
+      {% assign prev_post = visible_posts[prev_index] %}
+    {% endif %}
+    {% if next_index < visible_posts.size %}
+      {% assign next_post = visible_posts[next_index] %}
+    {% endif %}
+    {% break %}
+  {% endif %}
+{% endfor %}
 {% if prev_post or next_post %}
   <nav class="pagination">
     {% if prev_post %}

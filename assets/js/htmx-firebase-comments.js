@@ -193,20 +193,6 @@ auth.onAuthStateChanged(user => {
 });
 document.addEventListener('DOMContentLoaded', function() {
   // --- Real-time comment loading ---
-  // Add reCAPTCHA widget to comment form (hidden by default, shown for guests)
-  // Add accessible label to main comment textarea if not present (must be after mainForm declaration)
-  if (mainForm) {
-    const textarea = mainForm.querySelector('textarea[name="comment"]');
-    if (textarea && !mainForm.querySelector('label[for="firebase-main-textarea"]')) {
-      textarea.id = 'firebase-main-textarea';
-      const label = document.createElement('label');
-      label.setAttribute('for', 'firebase-main-textarea');
-      label.className = 'sr-only';
-      label.textContent = 'Comment';
-      mainForm.insertBefore(label, textarea);
-    }
-  }
-  // --- Real-time comment loading ---
   
   // Add reCAPTCHA widget to comment form (hidden by default, shown for guests)
   const mainForm = document.getElementById('firebase-comment-form');
@@ -247,13 +233,12 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.appendChild(script);
     }
   }
-  // Add guest name field with accessible label if not present
+  // Add guest name field if not present
   if (mainForm && !document.getElementById('firebase-guest-name')) {
     const nameDiv = document.createElement('div');
     nameDiv.id = 'firebase-guest-name-wrap';
     nameDiv.style.display = 'none';
     nameDiv.innerHTML = `
-      <label for="firebase-guest-name" class="sr-only">Your name (optional)</label>
       <input type="text" id="firebase-guest-name" name="guestName" class="comment-form-textarea" maxlength="32" placeholder="Your name (optional)">
     `;
     mainForm.insertBefore(nameDiv, mainForm.querySelector('textarea'));
@@ -630,8 +615,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = document.createElement('form');
     form.className = 'comment-form reply-form';
     form.innerHTML = `
-      <label for="firebase-reply-textarea" class="sr-only">Reply</label>
-      <textarea id="firebase-reply-textarea" name="comment" rows="2" placeholder="Write a reply..." required class="comment-form-textarea"></textarea>
+      <textarea name="comment" rows="2" placeholder="Write a reply..." required class="comment-form-textarea"></textarea>
       <div id="firebase-reply-captcha-wrap" style="display:none; margin:1em 0;"><div id="firebase-reply-captcha"></div></div>
       <button type="submit" class="btn btn--primary">Post Reply</button>
     `;
@@ -680,7 +664,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!form.querySelector('#firebase-reply-guest-name')) {
           const nameDiv = document.createElement('div');
           nameDiv.id = 'firebase-reply-guest-name-wrap';
-          nameDiv.innerHTML = `<label for="firebase-reply-guest-name" class="sr-only">Your name (optional)</label><input type="text" id="firebase-reply-guest-name" name="guestName" class="comment-form-textarea" maxlength="32" placeholder="Your name (optional)">`;
+          nameDiv.innerHTML = `<input type="text" id="firebase-reply-guest-name" name="guestName" class="comment-form-textarea" maxlength="32" placeholder="Your name (optional)">`;
           form.insertBefore(nameDiv, textarea);
           guestNameInput = nameDiv.querySelector('#firebase-reply-guest-name');
           if (guestNameInput && guestName) guestNameInput.value = guestName;

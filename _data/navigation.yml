@@ -10,3 +10,5 @@ main:
     url: /posts/
   - title: "Over mij"
     url: /about/
+  - title: "Autisme"
+    url: /autism/

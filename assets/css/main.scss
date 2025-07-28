@@ -38,6 +38,8 @@ search: false
 // =====================
 
 /* Minimal styling for test, based on _includes/comments.html after line 181 */
+
+
 .comments--testpage, .firebase-comments-section {
   max-width: 100%;
   overflow-x: hidden;
@@ -394,6 +396,20 @@ p.sc {
   margin-bottom: 0.5em !important;
 }
 
+.custom-divider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2em 0;
+}
+.custom-divider img {
+  height: 2em;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.8;
+}
 // =====================
 // Custom Post Date
 // =====================
@@ -649,7 +665,6 @@ overflow: hidden;
   text-align: center;
   font-style: italic;
   margin: 2em auto !important;
-  max-width: 600px;
   display: block;
 }
 // =====================

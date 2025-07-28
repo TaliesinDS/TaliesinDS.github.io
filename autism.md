@@ -73,3 +73,4 @@ tag: about
       <a href="{{ '/tag/' | append: tag | slugify | append: '/' | relative_url }}" class="post-tag">#{{ tag }}</a>
     {% endfor %}
   </div>
+{% endif %}

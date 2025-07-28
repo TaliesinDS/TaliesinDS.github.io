@@ -9,7 +9,7 @@ Op deze pagina vind je een overzicht van uiteenlopende projecten waar ik aan wer
 
 ![zeep verpakkingen](/assets/images/zeep1.jpg "mooie zeepjes")
 
-{% assign visible_posts = site.posts | where_exp: "post", "post.hidden != true and post.tags contains 'soap' == false and post.tags contains 'autism' == false" %}
+{% assign visible_posts = site.posts | where_exp: "post", "post.hidden != true and not post.tags contains 'soap' and not post.tags contains 'autism'" %}
 <div class="custom-list-container" style="box-sizing: border-box; width: 100%;">
 <ul style="list-style-type: none; padding: 0; margin: 0; box-sizing: border-box;">
 {% for post in visible_posts %}

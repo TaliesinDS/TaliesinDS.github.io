@@ -1,0 +1,54 @@
+
+
+
+<h2>What is Masking?</h2>
+<p>Roughly speaking in the context of autism, masking means to hide any outward signs of autism and appear as "normal" as possible. Lots of people, including me, start doing this at a young age in response to negative reactions towards their personality quirks. Especially things like stimming are quickly rejected by peers in my personal experience (at least at elementary school age).</p>
+<p>Some people go so far as not only blocking their own "unwanted" behaviour but also copying the behaviour of other people that seem to be socially successful. I never dared to do that because I was afraid that anyone would see straight through that and then I would be made fun of because of it. Of course, now I know that being made fun of once isn't the end of the world and odds are the next day nobody even remembers, but back then it truly did feel like the end of the world.</p>
+<hr>
+
+<h3>My Earliest Memory of Masking</h3>
+<p>I remember the first days of kindergarten. We would spend the lunch break playing outside in the schoolyard. They had these carts where one kid could sit in it and steer while the other ones pushed it. They had a big one and a small one, the big one was obviously a lot cooler and all the kids ran to that one first when the lunch break started.</p>
+<p>I wanted to do that too, but only the driving. I had no interest in pushing the cart, it did not look nearly as much fun as driving.</p>
+<p>So I went to sit in the empty smaller cart expecting the other kids to push me, because that is what happened with the big cart, and nothing happened and I did not understand why.</p>
+<p>I thought perhaps the other kids didn't want to play with the small cart so the next break I planned to run out as soon as possible and sprint to the big cart first and sit in it so they would have to push me. But instead they all went to the small cart and played with that, leaving me sitting alone in the big cart.</p>
+<p>This puzzled and frustrated me so I started observing them and after a while I noticed a pattern. The kids driving and pushing were taking turns! So I hatched my next plan: I would start pushing and see if that would get me accepted. And finally after pushing for about a week I got regular turns at the wheel as well.</p>
+<p>That is probably the earliest memory I have of trying to act like a normal human, and I was 4 at the time.</p>
+<hr>
+
+<h3>Learning to Hide</h3>
+<p>When I was young, I took things very literally. So when I discovered something I did was looked down upon by others, I wanted to instantly stop doing that. I saw other kids being bullied or doing things I thought were wrong and desperately wanted to not belong to that group, so I would be accepted by my peers.</p>
+<p>When I was around 3 years old, I didn't know how to deal with other kids or stand up for myself, so whenever something happened that I did not agree with (like someone else occupying the swing), I would go to my mom crying and expect her to fix it. This happened so much that one time my mom lost her patience and told me, "stop crying every time and just hit back or something!"</p>
+<p>Me being me, I took that as "you are no longer allowed to cry, you are no longer allowed to come to me with your problems, you must fight," and after that I started to just endure everything I didn't like until it got too much and then I started punching (this didn't end up happening a lot, but enough to not be bullied structurally because the bullies knew it would come at a price).</p>
+<p>After this, I instantly started disliking other kids crying and viewed them as childish.</p>
+
+<hr>
+
+<p>Sometimes someone would do something and then be ridiculed for it by other kids, and I would recognise myself in the person being bullied, because I would sometimes do the same thing they were being picked on for. I’d be horrified and overcome with a feeling of shame and self-loathing, and vow to myself to never ever do something like that again because I did not want to be the target next time.</p>
+<p>Eventually, the list of things I could never do got longer and longer and would contain things such as: cry, requiring the teacher to loosen your pants before a toilet break, any other toilet mishaps kids might have, having a snotty nose, etc. I don't even remember most of it, but it was basically all things regular kids just do because they are kids.</p>
+<p>With that naturally came a strong feeling of distaste whenever I saw someone else do those things. Not for the person, but the action, even back then I couldn't care less about whether other people were perfect or not, it was only about me and I had to be not weird.</p>
+<hr>
+
+<h3>Growing Up, Not Alone but Isolated</h3>
+<p>I think I was about 20 years old when I realised this was why I never asked for help and always thought I had to do everything on my own no matter what. I didn't even know the reason anymore, but I was so used to <em>nobody will help you</em> that I lived and thought that way for all that time without ever thinking "is this really the way other people live?"</p>
+<p>I had too many other things around me eating up all my mental energy to leave any spare energy I could use on self-reflection. But even if I had that energy, how would I even discover self-reflection? Nobody would teach me that because I would not talk to other people about my issues. Of course this led to many people, who could have helped me, not doing so because I never reached out and I ended up becoming that troubled kid nobody wants to deal with and they were happy to see gone.
+Like that one time when I was 16 and decided to drop out of high school, the only thing the Dean had to say about that was that he thought it was a good idea. He didn't even ask what my parents thought about it.
+</p>
+<hr>
+
+<h3>The Lingering Effects</h3>
+<p>But even now, 20 to 30 years later, while I no longer feel the need to prove myself to the world, I still feel discomfort when I think about doing "autistic" things, and worse, when seeing other people do "autistic" things. I can live with the first part but not the second, because how can I expect others to be tolerant and accepting of me if I am not willing to be tolerant and accepting of others first?</p>
+<p>When I meet someone else on the spectrum who isn't as uptight as me about hiding who they really are and are just being themselves, as they should, I feel discomfort and embarrassment and think things like <em>is that how other people see me? Why are they doing this? I unlearned this when I was a kid, why haven't they?</em> and I hate that about myself.</p>
+<p>I want to get out of that old thought pattern of "normals" vs "weirdos" and turn it into just "people" so I can just accept myself, all of it, and perhaps make friends with other people who are also on the spectrum and not care about who is more autistic than who and other such nonsense.</p>
+<hr>
+
+
+<p><em>What does it mean for an autistic person to unmask? You might find you reach a point where masking feels almost impossible, or where you want to explore more about who you really are and be accepted for being your true autistic self. This process is called 'unmasking'.</em></p>
+<hr>
+
+
+<h3>My Journey to Unmasking</h3>
+<em>Who Am I Really?</em>
+<p>I spent so many years hiding who I really am that I have forgotten my personality. But perhaps everyone feels like that.</p>
+<p>So I put on my mask at that time and now I am 43. <em> there even anything left underneath the mask?</em> Of course there is, but such are the thoughts crossing my mind when I think about it.</p>
+<p><em>Where do I even begin looking inside myself and should I even bother? What is the benefit? Will I be happier being myself or will I turn into someone pretending to be extra autistic? Am I trying to fix something that isn't broken?</em></p>
+<p>I am trying to not feel shame about who I am, what I am. I am just me, not someone with a handicap or with a broken brain. It's really hard to allow myself to just be me. I don't even really know who me is anymore. Hopefully writing this blog will help me with this.</p>

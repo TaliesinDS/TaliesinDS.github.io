@@ -6,9 +6,9 @@ main:
     url: /soap/
   - title: "Andere projecten"
     url: /projects/
+  - title: "Autisme"
+    url: /autism/
   - title: "Alle posts"
     url: /posts/
   - title: "Over mij"
     url: /about/
-  - title: "Autisme"
-    url: /autism/

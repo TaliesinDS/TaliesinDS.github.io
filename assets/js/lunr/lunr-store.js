@@ -36,7 +36,7 @@ var store = [{
         "teaser": "/assets/images/bull200px.webp"
       },{
         "title": "Masking",
-        "excerpt":"Masking Masking Masking What is Masking? Roughly speaking in the context of autism, masking means to hide any outward signs of autism and appear as \"normal\" as possible. Lots of people, including me, start doing this at a young age in response to negative reactions towards their personality quirks. Especially...","categories": [],
+        "excerpt":"Masking Masking Wat is Maskeren? In de context van autisme betekent maskeren grofweg dat je alle uiterlijke tekenen van autisme verbergt en zo “normaal” mogelijk probeert over te komen. Veel mensen, waaronder ikzelf, beginnen hier al op jonge leeftijd mee als reactie op negatieve reacties op hun persoonlijkheid of eigenaardigheden....","categories": [],
         "tags": ["autism"],
         "url": "/masking/",
         "teaser": "/assets/images/teaser/masking.webp"

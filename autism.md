@@ -16,7 +16,6 @@ tag: about
     </div>
   </div>
  text over autisme
-  </div>
 </div>
 
 <div class="lang-content lang-en" style="display: none;">

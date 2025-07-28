@@ -648,8 +648,9 @@ overflow: hidden;
 .center-italic {
   text-align: center;
   font-style: italic;
-  margin: 2em auto;
+  margin: 2em auto !important;
   max-width: 600px;
+  display: block;
 }
 // =====================
 // Miscellaneous

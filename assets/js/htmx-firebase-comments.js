@@ -233,24 +233,40 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.appendChild(script);
     }
   }
-  // Add guest name field if not present
-  if (mainForm && !document.getElementById('firebase-guest-name')) {
+  // Add display name field for all users (guests and logged-in)
+  if (mainForm && !document.getElementById('firebase-display-name')) {
     const nameDiv = document.createElement('div');
-    nameDiv.id = 'firebase-guest-name-wrap';
-    nameDiv.style.display = 'none';
+    nameDiv.id = 'firebase-display-name-wrap';
     nameDiv.innerHTML = `
-      <input type="text" id="firebase-guest-name" name="guestName" class="comment-form-textarea" maxlength="32" placeholder="Your name (optional)">
+      <input type="text" id="firebase-display-name" name="displayName" class="comment-form-textarea" maxlength="32" placeholder="Your name (optional)">
     `;
     mainForm.insertBefore(nameDiv, mainForm.querySelector('textarea'));
-    // Auto-fill guest name from localStorage if available
-    const guestNameInput = nameDiv.querySelector('#firebase-guest-name');
-    if (guestNameInput && window.localStorage) {
-      const savedName = localStorage.getItem('firebase-guest-name');
-      if (savedName) guestNameInput.value = savedName;
-      guestNameInput.addEventListener('input', function() {
-        localStorage.setItem('firebase-guest-name', guestNameInput.value.trim());
+    // Auto-fill display name from localStorage if available
+    const displayNameInput = nameDiv.querySelector('#firebase-display-name');
+    if (displayNameInput && window.localStorage) {
+      const savedName = localStorage.getItem('firebase-display-name');
+      if (savedName) displayNameInput.value = savedName;
+      displayNameInput.addEventListener('input', function() {
+        localStorage.setItem('firebase-display-name', displayNameInput.value.trim());
       });
     }
+    // Pre-fill with Google name if logged in
+    auth.onAuthStateChanged(user => {
+      if (user && !user.isAnonymous && user.displayName) {
+        displayNameInput.value = localStorage.getItem('firebase-display-name') || user.displayName;
+      }
+      nameDiv.style.display = 'block';
+    });
+    // Show/hide for guests
+    auth.onAuthStateChanged(user => {
+      if (user && user.isAnonymous) {
+        nameDiv.style.display = 'block';
+      } else if (user) {
+        nameDiv.style.display = 'block';
+      } else {
+        nameDiv.style.display = 'none';
+      }
+    });
   }
   // Add Upgrade button if not present
   const authDiv2 = document.querySelector('.comments-auth');
@@ -322,15 +338,15 @@ document.addEventListener('DOMContentLoaded', function() {
         window.lastGuestCommentTime = now;
         window.grecaptcha.reset();
       }
-      // Support anonymous user info
-      let name = user.displayName;
+      // Use display name for all users
+      const displayNameInput = document.getElementById('firebase-display-name');
+      let name = displayNameInput ? displayNameInput.value.trim() : '';
       let avatar = user.photoURL;
       if (user.isAnonymous) {
-        const guestNameInput = document.getElementById('firebase-guest-name');
-        const guestName = guestNameInput ? guestNameInput.value.trim() : '';
-        name = guestName || 'Guest';
-        // Pick a deterministic avatar based on UID
+        name = name || 'Guest';
         avatar = getGuestAvatar(user.uid);
+      } else {
+        name = name || user.displayName || 'User';
       }
       db.collection('comments').add({
         post: window.location.pathname,
@@ -344,11 +360,10 @@ document.addEventListener('DOMContentLoaded', function() {
         parent: null
       }).then(() => {
         mainForm.reset();
-        // Restore guest name after reset
-        const guestNameInput = document.getElementById('firebase-guest-name');
-        if (guestNameInput && window.localStorage) {
-          const savedName = localStorage.getItem('firebase-guest-name');
-          if (savedName) guestNameInput.value = savedName;
+        // Restore display name after reset
+        if (displayNameInput && window.localStorage) {
+          const savedName = localStorage.getItem('firebase-display-name');
+          if (savedName) displayNameInput.value = savedName;
         }
       });
     });

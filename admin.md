@@ -174,7 +174,7 @@ function renderDeleteButton() {
         }
       }
       selectedCommentIds.clear();
-      // Refresh comments directly
+      // Refresh comments and recently deleted section
       db.collection('comments').orderBy('created', 'desc').get().then(snapshot => {
         allComments = [];
         allPages.clear();
@@ -188,6 +188,7 @@ function renderDeleteButton() {
         });
         renderFilters();
         renderComments(currentPageFilter, currentUserFilter, currentDateSort);
+        renderRecentlyDeleted();
         btn.disabled = false;
       });
     };

@@ -43,13 +43,15 @@ function renderUserManagement() {
   }
   userDiv.style.display = '';
   const userList = userDiv.querySelector('#admin-user-list');
-  // Build user list from allComments
+  // Build user list from allComments, grouped by uid
   const userMap = new Map();
   allComments.forEach(c => {
+    const uid = (c.user && c.user.uid) ? c.user.uid : 'guest';
     const name = (c.user && c.user.name) ? c.user.name : 'Guest';
-    if (!userMap.has(name)) userMap.set(name, { count: 0, ids: [] });
-    userMap.get(name).count++;
-    userMap.get(name).ids.push(c.id);
+    if (!userMap.has(uid)) userMap.set(uid, { count: 0, ids: [], names: new Set() });
+    userMap.get(uid).count++;
+    userMap.get(uid).ids.push(c.id);
+    userMap.get(uid).names.add(name);
   });
   if (userMap.size === 0) {
     userList.innerHTML = '<em>No users found.</em>';
@@ -60,14 +62,16 @@ function renderUserManagement() {
   table.style.borderCollapse = 'collapse';
   table.innerHTML = `<thead><tr><th>User</th><th>Comments</th><th>Actions</th></tr></thead><tbody></tbody>`;
   const tbody = table.querySelector('tbody');
-  userMap.forEach((info, name) => {
+  userMap.forEach((info, uid) => {
+    const allNames = Array.from(info.names).map(escapeHTML).join(', ');
+    const mostRecentName = Array.from(info.names).pop();
     const row = document.createElement('tr');
     row.innerHTML = `
-      <td>${escapeHTML(name)}</td>
+      <td>${allNames}</td>
       <td>${info.count}</td>
       <td>
         <button class="btn btn--primary admin-view-user-comments" data-ids="${info.ids.join(',')}">View Comments</button>
-        <button class="btn btn--danger admin-block-user" data-user="${escapeHTML(name)}">Block User</button>
+        <button class="btn btn--danger admin-block-user" data-uid="${escapeHTML(uid)}" data-name="${escapeHTML(mostRecentName)}">Block User</button>
         <button class="btn btn--danger admin-delete-user-comments" data-ids="${info.ids.join(',')}">Delete All Posts</button>
       </td>
     `;
@@ -84,14 +88,15 @@ function renderUserManagement() {
       renderCommentsForUser(filtered);
     };
   });
-  // Block User button logic
+  // Block User button logic (by uid)
   tbody.querySelectorAll('.admin-block-user').forEach(btn => {
     btn.onclick = async function() {
-      const userName = this.getAttribute('data-user');
-      if (!confirm(`Block user '${userName}' from commenting?`)) return;
-      // Add to blocked_users collection
-      await db.collection('blocked_users').doc(userName).set({ blocked: true, blockedAt: Date.now() });
-      alert(`User '${userName}' has been blocked.`);
+      const uid = this.getAttribute('data-uid');
+      const name = this.getAttribute('data-name');
+      if (!confirm(`Block user '${name}' (uid: ${uid}) from commenting?`)) return;
+      // Add to blocked_users collection by uid
+      await db.collection('blocked_users').doc(uid).set({ blocked: true, blockedAt: Date.now(), name });
+      alert(`User '${name}' has been blocked.`);
     };
   });
   // Delete All Posts button logic

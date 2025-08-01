@@ -545,6 +545,7 @@ function renderRecentlyDeleted() {
     deletedDiv.style.marginTop = '2em';
     container.appendChild(deletedDiv);
   }
+  deletedDiv.style.display = 'block';
   deletedDiv.innerHTML = '<h3>Recently Deleted (last 3 hours)</h3><div id="admin-deleted-list">Loading...</div>';
   const deletedList = deletedDiv.querySelector('#admin-deleted-list');
   // Purge comments older than 3 hours

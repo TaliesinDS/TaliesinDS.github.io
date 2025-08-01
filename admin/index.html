@@ -569,6 +569,8 @@ function renderRecentlyDeleted() {
       deletedList.innerHTML = '<em>No recently deleted comments.</em>';
       return;
     }
+    // Sort by deletedAt descending (most recent first)
+    toShow.sort((a, b) => (b.deletedAt || 0) - (a.deletedAt || 0));
     const table = document.createElement('table');
     table.style.width = '100%';
     table.style.borderCollapse = 'collapse';

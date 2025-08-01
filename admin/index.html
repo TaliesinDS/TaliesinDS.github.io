@@ -324,6 +324,10 @@
     </thead>
     <tbody></tbody>
   </table>
+  <div id="admin-deleted-comments" style="margin-top:2em; display:none;">
+    <h3>Recently Deleted (last 3 hours)</h3>
+    <div id="admin-deleted-list">Loading...</div>
+  </div>
 </div>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 
@@ -452,19 +456,45 @@ function renderDeleteButton() {
         alert('No comments selected.');
         return;
       }
-      if (!confirm('Are you sure you want to delete the selected comments? This cannot be undone.')) return;
+      if (!confirm('Are you sure you want to delete the selected comments? You can restore them within 3 hours.')) return;
       btn.disabled = true;
+      const now = Date.now();
       for (const id of selectedCommentIds) {
         try {
-          await db.collection('comments').doc(id).delete();
+          // Get the comment data
+          const docRef = db.collection('comments').doc(id);
+          const docSnap = await docRef.get();
+          if (docSnap.exists) {
+            const commentData = docSnap.data();
+            // Move to deleted_comments with deletion timestamp
+            await db.collection('deleted_comments').doc(id).set({
+              ...commentData,
+              deletedAt: now
+            });
+            // Delete from comments
+            await docRef.delete();
+          }
         } catch (e) {
           alert('Failed to delete comment: ' + e.message);
         }
       }
       selectedCommentIds.clear();
-      // Refresh comments
-      auth.onAuthStateChanged(auth.currentUser);
-      btn.disabled = false;
+      // Refresh comments directly
+      db.collection('comments').orderBy('created', 'desc').get().then(snapshot => {
+        allComments = [];
+        allPages.clear();
+        allUsers.clear();
+        snapshot.forEach(doc => {
+          const c = doc.data();
+          c.id = doc.id;
+          allComments.push(c);
+          if (c.post) allPages.add(c.post);
+          if (c.user && c.user.name) allUsers.add(c.user.name);
+        });
+        renderFilters();
+        renderComments(currentPageFilter, currentUserFilter, currentDateSort);
+        btn.disabled = false;
+      });
     };
   }
 }
@@ -506,6 +536,96 @@ function renderFilters() {
   filterDiv.appendChild(sortSelect);
 }
 
+function renderRecentlyDeleted() {
+  const container = document.getElementById('admin-comments-container');
+  let deletedDiv = document.getElementById('admin-deleted-comments');
+  if (!deletedDiv) {
+    deletedDiv = document.createElement('div');
+    deletedDiv.id = 'admin-deleted-comments';
+    deletedDiv.style.marginTop = '2em';
+    container.appendChild(deletedDiv);
+  }
+  deletedDiv.innerHTML = '<h3>Recently Deleted (last 3 hours)</h3><div id="admin-deleted-list">Loading...</div>';
+  const deletedList = deletedDiv.querySelector('#admin-deleted-list');
+  // Purge comments older than 3 hours
+  const threeHoursAgo = Date.now() - 3 * 60 * 60 * 1000;
+  db.collection('deleted_comments').get().then(snapshot => {
+    let toShow = [];
+    let toDelete = [];
+    snapshot.forEach(doc => {
+      const c = doc.data();
+      c.id = doc.id;
+      if (c.deletedAt < threeHoursAgo) {
+        toDelete.push(doc.id);
+      } else {
+        toShow.push(c);
+      }
+    });
+    // Purge old deleted comments
+    toDelete.forEach(id => db.collection('deleted_comments').doc(id).delete());
+    if (toShow.length === 0) {
+      deletedList.innerHTML = '<em>No recently deleted comments.</em>';
+      return;
+    }
+    const table = document.createElement('table');
+    table.style.width = '100%';
+    table.style.borderCollapse = 'collapse';
+    table.innerHTML = `<thead><tr><th>Restore</th><th>Post</th><th>User</th><th>Date</th><th>Comment</th></tr></thead><tbody></tbody>`;
+    const tbody = table.querySelector('tbody');
+    toShow.forEach(c => {
+      let formattedDate = '';
+      if (c.created && c.created.toDate) {
+        const d = c.created.toDate();
+        formattedDate = d.toLocaleString('en-US', {
+          year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false
+        }).replace(',', ' at');
+      }
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td><button class="btn btn--primary admin-restore-btn" data-id="${escapeHTML(c.id)}">Restore</button></td>
+        <td>${escapeHTML(c.post || '')}</td>
+        <td>${escapeHTML((c.user && c.user.name) || 'Guest')}</td>
+        <td>${escapeHTML(formattedDate)}</td>
+        <td>${escapeHTML(c.text)}</td>
+      `;
+      tbody.appendChild(row);
+    });
+    deletedList.innerHTML = '';
+    deletedList.appendChild(table);
+    // Restore button logic
+    tbody.querySelectorAll('.admin-restore-btn').forEach(btn => {
+      btn.onclick = async function() {
+        const id = this.getAttribute('data-id');
+        const docRef = db.collection('deleted_comments').doc(id);
+        const docSnap = await docRef.get();
+        if (docSnap.exists) {
+          const commentData = docSnap.data();
+          // Restore to comments
+          await db.collection('comments').doc(id).set(commentData);
+          // Remove from deleted_comments
+          await docRef.delete();
+          renderRecentlyDeleted();
+          // Refresh main comments
+          db.collection('comments').orderBy('created', 'desc').get().then(snapshot => {
+            allComments = [];
+            allPages.clear();
+            allUsers.clear();
+            snapshot.forEach(doc => {
+              const c = doc.data();
+              c.id = doc.id;
+              allComments.push(c);
+              if (c.post) allPages.add(c.post);
+              if (c.user && c.user.name) allUsers.add(c.user.name);
+            });
+            renderFilters();
+            renderComments(currentPageFilter, currentUserFilter, currentDateSort);
+          });
+        }
+      };
+    });
+  });
+}
+
 auth.onAuthStateChanged(user => {
   showAuthUI(user);
   if (!user || user.uid !== ADMIN_UID) return;
@@ -523,6 +643,7 @@ auth.onAuthStateChanged(user => {
     renderFilters();
     renderComments(currentPageFilter, currentUserFilter, currentDateSort);
     renderDeleteButton();
+    renderRecentlyDeleted();
     document.getElementById('admin-comments-loading').style.display = 'none';
     document.getElementById('admin-comments-table').style.display = '';
   });

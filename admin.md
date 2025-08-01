@@ -13,6 +13,7 @@ author_profile: true
   <table id="admin-comments-table" style="width:100%; border-collapse:collapse; display:none;">
     <thead>
       <tr>
+        <th>Select</th>
         <th>Post</th>
         <th>User</th>
         <th>Date</th>
@@ -87,6 +88,7 @@ let allUsers = new Set();
 let currentPageFilter = '';
 let currentUserFilter = '';
 let currentDateSort = 'desc';
+let selectedCommentIds = new Set();
 
 function renderComments(pageFilter = '', userFilter = '', dateSort = 'desc') {
   const table = document.getElementById('admin-comments-table');
@@ -112,6 +114,7 @@ function renderComments(pageFilter = '', userFilter = '', dateSort = 'desc') {
     }
     const row = document.createElement('tr');
     row.innerHTML = `
+      <td><input type="checkbox" class="admin-comment-checkbox" data-id="${escapeHTML(c.id)}" ${selectedCommentIds.has(c.id) ? 'checked' : ''}></td>
       <td>${escapeHTML(c.post || '')}</td>
       <td>${escapeHTML((c.user && c.user.name) || 'Guest')}</td>
       <td>${escapeHTML(formattedDate)}</td>
@@ -119,6 +122,46 @@ function renderComments(pageFilter = '', userFilter = '', dateSort = 'desc') {
     `;
     tbody.appendChild(row);
   });
+  // Checkbox event listeners
+  tbody.querySelectorAll('.admin-comment-checkbox').forEach(cb => {
+    cb.onchange = function() {
+      const id = this.getAttribute('data-id');
+      if (this.checked) selectedCommentIds.add(id);
+      else selectedCommentIds.delete(id);
+    };
+  });
+}
+
+function renderDeleteButton() {
+  const table = document.getElementById('admin-comments-table');
+  let btn = document.getElementById('admin-delete-selected-btn');
+  if (!btn) {
+    btn = document.createElement('button');
+    btn.id = 'admin-delete-selected-btn';
+    btn.className = 'btn btn--danger';
+    btn.textContent = 'Delete Selected';
+    btn.style.marginBottom = '1em';
+    table.parentNode.insertBefore(btn, table);
+    btn.onclick = async function() {
+      if (selectedCommentIds.size === 0) {
+        alert('No comments selected.');
+        return;
+      }
+      if (!confirm('Are you sure you want to delete the selected comments? This cannot be undone.')) return;
+      btn.disabled = true;
+      for (const id of selectedCommentIds) {
+        try {
+          await db.collection('comments').doc(id).delete();
+        } catch (e) {
+          alert('Failed to delete comment: ' + e.message);
+        }
+      }
+      selectedCommentIds.clear();
+      // Refresh comments
+      auth.onAuthStateChanged(auth.currentUser);
+      btn.disabled = false;
+    };
+  }
 }
 
 function renderFilters() {
@@ -167,12 +210,14 @@ auth.onAuthStateChanged(user => {
     allUsers.clear();
     snapshot.forEach(doc => {
       const c = doc.data();
+      c.id = doc.id;
       allComments.push(c);
       if (c.post) allPages.add(c.post);
       if (c.user && c.user.name) allUsers.add(c.user.name);
     });
     renderFilters();
     renderComments(currentPageFilter, currentUserFilter, currentDateSort);
+    renderDeleteButton();
     document.getElementById('admin-comments-loading').style.display = 'none';
     document.getElementById('admin-comments-table').style.display = '';
   });

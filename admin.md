@@ -51,20 +51,24 @@ function escapeHTML(str) {
 
 function showAuthUI(user) {
   const authDiv = document.getElementById('admin-auth-container');
+  const commentsContainer = document.getElementById('admin-comments-container');
   if (!user) {
     authDiv.innerHTML = `<button id="admin-login-btn" class="btn btn--primary">Sign in with Google</button>`;
     document.getElementById('admin-login-btn').onclick = loginWithGoogle;
     document.getElementById('admin-comments-table').style.display = 'none';
     document.getElementById('admin-comments-loading').style.display = 'none';
+    commentsContainer.style.display = 'none';
   } else if (user.uid !== ADMIN_UID) {
     authDiv.innerHTML = `<div style="color:red; font-weight:bold;">Access denied. You are not authorized to view this page.</div><button id="admin-logout-btn" class="btn btn--primary" style="margin-top:1em;">Sign out</button>`;
     document.getElementById('admin-logout-btn').onclick = logout;
     document.getElementById('admin-comments-table').style.display = 'none';
     document.getElementById('admin-comments-loading').style.display = 'none';
+    commentsContainer.style.display = 'none';
   } else {
     authDiv.innerHTML = `<div style="color:green; font-weight:bold;">Welcome, ${escapeHTML(user.displayName || 'Admin')}!</div><button id="admin-logout-btn" class="btn btn--primary" style="margin-top:1em;">Sign out</button>`;
     document.getElementById('admin-logout-btn').onclick = logout;
     document.getElementById('admin-comments-loading').style.display = '';
+    commentsContainer.style.display = 'block';
   }
 }
 

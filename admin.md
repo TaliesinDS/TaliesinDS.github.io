@@ -22,10 +22,138 @@ author_profile: true
     </thead>
     <tbody></tbody>
   </table>
-  <div id="admin-deleted-comments" style="margin-top:2em; display:none;">
-    <h3>Recently Deleted (last 3 hours)</h3>
-    <div id="admin-deleted-list">Loading...</div>
-  </div>
+<div id="admin-user-management" style="margin-top:2em; display:none;">
+  <h3>User Management</h3>
+  <div id="admin-user-list">Loading...</div>
+</div>
+<div id="admin-deleted-comments" style="margin-top:2em; display:none;">
+  <h3>Recently Deleted (last 3 hours)</h3>
+  <div id="admin-deleted-list">Loading...</div>
+</div>
+function renderUserManagement() {
+  const container = document.getElementById('admin-comments-container');
+  let userDiv = document.getElementById('admin-user-management');
+  if (!userDiv) {
+    userDiv = document.createElement('div');
+    userDiv.id = 'admin-user-management';
+    userDiv.style.marginTop = '2em';
+    container.appendChild(userDiv);
+  }
+  userDiv.style.display = '';
+  const userList = userDiv.querySelector('#admin-user-list');
+  // Build user list from allComments
+  const userMap = new Map();
+  allComments.forEach(c => {
+    const name = (c.user && c.user.name) ? c.user.name : 'Guest';
+    if (!userMap.has(name)) userMap.set(name, { count: 0, ids: [] });
+    userMap.get(name).count++;
+    userMap.get(name).ids.push(c.id);
+  });
+  if (userMap.size === 0) {
+    userList.innerHTML = '<em>No users found.</em>';
+    return;
+  }
+  const table = document.createElement('table');
+  table.style.width = '100%';
+  table.style.borderCollapse = 'collapse';
+  table.innerHTML = `<thead><tr><th>User</th><th>Comments</th><th>Actions</th></tr></thead><tbody></tbody>`;
+  const tbody = table.querySelector('tbody');
+  userMap.forEach((info, name) => {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${escapeHTML(name)}</td>
+      <td>${info.count}</td>
+      <td>
+        <button class="btn btn--primary admin-view-user-comments" data-ids="${info.ids.join(',')}">View Comments</button>
+        <button class="btn btn--danger admin-block-user" data-user="${escapeHTML(name)}">Block User</button>
+        <button class="btn btn--danger admin-delete-user-comments" data-ids="${info.ids.join(',')}">Delete All Posts</button>
+      </td>
+    `;
+    tbody.appendChild(row);
+  });
+  userList.innerHTML = '';
+  userList.appendChild(table);
+  // View Comments button logic
+  tbody.querySelectorAll('.admin-view-user-comments').forEach(btn => {
+    btn.onclick = function() {
+      const ids = this.getAttribute('data-ids').split(',');
+      // Filter and show only this user's comments in the main table
+      const filtered = allComments.filter(c => ids.includes(c.id));
+      renderCommentsForUser(filtered);
+    };
+  });
+  // Block User button logic
+  tbody.querySelectorAll('.admin-block-user').forEach(btn => {
+    btn.onclick = async function() {
+      const userName = this.getAttribute('data-user');
+      if (!confirm(`Block user '${userName}' from commenting?`)) return;
+      // Add to blocked_users collection
+      await db.collection('blocked_users').doc(userName).set({ blocked: true, blockedAt: Date.now() });
+      alert(`User '${userName}' has been blocked.`);
+    };
+  });
+  // Delete All Posts button logic
+  tbody.querySelectorAll('.admin-delete-user-comments').forEach(btn => {
+    btn.onclick = async function() {
+      const ids = this.getAttribute('data-ids').split(',');
+      if (!confirm('Delete all comments by this user? This cannot be undone.')) return;
+      for (const id of ids) {
+        try {
+          const docRef = db.collection('comments').doc(id);
+          const docSnap = await docRef.get();
+          if (docSnap.exists) {
+            const commentData = docSnap.data();
+            await db.collection('deleted_comments').doc(id).set({ ...commentData, deletedAt: Date.now() });
+            await docRef.delete();
+          }
+        } catch (e) {
+          alert('Failed to delete comment: ' + e.message);
+        }
+      }
+      // Refresh comments and user management
+      db.collection('comments').orderBy('created', 'desc').get().then(snapshot => {
+        allComments = [];
+        allPages.clear();
+        allUsers.clear();
+        snapshot.forEach(doc => {
+          const c = doc.data();
+          c.id = doc.id;
+          allComments.push(c);
+          if (c.post) allPages.add(c.post);
+          if (c.user && c.user.name) allUsers.add(c.user.name);
+        });
+        renderFilters();
+        renderComments(currentPageFilter, currentUserFilter, currentDateSort);
+        renderUserManagement();
+        renderRecentlyDeleted();
+      });
+    };
+  });
+}
+
+function renderCommentsForUser(comments) {
+  const table = document.getElementById('admin-comments-table');
+  const tbody = table.querySelector('tbody');
+  tbody.innerHTML = '';
+  comments.forEach(c => {
+    let formattedDate = '';
+    if (c.created && c.created.toDate) {
+      const d = c.created.toDate();
+      formattedDate = d.toLocaleString('en-US', {
+        year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false
+      }).replace(',', ' at');
+    }
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td><input type="checkbox" class="admin-comment-checkbox" data-id="${escapeHTML(c.id)}" ${selectedCommentIds.has(c.id) ? 'checked' : ''}></td>
+      <td>${escapeHTML(c.post || '')}</td>
+      <td>${escapeHTML((c.user && c.user.name) || 'Guest')}</td>
+      <td>${escapeHTML(formattedDate)}</td>
+      <td>${escapeHTML(c.text)}</td>
+    `;
+    tbody.appendChild(row);
+  });
+}
 </div>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
@@ -342,6 +470,7 @@ auth.onAuthStateChanged(user => {
     renderFilters();
     renderComments(currentPageFilter, currentUserFilter, currentDateSort);
     renderDeleteButton();
+    renderUserManagement();
     renderRecentlyDeleted();
     document.getElementById('admin-comments-loading').style.display = 'none';
     document.getElementById('admin-comments-table').style.display = '';

@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>All Comments Overview - Portfolio</title>
+<!-- begin _includes/seo.html --><title>Admin Overview - Portfolio</title>
 <meta name="description" content="just a simple website to share some of the things i make">
 
 
@@ -21,8 +21,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
 <meta property="og:site_name" content="Portfolio">
-<meta property="og:title" content="All Comments Overview">
-<meta property="og:url" content="https://taliesinds.github.io//admin-comments/">
+<meta property="og:title" content="Admin Overview">
+<meta property="og:url" content="https://taliesinds.github.io//admin/">
 
 
   <meta property="og:description" content="just a simple website to share some of the things i make">
@@ -42,7 +42,7 @@
   
 
 
-<link rel="canonical" href="https://taliesinds.github.io//admin-comments/">
+<link rel="canonical" href="https://taliesinds.github.io//admin/">
 
 
 
@@ -286,7 +286,7 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="All Comments Overview">
+    <meta itemprop="headline" content="Admin Overview">
     
     
     
@@ -295,7 +295,7 @@
       
         <header>
           <h1 id="page-title" class="page__title" itemprop="headline">
-            <a href="https://taliesinds.github.io//admin-comments/" itemprop="url">All Comments Overview
+            <a href="https://taliesinds.github.io//admin/" itemprop="url">Admin Overview
 </a>
           </h1>
           
@@ -307,7 +307,8 @@
 
       <section class="page__content" itemprop="text">
         
-        <div id="admin-comments-container">
+        <div id="admin-auth-container"></div>
+<div id="admin-comments-container" style="display:none;">
   <h2>All Comments Overview</h2>
   <div id="admin-comments-loading">Loading comments...</div>
   <table id="admin-comments-table" style="width:100%; border-collapse:collapse; display:none;">
@@ -338,6 +339,8 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
 
+const ADMIN_UID = "SeV4YgBfa2e2ojIJspY8eSavPRy2";
+
 function escapeHTML(str) {
   return String(str).replace(/[&<>"']/g, function(tag) {
     const chars = {
@@ -351,31 +354,62 @@ function escapeHTML(str) {
   });
 }
 
-db.collection('comments').orderBy('created', 'desc').get().then(snapshot => {
-  const table = document.getElementById('admin-comments-table');
-  const tbody = table.querySelector('tbody');
-  const loading = document.getElementById('admin-comments-loading');
-  tbody.innerHTML = '';
-  snapshot.forEach(doc => {
-    const c = doc.data();
-    let formattedDate = '';
-    if (c.created && c.created.toDate) {
-      const d = c.created.toDate();
-      formattedDate = d.toLocaleString('en-US', {
-        year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false
-      }).replace(',', ' at');
-    }
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>${escapeHTML(c.post || '')}</td>
-      <td>${escapeHTML((c.user && c.user.name) || 'Guest')}</td>
-      <td>${escapeHTML(formattedDate)}</td>
-      <td>${escapeHTML(c.text)}</td>
-    `;
-    tbody.appendChild(row);
+function showAuthUI(user) {
+  const authDiv = document.getElementById('admin-auth-container');
+  if (!user) {
+    authDiv.innerHTML = `<button id="admin-login-btn" class="btn btn--primary">Sign in with Google</button>`;
+    document.getElementById('admin-login-btn').onclick = loginWithGoogle;
+    document.getElementById('admin-comments-table').style.display = 'none';
+    document.getElementById('admin-comments-loading').style.display = 'none';
+  } else if (user.uid !== ADMIN_UID) {
+    authDiv.innerHTML = `<div style="color:red; font-weight:bold;">Access denied. You are not authorized to view this page.</div><button id="admin-logout-btn" class="btn btn--primary" style="margin-top:1em;">Sign out</button>`;
+    document.getElementById('admin-logout-btn').onclick = logout;
+    document.getElementById('admin-comments-table').style.display = 'none';
+    document.getElementById('admin-comments-loading').style.display = 'none';
+  } else {
+    authDiv.innerHTML = `<div style="color:green; font-weight:bold;">Welcome, ${escapeHTML(user.displayName || 'Admin')}!</div><button id="admin-logout-btn" class="btn btn--primary" style="margin-top:1em;">Sign out</button>`;
+    document.getElementById('admin-logout-btn').onclick = logout;
+    document.getElementById('admin-comments-loading').style.display = '';
+  }
+}
+
+function loginWithGoogle() {
+  const provider = new firebase.auth.GoogleAuthProvider();
+  auth.signInWithPopup(provider);
+}
+function logout() {
+  auth.signOut();
+}
+
+auth.onAuthStateChanged(user => {
+  showAuthUI(user);
+  if (!user || user.uid !== ADMIN_UID) return;
+  db.collection('comments').orderBy('created', 'desc').get().then(snapshot => {
+    const table = document.getElementById('admin-comments-table');
+    const tbody = table.querySelector('tbody');
+    const loading = document.getElementById('admin-comments-loading');
+    tbody.innerHTML = '';
+    snapshot.forEach(doc => {
+      const c = doc.data();
+      let formattedDate = '';
+      if (c.created && c.created.toDate) {
+        const d = c.created.toDate();
+        formattedDate = d.toLocaleString('en-US', {
+          year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false
+        }).replace(',', ' at');
+      }
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${escapeHTML(c.post || '')}</td>
+        <td>${escapeHTML((c.user && c.user.name) || 'Guest')}</td>
+        <td>${escapeHTML(formattedDate)}</td>
+        <td>${escapeHTML(c.text)}</td>
+      `;
+      tbody.appendChild(row);
+    });
+    loading.style.display = 'none';
+    table.style.display = '';
   });
-  loading.style.display = 'none';
-  table.style.display = '';
 });
 </script>
 

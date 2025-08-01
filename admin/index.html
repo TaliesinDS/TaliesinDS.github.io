@@ -379,7 +379,7 @@ function showAuthUI(user) {
     authDiv.innerHTML = `<div style="color:green; font-weight:bold;">Welcome, ${escapeHTML(user.displayName || 'Admin')}!</div><button id="admin-logout-btn" class="btn btn--primary" style="margin-top:1em;">Sign out</button>`;
     document.getElementById('admin-logout-btn').onclick = logout;
     document.getElementById('admin-comments-loading').style.display = '';
-    commentsContainer.style.display = 'block';
+    commentsContainer.style.display = '';
   }
 }
 
@@ -545,7 +545,7 @@ function renderRecentlyDeleted() {
     deletedDiv.style.marginTop = '2em';
     container.appendChild(deletedDiv);
   }
-  deletedDiv.style.display = 'block';
+  deletedDiv.style.display = '';
   deletedDiv.innerHTML = '<h3>Recently Deleted (last 3 hours)</h3><div id="admin-deleted-list">Loading...</div>';
   const deletedList = deletedDiv.querySelector('#admin-deleted-list');
   // Purge comments older than 3 hours

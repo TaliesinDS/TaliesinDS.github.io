@@ -439,6 +439,29 @@
     </div>
 
     
+      
+        <!-- Firebase/htmx comment system include for all pages -->
+<div id="firebase-comments-section" class="comments comments--testpage">
+  <h3 class="comments-title">Comments</h3>
+  <div class="comments-auth">
+    <span id="firebase-user-info"></span>
+    <button id="firebase-login-btn" onclick="loginWithGoogle()" class="btn btn--primary">Sign in with Google</button>
+    <button id="firebase-logout-btn" onclick="logout()" class="btn btn--danger" style="display:none;">Sign out</button>
+  </div>
+  <form id="firebase-comment-form" style="display:none;" class="comment-form">
+    <textarea name="comment" rows="3" placeholder="Add a comment..." required class="comment-form-textarea"></textarea>
+    <button type="submit" class="btn btn--primary">Comment</button>
+  </form>
+  <div id="firebase-comment-list" class="comment-list"></div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="https://unpkg.com/htmx.org@1.9.10"></script>
+<script src="/assets/js/htmx-firebase-comments.js"></script>
+
+      
+    
   </article>
 
   
@@ -526,6 +549,10 @@
 
 
 
+
+
+
+    
 
 
 

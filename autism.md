@@ -4,7 +4,7 @@ title: "Over mijn ervaringen met autisme"
 layout: single
 author_profile: true
 tag: about
-comments: true
+comments: false
 ---
 
 <div class="lang-content lang-nl" style="display: block;">
@@ -37,6 +37,7 @@ comments: true
 
 <div class="comments-spacing">
   {% include comments.html %}
+  
 </div>
 
 {% assign visible_posts = site.posts | where_exp: "post", "post.hidden != true" %}

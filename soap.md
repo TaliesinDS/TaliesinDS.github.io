@@ -84,9 +84,6 @@ comments: true
 <div class="empty-box">
 </div>
 
-<div class="comments-spacing">
-  {% include comments.html %}
-</div>
 
 {% assign visible_posts = site.posts | where_exp: "post", "post.hidden != true" %}
 <div class="custom-list-container" style="box-sizing: border-box; width: 100%;">

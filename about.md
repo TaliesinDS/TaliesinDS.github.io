@@ -4,7 +4,7 @@ title: "Over mij"
 layout: single
 author_profile: true
 tag: about
-comments: true
+comments: false
 ---
 
 <div class="lang-content lang-nl" style="display: block;">
@@ -47,6 +47,11 @@ comments: true
   <div class="page-image-center">
   <img src="/assets/images/marginalia/catread1.webp" alt="Cat reading marginalia" />
 </div>
+</div>
+
+
+<div class="comments-spacing">
+  {% include comments.html %}
 </div>
 
 

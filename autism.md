@@ -4,6 +4,7 @@ title: "Over mijn ervaringen met autisme"
 layout: single
 author_profile: true
 tag: about
+comments: true
 ---
 
 <div class="lang-content lang-nl" style="display: block;">

@@ -8,6 +8,12 @@ About
 - This repository contains the source for my personal site built with Jekyll and the Minimal Mistakes theme (remote_theme mmistakes/minimal-mistakes@4.27.1).
 - Default locale: nl-NL. Content lives primarily under `_posts/`, `_pages/`, and `tag/`.
 
+Scope and reuse
+- This is the source for my personal website. It’s not a template or general-purpose starter.
+- You’re welcome to use ideas or copy customizations at your own risk.
+- I don’t provide support for reuse; issues/PRs related to adapting this code elsewhere may be ignored.
+- For a maintained starter, see Minimal Mistakes docs: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+
 Quick start (Windows / PowerShell)
 1) Prerequisites: Ruby (with DevKit), Bundler, and Git.
 2) Install dependencies:

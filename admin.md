@@ -429,8 +429,17 @@ function renderRecentlyDeleted() {
         const docSnap = await docRef.get();
         if (docSnap.exists) {
           const commentData = docSnap.data();
-          // Restore to comments
-          await db.collection('comments').doc(id).set(commentData);
+          // Build a sanitized object matching allowed fields in rules
+          const restored = {
+            post: commentData.post || '',
+            text: commentData.text || '',
+            user: commentData.user || { name: 'User', uid: 'unknown', avatar: '' },
+            created: commentData.created && commentData.created.toDate ? commentData.created : firebase.firestore.Timestamp.now(),
+            parent: commentData.parent || null,
+            deleted: !!commentData.deleted
+          };
+          // Restore to comments (strip housekeeping like deletedAt)
+          await db.collection('comments').doc(id).set(restored);
           // Remove from deleted_comments
           await docRef.delete();
           renderRecentlyDeleted();

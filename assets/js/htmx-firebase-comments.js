@@ -25,6 +25,7 @@ const auth = firebase.auth();
 // Cached admin status for current user
 window.__firebaseIsAdmin = false;
 let __adminUnsub = null;
+let __prevAdminState = null;
 
 function escapeHTML(str) {
   return String(str).replace(/[&<>"']/g, function(tag) {
@@ -197,10 +198,24 @@ auth.onAuthStateChanged(user => {
   try { if (__adminUnsub) { __adminUnsub(); __adminUnsub = null; } } catch (e) {}
   if (user) {
     __adminUnsub = db.doc(`admins/${user.uid}`).onSnapshot((doc) => {
-      window.__firebaseIsAdmin = !!(doc && doc.exists);
-    }, () => { window.__firebaseIsAdmin = false; });
+      const is = !!(doc && doc.exists);
+      // Detect change and reload to re-render action menus with admin privileges
+      if (__prevAdminState === null) {
+        __prevAdminState = is;
+        window.__firebaseIsAdmin = is;
+      } else if (is !== __prevAdminState) {
+        __prevAdminState = is;
+        window.__firebaseIsAdmin = is;
+        if (is) {
+          try { window.location.reload(); } catch (e) {}
+        }
+      } else {
+        window.__firebaseIsAdmin = is;
+      }
+    }, () => { window.__firebaseIsAdmin = false; __prevAdminState = false; });
   } else {
     window.__firebaseIsAdmin = false;
+    __prevAdminState = false;
   }
 });
 document.addEventListener('DOMContentLoaded', function() {

@@ -684,11 +684,11 @@ function renderRecentlyDeleted() {
     snapshot.forEach(doc => {
       const c = doc.data();
       c.id = doc.id;
-      if (c.deletedAt < threeHoursAgo) {
-        toDelete.push(doc.id);
-      } else {
-        toShow.push(c);
-      }
+      const ts = (typeof c.deletedAt === 'number')
+        ? c.deletedAt
+        : (c.deletedAt && c.deletedAt.toMillis) ? c.deletedAt.toMillis() : 0;
+      if (ts && ts < threeHoursAgo) toDelete.push(doc.id);
+      else toShow.push(c);
     });
     // Purge old deleted comments
     toDelete.forEach(id => db.collection('deleted_comments').doc(id).delete());
@@ -697,7 +697,11 @@ function renderRecentlyDeleted() {
       return;
     }
     // Sort by deletedAt descending (most recent first)
-    toShow.sort((a, b) => (b.deletedAt || 0) - (a.deletedAt || 0));
+    toShow.sort((a, b) => {
+      const am = (typeof a.deletedAt === 'number') ? a.deletedAt : (a.deletedAt && a.deletedAt.toMillis ? a.deletedAt.toMillis() : 0);
+      const bm = (typeof b.deletedAt === 'number') ? b.deletedAt : (b.deletedAt && b.deletedAt.toMillis ? b.deletedAt.toMillis() : 0);
+      return bm - am;
+    });
     const table = document.createElement('table');
     table.style.width = '100%';
     table.style.borderCollapse = 'collapse';

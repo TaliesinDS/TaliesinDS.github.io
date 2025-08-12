@@ -26,6 +26,9 @@ const auth = firebase.auth();
 window.__firebaseIsAdmin = false;
 let __adminUnsub = null;
 let __prevAdminState = null;
+const __adminReloaded = (function(){
+  try { return window.sessionStorage && sessionStorage.getItem('fbAdminReloaded') === '1'; } catch(e){ return false; }
+})();
 
 function escapeHTML(str) {
   return String(str).replace(/[&<>"']/g, function(tag) {
@@ -203,6 +206,10 @@ auth.onAuthStateChanged(user => {
       if (__prevAdminState === null) {
         __prevAdminState = is;
         window.__firebaseIsAdmin = is;
+        if (is && !__adminReloaded) {
+          try { sessionStorage.setItem('fbAdminReloaded','1'); } catch(e) {}
+          try { window.location.reload(); } catch (e) {}
+        }
       } else if (is !== __prevAdminState) {
         __prevAdminState = is;
         window.__firebaseIsAdmin = is;
@@ -216,6 +223,7 @@ auth.onAuthStateChanged(user => {
   } else {
     window.__firebaseIsAdmin = false;
     __prevAdminState = false;
+    try { sessionStorage.removeItem('fbAdminReloaded'); } catch(e) {}
   }
 });
 document.addEventListener('DOMContentLoaded', function() {
@@ -495,26 +503,17 @@ document.addEventListener('DOMContentLoaded', function() {
           isAdmin = !!window.__firebaseIsAdmin;
         }
   // 3-dots menu for actions (Edit/Delete only)
-        let actionMenu = '';
-        if (isOwner || isAdmin) {
-          actionMenu = `
-            <div class="comment-menu-wrap">
-              <button class="comment-menu-btn" aria-label="Comment actions">
-                <span class="comment-menu-icon">&#8942;</span>
-              </button>
-              <div class="comment-menu-popup">
-                <button class="comment-menu-edit" data-comment-id="${c.id}">Edit</button>
-                <button class="comment-menu-delete" data-comment-id="${c.id}">Delete</button>
-              </div>
-            </div>
-          `;
-        } else {
-          actionMenu = `<div class="comment-menu-wrap">
-            <button class="comment-menu-btn disabled" aria-label="Comment actions" disabled>
+        let actionMenu = `
+          <div class="comment-menu-wrap">
+            <button class="comment-menu-btn" aria-label="Comment actions">
               <span class="comment-menu-icon">&#8942;</span>
             </button>
-          </div>`;
-        }
+            <div class="comment-menu-popup">
+              <button class="comment-menu-edit" data-comment-id="${c.id}">Edit</button>
+              <button class="comment-menu-delete" data-comment-id="${c.id}">Delete</button>
+            </div>
+          </div>
+        `;
         // Format date
         let formattedDate = '';
         if (c.created && c.created.toDate) {
@@ -553,6 +552,14 @@ document.addEventListener('DOMContentLoaded', function() {
         if (menuBtn && menuPopup) {
           menuBtn.onclick = function(e) {
             e.stopPropagation();
+            // Re-evaluate permissions at click time
+            const nowUser = auth.currentUser;
+            const nowIsAdmin = !!window.__firebaseIsAdmin;
+            const nowIsOwner = nowUser && (nowUser.uid === c.user.uid);
+            if (!(nowIsOwner || nowIsAdmin)) {
+              // Not allowed — do not open menu
+              return;
+            }
             document.querySelectorAll('.comment-menu-popup').forEach(p => { if (p !== menuPopup) p.style.display = 'none'; });
             menuPopup.style.display = (menuPopup.style.display === 'block') ? 'none' : 'block';
           };
@@ -563,6 +570,10 @@ document.addEventListener('DOMContentLoaded', function() {
           const editBtn = menuPopup.querySelector('.comment-menu-edit');
           if (editBtn) {
             editBtn.onclick = function() {
+              const nowUser = auth.currentUser;
+              const nowIsAdmin = !!window.__firebaseIsAdmin;
+              const nowIsOwner = nowUser && (nowUser.uid === c.user.uid);
+              if (!(nowIsOwner || nowIsAdmin)) return;
               menuPopup.style.display = 'none';
               document.querySelectorAll('.edit-form').forEach(f => f.parentNode && f.parentNode.removeChild(f));
               const commentTextDiv = container.querySelector('.comment-text');
@@ -598,8 +609,12 @@ document.addEventListener('DOMContentLoaded', function() {
           const deleteBtn = menuPopup.querySelector('.comment-menu-delete');
           if (deleteBtn) {
             deleteBtn.onclick = function() {
+              const nowUser = auth.currentUser;
+              const nowIsAdmin = !!window.__firebaseIsAdmin;
+              const nowIsOwner = nowUser && (nowUser.uid === c.user.uid);
+              if (!(nowIsOwner || nowIsAdmin)) return;
               menuPopup.style.display = 'none';
-              if (isAdmin) {
+              if (nowIsAdmin) {
                 // Admin: hard-delete including replies
                 showAccessibleConfirmDialog({
                   message: 'Delete this comment and all its replies? This action cannot be undone.',
@@ -611,7 +626,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       });
                   }
                 });
-              } else if (isOwner) {
+              } else if (nowIsOwner) {
                 // Owner: soft-delete only this comment, keep replies
                 showAccessibleConfirmDialog({
                   message: 'Delete your comment? Replies will remain visible. Your comment text will be replaced with [deleted].',

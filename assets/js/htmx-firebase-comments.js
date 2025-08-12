@@ -196,7 +196,7 @@ auth.onAuthStateChanged(user => {
   // Subscribe to admin status for the current user
   try { if (__adminUnsub) { __adminUnsub(); __adminUnsub = null; } } catch (e) {}
   if (user) {
-    __adminUnsub = db.doc(`meta/admins/${user.uid}`).onSnapshot((doc) => {
+    __adminUnsub = db.doc(`admins/${user.uid}`).onSnapshot((doc) => {
       window.__firebaseIsAdmin = !!(doc && doc.exists);
     }, () => { window.__firebaseIsAdmin = false; });
   } else {

@@ -22,6 +22,9 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
+// Cached admin status for current user
+window.__firebaseIsAdmin = false;
+let __adminUnsub = null;
 
 function escapeHTML(str) {
   return String(str).replace(/[&<>"']/g, function(tag) {
@@ -190,6 +193,15 @@ function logout() {
 
 auth.onAuthStateChanged(user => {
   updateAuthUI(user);
+  // Subscribe to admin status for the current user
+  try { if (__adminUnsub) { __adminUnsub(); __adminUnsub = null; } } catch (e) {}
+  if (user) {
+    __adminUnsub = db.doc(`meta/admins/${user.uid}`).onSnapshot((doc) => {
+      window.__firebaseIsAdmin = !!(doc && doc.exists);
+    }, () => { window.__firebaseIsAdmin = false; });
+  } else {
+    window.__firebaseIsAdmin = false;
+  }
 });
 document.addEventListener('DOMContentLoaded', function() {
   // --- Real-time comment loading ---
@@ -462,13 +474,12 @@ document.addEventListener('DOMContentLoaded', function() {
         container.className = 'comment';
         container.style.marginLeft = (depth === 0 ? 0 : 1) + 'em'; // Replies always 1em relative to parent
         const currentUser = auth.currentUser;
-        const ADMIN_UIDS = ["SeV4YgBfa2e2ojIJspY8eSavPRy2"];
         let isOwner = false, isAdmin = false;
         if (currentUser) {
           isOwner = currentUser.uid === c.user.uid;
-          isAdmin = ADMIN_UIDS.includes(currentUser.uid);
+          isAdmin = !!window.__firebaseIsAdmin;
         }
-        // 3-dots menu for actions (Edit/Delete only)
+  // 3-dots menu for actions (Edit/Delete only)
         let actionMenu = '';
         if (isOwner || isAdmin) {
           actionMenu = `
@@ -497,6 +508,9 @@ document.addEventListener('DOMContentLoaded', function() {
             year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false
           }).replace(',', ' at');
         }
+        // Determine display text (respect soft-deleted state)
+        let displayTextHTML = c && c.deleted ? '<em>[deleted]</em>' : escapeHTML(c.text);
+
         container.innerHTML = `
           <div class="comment-main">
             <div class="comment-avatar-wrap"><img src="${c.user.avatar}" class="comment-avatar" alt="${escapeHTML(c.user.name)}"></div>
@@ -507,7 +521,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="comment-author">${escapeHTML(c.user.name) || 'Guest'}</span>
                     <span class="comment-date">${formattedDate}</span>
                   </div>
-                  <div class="comment-text">${escapeHTML(c.text)}</div>
+                  <div class="comment-text">${displayTextHTML}</div>
                 </div>
                 <div class="comment-menu-align">${actionMenu}</div>
               </div>
@@ -515,6 +529,9 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
           </div>
         `;
+        if (c && c.deleted) {
+          container.classList.add('comment--deleted');
+        }
         // 3-dots menu logic
         const menuBtn = container.querySelector('.comment-menu-btn');
         const menuPopup = container.querySelector('.comment-menu-popup');
@@ -567,16 +584,32 @@ document.addEventListener('DOMContentLoaded', function() {
           if (deleteBtn) {
             deleteBtn.onclick = function() {
               menuPopup.style.display = 'none';
-              showAccessibleConfirmDialog({
-                message: 'Are you sure you want to delete this comment? This will also delete all replies.',
-                onConfirm: () => {
-                  deleteCommentAndChildren(c.id)
-                    .then(() => {})
-                    .catch(err => {
+              if (isAdmin) {
+                // Admin: hard-delete including replies
+                showAccessibleConfirmDialog({
+                  message: 'Delete this comment and all its replies? This action cannot be undone.',
+                  onConfirm: () => {
+                    deleteCommentAndChildren(c.id)
+                      .then(() => {})
+                      .catch(err => {
+                        showAccessibleAlertDialog('Failed to delete comment: ' + err.message);
+                      });
+                  }
+                });
+              } else if (isOwner) {
+                // Owner: soft-delete only this comment, keep replies
+                showAccessibleConfirmDialog({
+                  message: 'Delete your comment? Replies will remain visible. Your comment text will be replaced with [deleted].',
+                  onConfirm: () => {
+                    db.collection('comments').doc(c.id).update({
+                      text: '[deleted]',
+                      deleted: true
+                    }).catch(err => {
                       showAccessibleAlertDialog('Failed to delete comment: ' + err.message);
                     });
-                }
-              });
+                  }
+                });
+              }
             };
           }
         }

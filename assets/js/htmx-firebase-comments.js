@@ -629,7 +629,7 @@ document.addEventListener('DOMContentLoaded', function() {
               } else if (nowIsOwner) {
                 // Owner: soft-delete only this comment, keep replies
                 showAccessibleConfirmDialog({
-                  message: 'Delete your comment? Replies will remain visible. Your comment text will be replaced with [deleted].',
+                  message: 'Delete your comment? Replies will remain visible. Your comment text will be replaced with [deleted]. This will not appear in Recently Deleted.',
                   onConfirm: () => {
                     db.collection('comments').doc(c.id).update({
                       text: '[deleted]',

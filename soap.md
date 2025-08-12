@@ -45,6 +45,29 @@ comments: false
   </div>
   <img src="/assets/images/zeep1.jpg" alt="zeep verpakkingen" title="mooie zeepjes" style="display:block; margin:1em auto; max-width:100%; border-radius:8px;" />
   <p>Op deze pagina deel ik mijn ervaringen met het maken van handgemaakte zeep<!--more-->, het ontwerpen van verpakkingen en het optimaliseren van het productieproces. Ik ben geen expert, maar vind het leuk om te experimenteren met verschillende recepten, technieken en materialen. Hier lees je over mijn ontdekkingen, successen en soms ook mislukkingen tijdens het leren en uitproberen. Of het nu gaat om het vinden van de juiste ingrediënten, het testen van nieuwe vormen of het bedenken van creatieve verpakkingen, ik neem je graag mee in mijn persoonlijke leerproces en experimenten rondom ambachtelijke zeep.</p>
+
+  <div style="display: flex; gap: 1em; justify-content: space-around; flex-wrap: wrap; margin-bottom: 2em; margin-top: 2em;">
+    <a href="/naturel-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
+      <div class="teaser-img-crop">
+        <img src="/assets/images/content/pages/wrapstandaard.webp" alt="First post teaser">
+      </div>
+      <div class="teaser-title" style="margin-top: 0.5em;">Naturel zeep</div>
+    </a>
+    <a href="/sering-en-lelietje-van-dalen-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
+      <div class="teaser-img-crop">
+        <img src="/assets/images/content/pages/wrapsering.webp" alt="Second post teaser">
+      </div>
+      <div class="teaser-title" style="margin-top: 0.5em;">Sering en Lelietje-van-dalen</div>
+    </a>
+    <a href="/aqua-di-gio-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
+      <div class="teaser-img-crop">
+        <img src="/assets/images/content/pages/wrapaquadigio.webp" alt="Third post teaser">
+      </div>
+      <div class="teaser-title" style="margin-top: 0.5em;">Aqua di Gio</div>
+    </a>
+  </div>
+
+  <p class="sc">Ik maak zeep als hobby. Er is geen webshop en ik neem geen orders aan. Vragen over recepten of techniek? Stuur gerust een bericht.</p>
 </div>
 
 <div class="lang-content lang-en">
@@ -58,27 +81,29 @@ comments: false
   </div>
   <img src="/assets/images/zeep1.jpg" alt="zeep verpakkingen" title="mooie zeepjes" style="display:block; margin:1em auto; max-width:100%; border-radius:8px;" />
   <p>On this page I share my experiences with making handmade soap, designing packaging, and optimizing the production process. I am not an expert, but I enjoy experimenting with different recipes, techniques, and materials. Here you can read about my discoveries, successes, and sometimes also failures while learning and trying things out. Whether it’s finding the right ingredients, testing new shapes, or coming up with creative packaging, I’m happy to take you along in my personal learning process and experiments with artisanal soap.</p>
-</div>
 
-<div style="display: flex; gap: 1em; justify-content: space-around; flex-wrap: wrap; margin-bottom: 2em; margin-top: 2em;">
-  <a href="/naturel-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
-    <div class="teaser-img-crop">
-      <img src="/assets/images/content/pages/wrapstandaard.webp" alt="First post teaser">
-    </div>
-    <div class="teaser-title" style="margin-top: 0.5em;">Naturel zeep</div>
-  </a>
-  <a href="/sering-en-lelietje-van-dalen-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
-    <div class="teaser-img-crop">
-      <img src="/assets/images/content/pages/wrapsering.webp" alt="Second post teaser">
-    </div>
-    <div class="teaser-title" style="margin-top: 0.5em;">Sering en Lelietje-van-dalen</div>
-  </a>
-  <a href="/aqua-di-gio-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
-    <div class="teaser-img-crop">
-      <img src="/assets/images/content/pages/wrapaquadigio.webp" alt="Third post teaser">
-    </div>
-    <div class="teaser-title" style="margin-top: 0.5em;">Aqua di Gio</div>
-  </a>
+  <div style="display: flex; gap: 1em; justify-content: space-around; flex-wrap: wrap; margin-bottom: 2em; margin-top: 2em;">
+    <a href="/naturel-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
+      <div class="teaser-img-crop">
+        <img src="/assets/images/content/pages/wrapstandaard.webp" alt="First post teaser">
+      </div>
+  <div class="teaser-title" style="margin-top: 0.5em;">Natural soap</div>
+    </a>
+    <a href="/sering-en-lelietje-van-dalen-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
+      <div class="teaser-img-crop">
+        <img src="/assets/images/content/pages/wrapsering.webp" alt="Second post teaser">
+      </div>
+      <div class="teaser-title" style="margin-top: 0.5em;">Lilac & Lily of the Valley</div>
+    </a>
+    <a href="/aqua-di-gio-zeep/" style="flex: 1 1 0; max-width: 220px; text-align: center;">
+      <div class="teaser-img-crop">
+        <img src="/assets/images/content/pages/wrapaquadigio.webp" alt="Third post teaser">
+      </div>
+      <div class="teaser-title" style="margin-top: 0.5em;">Aqua di Gio</div>
+    </a>
+  </div>
+
+  <p class="sc">I make soap as a hobby. There’s no webshop and I don’t accept orders. Questions about recipes or technique? Feel free to get in touch.</p>
 </div>
 
 <div class="empty-box">

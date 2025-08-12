@@ -170,7 +170,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
 
-const ADMIN_UID = "SeV4YgBfa2e2ojIJspY8eSavPRy2";
+let __isAdmin = false;
 
 function escapeHTML(str) {
   return String(str).replace(/[&<>"']/g, function(tag) {
@@ -194,7 +194,7 @@ function showAuthUI(user) {
     document.getElementById('admin-comments-table').style.display = 'none';
     document.getElementById('admin-comments-loading').style.display = 'none';
     commentsContainer.style.display = 'none';
-  } else if (user.uid !== ADMIN_UID) {
+  } else if (!__isAdmin) {
     authDiv.innerHTML = `<div style="color:red; font-weight:bold;">Access denied. You are not authorized to view this page.</div><button id="admin-logout-btn" class="btn btn--primary" style="margin-top:1em;">Sign out</button>`;
     document.getElementById('admin-logout-btn').onclick = logout;
     document.getElementById('admin-comments-table').style.display = 'none';
@@ -452,30 +452,47 @@ function renderRecentlyDeleted() {
         }
       };
     });
+  }).catch(err => {
+    deletedList.innerHTML = '<em>Cannot access recently deleted (permissions).</em>';
   });
 }
 
 auth.onAuthStateChanged(user => {
-  showAuthUI(user);
-  if (!user || user.uid !== ADMIN_UID) return;
-  db.collection('comments').orderBy('created', 'desc').get().then(snapshot => {
-    allComments = [];
-    allPages.clear();
-    allUsers.clear();
-    snapshot.forEach(doc => {
-      const c = doc.data();
-      c.id = doc.id;
-      allComments.push(c);
-      if (c.post) allPages.add(c.post);
-      if (c.user && c.user.name) allUsers.add(c.user.name);
+  if (user) {
+    // subscribe to admin doc presence
+    db.doc(`admins/${user.uid}`).onSnapshot(doc => {
+      __isAdmin = !!(doc && doc.exists);
+      showAuthUI(user);
+      if (!__isAdmin) return;
+      // Load comments after confirming admin
+      db.collection('comments').orderBy('created', 'desc').get().then(snapshot => {
+        allComments = [];
+        allPages.clear();
+        allUsers.clear();
+        snapshot.forEach(doc => {
+          const c = doc.data();
+          c.id = doc.id;
+          allComments.push(c);
+          if (c.post) allPages.add(c.post);
+          if (c.user && c.user.name) allUsers.add(c.user.name);
+        });
+        renderFilters();
+        renderComments(currentPageFilter, currentUserFilter, currentDateSort);
+        renderDeleteButton();
+        renderUserManagement();
+        renderRecentlyDeleted();
+        document.getElementById('admin-comments-loading').style.display = 'none';
+        document.getElementById('admin-comments-table').style.display = '';
+      }).catch(err => {
+        document.getElementById('admin-comments-loading').textContent = 'Failed to load comments (permissions).';
+      });
+    }, () => {
+      __isAdmin = false;
+      showAuthUI(user);
     });
-    renderFilters();
-    renderComments(currentPageFilter, currentUserFilter, currentDateSort);
-    renderDeleteButton();
-    renderUserManagement();
-    renderRecentlyDeleted();
-    document.getElementById('admin-comments-loading').style.display = 'none';
-    document.getElementById('admin-comments-table').style.display = '';
-  });
+  } else {
+    __isAdmin = false;
+    showAuthUI(null);
+  }
 });
 </script>

@@ -2,18 +2,40 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-  // Admin model: top-level collection /admins/{uid}
+    // Helper functions available to all matches in this database
+    function isAdmin() {
+      return request.auth != null &&
+             exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+    function isNotBlocked() {
+      return request.auth != null && (
+        !exists(/databases/$(database)/documents/blocked_users/$(request.auth.uid)) ||
+        get(/databases/$(database)/documents/blocked_users/$(request.auth.uid)).data.blocked != true
+      );
+    }
+
+    // Admin model: top-level collection /admins/{uid}
   match /admins/{uid} {
       allow read: if request.auth != null && request.auth.uid == uid;
       allow write: if false; // manage via console only
+    }
+
+    // Blocked users list (by uid)
+    match /blocked_users/{uid} {
+      allow read, write: if isAdmin();
+    }
+
+    // Deleted comments archive
+    match /deleted_comments/{id} {
+      allow read, write: if isAdmin();
     }
 
     // Comments collection (flat): each doc contains post path and optional parent id
     match /comments/{commentId} {
       allow read: if true; // public read
 
-      // Create: must be authed; enforce minimal schema and types
-      allow create: if request.auth != null && isValidNewComment();
+  // Create: must be authed and not blocked; enforce schema; admins may restore from archive
+  allow create: if request.auth != null && isNotBlocked() && (isValidNewComment() || (isAdmin() && isValidAdminCreate()));
 
       // Update: owner or admin; restrict editable fields; enforce types; preserve ownership & created timestamp
       allow update: if request.auth != null && (isOwner() || isAdmin()) && isValidCommentUpdate();
@@ -22,10 +44,7 @@ service cloud.firestore {
       allow delete: if request.auth != null && isAdmin();
 
       function isOwner() {
-        return request.auth.uid == resource.data.user.uid;
-      }
-      function isAdmin() {
-        return exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+        return request.auth != null && request.auth.uid == resource.data.user.uid;
       }
       // Required and optional keys for create
       function isValidNewComment() {
@@ -43,6 +62,23 @@ service cloud.firestore {
                request.resource.data.get('deleted', false) is bool &&
                // created must be set by serverTimestamp
                request.resource.data.created == request.time;
+      }
+      // Admin restore create: allow created to be any timestamp
+      function isValidAdminCreate() {
+        let allowed = ['post', 'text', 'user', 'created', 'parent', 'deleted'];
+        let required = ['post', 'text', 'user', 'created'];
+        return isAdmin() &&
+               request.resource.data.keys().hasAll(required) &&
+               request.resource.data.keys().hasOnly(allowed) &&
+               request.resource.data.post is string &&
+               request.resource.data.text is string &&
+               request.resource.data.user is map &&
+               request.resource.data.user.uid is string &&
+               request.resource.data.user.name is string &&
+               request.resource.data.user.get('avatar', '') is string &&
+               (request.resource.data.get('parent', null) == null || request.resource.data.get('parent', '') is string) &&
+               request.resource.data.get('deleted', false) is bool &&
+               request.resource.data.created is timestamp;
       }
       function isValidCommentUpdate() {
         // Only allow changing text, deleted; admins may also change user.name in emergencies

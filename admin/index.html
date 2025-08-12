@@ -736,7 +736,9 @@ function renderRecentlyDeleted() {
             post: commentData.post || '',
             text: commentData.text || '',
             user: commentData.user || { name: 'User', uid: 'unknown', avatar: '' },
-            created: commentData.created && commentData.created.toDate ? commentData.created : firebase.firestore.Timestamp.now(),
+            created: (commentData.created && commentData.created.toDate)
+              ? commentData.created
+              : firebase.firestore.FieldValue.serverTimestamp(),
             parent: commentData.parent || null,
             deleted: !!commentData.deleted
           };

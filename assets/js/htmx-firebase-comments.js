@@ -617,9 +617,9 @@ document.addEventListener('DOMContentLoaded', function() {
               if (nowIsAdmin) {
                 // Admin: hard-delete including replies
                 showAccessibleConfirmDialog({
-                  message: 'Delete this comment and all its replies? This action cannot be undone.',
+                  message: 'Delete this comment and all its replies? They’ll appear in Recently Deleted for 3 hours.',
                   onConfirm: () => {
-                    deleteCommentAndChildren(c.id)
+                    archiveAndDeleteCommentAndChildren(c.id)
                       .then(() => {})
                       .catch(err => {
                         showAccessibleAlertDialog('Failed to delete comment: ' + err.message);
@@ -855,13 +855,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // ...existing code...
 
-  // Recursively delete a comment and all its children (replies)
-  async function deleteCommentAndChildren(commentId) {
-    const childrenSnap = await db.collection('comments').where('parent', '==', commentId).get();
-    for (const doc of childrenSnap.docs) {
-      await deleteCommentAndChildren(doc.id);
+  // Recursively archive (to deleted_comments) and delete a comment and all its children
+  async function archiveAndDeleteCommentAndChildren(commentId) {
+    try {
+      const docRef = db.collection('comments').doc(commentId);
+      const snap = await docRef.get();
+      if (snap.exists) {
+        const data = snap.data();
+        await db.collection('deleted_comments').doc(commentId).set({
+          ...data,
+          deletedAt: firebase.firestore.FieldValue.serverTimestamp()
+        }, { merge: false });
+      }
+      const childrenSnap = await db.collection('comments').where('parent', '==', commentId).get();
+      for (const child of childrenSnap.docs) {
+        await archiveAndDeleteCommentAndChildren(child.id);
+      }
+      await db.collection('comments').doc(commentId).delete();
+    } catch (e) {
+      throw e;
     }
-    await db.collection('comments').doc(commentId).delete();
   }
 
   // Accessible confirmation dialog

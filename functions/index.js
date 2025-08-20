@@ -24,6 +24,12 @@ exports.verifyCaptcha = functions.https.onRequest(async (req, res) => {
   cors(req, res, async () => {
     if (req.method !== 'POST') return res.status(405).json({ ok: false, reason: 'method-not-allowed' });
     const token = req.body && req.body.token;
+    // Loud marker so we can find every invocation in logs quickly (no secrets or token contents).
+    try {
+      console.error('VERBOSE_MARKER verify entry', { origin: req.get('origin') || null, method: req.method, tokenLength: token ? String(token.length) : '0', ts: new Date().toISOString() });
+    } catch (e) {
+      console.error('VERBOSE_MARKER logging failed', String(e));
+    }
     if (!token) return res.status(400).json({ ok: false, reason: 'no-token' });
     if (!RECAPTCHA_SECRET) return res.status(500).json({ ok: false, reason: 'no-secret-configured' });
 

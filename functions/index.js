@@ -37,6 +37,22 @@ exports.verifyCaptcha = functions.https.onRequest(async (req, res) => {
         body: params
       });
       const data = await g.json();
+      // Log a small, safe summary of Google's reply and request metadata for debugging.
+      // DO NOT log the token or the secret. We only log token length and non-sensitive fields.
+      try {
+        console.log('siteverify reply', {
+          success: !!data.success,
+          hostname: data.hostname || null,
+          // some siteverify replies include score/action for v3 — harmless to log if present
+          score: data.score || null,
+          action: data.action || null,
+          'error-codes': data['error-codes'] || [] ,
+          ts: new Date().toISOString()
+        });
+        console.log('verify request metadata', { origin: req.get('origin') || null, tokenLength: token ? String(token.length) : '0' });
+      } catch (logErr) {
+        console.error('logging error', logErr);
+      }
       // data.success is boolean (v2)
       if (data.success) {
         // Optional: verify hostname matches your site:

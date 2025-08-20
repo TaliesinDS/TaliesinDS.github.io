@@ -23,13 +23,7 @@ const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET || process.env.RECAPTCHA_S
 exports.verifyCaptcha = functions.https.onRequest(async (req, res) => {
   cors(req, res, async () => {
     if (req.method !== 'POST') return res.status(405).json({ ok: false, reason: 'method-not-allowed' });
-    const token = req.body && req.body.token;
-    // Loud marker so we can find every invocation in logs quickly (no secrets or token contents).
-    try {
-      console.error('VERBOSE_MARKER verify entry', { origin: req.get('origin') || null, method: req.method, tokenLength: token ? String(token.length) : '0', ts: new Date().toISOString() });
-    } catch (e) {
-      console.error('VERBOSE_MARKER logging failed', String(e));
-    }
+  const token = req.body && req.body.token;
     if (!token) return res.status(400).json({ ok: false, reason: 'no-token' });
     if (!RECAPTCHA_SECRET) return res.status(500).json({ ok: false, reason: 'no-secret-configured' });
 
@@ -43,22 +37,7 @@ exports.verifyCaptcha = functions.https.onRequest(async (req, res) => {
         body: params
       });
       const data = await g.json();
-      // Log a small, safe summary of Google's reply and request metadata for debugging.
-      // DO NOT log the token or the secret. We only log token length and non-sensitive fields.
-      try {
-        console.log('siteverify reply', {
-          success: !!data.success,
-          hostname: data.hostname || null,
-          // some siteverify replies include score/action for v3 — harmless to log if present
-          score: data.score || null,
-          action: data.action || null,
-          'error-codes': data['error-codes'] || [] ,
-          ts: new Date().toISOString()
-        });
-        console.log('verify request metadata', { origin: req.get('origin') || null, tokenLength: token ? String(token.length) : '0' });
-      } catch (logErr) {
-        console.error('logging error', logErr);
-      }
+  // (debug logs removed) -- function only returns verification result
       // data.success is boolean (v2)
       if (data.success) {
         // Optional: verify hostname matches your site:

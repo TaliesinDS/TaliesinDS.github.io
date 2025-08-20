@@ -22,6 +22,10 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
+// URL of your server-side reCAPTCHA v2 verify endpoint.
+// This function verifies the v2 token server-side and must be deployed separately.
+// Deployed Cloud Function URL (your project):
+const RECAPTCHA_VERIFY_URL = 'https://us-central1-htmx-comments-test.cloudfunctions.net/verifyCaptcha';
 // Cached admin status for current user
 window.__firebaseIsAdmin = false;
 let __adminUnsub = null;
@@ -346,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (user && user.isAnonymous) renderCaptcha();
     });
 
-    mainForm.addEventListener('submit', function(e) {
+    mainForm.addEventListener('submit', async function(e) {
       e.preventDefault();
       const user = auth.currentUser;
       if (!user) return;
@@ -369,7 +373,26 @@ document.addEventListener('DOMContentLoaded', function() {
           alert('Please complete the CAPTCHA.');
           return;
         }
-        // Optionally: verify captchaResponse with your backend for extra security
+  // Verify captcha server-side if RECAPTCHA_VERIFY_URL is configured
+  if (RECAPTCHA_VERIFY_URL) {
+          try {
+            const verifyRes = await fetch(RECAPTCHA_VERIFY_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ token: captchaResponse })
+            });
+            const verifyJson = await verifyRes.json();
+            if (!verifyJson || !verifyJson.ok) {
+              alert('CAPTCHA verification failed. Please try again.');
+              return;
+            }
+          } catch (err) {
+            console.error('Captcha verify error', err);
+            alert('CAPTCHA verification failed (network error). Please try again.');
+            return;
+          }
+        }
+        // Passed client and (optional) server-side verification
         window.lastGuestCommentTime = now;
         window.grecaptcha.reset();
       }
@@ -383,7 +406,7 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         name = name || user.displayName || 'User';
       }
-      db.collection('comments').add({
+  db.collection('comments').add({
         post: window.location.pathname,
         text: text,
         user: {
@@ -756,7 +779,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
-    form.addEventListener('submit', function(e) {
+  form.addEventListener('submit', async function(e) {
       e.preventDefault();
       const user = auth.currentUser;
       if (!user) return;
@@ -783,6 +806,25 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!captchaResponse) {
           alert('Please complete the CAPTCHA.');
           return;
+        }
+  // Verify reply captcha server-side if configured
+  if (RECAPTCHA_VERIFY_URL) {
+          try {
+            const verifyRes = await fetch(RECAPTCHA_VERIFY_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ token: captchaResponse })
+            });
+            const verifyJson = await verifyRes.json();
+            if (!verifyJson || !verifyJson.ok) {
+              alert('CAPTCHA verification failed. Please try again.');
+              return;
+            }
+          } catch (err) {
+            console.error('Captcha verify error', err);
+            alert('CAPTCHA verification failed (network error). Please try again.');
+            return;
+          }
         }
         window.lastGuestReplyTime = now;
         if (replyWidgetId !== null) window.grecaptcha.reset(replyWidgetId);

@@ -1,0 +1,19 @@
+{
+  "name": "functions",
+  "version": "1.0.0",
+  "description": "Firebase Cloud Functions for reCAPTCHA verification",
+  "private": true,
+  "main": "index.js",
+  "engines": {
+  "node": "20"
+  },
+  "scripts": {
+    "start": "npx @google-cloud/functions-framework --target=verifyCaptcha --signature-type=http"
+  },
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.1.4",
+    "cors": "^2.8.5",
+    "firebase-admin": "^12.0.0",
+    "firebase-functions": "^4.4.0"
+  }
+}

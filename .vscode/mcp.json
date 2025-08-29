@@ -10,14 +10,6 @@
 				"MEMORY_FILE_PATH": "C:/Users/akortekaas/Documents/GitHub/memory/memory.json"
 			},
 			"type": "stdio"
-		},
-		"my-mcp-server-112833d9": {
-			"type": "stdio",
-			"command": "npx",
-			"args": [
-				"-y",
-				"@modelcontextprotocol/server-memory"
-			]
 		}
 	},
 	"inputs": []

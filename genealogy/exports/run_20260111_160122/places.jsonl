@@ -1,0 +1,693 @@
+{"id": "_100df4dbd5cf24292a0507e80c", "name": "Ede", "lat": 52.04006159907127, "lon": 5.665740171916204, "is_private": false}
+{"id": "_100df571a69a158b020709888a2b", "name": "Ferwoude", "lat": 53.00605539269418, "lon": 5.4330966793683855, "is_private": false}
+{"id": "_100df5958e99566210dc32150b3d", "name": "Wonseradeel", "lat": 53.083712528516635, "lon": 5.424061522937494, "is_private": false}
+{"id": "_100df5de7e7726a049ec38e440e5", "name": "Alphen aan de Rijn", "lat": 52.12996257778155, "lon": 4.663277005299701, "is_private": false}
+{"id": "_100df6506c7423f332c3f93b9ff9", "name": "Bloemendaal", "lat": 52.40292379915191, "lon": 4.62088732646145, "is_private": false}
+{"id": "_100e5c10497044081bcd20e41294", "name": "Heenvliet", "lat": 51.864187515004446, "lon": 4.245131488250605, "is_private": false}
+{"id": "_100e5c4a561e4543fc877a3433ba", "name": "Indonesia", "lat": -7.80104508943007, "lon": 110.36487336232418, "is_private": false}
+{"id": "_100e5c4abed22a7ae9d6b266e36d", "name": "Djokja", "lat": -7.80104508943007, "lon": 110.36487336232418, "is_private": false}
+{"id": "_100e5c7771e61288d16526666ae9", "name": "Bandung", "lat": -6.919192450342057, "lon": 107.61791222760863, "is_private": false}
+{"id": "_f378f1f1b925f99e676cd8a0a42", "name": "veendam", "lat": 53.105428662850294, "lon": 6.875162533799757, "is_private": false}
+{"id": "_f378f5b556312b839cbf5101aec", "name": "naaldwijk", "lat": 51.992389254710695, "lon": 4.2067228998519655, "is_private": false}
+{"id": "_f378f5f5f2c1002a407bdab66b6", "name": "De Lier", "lat": 51.9750406935919, "lon": 4.250332695960549, "is_private": false}
+{"id": "_f378f8357f2377cb954b156725a", "name": "s-gravenzande", "lat": 52.0040767682854, "lon": 4.160477388233108, "is_private": false}
+{"id": "_f378f8962ec1478ceb48e2bad60", "name": "wezep", "lat": 52.463515333984, "lon": 5.99527070656504, "is_private": false}
+{"id": "_f378f92a5fd5ae0eab77950802f", "name": "arnhem", "lat": 51.981361666173896, "lon": 5.908499166578773, "is_private": false}
+{"id": "_f3790165c52a4946f41efc7113", "name": "Delft", "lat": 52.01152046578159, "lon": 4.358600923427528, "is_private": false}
+{"id": "_f379028dd806e285e1330d07848", "name": "berkel", "lat": 51.99269202637027, "lon": 4.480625341894328, "is_private": false}
+{"id": "_f37904e45b92e053c46bb4fb8cb", "name": "zoetermeer", "lat": 52.05691622257967, "lon": 4.4953504171262955, "is_private": false}
+{"id": "_f379053923f334a2a1f25782235", "name": "den haag", "lat": 52.078285583307945, "lon": 4.308913431747682, "is_private": false}
+{"id": "_f37909ffdb179f75b61058bc428", "name": "monster", "lat": 52.0220199343143, "lon": 4.1714053144996335, "is_private": false}
+{"id": "_f3790b7388c4ff0d83af9793769", "name": "wassenaar", "lat": 52.1421027187996, "lon": 4.396092707071595, "is_private": false}
+{"id": "_f37929de73f42d79b2ab0511c7f", "name": "kampen", "lat": 52.55749600586494, "lon": 5.917143732787202, "is_private": false}
+{"id": "_f37949d70ea3e1f376f97433e9b", "name": "Wymbritseradeel", "lat": 52.99816535204646, "lon": 5.580061140003575, "is_private": false}
+{"id": "_f37950184b0d5f1953172998a0", "name": "maasland", "lat": 51.93629292281904, "lon": 4.2719574037570585, "is_private": false}
+{"id": "_f3795127f7f6f15edfc12e5e788", "name": "zuid holland", "lat": 52.07555840573075, "lon": 4.299650493544018, "is_private": false}
+{"id": "_f37951d1bac7a1e06604d5062b7", "name": "nootdorp", "lat": 52.04020995252336, "lon": 4.410177693957784, "is_private": false}
+{"id": "_f37952b87d77a227bc67950e054", "name": "maassluis", "lat": 51.92216740368657, "lon": 4.2526613682222845, "is_private": false}
+{"id": "_f379594acce7d54d736a34bf812", "name": "stolwijk", "lat": 51.97174748861011, "lon": 4.771199700370113, "is_private": false}
+{"id": "_f3795bfe7f22edb143b9468454b", "name": "rotterdam", "lat": 51.92016118215792, "lon": 4.472927916956123, "is_private": false}
+{"id": "_f379612e8ae73d78f079523dedc", "name": "berkenwoude", "lat": 51.94475655665817, "lon": 4.709695525649552, "is_private": false}
+{"id": "_f3796b964585e383deca9550976", "name": "pijnacker", "lat": 52.01310426285854, "lon": 4.433461151240645, "is_private": false}
+{"id": "_f3796c2469acdb4d573bd7057d", "name": "zegwaard", "lat": 52.05632376908599, "lon": 4.496191921617495, "is_private": false}
+{"id": "_f3796e5990c44d459ea16c368f0", "name": "delfgauw", "lat": 52.00898633515496, "lon": 4.396112991231134, "is_private": false}
+{"id": "_f37b545668a5db5d871ff1592d6", "name": "velsen", "lat": 52.46124924012735, "lon": 4.647301235698087, "is_private": false}
+{"id": "_f37b5abf9616aa9a194a2bf5588", "name": "abdij van Egmond", "lat": 52.59555213093065, "lon": 4.660373718059553, "is_private": false}
+{"id": "_f37b65134a027465ddd213d4ad6", "name": "rinnegom", "lat": 52.60998332791105, "lon": 4.649583217934113, "is_private": false}
+{"id": "_f37b6786afe4fe47b43b46f66a3", "name": "teylingen", "lat": 52.23119434615979, "lon": 4.518986088186576, "is_private": false}
+{"id": "_f37b6f34bd67b624b654577904d", "name": "santpoort (slot brederode)", "lat": 52.42538976150551, "lon": 4.62252909887443, "is_private": false}
+{"id": "_f37b6fa098a43f049752832c921", "name": "bad bentheim", "lat": 52.30256011854472, "lon": 7.156503258906724, "is_private": false}
+{"id": "_f37b6ff3ffe4ceeba42cc764945", "name": "GERMANY", "lat": null, "lon": null, "is_private": false}
+{"id": "_f37b7ba78ec52d97f7c36a8cb23", "name": "utrecht", "lat": 52.08974637794014, "lon": 5.121753823232109, "is_private": false}
+{"id": "_f37b7cef1e56dcf6e77698e835c", "name": "ISRAEL", "lat": 31.964354259587523, "lon": 35.015658346815066, "is_private": false}
+{"id": "_f37b7cf2d2e5234360e58cd9603", "name": "jerusalem", "lat": 31.778461977549426, "lon": 35.229619652674764, "is_private": false}
+{"id": "_f37b8de4d4837550f4d15e22d4f", "name": "FRANCE", "lat": null, "lon": null, "is_private": false}
+{"id": "_f37b8de877127b129dcf5bcdd55", "name": "chatenois", "lat": 48.269737181502805, "lon": 7.397521498906308, "is_private": false}
+{"id": "_f37b95596b3530d445f0d80a8e7", "name": "metz", "lat": 49.115458674327506, "lon": 6.169483924705353, "is_private": false}
+{"id": "_f37b98180ae2959eb801d3ff7f4", "name": "LOTHARINGEN", "lat": 49.12010438448817, "lon": 6.175510977809947, "is_private": false}
+{"id": "_f37b986992b4e1693627d6d37f0", "name": "bouzonville", "lat": 49.293196929869666, "lon": 6.532757105131308, "is_private": false}
+{"id": "_f37ba5714a82c13e69f65ed16d9", "name": "luneville", "lat": 48.594621257070266, "lon": 6.4917696070654465, "is_private": false}
+{"id": "_f37baaaa3333edbf3e5763889dd", "name": "aken", "lat": 50.774740423118885, "lon": 6.083894147131366, "is_private": false}
+{"id": "_f37bba717bd30b1e572c35273a", "name": "soissons", "lat": 49.38093811835032, "lon": 3.3252309422110797, "is_private": false}
+{"id": "_f37bc56074126b220f1cbcbadf9", "name": "nederhemert", "lat": 51.76688109424568, "lon": 5.165574262415191, "is_private": false}
+{"id": "_f37bc9c74c96927a41c915a31af", "name": "saksen", "lat": 52.03755905841046, "lon": 9.888995931639142, "is_private": false}
+{"id": "_f37bcb5bb6459fab062a015ef03", "name": "BELGIE", "lat": 50.84797678570551, "lon": 4.350291176166204, "is_private": false}
+{"id": "_f37bcb604b71719f61db02668e1", "name": "gent", "lat": 51.0565592504492, "lon": 3.7277187945186077, "is_private": false}
+{"id": "_f37bcb9dc6431a99874830b2e08", "name": "winkel", "lat": 52.75494219326433, "lon": 4.902828000652097, "is_private": false}
+{"id": "_f37bcdf5fba540aed2ece6527ca", "name": "egmond", "lat": 52.596219209459804, "lon": 4.655643943971817, "is_private": false}
+{"id": "_f37bd1da3a06211aae0c3f404c2", "name": "andernach", "lat": 50.4401312343651, "lon": 7.397446351432286, "is_private": false}
+{"id": "_f37e0fca3ed699ad01c359af6cc", "name": "mainz", "lat": 49.99886343607378, "lon": 8.273850584667112, "is_private": false}
+{"id": "_f37e110a17e762f2a4d110f49cf", "name": "ITALY", "lat": 43.23041898095489, "lon": 12.03590306491708, "is_private": false}
+{"id": "_f37e110e54c3a8a388bc227cb39", "name": "pavia", "lat": 45.18450292038338, "lon": 9.153639351707866, "is_private": false}
+{"id": "_f37e133121e6c6edb8b99dc8d21", "name": "rijnsburg", "lat": 52.18945768081689, "lon": 4.443254789270976, "is_private": false}
+{"id": "_f37edff2be3c910ce39b619fa7", "name": "hoek van holland", "lat": 51.97695420526236, "lon": 4.1351271063946005, "is_private": false}
+{"id": "_f37ee62e46c611455d38960f8ba", "name": "lierweg 44", "lat": 51.97701537137762, "lon": 4.261066954373715, "is_private": false}
+{"id": "_f37ee6f4e71376b2429c8fd9ea2", "name": "st. jorispad 14", "lat": 51.97632491502008, "lon": 4.208171969684536, "is_private": false}
+{"id": "_f37ee8dd6954ab11f9514fc4bf0", "name": "lierweg 50", "lat": 51.97745513517054, "lon": 4.262625364325769, "is_private": false}
+{"id": "_f37ef77470563428cff88837178", "name": "woudseweg", "lat": null, "lon": null, "is_private": false}
+{"id": "_f37fc2e58d4361e2bcd1bcb86d4", "name": "neustria", "lat": null, "lon": null, "is_private": false}
+{"id": "_f37fc305db16c22bc09d2e1f174", "name": "brissarthe", "lat": 47.70058579540405, "lon": -0.449103984610453, "is_private": false}
+{"id": "_f37fc6751b55889ee34ce983dc8", "name": "tours", "lat": 47.39561940460324, "lon": 0.6945739929406088, "is_private": false}
+{"id": "_f37fcabbe38558ea0b3af0ee5d0", "name": "alsace", "lat": 48.17219447074248, "lon": 6.921837901826817, "is_private": false}
+{"id": "_f37fcac1e802045fd22979d8d9b", "name": "Haut-Rhin", "lat": 47.848697856706394, "lon": 7.289434769245645, "is_private": false}
+{"id": "_f37fcfbdfc276d2011523a305e2", "name": "Austrasia", "lat": 49.33477796813563, "lon": 6.104367364147245, "is_private": false}
+{"id": "_f37fd0b0ac01adc5116a4a01613", "name": "limoges", "lat": 45.82895029226604, "lon": 1.2664730007052953, "is_private": false}
+{"id": "_f37fd144cee385bcbf15380b00e", "name": "brosse", "lat": 46.41519589874225, "lon": 1.3202142423532672, "is_private": false}
+{"id": "_f381d61600052deb91bba9bf119", "name": "heeg", "lat": 52.96811149228077, "lon": 5.603489251566836, "is_private": false}
+{"id": "_f381ebee8967d98566cf638aa4d", "name": "sneek", "lat": 53.031893528658344, "lon": 5.658435278221476, "is_private": false}
+{"id": "_f381ef80d8b48987a883ba22b21", "name": "ijlst", "lat": 53.01127075017356, "lon": 5.620466595895456, "is_private": false}
+{"id": "_f381f2ee6ac5334c1c589757a67", "name": "burgwerd", "lat": 53.086312502206, "lon": 5.5467735178915225, "is_private": false}
+{"id": "_f3820bb0c89dae7e77fa063e2a", "name": "ferwoude", "lat": 53.00619846145809, "lon": 5.433548060833237, "is_private": false}
+{"id": "_f3822aa5f1015f83d49b2f93070", "name": "hommerts", "lat": 52.98364710017337, "lon": 5.6497547060122395, "is_private": false}
+{"id": "_f38247ed07728d96c1dcbc0b3d0", "name": "oudega", "lat": 52.99241737005155, "lon": 5.549748720694716, "is_private": false}
+{"id": "_f3827578b063bff5f5b1d0364", "name": "jutrijp", "lat": 52.99529177597442, "lon": 5.649730604989791, "is_private": false}
+{"id": "_f382832b24a5a5a2181a6bf9a94", "name": "woudsend", "lat": 52.944376199611305, "lon": 5.629996968243826, "is_private": false}
+{"id": "_f382c09097043855bbc8bae5280", "name": "idzega", "lat": 52.97827401035394, "lon": 5.558281674243883, "is_private": false}
+{"id": "_f382cbaace93bace253689ce5c9", "name": "eernewoude", "lat": 53.131644323744595, "lon": 5.942181919034447, "is_private": false}
+{"id": "_f382cc2df006e54e5dc14c378bf", "name": "lemmer", "lat": 52.84467647286297, "lon": 5.710991700803165, "is_private": false}
+{"id": "_f382e3f632c839698372d64416", "name": "sybrandaburen", "lat": 53.06819465799504, "lon": 5.72084117811298, "is_private": false}
+{"id": "_f38300f4d013d2c633ce7d582c4", "name": "wons", "lat": 53.08433656536698, "lon": 5.423545886934278, "is_private": false}
+{"id": "_f3831374a2f37bc4b0c405e30f4", "name": "oldebroek", "lat": 52.44746365197798, "lon": 5.898108262303308, "is_private": false}
+{"id": "_f3831731e0110d2979c7baf2210", "name": "hattem", "lat": 52.474460510614094, "lon": 6.069887941323794, "is_private": false}
+{"id": "_f384c453ca15ec913ec09d6b5a7", "name": "kamperveen", "lat": 52.584213595624014, "lon": 5.890913323773328, "is_private": false}
+{"id": "_f384cd8d6b16545d6cb154b7fb8", "name": "ijsselmuiden", "lat": 52.56545937658727, "lon": 5.927823135721567, "is_private": false}
+{"id": "_f384ce85ce56a303a52c09fe1e7", "name": "zalk", "lat": 52.51969685561924, "lon": 6.009954656730102, "is_private": false}
+{"id": "_f384d63586178357b5d7bd64be", "name": "oosterwolde", "lat": 52.46493869442872, "lon": 5.894558805530148, "is_private": false}
+{"id": "_f384dddcd8051ed22444e1ca617", "name": "de zande", "lat": 52.51373218623866, "lon": 5.96075625321023, "is_private": false}
+{"id": "_f384ff5febc25d2cc8ccd70543e", "name": "hasselt", "lat": 52.59070210561881, "lon": 6.089553539265161, "is_private": false}
+{"id": "_f38508e30307bd865d65475d80c", "name": "heerde", "lat": 52.39050181503835, "lon": 6.0435409881846684, "is_private": false}
+{"id": "_f38547ca5714f092a3f012933eb", "name": "voskuil", "lat": 52.47618413453577, "lon": 6.025149500228525, "is_private": false}
+{"id": "_f3854b231c941d00d3849635ce2", "name": "mastenbroek", "lat": 52.57407338710826, "lon": 6.021882933445973, "is_private": false}
+{"id": "_f3854d3af27398b31902110875c", "name": "wilsum", "lat": 52.52975446394395, "lon": 5.962526514905336, "is_private": false}
+{"id": "_f3854dda32f61bdc672251527ba", "name": "kampereiland", "lat": null, "lon": null, "is_private": false}
+{"id": "_f385640867d5758679ecdd1558", "name": "antwerpen", "lat": 51.22028557452497, "lon": 4.401413822432996, "is_private": false}
+{"id": "_f38564453416989f8a801dddfc8", "name": "Kasteel Buckhorst", "lat": 52.50899450668964, "lon": 6.01644989936949, "is_private": false}
+{"id": "_f385bebf55a7ae83d4f93203402", "name": "woerden", "lat": 52.086020903633674, "lon": 4.883811488661073, "is_private": false}
+{"id": "_f385c65b8896264d29fddd20f26", "name": "haaksbergen", "lat": 52.15871851059623, "lon": 6.739496567146624, "is_private": false}
+{"id": "_f385c73843c7037e292a0f50733", "name": "dinxperlo", "lat": 51.86230441651261, "lon": 6.487712335633966, "is_private": false}
+{"id": "_f385d36931f5aee042afcae9509", "name": "lonneker", "lat": 52.24979469456489, "lon": 6.911342640191255, "is_private": false}
+{"id": "_f385db0e9a012c0de2c24914244", "name": "doornspijk", "lat": 52.418980439037846, "lon": 5.81711366647991, "is_private": false}
+{"id": "_f385df22f9a45fba0ac19b9ecd4", "name": "elburg", "lat": 52.448505152689776, "lon": 5.83395287503687, "is_private": false}
+{"id": "_f385e015cb846c30a93dcb2b9b", "name": "epe", "lat": 52.34793351978349, "lon": 5.985111707401829, "is_private": false}
+{"id": "_f385e10d94c77adbc01dc97fcff", "name": "leiden", "lat": 52.15892348255321, "lon": 4.492645309490592, "is_private": false}
+{"id": "_f385edb151bbe30825bc780efb", "name": "emmerich", "lat": 51.833154191399515, "lon": 6.2423726589265955, "is_private": false}
+{"id": "_f385ee900be890723486e0a6", "name": "NEDERLAND", "lat": null, "lon": null, "is_private": false}
+{"id": "_f385f2ea4647e2075eef2d7184e", "name": "lexmond", "lat": 51.96321932289246, "lon": 5.036576068429293, "is_private": false}
+{"id": "_f386057241e111fd2094dd3fda3", "name": "hattemerbroek", "lat": 52.47400998066046, "lon": 6.02272594812759, "is_private": false}
+{"id": "_f387a0fa6c862557272f269a21d", "name": "genemuiden", "lat": 52.62353119241437, "lon": 6.0413621581086, "is_private": false}
+{"id": "_f387a20d4cc4da4c5a16206a3c9", "name": "Groenestraat, wijk 3 nr 340", "lat": 52.55601181159791, "lon": 5.914717223299008, "is_private": false}
+{"id": "_f387a2b6f9a1e1fb92e427b5838", "name": "Groenestraat, wijk 3 nr 480", "lat": 52.55695247620887, "lon": 5.91394625285114, "is_private": false}
+{"id": "_f387a76a5514f81e452fea044d1", "name": "Groenestraat, wijk 4 nr 85", "lat": 52.55695247620887, "lon": 5.91394625285114, "is_private": false}
+{"id": "_f387b110f57752d7bc960fcee31", "name": "Groenestraat, wijk 4 nr 50", "lat": 52.55695247620887, "lon": 5.91394625285114, "is_private": false}
+{"id": "_f387c0f3e9342213a800941a7f8", "name": "nunspeet", "lat": 52.37633610827701, "lon": 5.786615611016229, "is_private": false}
+{"id": "_f387c1392c923659bc994bad011", "name": "dalfsen", "lat": 52.503366611829506, "lon": 6.259264606267047, "is_private": false}
+{"id": "_f387c39d88c288863d0b366f53a", "name": "hulshorst", "lat": 52.36283843218708, "lon": 5.732680507391194, "is_private": false}
+{"id": "_f387c75229a630c59ff2cd232c0", "name": "friesland", "lat": null, "lon": null, "is_private": false}
+{"id": "_f387c7562b134f4447bcb3e94b3", "name": "oosterwolde", "lat": 52.98991018030642, "lon": 6.294802364153508, "is_private": false}
+{"id": "_f38825bd20c66503913b9b186a2", "name": "lage bijssel", "lat": 52.4016078653508, "lon": 5.7754916450066744, "is_private": false}
+{"id": "_f38832589db50ff265cd6ed313a", "name": "harderwijk", "lat": 52.350247172832, "lon": 5.618308625465539, "is_private": false}
+{"id": "_f3887b6cb7f696d32c0c14718e6", "name": "nijmegen", "lat": 51.848053437557546, "lon": 5.86278113770046, "is_private": false}
+{"id": "_f38884ade1546fa6f5e63cf4c9b", "name": "nieuwleusen", "lat": 52.59139664665759, "lon": 6.282119598420499, "is_private": false}
+{"id": "_f3889935a3a7a5f1f214f659958", "name": "zwollerkerspel", "lat": 52.512129440102925, "lon": 6.092919346735171, "is_private": false}
+{"id": "_f388a42ce5a242a8eec327b063a", "name": "wateringen", "lat": 52.02408659743831, "lon": 4.27463101567928, "is_private": false}
+{"id": "_f388b0d4d0765a859ca9994286b", "name": "grafhorst", "lat": 52.58252885900634, "lon": 5.933562578021019, "is_private": false}
+{"id": "_f388f9f82c62b9a2b619303d902", "name": "zwolle", "lat": 52.51229817310204, "lon": 6.0935635927942355, "is_private": false}
+{"id": "_f388fe72a7849df45a2d44a4904", "name": "Michaëlskerk", "lat": 52.511815640087875, "lon": 6.092249488830151, "is_private": false}
+{"id": "_f3890c6129c68a11822a06923a2", "name": "schelle", "lat": 52.49191107401346, "lon": 6.0834543419430425, "is_private": false}
+{"id": "_f3890cb43e76a4ac76fa339e7ec", "name": "smilde", "lat": 52.949479214326, "lon": 6.446500447948449, "is_private": false}
+{"id": "_f3890d6514a36378690a3d06fbc", "name": "ankum", "lat": 52.52181005399372, "lon": 6.242091188053244, "is_private": false}
+{"id": "_f3890fa6aac15e2fcf66f5f65d0", "name": "garner", "lat": 52.51749918714588, "lon": 6.257664621676961, "is_private": false}
+{"id": "_f3890fa974b43ae619ec6fe5f73", "name": "westerhof", "lat": null, "lon": null, "is_private": false}
+{"id": "_f38926b109a600e62eb2f852e34", "name": "wijhe", "lat": 52.387928667011664, "lon": 6.135297411167607, "is_private": false}
+{"id": "_f38928157157a32ff5e406fe46d", "name": "spoolde", "lat": 52.50701681150698, "lon": 6.054756831322467, "is_private": false}
+{"id": "_f3893a2e73c16b842c9955daa92", "name": "oldeneel", "lat": 52.48013664368217, "lon": 6.089489665346978, "is_private": false}
+{"id": "_f389556d7a977744e88c84770c7", "name": "nijkerk", "lat": 52.222921096252655, "lon": 5.483393555307389, "is_private": false}
+{"id": "_f38968532f569dcfe4112eff66d", "name": "abstgoed huijstede", "lat": 52.22203444194371, "lon": 5.514634207210986, "is_private": false}
+{"id": "_f38bb5736905d4fe9d0df408c77", "name": "voorschoten", "lat": 52.12508651668957, "lon": 4.446678601977954, "is_private": false}
+{"id": "_f38bc5754b93c5d51f9719e0ee", "name": "hazerswoude", "lat": 52.09666049055963, "lon": 4.590883613133014, "is_private": false}
+{"id": "_f38bd0b35963e7c0053152400d5", "name": "groenendijk", "lat": 52.13175917296764, "lon": 4.559812677774475, "is_private": false}
+{"id": "_f38bddd50b42f8874899df1708d", "name": "dordrecht", "lat": 51.81722845427911, "lon": 4.664376431351345, "is_private": false}
+{"id": "_f38c25fd6e46f57e95c272dfb38", "name": "oud-alblas", "lat": 51.85849788392361, "lon": 4.704341952882248, "is_private": false}
+{"id": "_f38c3391d9146853bab4efd068a", "name": "sint pancras", "lat": 52.66567305674242, "lon": 4.7865797357344295, "is_private": false}
+{"id": "_f38c396040d2b926fc3197126e5", "name": "worringen", "lat": 51.044271939960645, "lon": 6.893936991685719, "is_private": false}
+{"id": "_f38c3c20cd85b7d18f574aac4a9", "name": "gorinchem", "lat": 51.82969542654093, "lon": 4.974713346477805, "is_private": false}
+{"id": "_f38c47ac029573c656f42ecf668", "name": "langerak", "lat": 51.934605631700556, "lon": 4.877871568387806, "is_private": false}
+{"id": "_f38c49c34d7482d751c01aaad5f", "name": "ane", "lat": 52.61372344750639, "lon": 6.65130347455569, "is_private": false}
+{"id": "_f38c5952dba28cf583958b8bf3f", "name": "schoonhoven", "lat": 51.945336268813065, "lon": 4.851751597648569, "is_private": false}
+{"id": "_f38c688dfe226c1283b8272349", "name": "ijsselmonde", "lat": 51.90088691304074, "lon": 4.549482556652975, "is_private": false}
+{"id": "_f38c6c493f24ef97f96bd65bebc", "name": "syrie", "lat": null, "lon": null, "is_private": false}
+{"id": "_f38c6ed860a663c26c2179716d7", "name": "arkel", "lat": 51.8653910652681, "lon": 4.997188930276959, "is_private": false}
+{"id": "_f38c758b8014373c994caab2d6c", "name": "pierepont", "lat": 49.65438300801453, "lon": 3.792409496762209, "is_private": false}
+{"id": "_f38c9006ecd28428defbf177555", "name": "enger", "lat": 52.139664808451364, "lon": 8.558703343236763, "is_private": false}
+{"id": "_f38c916d7144c8d97d12ca74ff7", "name": "normandy", "lat": 48.97773028168734, "lon": 0.21401816711749516, "is_private": false}
+{"id": "_f38c92db6266e96995621bd4d96", "name": "westphalia", "lat": 51.82819949987173, "lon": 8.012789218899144, "is_private": false}
+{"id": "_f38c93e10c21f79109c979aa92f", "name": "DENMARK", "lat": null, "lon": null, "is_private": false}
+{"id": "_f38c93e2fc9280b4c08c3fcb992", "name": "jutland", "lat": 56.2435612355083, "lon": 9.25235913865955, "is_private": false}
+{"id": "_f38e1a280fc3842a9fa5d70abca", "name": "manderscheid", "lat": 50.0929137443759, "lon": 6.813343069820872, "is_private": false}
+{"id": "_f38e78443ef24b853fd2a4fb91", "name": "veere", "lat": 51.547289524175774, "lon": 3.6675634179912366, "is_private": false}
+{"id": "_f38e78b19fc65a98ab16d8a5e79", "name": "domkerk", "lat": 52.09088782613297, "lon": 5.122389878834571, "is_private": false}
+{"id": "_f38e7e4a77a595770cec61dacfd", "name": "cuijk", "lat": 51.72914805638514, "lon": 5.878856036620671, "is_private": false}
+{"id": "_f38e7f7f9c47c05b0c94dffff02", "name": "nassau", "lat": 50.310908312134075, "lon": 7.792316408461832, "is_private": false}
+{"id": "_f38ea2f93c05f5cd61bd3edc3d9", "name": "brugge", "lat": 51.208954581105566, "lon": 3.225283665262354, "is_private": false}
+{"id": "_f38ea3e3d3b1eacd684387b099a", "name": "saint-quentin", "lat": 49.84779517760402, "lon": 3.2901519494765665, "is_private": false}
+{"id": "_f38eed0d33747bb440ea8f225b2", "name": "zoeterwoude", "lat": 52.121290132559025, "lon": 4.497169661010529, "is_private": false}
+{"id": "_f391ec874d555999298e98dd2cc", "name": "kethel en spaland", "lat": 51.94370115910847, "lon": 4.3749239904286705, "is_private": false}
+{"id": "_f391f1e2cd7633d67d12f13e9b2", "name": "oudenhoorn", "lat": 51.82802926563439, "lon": 4.191493255927318, "is_private": false}
+{"id": "_f391f4b346f3be8b31f9a93fec3", "name": "hopsten", "lat": 52.382981791499205, "lon": 7.603990134183087, "is_private": false}
+{"id": "_f3921083cc191ee790ea7ded27", "name": "den bosch", "lat": 51.68903017339051, "lon": 5.304089309465454, "is_private": false}
+{"id": "_f39214f2d5778956908bc916253", "name": "schiedam", "lat": 51.91779403003708, "lon": 4.39902212134363, "is_private": false}
+{"id": "_f3921579a3354c38f89ccdaee04", "name": "kethel", "lat": 51.936782662196414, "lon": 4.377656947235162, "is_private": false}
+{"id": "_f3921677f8d2e0c565b29563351", "name": "overschie", "lat": 51.93919429142022, "lon": 4.419954857082687, "is_private": false}
+{"id": "_f392176042e30166eb1719da86d", "name": "Ackersdijk en Vrouwenregt", "lat": null, "lon": null, "is_private": false}
+{"id": "_f392187fa343eedd9119de9d465", "name": "schipluiden", "lat": 51.97814817327787, "lon": 4.317006667990398, "is_private": false}
+{"id": "_f3921d9aab41d3282059c11e28a", "name": "absregt", "lat": null, "lon": null, "is_private": false}
+{"id": "_f3921ec7fe12f160dae7ceb3d0", "name": "vlaardingen", "lat": 51.90799671745971, "lon": 4.342740633497298, "is_private": false}
+{"id": "_f392232b4f119e45bf0d3796eb1", "name": "honselersdijk", "lat": 52.00659198530488, "lon": 4.224936468141877, "is_private": false}
+{"id": "_f39223b8e0c6d6c61c5eae5da1f", "name": "Vlaardinger-Ambacht", "lat": 51.907923173318814, "lon": 4.342850728562742, "is_private": false}
+{"id": "_f3922407609545f9b067710f54e", "name": "Vrijenban", "lat": 52.0197669718485, "lon": 4.365388540059613, "is_private": false}
+{"id": "_f39229f3754461341be8095071c", "name": "dinther", "lat": 51.64803304689326, "lon": 5.481062445663794, "is_private": false}
+{"id": "_f3922f82d4f21eb273b617e86a4", "name": "erp", "lat": 51.60064775875208, "lon": 5.605952329382799, "is_private": false}
+{"id": "_f39231cac794971265b01f773fd", "name": "leeuwarden", "lat": 53.202322292063634, "lon": 5.795766869186272, "is_private": false}
+{"id": "_f39233595f872f7154c9b4c4e7", "name": "amsterdam", "lat": 52.372694406394054, "lon": 4.900228473458197, "is_private": false}
+{"id": "_f392335df837b076c8fc8f7454a", "name": "oudevrouwenhuis", "lat": null, "lon": null, "is_private": false}
+{"id": "_f39233dc2b7152258bc2fe6bd20", "name": "bolsward", "lat": 53.06280786971649, "lon": 5.522718062645691, "is_private": false}
+{"id": "_f39235766157028ab704ca30f52", "name": "aurich", "lat": 53.46969359640559, "lon": 7.482341934367299, "is_private": false}
+{"id": "_f392365ad4f8bf0e0a6b18def2", "name": "didam", "lat": 51.941038122751436, "lon": 6.129973581060987, "is_private": false}
+{"id": "_f392404cfda2e5267328544115b", "name": "spaland", "lat": 51.934467431479064, "lon": 4.372372636792405, "is_private": false}
+{"id": "_f394d1acc04786672b89bc703af", "name": "abtswoude", "lat": 51.99151020593712, "lon": 4.350485289677496, "is_private": false}
+{"id": "_f394d5f9fbc7ec30d3d46ef79b0", "name": "zouteveen", "lat": 51.94778379843234, "lon": 4.320684593621156, "is_private": false}
+{"id": "_f394d84d7306a11addaee04e694", "name": "woudharnasch", "lat": 52.00047583485302, "lon": 4.31316595192333, "is_private": false}
+{"id": "_f394eea3db27ade5fbd81cabeff", "name": "oude kerk", "lat": 52.01265404658975, "lon": 4.355741087506156, "is_private": false}
+{"id": "_f39505b05ce7838260dd35d0ca", "name": "holy", "lat": 51.92320097445526, "lon": 4.3459116872935315, "is_private": false}
+{"id": "_f395414735474e219d5b3c15cc5", "name": "burgersdijk", "lat": 51.968806166034874, "lon": 4.261521996545799, "is_private": false}
+{"id": "_f3954e171aa6399916bcf7ea7ec", "name": "valenciennes", "lat": 50.35793665006688, "lon": 3.5238764712768766, "is_private": false}
+{"id": "_f39562344742ec18947e08cbcb3", "name": "LUXEMBURG", "lat": 49.6106351097331, "lon": 6.131003370747117, "is_private": false}
+{"id": "_f395623741d6a9b1e3baf591504", "name": "houffalize", "lat": 50.13339825654716, "lon": 5.788866773813212, "is_private": false}
+{"id": "_f39565ca4b55d9f9c7b4a718e2d", "name": "loosduinen", "lat": 52.05206064378498, "lon": 4.229551279022753, "is_private": false}
+{"id": "_f39566364a242b812d3141aa337", "name": "Cisterciënzerinnenklooster", "lat": 52.05022241734194, "lon": 4.2290508747657265, "is_private": false}
+{"id": "_f395685a30e53c0034c5d72503b", "name": "corbie", "lat": 49.908896800418844, "lon": 2.5100128439131564, "is_private": false}
+{"id": "_f3956c7627b1243c36830001307", "name": "ENGLAND", "lat": null, "lon": null, "is_private": false}
+{"id": "_f3956c793e233110a49698d4ff2", "name": "huntingdon", "lat": 52.32706290687123, "lon": -0.18087868264401114, "is_private": false}
+{"id": "_f3957b6a6601ffc91d067628937", "name": "carlisle", "lat": 54.89450787678011, "lon": -2.9385275773056234, "is_private": false}
+{"id": "_f395a186c0e690c801a6fd4211b", "name": "lens", "lat": 50.429280437474155, "lon": 2.8337070973202887, "is_private": false}
+{"id": "_f395a24101c3454dedd47dc8697", "name": "winchester", "lat": 51.06292100897611, "lon": -1.3196794653364639, "is_private": false}
+{"id": "_f395a3cc327ef3a8fed78c48d4", "name": "wessex", "lat": 51.185254427142574, "lon": -2.188331463494491, "is_private": false}
+{"id": "_f395a421e9c7653a564f1f7333d", "name": "SCOTLAND", "lat": 55.948640408255656, "lon": -3.2002156073614114, "is_private": false}
+{"id": "_f395a4247d24bcad3abc9b666d0", "name": "edinburgh", "lat": 55.94854659265528, "lon": -3.2006235538448173, "is_private": false}
+{"id": "_f395a5aeea76091438e4caf3e0f", "name": "northumberland", "lat": 55.23909625900019, "lon": -1.9767310507958626, "is_private": false}
+{"id": "_f395a5b188335c70727d1a5876f", "name": "Alnwick", "lat": 55.41107199102228, "lon": -1.7063716773590296, "is_private": false}
+{"id": "_f395aae66821f09a5f42c7648d9", "name": "londen", "lat": 51.50846236774324, "lon": -0.07615566903832365, "is_private": false}
+{"id": "_f395ae48cb61b9dd7300cd66de0", "name": "pucklechurch", "lat": 51.48694927435418, "lon": -2.434344081042489, "is_private": false}
+{"id": "_f395afdd08747e2386ad2de9bab", "name": "farndon", "lat": 53.08415186196204, "lon": -2.8773176806119327, "is_private": false}
+{"id": "_f395b168eeb28a1aada0b2cf0db", "name": "oxfordshire", "lat": 51.757071829837514, "lon": -1.2589021911132998, "is_private": false}
+{"id": "_f395b16be513fbdb29c87a0a3ce", "name": "wantage", "lat": 51.58874635087391, "lon": -1.4284994070389156, "is_private": false}
+{"id": "_f395b2edd2f47159794ccc9ca94", "name": "kingston-upon-thames", "lat": 51.41051014131124, "lon": -0.30607243408273277, "is_private": false}
+{"id": "_f395bd25b526ff0a835cd431646", "name": "HONGARIJE", "lat": null, "lon": null, "is_private": false}
+{"id": "_f395c2de6d86f9298c992dcd757", "name": "nedersaksen", "lat": 52.92438998282206, "lon": 9.227631642391469, "is_private": false}
+{"id": "_f395c2e152c74cc7f2438a4eaca", "name": "ringelheim", "lat": 52.03476322311174, "lon": 10.310913333681881, "is_private": false}
+{"id": "_f395c357b91142633b101ee4eb2", "name": "memleben", "lat": 51.266251870344846, "lon": 11.49708757053311, "is_private": false}
+{"id": "_f395d7535614bd11afa8fcdb542", "name": "luik", "lat": 50.6403368140156, "lon": 5.57190522024882, "is_private": false}
+{"id": "_f395d7562117cbe934b9b3f584", "name": "herstal", "lat": 50.67039003512759, "lon": 5.638647401032873, "is_private": false}
+{"id": "_f395d802e622ccb0ade524b1614", "name": "picardie", "lat": 49.545491288242275, "lon": 2.7968384871380443, "is_private": false}
+{"id": "_f395d80693313f8aae58c8355af", "name": "Queirzy-sur-Oise", "lat": 49.573971817212325, "lon": 3.1406740510580318, "is_private": false}
+{"id": "_f395d8df5fd445c94aee5f45818", "name": "laon", "lat": 49.56445128367268, "lon": 3.624770493193303, "is_private": false}
+{"id": "_f395d9df1d07c14fc7359b35cbe", "name": "jupille aan de maas", "lat": 50.64724495944747, "lon": 5.632557757144595, "is_private": false}
+{"id": "_f397ece777220abf035e28897b6", "name": "meerheym (merum)", "lat": 51.17410036148518, "lon": 5.957348742855028, "is_private": false}
+{"id": "_f397f06eec66e378665949e8709", "name": "bronckhorst", "lat": 52.0759630784341, "lon": 6.179690809120622, "is_private": false}
+{"id": "_f397f0fbcd97fea5d21f7b53f33", "name": "limburg", "lat": null, "lon": null, "is_private": false}
+{"id": "_f397f0ff98533a88afffa6eba9a", "name": "kassel (kessel?) castle", "lat": 51.290675505470546, "lon": 6.056035237245862, "is_private": false}
+{"id": "_f397f678fdf6103d885edcbfaa6", "name": "burcht steenvoort", "lat": 50.80822214366565, "lon": 2.58166137684972, "is_private": false}
+{"id": "_f397f6f52947e2c2f71056e8c5b", "name": "heusden", "lat": 51.7340645599698, "lon": 5.1380032727604235, "is_private": false}
+{"id": "_f397ffd7dcd5293588b66fcb63d", "name": "gennep", "lat": 51.69832740103263, "lon": 5.972347670184842, "is_private": false}
+{"id": "_f39807cbf274e357c432dcd9cd6", "name": "sponheim castle", "lat": 49.8312380798072, "lon": 7.714670027261432, "is_private": false}
+{"id": "_f3980db84bb2eb8a54772c153d1", "name": "boulogne", "lat": 50.72608175870414, "lon": 1.6147980174201269, "is_private": false}
+{"id": "_f3980e031784acd04f07f9d096e", "name": "rumily", "lat": 45.865557714395955, "lon": 5.952584331272846, "is_private": false}
+{"id": "_f398531d7042e1aa9d592e05939", "name": "herpen", "lat": 51.7721795778608, "lon": 5.641614957841998, "is_private": false}
+{"id": "_f3985b918e346e52cead33e1162", "name": "chiny", "lat": 49.74112507460947, "lon": 5.343433183711919, "is_private": false}
+{"id": "_f3986382e321f443e81bcfccac9", "name": "hochstaden", "lat": 51.04003739326999, "lon": 6.5590733252335145, "is_private": false}
+{"id": "_f3987600b0e77ade601e9509c65", "name": "leuven", "lat": 50.879493360153866, "lon": 4.701229817325959, "is_private": false}
+{"id": "_f398792e4035302c7634e4cdbda", "name": "Samer", "lat": 50.63938806757209, "lon": 1.7457809007029303, "is_private": false}
+{"id": "_f3987b85c046922a6526fb59de1", "name": "BENEDEN-LOTHARINGEN", "lat": 50.775460550678055, "lon": 6.083864243902994, "is_private": false}
+{"id": "_f3987c28aef5f135fdcdcc71fe8", "name": "nivelles", "lat": 50.59773505105488, "lon": 4.323636519530487, "is_private": false}
+{"id": "_f3987c2b5cf7d6a0e324cc3846a", "name": "Cloister De, Sainte Gertrude", "lat": 50.59773505105488, "lon": 4.323636519530487, "is_private": false}
+{"id": "_f3987cf48d9636f9344ffc23ba9", "name": "namur", "lat": 50.46322904988934, "lon": 4.867448384694713, "is_private": false}
+{"id": "_f39882d32f9343aa4dd95eaefaf", "name": "meuse", "lat": 50.212827835999214, "lon": 5.54859751084201, "is_private": false}
+{"id": "_f39886d7ee3b6a936be16613e9", "name": "meerssen", "lat": 50.88372099221149, "lon": 5.754806532676078, "is_private": false}
+{"id": "_f3988a8c1c76df39b2a5d81d61b", "name": "ingelheim am rhein", "lat": 49.97756163283289, "lon": 8.07156261337568, "is_private": false}
+{"id": "_f3988acf77f20480d63bf4dc84f", "name": "prum", "lat": 50.2069160048508, "lon": 6.425838132292947, "is_private": false}
+{"id": "_f3988be952341511d0ad364f600", "name": "Hesbaye, Haspengouw", "lat": 50.7039115575214, "lon": 5.0336224317101665, "is_private": false}
+{"id": "_f3988c20e5d65f490cca73c0cb4", "name": "angers", "lat": 47.47022094960828, "lon": -0.5602279939183564, "is_private": false}
+{"id": "_f39892b04dc52a1def1f5d19ddc", "name": "aquitaine", "lat": 44.246874787983714, "lon": -0.6538064150606331, "is_private": false}
+{"id": "_f39892b32636462a4a5f33e8859", "name": "Champagne", "lat": 45.42219767697382, "lon": 0.3165965395031994, "is_private": false}
+{"id": "_f398934d6987524ae2e78bc8f33", "name": "bourgogne", "lat": 45.894151193573144, "lon": 4.805015789235883, "is_private": false}
+{"id": "_f39893505ecc577b3ce2fe7890", "name": "sens", "lat": 48.21540430869805, "lon": 3.2720813533156825, "is_private": false}
+{"id": "_f39894b3ff350d39aa28c10f9aa", "name": "arles", "lat": 43.676542984387645, "lon": 4.627575357048471, "is_private": false}
+{"id": "_f398c17831d1d349f5384f1fc29", "name": "bleiswijk", "lat": 52.01088362711537, "lon": 4.530242351112686, "is_private": false}
+{"id": "_f398c17a8495fbc758476e0f2f6", "name": "kasteel cranenburg", "lat": 52.030212352425195, "lon": 4.558115454233385, "is_private": false}
+{"id": "_f398c1d7a186fb1cc7076b232af", "name": "eikenduinen", "lat": 52.06271492151946, "lon": 4.259790866188922, "is_private": false}
+{"id": "_f398c6f8fd966f8aef883c10eee", "name": "sassenheim", "lat": 52.22721194082181, "lon": 4.522395576553894, "is_private": false}
+{"id": "_f398c78a61736b93a5082c9e7dd", "name": "kasteel duivenvoorde", "lat": 52.11130401636677, "lon": 4.417466472759791, "is_private": false}
+{"id": "_f3990b47e2d6bdebe19417a44b6", "name": "monnickendam", "lat": 52.46011184323456, "lon": 5.034697404810177, "is_private": false}
+{"id": "_f39bb57b95477f3aeca27fb9be7", "name": "noordwijkerhout", "lat": 52.262555198032615, "lon": 4.493246311506863, "is_private": false}
+{"id": "_f39bb61965a7789f95c21bfccca", "name": "noordwijk", "lat": 52.23399732472134, "lon": 4.445478838064873, "is_private": false}
+{"id": "_f39bb7850963c3acb29569b29b3", "name": "rijswijk", "lat": 52.05571534024119, "lon": 4.334215849442336, "is_private": false}
+{"id": "_f39bb7ece723d21a85c4fe93bf2", "name": "hillegom", "lat": 52.29282162750166, "lon": 4.5792568442068875, "is_private": false}
+{"id": "_f39bdccc7a577461e7ead515e48", "name": "aan de duinweg", "lat": 52.25690906790469, "lon": 4.452892046510643, "is_private": false}
+{"id": "_f39be9d74ef2e3fb28d141395af", "name": "leiderdorp", "lat": 52.15094963808594, "lon": 4.523794053911267, "is_private": false}
+{"id": "_f39c9e0de5445fe218a04bf6745", "name": "bergschenhoek", "lat": 51.9893796641752, "lon": 4.501578935595361, "is_private": false}
+{"id": "_f39ca0bc7a763c2b8c7144f8611", "name": "capelle aan den ijssel", "lat": 51.9223850900328, "lon": 4.5837158123843, "is_private": false}
+{"id": "_f39ca3d0a77789f41599162f0ef", "name": "zevenhuizen", "lat": 52.01250315281146, "lon": 4.5816310972043, "is_private": false}
+{"id": "_f39ca75973f7e006e8a76d32ca1", "name": "hillegersberg", "lat": 51.952330284422274, "lon": 4.490028678854409, "is_private": false}
+{"id": "_f3a2b97a594cf6eaf94fd19f63", "name": "stompwijk", "lat": 52.09564809285128, "lon": 4.46502619232882, "is_private": false}
+{"id": "_f3a2bba359131a2a1201164d7cd", "name": "veur", "lat": 52.08071094638334, "lon": 4.3974457799669056, "is_private": false}
+{"id": "_f3a2fb252a6478164102b5dc779", "name": "maaswijk", "lat": 51.837367052767384, "lon": 4.361324457363938, "is_private": false}
+{"id": "_f3a4e81d50451795ca0d509c551", "name": "katwijk", "lat": 52.20380247829649, "lon": 4.396986761689053, "is_private": false}
+{"id": "_f3a518727cd7ba2cbd5012e4ae7", "name": "hof van delft", "lat": 52.01032367277441, "lon": 4.347182576979347, "is_private": false}
+{"id": "_f3a518c8883760bdd95858f93b7", "name": "hodenpijl", "lat": 51.98322033098258, "lon": 4.318022004862667, "is_private": false}
+{"id": "_f3a52185c917dce18e02c959659", "name": "keulen", "lat": 50.9413235819875, "lon": 6.958462561876536, "is_private": false}
+{"id": "_f3a52624ded164f866e603c023b", "name": "borculo", "lat": 52.11332986170703, "lon": 6.52126425588807, "is_private": false}
+{"id": "_f3a52ba40429bd0ff0d60f7215", "name": "aalten", "lat": 51.92675840459674, "lon": 6.5810816888965515, "is_private": false}
+{"id": "_f3a52c0e7af31d2a92c9ffd760f", "name": "lintelo", "lat": 51.92408267506244, "lon": 6.515385986079305, "is_private": false}
+{"id": "_f3a5300a32117b1f4577d4ab3e7", "name": "oude vest", "lat": 52.16228904430467, "lon": 4.493069557104263, "is_private": false}
+{"id": "_f3a532754737ae1948c22e07128", "name": "Middelstegracht", "lat": 52.15815236246, "lon": 4.4972258087440125, "is_private": false}
+{"id": "_f3a5e3bda167104168ee2c0875f", "name": "warmond", "lat": 52.19742485599566, "lon": 4.5024513900714656, "is_private": false}
+{"id": "_f3a5fc06c03498f955ab6d0f00b", "name": "egmond of de hoef", "lat": 52.61924009161561, "lon": 4.649946010951018, "is_private": false}
+{"id": "_f3a5fc0bb534ada271bcc38ceff", "name": "kasteel egmond", "lat": 52.621651265610566, "lon": 4.654307257843752, "is_private": false}
+{"id": "_f3ab3d8ad57f1a0f9c21e2111e", "name": "ter heijde", "lat": 52.0301810804712, "lon": 4.168141044533667, "is_private": false}
+{"id": "_f3ab55adcdfac29c2782464464", "name": "nieuwland (ZH)", "lat": 51.9174932540058, "lon": 4.390338780758757, "is_private": false}
+{"id": "_f3acbba31fc37b8d1dc8c7fd6a5", "name": "maasdam", "lat": 51.78769423821569, "lon": 4.5560591645783415, "is_private": false}
+{"id": "_f3acc7c8e29626a09ad1438c7e9", "name": "schoonderloo", "lat": 51.90617191150095, "lon": 4.452506726104402, "is_private": false}
+{"id": "_f3af020faae7778da84d489d05b", "name": "oud mathenesse", "lat": 51.916362243074424, "lon": 4.420814182779294, "is_private": false}
+{"id": "_f3af0db790a3c4fa73b67c3565b", "name": "dijkshoorn", "lat": 52.014484459951625, "lon": 4.3263931928618335, "is_private": false}
+{"id": "_f3af149d7a26aeb159b4daa3bbc", "name": "klooster Sion", "lat": 52.014484459951625, "lon": 4.3263931928618335, "is_private": false}
+{"id": "_f3af1cd084c4780b67ba37f91fb", "name": "heemstede", "lat": 52.350298905558454, "lon": 4.621247127300006, "is_private": false}
+{"id": "_f3af29d0d594111b8bf62a2261d", "name": "reims", "lat": 49.25168387394353, "lon": 4.031845474972756, "is_private": false}
+{"id": "_f3af3760a511ba4326f84dfdcfa", "name": "haarlem", "lat": 52.38382191129176, "lon": 4.63580163131329, "is_private": false}
+{"id": "_f3af3834e551cfcf637fd38e2c9", "name": "mechelen", "lat": 51.02883820436292, "lon": 4.479131769787616, "is_private": false}
+{"id": "_f3af3837e3c6c3f99d1e754120a", "name": "slot boutersem", "lat": 50.840611830751115, "lon": 4.848879327957847, "is_private": false}
+{"id": "_f3af4044cce44d3e748780733fb", "name": "zevenbergen", "lat": 51.64455914418944, "lon": 4.606654148524807, "is_private": false}
+{"id": "_f3af454f6bb6a59b41219fbb5dd", "name": "papendrecht", "lat": 51.82492905985005, "lon": 4.68451576273693, "is_private": false}
+{"id": "_f3af49182327c38d5ed90ce87dc", "name": "grimbergen", "lat": 50.93328246786151, "lon": 4.370763999168165, "is_private": false}
+{"id": "_f3af4cd3398244ff824acf412db", "name": "voorhout", "lat": 52.22139324440106, "lon": 4.482820301490778, "is_private": false}
+{"id": "_f3b54dc92715b4651ea12010f10", "name": "gouda", "lat": 52.01084654198082, "lon": 4.710271150741942, "is_private": false}
+{"id": "_f3b54dd12af5db613f614aea945", "name": "moerdrecht", "lat": 51.98646740159531, "lon": 4.670923597750776, "is_private": false}
+{"id": "_f53dabd48d72eac5e7e0d92d216", "name": "nieuwenhoorn", "lat": 51.85435318338017, "lon": 4.142811407549923, "is_private": false}
+{"id": "_f53dbdbfc2ceec5ce155042e32", "name": "Tedingerbroek", "lat": 52.0534891597458, "lon": 4.373348938930135, "is_private": false}
+{"id": "_f53df910bba587300c42e484059", "name": "nieuwe-tonge", "lat": 51.71390884250891, "lon": 4.1649563218963355, "is_private": false}
+{"id": "_f53e121774f657f61e69fa0b44d", "name": "schoorl", "lat": 52.70098075372051, "lon": 4.693875804032586, "is_private": false}
+{"id": "_f53e218eaea7f63c0266c9a6f0d", "name": "worcestershire", "lat": 52.20669578379136, "lon": -2.1926147492536265, "is_private": false}
+{"id": "_f53e21b4f96706f0f8aa84f1dae", "name": "claines", "lat": 52.22778434091651, "lon": -2.218771368826509, "is_private": false}
+{"id": "_f53e23dc2ae4a003817c7068310", "name": "staffordshire", "lat": 52.84379702459988, "lon": -2.012477595264473, "is_private": false}
+{"id": "_f53e23de76de5951426d7f437", "name": "tamworth", "lat": 52.632631847258786, "lon": -1.696757883236821, "is_private": false}
+{"id": "_f53e246412f433171f01c0dc817", "name": "gloucestershire", "lat": 51.86800785301315, "lon": -2.246983868727579, "is_private": false}
+{"id": "_f53e24678f724a185dd0dde9cbf", "name": "st' Peters church", "lat": 51.86918489892484, "lon": -2.247833202053508, "is_private": false}
+{"id": "_f53e265ab155f3161cd5770d524", "name": "lichfield", "lat": 52.68542351965015, "lon": -1.830498922110838, "is_private": false}
+{"id": "_f53e26c5be042becd43f6fd0bdc", "name": "st oswalds priory", "lat": 51.86921130855366, "lon": -2.247832858185449, "is_private": false}
+{"id": "_f53e34d6ff427ff868810044d94", "name": "coucy", "lat": 49.521796831068926, "lon": 3.3185117422225927, "is_private": false}
+{"id": "_f53e351132372b228c40c1c8cb0", "name": "braine", "lat": 49.33959411562368, "lon": 3.5350092591365567, "is_private": false}
+{"id": "_f55201c4575d1b2d97221b77c1", "name": "TURKEY", "lat": 39.265751638750096, "lon": 32.734433991981284, "is_private": false}
+{"id": "_f55201c6d936e8f721fb08be0e6", "name": "tarsus", "lat": 36.9172389210206, "lon": 34.89722398856067, "is_private": false}
+{"id": "_f5523c239bb5bba2396ffa98951", "name": "paris", "lat": 48.85302245004413, "lon": 2.350002515025258, "is_private": false}
+{"id": "_f5523dd6d345992fca38436c13f", "name": "tournai", "lat": 50.60666012013825, "lon": 3.3887889453455298, "is_private": false}
+{"id": "_f6696d71ac850cb5c1ee7fc1978", "name": "Ijsselstein", "lat": 52.01923138487735, "lon": 5.043852670502825, "is_private": false}
+{"id": "_f669820cf73522e3c69c3e39fb8", "name": "heiloo", "lat": 52.60077117423629, "lon": 4.701635945728664, "is_private": false}
+{"id": "_f669e98dab25cdd04597e408756", "name": "lippe", "lat": null, "lon": null, "is_private": false}
+{"id": "_f669e9916bd47fb4f816ead8598", "name": "lipperode", "lat": 51.68815973318671, "lon": 8.376940355538437, "is_private": false}
+{"id": "_f669f1d09603e06d0d717d06b54", "name": "arnsberg", "lat": 51.401739037520024, "lon": 8.062273456349198, "is_private": false}
+{"id": "_f669f4406323218d10e5e891c6", "name": "werl", "lat": 51.5525106789321, "lon": 7.913934275357419, "is_private": false}
+{"id": "_f669f711beb36b21982af2bf310", "name": "Swabia", "lat": 48.583770512984, "lon": 7.748306886739189, "is_private": false}
+{"id": "_f669f98ba1b1d18baab7711ab48", "name": "regensburg", "lat": 49.01948778762073, "lon": 12.09809229098575, "is_private": false}
+{"id": "_f66a029bb9243c429c8c80e1cee", "name": "Auxerre", "lat": 47.79754657649731, "lon": 3.5733530509530467, "is_private": false}
+{"id": "_f66a1258b5f4c9e7ed1eb7ce36b", "name": "wachtendonk", "lat": 51.403909672482975, "lon": 6.3382796530342365, "is_private": false}
+{"id": "_f66a1329f6c22f5cda8535b1603", "name": "loon op zand", "lat": 51.6267496796093, "lon": 5.072628127384134, "is_private": false}
+{"id": "_f66a13c1e494da1f4cb47617f75", "name": "kelheim", "lat": 48.91846409664709, "lon": 11.872253498060312, "is_private": false}
+{"id": "_f66c2eb7b5b192b909db4b9c0ca", "name": "briey", "lat": 49.24784673164665, "lon": 5.936501905351974, "is_private": false}
+{"id": "_f66cd9c97655943b7d5531abdc7", "name": "oude wetering", "lat": 52.21503732732735, "lon": 4.645042855969502, "is_private": false}
+{"id": "_f66cdab809a4311cf67cfb0bb72", "name": "emsdetten", "lat": 52.17410671340412, "lon": 7.529091095419367, "is_private": false}
+{"id": "_f66cdbb0561638a16e4d64b56c6", "name": "munster", "lat": 51.96300942956029, "lon": 7.625613976067188, "is_private": false}
+{"id": "_f66ce233232483d49130a7322c0", "name": "nieuwland", "lat": 51.91864029122647, "lon": 4.387959244473359, "is_private": false}
+{"id": "_f66ce3e92cb55b369e12a08470f", "name": "rijnsaterwoude", "lat": 52.19817077344156, "lon": 4.670772723304483, "is_private": false}
+{"id": "_f66ce51f21b49fbcda0d37f9e30", "name": "abtsrecht", "lat": null, "lon": null, "is_private": false}
+{"id": "_f66ced262da34e565480b074e1b", "name": "sint-niklaas", "lat": 51.164472655121166, "lon": 4.140281286218444, "is_private": false}
+{"id": "_f67307aba40272b72a4735b20a", "name": "Waddingh (Wateringen?)", "lat": 52.02408659743831, "lon": 4.27463101567928, "is_private": false}
+{"id": "_f6730d73cff53995b1091edb9d4", "name": "laken", "lat": 50.87706594832187, "lon": 4.347780197585266, "is_private": false}
+{"id": "_f67328edc8036a6e2b178826cf1", "name": "Liedekerke", "lat": 50.87061288571543, "lon": 4.082708051962063, "is_private": false}
+{"id": "_f6733c0117a6cfd8db4f80ae0f6", "name": "poeldijk", "lat": 52.02218333479752, "lon": 4.216103350928371, "is_private": false}
+{"id": "_f675d03b56970938b1bcfb8950a", "name": "Veenendaal", "lat": 52.028832032013526, "lon": 5.559290974042034, "is_private": false}
+{"id": "_f675d0ab9ef7004f21af607691b", "name": "oranienburg", "lat": 52.766236005624705, "lon": 13.26394480082933, "is_private": false}
+{"id": "_f675d448db0647f6355db3096e1", "name": "lemsterland", "lat": 52.84467647286297, "lon": 5.710991700803165, "is_private": false}
+{"id": "_f675e5d90002f50b84f33dfb243", "name": "beverwijk", "lat": 52.485836339976885, "lon": 4.657974223716317, "is_private": false}
+{"id": "_f675f30ef7a62fc8e0cad73a5d6", "name": "avereest", "lat": null, "lon": null, "is_private": false}
+{"id": "_f67a3ccc8f54ad17c3083e00bf3", "name": "oegstgeest", "lat": 52.18782310810409, "lon": 4.4672442005671416, "is_private": false}
+{"id": "_f67a3e5910344776ae9ed6eaa1f", "name": "Katwijk op Rhijn", "lat": 52.194582922658505, "lon": 4.419499280051284, "is_private": false}
+{"id": "_f67f3d4c58a543492dbc2ec720b", "name": "benthuizen", "lat": 52.07793887858938, "lon": 4.544189428678003, "is_private": false}
+{"id": "_f67f3f2bcdc1497fce4c5a53ac2", "name": "drongelen", "lat": 51.716125953844376, "lon": 5.053894682468741, "is_private": false}
+{"id": "_f67f3ff90987ebde76fd7c0e3f5", "name": "dussen", "lat": 51.73105954331717, "lon": 4.962357921132091, "is_private": false}
+{"id": "_f67f4e6e4fb24bc92bbfed6155a", "name": "stavoren", "lat": 52.885241896056776, "lon": 5.358846793298598, "is_private": false}
+{"id": "_f68071eec1e1754d87f70422d37", "name": "lisse", "lat": 52.257354565581096, "lon": 4.552888284210772, "is_private": false}
+{"id": "_f6807f4cd9a27c5ed26182492a8", "name": "hoogwoud", "lat": 52.71741179254427, "lon": 4.934580287522327, "is_private": false}
+{"id": "_f680a041f0b3210e0091e4dc301", "name": "franekeradeel", "lat": 53.18668322303492, "lon": 5.543384497235081, "is_private": false}
+{"id": "_f680a044b1b7870e3d746db0fc", "name": "achlum", "lat": 53.14840195141929, "lon": 5.485288074930874, "is_private": false}
+{"id": "_f680a174b135a07235ad4a8c2d7", "name": "scharnegoutum", "lat": 53.06038322305182, "lon": 5.679111084698606, "is_private": false}
+{"id": "_f680a2b8a3c9a4d2929d440ff3", "name": "tjerkwerd", "lat": 53.04248842998495, "lon": 5.502346656933566, "is_private": false}
+{"id": "_f680a3004ac73dc62ae39de2b21", "name": "workum", "lat": 52.97898572285537, "lon": 5.443131925860416, "is_private": false}
+{"id": "_f680a8387de5669bae7d53c73a5", "name": "dongjum", "lat": 53.20819224542367, "lon": 5.544353018740073, "is_private": false}
+{"id": "_f680a8a795e6a63be66f98c4cd8", "name": "sexbierum", "lat": 53.2190892195301, "lon": 5.484817590245875, "is_private": false}
+{"id": "_f680a97a7d22ceffbf6049a0ff3", "name": "schalsum", "lat": 53.19783805830979, "lon": 5.572069171560799, "is_private": false}
+{"id": "_f682decb74570fd23fb6a35922f", "name": "zuideinde", "lat": 52.48341170972882, "lon": 5.931374650907507, "is_private": false}
+{"id": "_f68327aa98150d8749ee8f8726", "name": "Nordrhein-Westfalen", "lat": 51.37461444954529, "lon": 7.17143600507248, "is_private": false}
+{"id": "_f68327acfa21cc90d107f5e09b5", "name": "Unna", "lat": 51.53491587634373, "lon": 7.691143579328188, "is_private": false}
+{"id": "_f6833ef4bb851638dc7f2df326e", "name": "schieland", "lat": 51.94990013223917, "lon": 4.489112908277899, "is_private": false}
+{"id": "_f6836c38c211ee0836ab6ea8752", "name": "Benschop", "lat": 52.007250326200804, "lon": 4.980303675337211, "is_private": false}
+{"id": "_f6836c860655c2c2854c6235620", "name": "vlist", "lat": 51.97528719432678, "lon": 4.821750051986864, "is_private": false}
+{"id": "_f6836d862046688f7fba5062038", "name": "bonrepas", "lat": 51.96603734413097, "lon": 4.839708033856414, "is_private": false}
+{"id": "_f6837043d4f7f9c920d6034584a", "name": "polsbroek", "lat": 51.97588767462728, "lon": 4.848566203182721, "is_private": false}
+{"id": "_f6837ec209d48a9adf964b92712", "name": "appenbroek", "lat": 51.84879091987701, "lon": 4.243869895307802, "is_private": false}
+{"id": "_f683869fd671b3ab579f8841ac0", "name": "valkenburg zh", "lat": 52.179914695645714, "lon": 4.433023282195802, "is_private": false}
+{"id": "_f8c9a9126c0373a01ee8bf2a837", "name": "Heemskerk", "lat": 52.51032955111775, "lon": 4.671236289830333, "is_private": false}
+{"id": "_f8c9a915be17e96dfa6501909e0", "name": "Slot Assumburg", "lat": 52.50512788392118, "lon": 4.685200169768311, "is_private": false}
+{"id": "_f8c9d1106514ca5c0c6ea9b032b", "name": "Altena", "lat": 51.758079403778225, "lon": 5.02622805858473, "is_private": false}
+{"id": "_f8c9d112b905624519a6d3e3bb5", "name": "Meeuwen", "lat": 51.7285751325568, "lon": 5.009958561972281, "is_private": false}
+{"id": "_f8ca1778b754665133833877893", "name": "den Hoorn", "lat": 51.99976127354878, "lon": 4.330488919422584, "is_private": false}
+{"id": "_f8ca17dd0237bc5e9fa4b65a689", "name": "Honderdland", "lat": 51.96247794725424, "lon": 4.216387092459539, "is_private": false}
+{"id": "_f8ca187264a48a352b3fbd8ab9a", "name": "delfshaven", "lat": 51.90929609002839, "lon": 4.448591181891113, "is_private": false}
+{"id": "_f8ca2511e371ddb48cd97189843", "name": "maasdijk", "lat": 51.95926390735016, "lon": 4.217459545876356, "is_private": false}
+{"id": "_f8ca2866a705ffd29c8aa475493", "name": "SWITZERLAND", "lat": 47.01902346848655, "lon": 8.416697365838612, "is_private": false}
+{"id": "_f8ca286978b29e20c7fc0d6766a", "name": "Saanen", "lat": 46.48976476275795, "lon": 7.2616838894014935, "is_private": false}
+{"id": "_f8ccc2f3bfc62e154201e48dce6", "name": "'t Woudt", "lat": 51.99534319121892, "lon": 4.293453687606055, "is_private": false}
+{"id": "_f8cd095f3f816e45bebe1fcf06b", "name": "zandambacht", "lat": 51.988999442158494, "lon": 4.162821664814466, "is_private": false}
+{"id": "_f8d0d140be66ba6e5340fb3dd87", "name": "goslar", "lat": 51.90280317011095, "lon": 10.42548157155433, "is_private": false}
+{"id": "_f8d0dd0e29120030fb98287bc07", "name": "zwartewaal", "lat": 51.88392177677187, "lon": 4.223501810021633, "is_private": false}
+{"id": "_f8d0f4b4bb97624e56ba3ae3f42", "name": "westerland", "lat": 52.8896511632321, "lon": 4.9242419639827615, "is_private": false}
+{"id": "_f8d0fd211de3470cab180f61bd5", "name": "dieze", "lat": 52.52329881616559, "lon": 6.093756234843188, "is_private": false}
+{"id": "_f8d116dc9e7306832fd3c59537c", "name": "grote kerk", "lat": 51.92214926165048, "lon": 4.250923508377268, "is_private": false}
+{"id": "_f8d117c2bd56a0590f5b0b56b3", "name": "OOST-INDIE", "lat": -6.121913527536522, "lon": 106.81098709971388, "is_private": false}
+{"id": "_f8d6eb6c3064f9551571ba62a", "name": "houtweg", "lat": 52.50569732889535, "lon": 4.651147236025059, "is_private": false}
+{"id": "_f8ddf2a9930189eba013b47f5e7", "name": "pendrecht", "lat": 51.855238839118826, "lon": 4.487128185744482, "is_private": false}
+{"id": "_f8e00c10ab150fe09ebade32687", "name": "Abdij Rijnsburg", "lat": 52.18950072761476, "lon": 4.44319283722766, "is_private": false}
+{"id": "_f8e02a202ec34c9cef7a0f7cee3", "name": "kasteel Teylingen", "lat": 52.23126060602909, "lon": 4.519014388980083, "is_private": false}
+{"id": "_f8e079944de6c26df0649e12463", "name": "middenweg 51?", "lat": 53.12048075992029, "lon": 6.8748376143333845, "is_private": false}
+{"id": "_f8e37d9757d78106f262d94ed9a", "name": "Boutersem", "lat": null, "lon": null, "is_private": false}
+{"id": "_f8e37ef150f2e259658a120ca78", "name": "butsel", "lat": null, "lon": null, "is_private": false}
+{"id": "_f8e388b9d702870816775dbde8c", "name": "tomb of childeric", "lat": 50.6082632856749, "lon": 3.3947959079346477, "is_private": false}
+{"id": "_f8e38de7b6f203cf96855949a77", "name": "NORWAY", "lat": 60.98705765891619, "lon": 8.252296838207851, "is_private": false}
+{"id": "_f8e38deaa3a7dbf9dfcc875718d", "name": "vestfold", "lat": 59.270409301795496, "lon": 10.165555588726681, "is_private": false}
+{"id": "_f8e3b80131f63b27b3d63a7fc2f", "name": "Champagne-et-Fontaine", "lat": 45.427371389523884, "lon": 0.33964053008145095, "is_private": false}
+{"id": "_f8e6cf5525017dcc4cbcc298853", "name": "Bavaria", "lat": null, "lon": null, "is_private": false}
+{"id": "_f8e6cf592011cb7e611f0905eb0", "name": "Nordgau", "lat": 48.543177181935114, "lon": 7.878843765719301, "is_private": false}
+{"id": "_f8e6f805f9e2d911397ec6c2b61", "name": "Abbaye De Samer", "lat": 50.638888516760446, "lon": 1.7480895989612668, "is_private": false}
+{"id": "_f8e77b1b2527e971f8308b8bc60", "name": "burgsponheim", "lat": 49.83279563978315, "lon": 7.715070216532709, "is_private": false}
+{"id": "_f8e794d9c6a58c188111aacab76", "name": "Esztergom", "lat": 47.79898896811276, "lon": 18.73619931184767, "is_private": false}
+{"id": "_f8e79a0b72632618e0af664b665", "name": "mariahospitaal van de duitse orde (tuetonic order)", "lat": 32.92330481007382, "lon": 35.06976000687097, "is_private": false}
+{"id": "_f8e79fde2289516a17a8b450ff", "name": "Acre", "lat": 32.9213033066234, "lon": 35.06884250312162, "is_private": false}
+{"id": "_f8e7a7d85064b01d263b74da30a", "name": "Monastery of San Felice", "lat": 45.18827256564613, "lon": 9.152204541183819, "is_private": false}
+{"id": "_f8e7c8d0a2071184a017096b010", "name": "Edinburg castle", "lat": 55.94854659265528, "lon": -3.2006235538448173, "is_private": false}
+{"id": "_f8e7d0205a76e2ad93e375d23a", "name": "st. Pauls Church", "lat": 36.91411437120898, "lon": 34.89776572581837, "is_private": false}
+{"id": "_f9107d5ad7c3b30328a347f5d1e", "name": "R.K. kerk", "lat": null, "lon": null, "is_private": false}
+{"id": "_f91080350937fa2e6c2df68e5e9", "name": "Hoogeveen", "lat": 52.72919654152166, "lon": 6.477307705458587, "is_private": false}
+{"id": "_f9108fece0c524b2079b6a1fd76", "name": "de Wijk", "lat": 52.672740610788374, "lon": 6.285785947890832, "is_private": false}
+{"id": "_f91095c185576cbff7718fe7c33", "name": "Druten", "lat": 51.891457397645105, "lon": 5.609982699924453, "is_private": false}
+{"id": "_f91097917fc35b3d9356a4b1854", "name": "Veghel", "lat": 51.61786816672407, "lon": 5.5420652817550815, "is_private": false}
+{"id": "_f910a75292f99eed98e81b2b8", "name": "westgaag", "lat": 51.946652730396764, "lon": 4.254598823905179, "is_private": false}
+{"id": "_f910c78c7b15df457ce9ebc988a", "name": "huis Adrichem", "lat": 52.48739614088989, "lon": 4.671426088072022, "is_private": false}
+{"id": "_f911311d8983d54687d7bf2d15d", "name": "leidschendam", "lat": 52.08012768254714, "lon": 4.3981089075193465, "is_private": false}
+{"id": "_f91147d6da640b1ac87aa51e6fb", "name": "gemert", "lat": 51.5550766869752, "lon": 5.681495685059926, "is_private": false}
+{"id": "_f9114959cfa181ab778793ad653", "name": "Schijndel", "lat": 51.619479680141744, "lon": 5.434995044331982, "is_private": false}
+{"id": "_f9114ac79005ead6c3e16daac75", "name": "Sint Oedenrode", "lat": 51.563266644588865, "lon": 5.460855560001601, "is_private": false}
+{"id": "_f913a78f8287a2a86e96a90baf6", "name": "rijswijkerhoek", "lat": null, "lon": null, "is_private": false}
+{"id": "_f913ac260e232e85bd48fd6b0a2", "name": "etten-leur", "lat": 51.569332686689414, "lon": 4.635192005591397, "is_private": false}
+{"id": "_f913b66824e3064de8861ab198", "name": "abdij leeuwenhorst", "lat": 52.24058937273051, "lon": 4.477811914041939, "is_private": false}
+{"id": "_f913bdac47f1292b3fa61ac79ad", "name": "boerderij Vrederust", "lat": 52.033789567017514, "lon": 4.258662796684349, "is_private": false}
+{"id": "_f913de1097370b4d4de783286f8", "name": "zuidwijk", "lat": 52.12613471122811, "lon": 4.4063722595902375, "is_private": false}
+{"id": "_f913f995d0a1c866add3d39533d", "name": "wilsveen", "lat": 52.08257923663864, "lon": 4.438006960727444, "is_private": false}
+{"id": "_f916d6144ce2b6de68aa5087fd9", "name": "oostgaag", "lat": 51.95654953785892, "lon": 4.295437298492892, "is_private": false}
+{"id": "_f9174e86cc0237e9644ff934c42", "name": "kallo", "lat": 51.2521896565131, "lon": 4.276962704031456, "is_private": false}
+{"id": "_f917928d9702f4af4db9b34ec88", "name": "Kasteel Lage-en Hoge Woerd", "lat": 52.00043080678914, "lon": 4.207070087405123, "is_private": false}
+{"id": "_f917d2cc00031707147c5e99a42", "name": "woudenberg", "lat": 52.081880053466776, "lon": 5.409676653447107, "is_private": false}
+{"id": "_f917d37efad54c73d66983dea74", "name": "scherpenzeel", "lat": 52.078422271660905, "lon": 5.489200597160942, "is_private": false}
+{"id": "_f91a180f0414945e670c84f47c7", "name": "Liesveld", "lat": 51.93137242416453, "lon": 4.831732217064579, "is_private": false}
+{"id": "_f91a1816639f1f87a33d462995", "name": "kasteel Liesveld", "lat": 51.93137242416453, "lon": 4.831732217064579, "is_private": false}
+{"id": "_f91a1c1184b1cf93fd5587c4b85", "name": "Diest", "lat": 50.98488423868015, "lon": 5.050937268757242, "is_private": false}
+{"id": "_f91a24eb80e4e35d1cd50f95dd5", "name": "kasteel Diest", "lat": 50.985209265362066, "lon": 5.057443302290364, "is_private": false}
+{"id": "_f91a2d525382c7e996c727f62a7", "name": "Heimbach", "lat": 50.63333754544898, "lon": 6.479471411518604, "is_private": false}
+{"id": "_f91a72426dc4eccc5a670edcd98", "name": "Cochem", "lat": 50.14216977519682, "lon": 7.166969611610398, "is_private": false}
+{"id": "_f91a7be01cd7280b287ae3e4966", "name": "kasteel Luxemburg", "lat": 49.61162019706714, "lon": 6.136671452342836, "is_private": false}
+{"id": "_f91a837802e5bf21a8cbebbb185", "name": "Reinhausen", "lat": 51.46789037780843, "lon": 9.983403124805323, "is_private": false}
+{"id": "_f91a84b359f149ab54992159af", "name": "Winzenburg", "lat": 51.942926733641855, "lon": 9.945169995104079, "is_private": false}
+{"id": "_f91a91f5e5e602dabb9cbca6109", "name": "Herzfeld", "lat": 51.663102913663224, "lon": 8.144475859031385, "is_private": false}
+{"id": "_f91a9e11c0c2348fdda85eadb51", "name": "Sulzbach", "lat": 49.50458773240826, "lon": 11.738915558985655, "is_private": false}
+{"id": "_f91a9e15cca3243b34622f313e0", "name": "kasteel Sulzbach", "lat": 49.50528537785351, "lon": 11.736132765311085, "is_private": false}
+{"id": "_f91ae25551a5a2815f97ac18d8e", "name": "Stade", "lat": 53.60098495049433, "lon": 9.476079999916827, "is_private": false}
+{"id": "_f91ae2581f3121035f7d318e629", "name": "Stade", "lat": 53.60098495049433, "lon": 9.476079999916827, "is_private": false}
+{"id": "_f91ae8342471a7f479963b5cbbc", "name": "Lenzen", "lat": 53.09083587518189, "lon": 11.473599552705366, "is_private": false}
+{"id": "_f91aea95bc51f8aafb4ec7838a2", "name": "Lüneburger heide", "lat": 53.17313136184229, "lon": 9.952366672613831, "is_private": false}
+{"id": "_f91af25ffb87d6e989967d63426", "name": "Gandersheim", "lat": 51.87029509312836, "lon": 10.02623856898042, "is_private": false}
+{"id": "_f91af262ead7a9d07bb56c1d343", "name": "Gandersheim Abbey", "lat": 51.87029509312836, "lon": 10.02623856898042, "is_private": false}
+{"id": "_f91afa083b03d702a957cb301b1", "name": "Novara", "lat": 45.44607593411062, "lon": 8.622230041426533, "is_private": false}
+{"id": "_f91d1a80f3c4a1ae717d11964a1", "name": "Aschaffenburg", "lat": 49.9737734957673, "lon": 9.146506876537078, "is_private": false}
+{"id": "_f91d1b67835284dd2bcce708362", "name": "Stiftskirche Aschaffenburg", "lat": 49.9737734957673, "lon": 9.146506876537078, "is_private": false}
+{"id": "_f91d1ffddde1ebc11f1fb4dc7cf", "name": "Rhetie", "lat": 46.85685070709865, "lon": 9.530715272530928, "is_private": false}
+{"id": "_f91d36a6bd115c3fea90d126c2e", "name": "Treviso", "lat": 45.66588067444198, "lon": 12.245725393912535, "is_private": false}
+{"id": "_f91d38a1eca705b8b540967e3fe", "name": "Cysoing", "lat": 50.56853690315665, "lon": 3.215676233176631, "is_private": false}
+{"id": "_f91d42738725c5e6be2b39d049", "name": "Wetterau", "lat": 50.365385173961826, "lon": 8.846874899295749, "is_private": false}
+{"id": "_f91d436d6c35d9615e6c94e3fd9", "name": "Kelheim", "lat": 48.91849535206398, "lon": 11.872297072797586, "is_private": false}
+{"id": "_f91d48ad2af3398d0e6105e6614", "name": "Augsburg", "lat": 48.367840562789226, "lon": 10.895170612697497, "is_private": false}
+{"id": "_f91d4f764e628d76f27257bb793", "name": "Gemunden", "lat": 50.056156429997685, "lon": 9.690454256264347, "is_private": false}
+{"id": "_f91d6ff2d6b2f778dec63ceb1b8", "name": "Stuttgart", "lat": 48.77416347705282, "lon": 9.176828359607732, "is_private": false}
+{"id": "_f91d6ff5a1d4ed37dc868e6b1bf", "name": "kasteel Cannstatt", "lat": 48.81429348554806, "lon": 9.210888576437721, "is_private": false}
+{"id": "_f91d82e4bd51cd9ac12b53b785d", "name": "Esch-sur-Sure", "lat": 49.91108294772081, "lon": 5.934333193822368, "is_private": false}
+{"id": "_f91d85b788b573b2975a60344db", "name": "Saalfeld", "lat": 50.64694800376155, "lon": 11.366080549012482, "is_private": false}
+{"id": "_f91d8677b273f1e6a95e130cdb1", "name": "Brauweiler", "lat": null, "lon": null, "is_private": false}
+{"id": "_f91d867a4173de04a6d9f5e0fed", "name": "Brauweiler abbey", "lat": 50.96118319064035, "lon": 6.782533511624731, "is_private": false}
+{"id": "_f91d8eb71485329404f2adb2705", "name": "Sint  Pantaleon kerk", "lat": 50.92863101444557, "lon": 6.947774155714006, "is_private": false}
+{"id": "_f91d940f3c9514e9253f428fa82", "name": "Rome", "lat": 41.90219324929202, "lon": 12.453902823279464, "is_private": false}
+{"id": "_f91d9468f5653b0790ccf454454", "name": "Sint Peter Basilica", "lat": 41.90219324929202, "lon": 12.453902823279464, "is_private": false}
+{"id": "_f91d98dd0fdb57dd8178514e30", "name": "Prote island", "lat": null, "lon": null, "is_private": false}
+{"id": "_f91da11b3ba48425f21a2a3920b", "name": "Constantinopel (Istanbul)", "lat": 41.00949431635573, "lon": 28.972621023654206, "is_private": false}
+{"id": "_f91da11d7582eb44b1ffabc23d5", "name": "Bukoleon Palace", "lat": 41.00255962659414, "lon": 28.975717541503546, "is_private": false}
+{"id": "_f91daa42b1e46d34445b3a19e27", "name": "Aachen Cathedral", "lat": 50.774734475403044, "lon": 6.083956707005651, "is_private": false}
+{"id": "_f91debec14b4c239f3fe41cad87", "name": "Julich (Gulik)", "lat": 50.922012666313734, "lon": 6.357864824775587, "is_private": false}
+{"id": "_f91e03e56056deef782d15508fb", "name": "Antioch", "lat": 36.19995201214006, "lon": 36.161151496879825, "is_private": false}
+{"id": "_f91e0663ced4351e9f556b2cf88", "name": "Saint-Pol", "lat": 50.38243148279327, "lon": 2.3392882782678748, "is_private": false}
+{"id": "_f91e085f40738aabf1001f31d40", "name": "Blingel", "lat": 50.408532796295276, "lon": 2.147311851873903, "is_private": false}
+{"id": "_f91e09185d519b687e7a2bd4e23", "name": "Rollancourt", "lat": 50.40830695098238, "lon": 2.122501534846771, "is_private": false}
+{"id": "_f91e0b6f8e6586ff946ce2e2938", "name": "Tangry", "lat": 50.46611076924115, "lon": 2.3518181799892477, "is_private": false}
+{"id": "_f91e0d9667e498a0fd9acdfb793", "name": "Blangy-sur-Ternoise", "lat": 50.42288236416073, "lon": 2.166619084363693, "is_private": false}
+{"id": "_f91e0f379354a7f72940459d1c9", "name": "Beauvois", "lat": 50.37483472870106, "lon": 2.2340712420034445, "is_private": false}
+{"id": "_f91e154aa126769f63f485d54e3", "name": "Bours", "lat": 50.4539706459634, "lon": 2.4105369559305783, "is_private": false}
+{"id": "_f91e1eadc145a5a0b1a3ea01619", "name": "Desvres", "lat": 50.6678136027621, "lon": 1.8361724575791913, "is_private": false}
+{"id": "_f91e23225e51c8af57c4077ace9", "name": "Nedonchel", "lat": 50.524289091362114, "lon": 2.3579130333917613, "is_private": false}
+{"id": "_f91e24d8aad6285b14f0921560", "name": "Pressy", "lat": 50.47456552482445, "lon": 2.395028573380581, "is_private": false}
+{"id": "_f91e296e9e07b1b9a8119e89708", "name": "Montcavrel", "lat": 50.51472800912555, "lon": 1.8102386550081484, "is_private": false}
+{"id": "_f91e2c779697088a07fff07f543", "name": "Aumale", "lat": 49.76851691143898, "lon": 1.752354901657801, "is_private": false}
+{"id": "_f91e2d64a8b4953ae991bc129c9", "name": "Saint-Riquier", "lat": 50.13403504436138, "lon": 1.9483057855565793, "is_private": false}
+{"id": "_f91e2faa9bc57adf101feae4c97", "name": "Montreuil", "lat": 50.46402693503233, "lon": 1.7633231491826569, "is_private": false}
+{"id": "_f91e304459d2c6b44f88150731d", "name": "Crecy En Ponthieu", "lat": 50.25246580110074, "lon": 1.882579862278032, "is_private": false}
+{"id": "_f91e35598f03e03ffcd9c71cfdc", "name": "Senlis", "lat": 49.20684042907883, "lon": 2.5859341332824175, "is_private": false}
+{"id": "_f91e3750d601fbaf51aa38479ac", "name": "Saint Denise Cathedral", "lat": 48.93549137344803, "lon": 2.35983488742881, "is_private": false}
+{"id": "_f91e3b96fdb1945472dba126455", "name": "Saint-Maixent-l'Ecole", "lat": null, "lon": null, "is_private": false}
+{"id": "_f91e3cddf5d6ee3ada9331a8efc", "name": "Bayeux", "lat": null, "lon": null, "is_private": false}
+{"id": "_f91e3f12b29337eb940282e33e7", "name": "SCANDINAVIA", "lat": 58.66189294641035, "lon": 10.833985711109792, "is_private": false}
+{"id": "_f91e41b1ba624f331ae98b808fa", "name": "Rouen", "lat": 49.44252840712862, "lon": 1.099836861387089, "is_private": false}
+{"id": "_f91ffbe4d40109bdea15f0bd48d", "name": "Hucqueliers", "lat": 50.568387412785874, "lon": 1.9052867694223947, "is_private": false}
+{"id": "_f91ffe2965966dca969a46c4dd3", "name": "Therouanne", "lat": 50.63797190566697, "lon": 2.2569203013015775, "is_private": false}
+{"id": "_f920009a4cc206701ed63c1c912", "name": "Tingry", "lat": 50.61825103942721, "lon": 1.7304835795970503, "is_private": false}
+{"id": "_f92001820ed78cb3973c5550d7f", "name": "Colembert", "lat": 50.747374121573465, "lon": 1.8397722394023872, "is_private": false}
+{"id": "_f92007930bc4918281925ba62ab", "name": "Fresnoy", "lat": 50.36731228481129, "lon": 2.1303013062827634, "is_private": false}
+{"id": "_f9201a094376a28d9d766da75a0", "name": "Guise", "lat": 49.898606988939314, "lon": 3.6247325464363365, "is_private": false}
+{"id": "_f9201aebe995fccc2081612c9fa", "name": "Avesnes", "lat": 50.12186443801552, "lon": 3.9311566653144125, "is_private": false}
+{"id": "_f9201cd13d22cc4cc433087c5d7", "name": "Arsuf", "lat": 32.20200957093248, "lon": 34.81192041770081, "is_private": false}
+{"id": "_f9201fdc8002da7ee942196f18f", "name": "Montmorency", "lat": 48.98875704394474, "lon": 2.3186586416886277, "is_private": false}
+{"id": "_f920217cf8c15c834ef0defc262", "name": "La Roche en Ardenne", "lat": 50.18199731454413, "lon": 5.57666091519698, "is_private": false}
+{"id": "_f92022b28c71e4de6d69bc7e14c", "name": "Oizy", "lat": 49.893696633012105, "lon": 5.00862125052131, "is_private": false}
+{"id": "_f9204b7aa9648907d7613b561e7", "name": "OOSTENRIJK", "lat": 47.5711081230174, "lon": 14.681124313811024, "is_private": false}
+{"id": "_f9204b7d0673e2ab28f3eb5b6bb", "name": "Millstatt", "lat": 46.80428396642127, "lon": 13.57046227274379, "is_private": false}
+{"id": "_f9204b8ad923bc8271fd682de45", "name": "Millstatt Abbey", "lat": 46.80428396642127, "lon": 13.57046227274379, "is_private": false}
+{"id": "_f9204e13751426ae31c15efafd8", "name": "Turijn", "lat": 45.06482582476152, "lon": 7.686915088590747, "is_private": false}
+{"id": "_f9204f2b0f7213bdf75b4895c3c", "name": "Schweinfurt", "lat": 50.045153463275746, "lon": 10.234238739499029, "is_private": false}
+{"id": "_f92050d1e76401096531ce19e0f", "name": "Piemonte", "lat": 44.897491530190834, "lon": 8.05207864075692, "is_private": false}
+{"id": "_f92051bc5c62cbde22255497f16", "name": "Geneva", "lat": 46.20092221576001, "lon": 6.148867790660367, "is_private": false}
+{"id": "_f92052e3f344d1f7dc0eac98495", "name": "Este", "lat": 45.22861921375976, "lon": 11.656756233387517, "is_private": false}
+{"id": "_f9205e3f2d41109a81fd0ebf008", "name": "Como", "lat": 45.80941635055922, "lon": 9.083294578501965, "is_private": false}
+{"id": "_f9205ee81d86dbba79f53bedec5", "name": "Piacenza", "lat": 45.05252580346994, "lon": 9.693548121427494, "is_private": false}
+{"id": "_f92060c01ca307831de37d7b34b", "name": "Lombardia", "lat": 45.63004930702479, "lon": 9.668582391077289, "is_private": false}
+{"id": "_f92060c2b7c327e9132f6e15212", "name": "Verticilio", "lat": null, "lon": null, "is_private": false}
+{"id": "_f92065658cc1afcc6ccd7891e1f", "name": "Avalgau", "lat": 50.83886390012873, "lon": 7.468877257710637, "is_private": false}
+{"id": "_f92066a9b56387bd7617b76f497", "name": "Kinziggau", "lat": 50.23269326049864, "lon": 9.278869942544544, "is_private": false}
+{"id": "_f9206769dba2e691729f7142577", "name": "POLAND", "lat": 52.33116041211507, "lon": 19.654389314736058, "is_private": false}
+{"id": "_f920676d0783c2e459b9ded85c0", "name": "Koszalin", "lat": 54.190195302341394, "lon": 16.181878476879618, "is_private": false}
+{"id": "_f9206965348534fc9555b1b7b30", "name": "Geldern", "lat": 51.51772375521349, "lon": 6.321340755964157, "is_private": false}
+{"id": "_f920781907130922524f0c29f28", "name": "Eifelgau", "lat": 50.53011710954149, "lon": 6.480978804994163, "is_private": false}
+{"id": "_f9207984b4c4fde9ffe53a73b18", "name": "Thurgau", "lat": 47.65076551126573, "lon": 9.1637942862484, "is_private": false}
+{"id": "_f9207da358b7ef0c7c302b53a02", "name": "Fezensac", "lat": 43.7582138847712, "lon": 0.3027574904107682, "is_private": false}
+{"id": "_f920879aab54b82306021fd7527", "name": "Walbeck", "lat": 52.27919528769176, "lon": 11.064963512315535, "is_private": false}
+{"id": "_f92088ab48e64f609c794d9f89", "name": "Babenberg (Bamberg)", "lat": 49.89327383985785, "lon": 10.888312459510248, "is_private": false}
+{"id": "_f9208b7191b7d6ea41d06556fe2", "name": "Lorsch", "lat": 49.65388987394166, "lon": 8.567781565278487, "is_private": false}
+{"id": "_f9208e6e8583e7f83bd8db4444f", "name": "Bratislava", "lat": 48.143215873464236, "lon": 17.10138849740182, "is_private": false}
+{"id": "_f92090c4f0236d979c198207fb3", "name": "Karnthen", "lat": 46.74412205587132, "lon": 13.884573862423137, "is_private": false}
+{"id": "_f920957c8321d2761c5b92a30d7", "name": "Sualafeldgau", "lat": 48.930461502077264, "lon": 10.92343328490758, "is_private": false}
+{"id": "_f9209c85d952def41157b03e2f3", "name": "Zorbig", "lat": 51.62568834666353, "lon": 12.116237088083695, "is_private": false}
+{"id": "_f9209c8949370c8470b30234c0b", "name": "Zorbig castle", "lat": 51.62568834666353, "lon": 12.116237088083695, "is_private": false}
+{"id": "_f9209d849ac3835d4f2fe2ffc42", "name": "Arneburg", "lat": 52.67288509222754, "lon": 12.007426422199181, "is_private": false}
+{"id": "_f920a07bb04701f147d2a0fe4eb", "name": "Lenzen", "lat": 53.09076619453482, "lon": 11.473474741046422, "is_private": false}
+{"id": "_f920af97ebb1fa05d39418ea62b", "name": "Hannover", "lat": 52.37438879958232, "lon": 9.738929538287197, "is_private": false}
+{"id": "_f920b0ab92235a7b467cd6bf6d4", "name": "Luneburg", "lat": 53.2489818332707, "lon": 10.408889366256311, "is_private": false}
+{"id": "_f920b21d9582eda0ee50aa55817", "name": "Corvey", "lat": 51.778053951442665, "lon": 9.409392088745793, "is_private": false}
+{"id": "_f920b6c07c7cfa6241a2055e5d", "name": "Quedlinburg", "lat": 51.78924136559405, "lon": 11.141832824027626, "is_private": false}
+{"id": "_f920b9003b559b321b347cc0e5b", "name": "Hildeburghausen", "lat": 50.42597346150194, "lon": 10.729347010092324, "is_private": false}
+{"id": "_f920bbaa2962485c3d961f2a303", "name": "Verdun", "lat": 49.15954241929036, "lon": 5.382257667187425, "is_private": false}
+{"id": "_f920c20271120da07fc2fe133d6", "name": "Munsterbilzen", "lat": 50.8880938609165, "lon": 5.526619112127364, "is_private": false}
+{"id": "_f920c20663c66e32310b92bde8f", "name": "Abdij Van Munsterblizen", "lat": 50.889335206844564, "lon": 5.525580981538791, "is_private": false}
+{"id": "_f920d87bc1e45f43f6801a46f5c", "name": "Vlaanderen", "lat": 50.964760699103444, "lon": 3.572361477646552, "is_private": false}
+{"id": "_f920df7f625ef69c273a4838b9", "name": "Cambrai", "lat": 50.175700864403865, "lon": 3.2338092293162406, "is_private": false}
+{"id": "_f920e04738bfad28a1925f3cd3", "name": "Douai", "lat": 50.36836906359523, "lon": 3.078910223955088, "is_private": false}
+{"id": "_f920e56826d336d699b7010e95e", "name": "Petegem", "lat": 50.833226037354926, "lon": 3.556311906836601, "is_private": false}
+{"id": "_f920ebb034756e030aab8d24505", "name": "Hainaut", "lat": 50.48171084717397, "lon": 3.958437162902444, "is_private": false}
+{"id": "_f920f725143107c7b65b39220c9", "name": "Gelderland", "lat": 52.099167983880065, "lon": 5.8929221895563035, "is_private": false}
+{"id": "_f920f79ead92cea0574daeb7ee3", "name": "Mons", "lat": 50.45409698596093, "lon": 3.952184058633472, "is_private": false}
+{"id": "_f920fb6e2321e978133f0c14701", "name": "Orlamunde", "lat": 50.7743955657489, "lon": 11.516685999573923, "is_private": false}
+{"id": "_f9236fb19df3548be6d8d9f0f3a", "name": "Betuwe", "lat": 51.92401814043714, "lon": 5.563961579198192, "is_private": false}
+{"id": "_f923731420c1966e3037bc4c287", "name": "Nellenburg", "lat": 47.49188156479474, "lon": 9.847224321332444, "is_private": false}
+{"id": "_f923749eed3365ec52a5bec060e", "name": "Loon", "lat": 50.80180406271672, "lon": 5.344874223232993, "is_private": false}
+{"id": "_f9238bd05f046928aa7c0a50f82", "name": "Charmois", "lat": 48.53966601599055, "lon": 6.382915263187968, "is_private": false}
+{"id": "_f923935ea0b3a81d1074e910d71", "name": "Spijk", "lat": 51.84986681073415, "lon": 6.151108975466526, "is_private": false}
+{"id": "_f923936938e6d27acb2645fd104", "name": "Herispich", "lat": 51.84862943172794, "lon": 6.151694473857731, "is_private": false}
+{"id": "_f92398a1d552a0f7bb704d58595", "name": "Sogn", "lat": 61.47085745368338, "lon": 6.004447121409988, "is_private": false}
+{"id": "_f9239b81cec4411e7dc9f358576", "name": "Remiremont", "lat": 48.01580352723404, "lon": 6.591244206311591, "is_private": false}
+{"id": "_f923a698c1a34d2c17892cb34c9", "name": "Erstein", "lat": 48.42210996995848, "lon": 7.662505484641484, "is_private": false}
+{"id": "_f923a69c03719b5a35893b05fa2", "name": "Erstein Abbey", "lat": 48.42210996995848, "lon": 7.662505484641484, "is_private": false}
+{"id": "_f923b7ede9f60da0e3192be6b6a", "name": "Hasnon", "lat": 50.42381133806519, "lon": 3.386294220523407, "is_private": false}
+{"id": "_f923b7f19ff3af6ad834cd65028", "name": "Hasnon Abbey", "lat": 50.42381133806519, "lon": 3.386294220523407, "is_private": false}
+{"id": "_f923bc1dcee748ae374d197318a", "name": "Mesen", "lat": 50.763973435577796, "lon": 2.8988538947101095, "is_private": false}
+{"id": "_f923bc22ecd18f881cc24b45ba5", "name": "Abdij van Mesen (Messines)", "lat": 50.763973435577796, "lon": 2.8988538947101095, "is_private": false}
+{"id": "_f923bda2dae2ee3df489e29debc", "name": "Lille", "lat": 50.64028735777169, "lon": 3.0627227296861754, "is_private": false}
+{"id": "_f923bf186cd456499ec6beac753", "name": "Melun", "lat": 48.53894717630785, "lon": 2.6596463907496823, "is_private": false}
+{"id": "_f923c0b249a11989694a9cefe36", "name": "Orleans", "lat": 47.90180400011921, "lon": 1.9100676367270422, "is_private": false}
+{"id": "_f923e8bb52d4ba4927590942abc", "name": "Chapel of St Laurent, Abbey of St Pierre de Grand", "lat": 48.859719186578445, "lon": 2.305166000188075, "is_private": false}
+{"id": "_f923eaca3b83628ca8a1a1cf7a9", "name": "Ivrea", "lat": 45.46691230821357, "lon": 7.875957334192251, "is_private": false}
+{"id": "_f923f0872cf17a07ce2fc49bc8c", "name": "Tuscany", "lat": 43.41867470204575, "lon": 11.128951606382504, "is_private": false}
+{"id": "_f923f87b72e5bef9dbbeecffd10", "name": "Vienna", "lat": 48.20845411979811, "lon": 16.373149400381553, "is_private": false}
+{"id": "_f923ff8b56d74eb0bee2d345ec9", "name": "Amiens", "lat": 49.89498252637619, "lon": 2.3009519586767113, "is_private": false}
+{"id": "_f92402986ce719211d572d2093b", "name": "Lucca", "lat": 43.84296945914346, "lon": 10.503458091535073, "is_private": false}
+{"id": "_f924097d9a05d39d64cab4a5f", "name": "Orbe", "lat": 46.725842967861105, "lon": 6.532769227059802, "is_private": false}
+{"id": "_f9240ec218770771f36d2ded48b", "name": "Friuli", "lat": 46.21021000793961, "lon": 13.084939877731914, "is_private": false}
+{"id": "_f9241110a28732c91a54520456b", "name": "Spoleto", "lat": 42.74053830030377, "lon": 12.737862590787739, "is_private": false}
+{"id": "_f924123aa5db53eb89f715d8c1", "name": "Verona", "lat": 45.43888948314427, "lon": 10.994161787503382, "is_private": false}
+{"id": "_f92417b15f2185e8830bbbdb0ee", "name": "Perugia", "lat": 43.111938443071075, "lon": 12.38894243640174, "is_private": false}
+{"id": "_f924199a5492def007b4d2882e0", "name": "Toulouse", "lat": 43.60443876181833, "lon": 1.443613759108157, "is_private": false}
+{"id": "_f9241c9aa32128ded07fbbe15fc", "name": "Lot-et-Garonne", "lat": 44.31751816772995, "lon": 0.4565375019944081, "is_private": false}
+{"id": "_f92694e9a906772fedfdcdc817b", "name": "Harelbeke", "lat": 50.85804549479532, "lon": 3.3129964721624883, "is_private": false}
+{"id": "_f9269b340804163055dc1d7d7a9", "name": "Wassenberg", "lat": 51.09953216542493, "lon": 6.1575931719772425, "is_private": false}
+{"id": "_f9269de641947b0aab08e2ef495", "name": "Teisterbant", "lat": 51.909630471224396, "lon": 5.0925037351500775, "is_private": false}
+{"id": "_f926a1d2ee430f62c876a44b467", "name": "Antoing", "lat": 50.56747817617076, "lon": 3.4513774576931566, "is_private": false}
+{"id": "_f926cab0f8b16c7ba3d8ef949a", "name": "Saint Omer", "lat": 50.75272013262715, "lon": 2.2547058551049686, "is_private": false}
+{"id": "_f926cd3d15e46a43127eac6da50", "name": "Picquigny", "lat": 49.94325456728718, "lon": 2.141577947569734, "is_private": false}
+{"id": "_f926d9fb3ee17de096387cd50b4", "name": "Guines", "lat": 50.86834042149482, "lon": 1.8704905297947345, "is_private": false}
+{"id": "_f926dbe9e9c7ce2c85a6585d493", "name": "Somme", "lat": 49.953218211971375, "lon": 2.2474758908427512, "is_private": false}
+{"id": "_f926f73c58359f5ee98f25b151f", "name": "Joigny", "lat": 47.98285330098957, "lon": 3.3984427270027253, "is_private": false}
+{"id": "_f926f7d8bc170025f195cd8f959", "name": "Arzillières", "lat": 48.64484807573702, "lon": 4.588638240990623, "is_private": false}
+{"id": "_f926f9ca4b03d9b934e9f3f7608", "name": "Nevers", "lat": 46.98721370592492, "lon": 3.15734240532381, "is_private": false}
+{"id": "_f926fd05c4d7ab9dfea915aa724", "name": "Seeon", "lat": 47.97553356152302, "lon": 12.460210516223006, "is_private": false}
+{"id": "_f926fd090c4680ab50e5c19d78a", "name": "Seeon Abbey", "lat": 47.97467300093402, "lon": 12.448045385304608, "is_private": false}
+{"id": "_f927006368f109b4d68728302fd", "name": "lechsgemund", "lat": 48.735810739863204, "lon": 10.937649049002175, "is_private": false}
+{"id": "_f927055298a3c708f25bab414ce", "name": "Cham", "lat": 49.21789096085268, "lon": 12.666178154452103, "is_private": false}
+{"id": "_f9271a06b9d4d42aecf12f50f06", "name": "Salzburg", "lat": 47.79809257506653, "lon": 13.045923786810928, "is_private": false}
+{"id": "_f9271f3059f398d2c6ab0a540a5", "name": "Chiemgau", "lat": 47.96430709692268, "lon": 12.360480453314484, "is_private": false}
+{"id": "_f9272086400525eea234519f952", "name": "Inngau", "lat": 47.76608505915048, "lon": 12.110514942742748, "is_private": false}
+{"id": "_f92730bb06d24d8695278469eac", "name": "Yonne", "lat": 47.79144484250191, "lon": 3.591645673212746, "is_private": false}
+{"id": "_f9273249e507aef8de94e495aa6", "name": "Beaugency", "lat": 47.77782396364289, "lon": 1.633338493137695, "is_private": false}
+{"id": "_f927336ef055e1209de33e1fcaf", "name": "La Fleche", "lat": 47.69894302832453, "lon": -0.07530371869753355, "is_private": false}
+{"id": "_f92735d10ed5f250af4fdd006fb", "name": "Tonnerre", "lat": 47.854726633245285, "lon": 3.9730970369011156, "is_private": false}
+{"id": "_f9273a590be1c2e0244300fdc8c", "name": "Seligney", "lat": 46.93764028413099, "lon": 5.539897284360972, "is_private": false}
+{"id": "_f9273ecb444554b335ed25a1925", "name": "Dijon", "lat": 47.321328059004664, "lon": 5.041440242847272, "is_private": false}
+{"id": "_f92740d1d0c5bec748f233696b0", "name": "Macon", "lat": 46.305721977516164, "lon": 4.832176878399236, "is_private": false}
+{"id": "_f9274447ad47bef1cae7c060898", "name": "Roucy", "lat": 49.37057047536992, "lon": 3.8138422874065516, "is_private": false}
+{"id": "_f9274c3554b633ab08cfe6f522d", "name": "Cheateau de Pouilly", "lat": 49.269403603966396, "lon": 2.0258926645974475, "is_private": false}
+{"id": "_f9274d21f7848266834ad146637", "name": "Pouilly", "lat": 49.2718212922516, "lon": 2.0294140544409722, "is_private": false}
+{"id": "_f9274f21592465222eaebf3defb", "name": "Autun", "lat": 46.945418511880895, "lon": 4.299235646954081, "is_private": false}
+{"id": "_f92752feb7b13fe5de3bafc0312", "name": "Chalon-sur-Saone", "lat": 46.780661366983445, "lon": 4.85382093650142, "is_private": false}
+{"id": "_f92757deac97587f95f5e0f3b97", "name": "Gourdon", "lat": 43.72003308570623, "lon": 6.97871339067185, "is_private": false}
+{"id": "_f92757e10cf25fad3ad542c3890", "name": "Chateau de Gourdon", "lat": 43.72011562454327, "lon": 6.978447702518228, "is_private": false}
+{"id": "_f92d387b6707a2d55e18be98d2e", "name": "Blois", "lat": 47.58849393919644, "lon": 1.3363243934536932, "is_private": false}
+{"id": "_f92d3d4ce172985e06681f9a49e", "name": "Ramla", "lat": 31.924475297531274, "lon": 34.87407043259008, "is_private": false}
+{"id": "_f92d4341c3224def47f5eeada2e", "name": "Marcigny", "lat": 46.274850428094595, "lon": 4.0414659042591365, "is_private": false}
+{"id": "_f92d43452146d953362b3f73386", "name": "Cluniac Priory", "lat": 46.27442971349735, "lon": 4.041662607101365, "is_private": false}
+{"id": "_f92d48ded3c28a27b5907653bc9", "name": "Priory of Saint-Gervais", "lat": 49.44960771065639, "lon": 1.0826437663998423, "is_private": false}
+{"id": "_f92d4ad1b854ca35f609c834f5", "name": "Falaise", "lat": 48.89434082505067, "lon": -0.2012570064369042, "is_private": false}
+{"id": "_f92d4ad4c0b682a461061003e99", "name": "Château de Falaise", "lat": 48.89320741343488, "lon": -0.2040424854259639, "is_private": false}
+{"id": "_f92d4c79c2375d3c19edee27f4e", "name": "Caen", "lat": 49.18711119458235, "lon": -0.3632097300513097, "is_private": false}
+{"id": "_f92d4d04f644720efb3608308cf", "name": "Abbey of Sainte-Trinité", "lat": 49.18635789298327, "lon": -0.3529665093156931, "is_private": false}
+{"id": "_f92d5f10b5627a82c4170eda03c", "name": "Nicaea", "lat": 40.42914220883624, "lon": 29.720196190469185, "is_private": false}
+{"id": "_f92d69037845c50ac56ffe2c595", "name": "Mortain", "lat": 48.64858474211068, "lon": -0.941999120620375, "is_private": false}
+{"id": "_f92d6b62574213ab3cb7374dee6", "name": "Evreux", "lat": 49.02421568155016, "lon": 1.1510068143750314, "is_private": false}
+{"id": "_f92d6dc68924b633ce68fc2fefc", "name": "Rennes", "lat": 48.1114730274192, "lon": -1.6793716172600064, "is_private": false}
+{"id": "_f92d6fedb815a9829086d1a58f6", "name": "Bretagne", "lat": 48.092047799203336, "lon": -1.6771468095624886, "is_private": false}
+{"id": "_f92d70caca630bb6da16b4a62a9", "name": "Conquereuil", "lat": 47.624390863550126, "lon": -1.7514992687044355, "is_private": false}
+{"id": "_f92d741325f2ef1c3a7cdb4b7ef", "name": "Anjou", "lat": 47.4712204576503, "lon": -0.5522613419583174, "is_private": false}
+{"id": "_f92d7e88cef58b2b450b59f3b84", "name": "Gatinais", "lat": 48.02890745441757, "lon": 2.547362582855563, "is_private": false}
+{"id": "_f92d843dae355512fa9639fe833", "name": "Loches", "lat": 47.12485930632501, "lon": 0.9966614719625427, "is_private": false}
+{"id": "_f92d87f33c83ddf27a9d879070b", "name": "Nantes", "lat": 47.21834645411689, "lon": -1.5504566265353044, "is_private": false}
+{"id": "_f92d900adb863e7dbb3ec76a3ed", "name": "Fecamp", "lat": 49.75484509833657, "lon": 0.37980327263952657, "is_private": false}
+{"id": "_f92d931c7db27203d5d1108fa27", "name": "Ponteaudemer", "lat": 49.35462633995263, "lon": 0.5141327826657897, "is_private": false}
+{"id": "_f92d9c19d0d46aa88363372da1e", "name": "Epernay", "lat": 49.04547329634977, "lon": 3.957405681818132, "is_private": false}
+{"id": "_f92d9e20b554e3c987bc9e6e84f", "name": "Maine", "lat": 48.00611785592134, "lon": -0.19360208828234185, "is_private": false}
+{"id": "_f92da274b791c1e1ed3837db97a", "name": "Le Mans", "lat": 48.009286115105034, "lon": 0.19868717351154241, "is_private": false}
+{"id": "_f93385d66ad1586ab055f1d7b05", "name": "Montdidier", "lat": 49.647041663734825, "lon": 2.5671994384316856, "is_private": false}
+{"id": "_f933869f720159f4000af935c87", "name": "Ramerupt", "lat": 48.519353464312935, "lon": 4.292570378970475, "is_private": false}
+{"id": "_f9339ab6bc77493827e596a0533", "name": "Chaumontois", "lat": 48.67486051361694, "lon": 5.89128563282255, "is_private": false}
+{"id": "_f933a6cdb126a1de9691a01b69", "name": "Brienne-le-Chateau", "lat": 48.39317551312901, "lon": 4.526267046946947, "is_private": false}
+{"id": "_f933a8021ea42a01a0ca9cc12c1", "name": "Bar-sur-Seine", "lat": 48.113401271596, "lon": 4.3724112272129165, "is_private": false}
+{"id": "_f933ac178187b2f225138524e07", "name": "Salin les Bains", "lat": 46.940478998224194, "lon": 5.878835398574245, "is_private": false}
+{"id": "_f933aea924b224125950bdfca88", "name": "Narbonne", "lat": 43.18422569814427, "lon": 3.0030050636167767, "is_private": false}
+{"id": "_f933af1fb68338abd3c80a4b465", "name": "Besancon", "lat": 47.23802896029522, "lon": 6.024266889488693, "is_private": false}
+{"id": "_f933badd91648d937ef513b6c3f", "name": "Montlhery", "lat": 48.63835974123543, "lon": 2.2715843921065715, "is_private": false}
+{"id": "_f933bff1dbe27303025c245319a", "name": "Troyes", "lat": 48.2972910530853, "lon": 4.074446086866956, "is_private": false}
+{"id": "_f933c27b37f624edf8fb956438e", "name": "Vermandois", "lat": 49.878031123364636, "lon": 3.1501545199449166, "is_private": false}
+{"id": "_f933c6ba72b2595a831391f91c0", "name": "Eu", "lat": 50.04875704367959, "lon": 1.419697041672957, "is_private": false}
+{"id": "_f933c7fc9bd3b648444c553dc75", "name": "Manche", "lat": 49.18426350103503, "lon": -1.3226349290531665, "is_private": false}
+{"id": "_f933c97c8e32410645a38858452", "name": "Saint-Pierre-sur-Dives", "lat": 49.01969682921487, "lon": -0.031946086632358886, "is_private": false}
+{"id": "_f933c97f20f1e47936f553a7b3b", "name": "abdij Saint-Pierre-sur-Dives", "lat": 49.01980105310206, "lon": -0.03318905108051654, "is_private": false}
+{"id": "_f933cac12003b52509160fcf223", "name": "Eure", "lat": 49.106649156855084, "lon": 0.9482876344174022, "is_private": false}
+{"id": "_f933cf273116d71dc6acc48cfd1", "name": "Bricquebec", "lat": 49.47029784239128, "lon": -1.6321506472952487, "is_private": false}
+{"id": "_f933d1d837b31fdc87a300ae87", "name": "Maere", "lat": 63.93756935094904, "lon": 11.424218416814163, "is_private": false}
+{"id": "_f933d95e6094a8c325ae7b5ecae", "name": "Longpont-sur-Orge", "lat": 48.6421867031689, "lon": 2.292604401003403, "is_private": false}
+{"id": "_f933e5a13a852a9886d5d06db7a", "name": "Chartres", "lat": 48.443914218977135, "lon": 1.48896921383958, "is_private": false}
+{"id": "_f933e5a48b4462e325ef92c0ac4", "name": "Abbaye Saint-Père-en-Vallée", "lat": 48.44376345108649, "lon": 1.4926235348035384, "is_private": false}
+{"id": "_f933efba5e9142f9ac767235924", "name": "Marne", "lat": 48.71069971130847, "lon": 4.568934001666474, "is_private": false}
+{"id": "_f933f080b6717c0f69fec130b92", "name": "Oise", "lat": 49.38737465733215, "lon": 2.4185735126348864, "is_private": false}
+{"id": "_f933f25ec935f4bae1c0953c960", "name": "Peronne", "lat": 49.92917877094675, "lon": 2.9317511348665146, "is_private": false}
+{"id": "_f933f5c423856c50dce3751f7c2", "name": "Valois", "lat": 49.26770862604136, "lon": 3.0546214782781345, "is_private": false}
+{"id": "_f933f844c6e758764726df53034", "name": "Champagne", "lat": 49.10996218197557, "lon": 4.102656347553491, "is_private": false}
+{"id": "_f933f9cd53ce376c9598067a80", "name": "Bar-sur-Aube", "lat": 48.23270898310042, "lon": 4.707284928651007, "is_private": false}
+{"id": "_f933fccb09d32c34a090ec8a8d5", "name": "le Ferte-sur-Aube", "lat": 48.09701068197903, "lon": 4.78310446502713, "is_private": false}
+{"id": "_f934038166951a4c3e763526e74", "name": "Seine inferieure", "lat": 49.64445441084102, "lon": 0.7499936662988458, "is_private": false}
+{"id": "_f93404d2ae11cdb5f48574c7b85", "name": "Breteuil", "lat": 48.83619096361243, "lon": 0.9130258024037066, "is_private": false}
+{"id": "_f9340a5fe2e2f1d8f9781840504", "name": "Ponthieu", "lat": 50.10567138063194, "lon": 1.8327505702826998, "is_private": false}
+{"id": "_f9340f01e5920f43aa501da5cd4", "name": "Abbeville", "lat": 50.10489518604668, "lon": 1.8319334099108568, "is_private": false}
+{"id": "_f934149c6e373c28f47fb22428a", "name": "Vexin", "lat": 49.168074335263285, "lon": 1.8959944331176075, "is_private": false}
+{"id": "_f934196b9564ce422f4e2d44509", "name": "Crepy en Valois", "lat": 49.23831199259847, "lon": 2.883408632549552, "is_private": false}
+{"id": "_f9341ab088648717ee579756ca4", "name": "Castle Crespy", "lat": 49.23806001306414, "lon": 2.883390794695692, "is_private": false}
+{"id": "_f939e8a63b3571d44561097b507", "name": "Brielle", "lat": 51.902663493348534, "lon": 4.162319175568913, "is_private": false}
+{"id": "_f939f70d4c766eb73fda9be2974", "name": "'s-Herenbroek", "lat": 52.5375598133514, "lon": 6.013401894025163, "is_private": false}
+{"id": "_f939fef267c338e47041d0eb59f", "name": "Spankeren", "lat": 52.05782532324432, "lon": 6.114631301500185, "is_private": false}
+{"id": "_f93a01acb226d5dd849b9c01a0f", "name": "Velp", "lat": 51.99113183762343, "lon": 5.9805597224782465, "is_private": false}

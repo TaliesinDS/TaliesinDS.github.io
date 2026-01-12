@@ -1,0 +1,19 @@
+{
+  "counts": {
+    "people": 3895,
+    "families": 2074,
+    "person_parent": 4533,
+    "events": 7060,
+    "places": 693,
+    "notes": 133,
+    "person_event": 7022,
+    "person_note": 124,
+    "event_note": 6,
+    "family_event": 0
+  },
+  "redaction": {
+    "living_cutoff_years": 110,
+    "redact_living": true,
+    "redact_private": true
+  }
+}

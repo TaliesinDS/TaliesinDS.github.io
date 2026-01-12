@@ -1,0 +1,15 @@
+INFO:     127.0.0.1:35386 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35392 - "GET /demo/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35392 - "GET /graph/neighborhood?id=I0001&depth=2&max_nodes=1000&layout=family HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35397 - "GET /people/I0001 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:35400 - "GET /demo/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35400 - "GET /graph/neighborhood?id=I0001&depth=2&max_nodes=1000&layout=family HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35400 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35400 - "GET /graph/neighborhood?id=I0001&depth=2&max_nodes=1000&layout=family HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35415 - "GET /graph/neighborhood?id=I0001&depth=2&max_nodes=1000&layout=family HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35415 - "GET /graph/neighborhood?id=I0001&depth=2&max_nodes=1000&layout=family HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35415 - "GET /graph/neighborhood?id=I0001&depth=2&max_nodes=1000&layout=family HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35415 - "GET /graph/neighborhood?id=I0001&depth=2&max_nodes=1000&layout=family HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35415 - "GET /demo/graph HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35415 - "GET /graph/neighborhood?id=I0001&depth=2&max_nodes=1000&layout=family HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35459 - "GET /health HTTP/1.1" 200 OK

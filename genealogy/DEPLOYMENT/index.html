@@ -1,0 +1,306 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="nl-NL" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Deployment sketch (Cloud Run + Cloud SQL) - Portfolio</title>
+<meta name="description" content="just a simple website to share some of the things i make">
+
+
+  <meta name="author" content="Arthur Kortekaas">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Portfolio">
+<meta property="og:title" content="Deployment sketch (Cloud Run + Cloud SQL)">
+<meta property="og:url" content="https://taliesinds.github.io//genealogy/DEPLOYMENT/">
+
+
+  <meta property="og:description" content="just a simple website to share some of the things i make">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://taliesinds.github.io//genealogy/DEPLOYMENT/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!-- start custom head snippets -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <!-- start custom head snippets -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--default" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logosmall.png" alt="Portfolio"></a>
+        
+        <a class="site-title" href="/">
+          Portfolio
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/soap/"
+                
+                
+              >Zeep</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/projects/"
+                
+                
+              >Andere projecten</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/autism/"
+                
+                
+              >Autisme</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Alle posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >Over mij</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <span class="search-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 114.9-93.1 208-208 208S0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zm-48 0c0-88.2-71.8-160-160-160S48 119.8 48 208s71.8 160 160 160s160-71.8 160-160zM504.9 471l-99.7-99.7c-4.7-4.7-12.3-4.7-17 0l-28.3 28.3c-4.7 4.7-4.7 12.3 0 17l99.7 99.7c4.7 4.7 12.3 4.7 17 0l28.3-28.3c4.7-4.7 4.7-12.3 0-17z"/></svg>
+
+          </span>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Wissel Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      <h1 id="deployment-sketch-cloud-run--cloud-sql">Deployment sketch (Cloud Run + Cloud SQL)</h1>
+
+<p>This is a deployment sketch for running the genealogy backend as a <strong>real service</strong>, while keeping your main website on <strong>GitHub Pages/Jekyll</strong>.</p>
+
+<h2 id="recommended-shape">Recommended shape</h2>
+<ul>
+  <li>Main site: <code class="language-plaintext highlighter-rouge">www.arthurkortekaas.nl</code> → GitHub Pages (unchanged)</li>
+  <li>Genealogy app:
+    <ul>
+      <li>UI: <code class="language-plaintext highlighter-rouge">tree.arthurkortekaas.nl</code> (static SPA hosting, or even served by the API)</li>
+      <li>API: <code class="language-plaintext highlighter-rouge">api.tree.arthurkortekaas.nl</code> (Cloud Run)</li>
+      <li>DB: Cloud SQL (Postgres + PostGIS)</li>
+    </ul>
+  </li>
+</ul>
+
+<p>This avoids trying to “merge” two hosting providers on the same path.</p>
+
+<h2 id="components">Components</h2>
+<ul>
+  <li>Cloud Run service: container built from <code class="language-plaintext highlighter-rouge">genealogy/api/Dockerfile</code></li>
+  <li>Cloud SQL Postgres instance (enable PostGIS)</li>
+  <li>Optional later:
+    <ul>
+      <li>Meilisearch/Typesense/OpenSearch if Postgres full-text becomes limiting</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="secrets">Secrets</h2>
+<ul>
+  <li>No secrets in the repo.</li>
+  <li>Use Secret Manager for DB password, any API keys, etc.</li>
+</ul>
+
+<h2 id="privacy-model-server-side">Privacy model (server-side)</h2>
+<ul>
+  <li>The API is responsible for hiding living people.</li>
+  <li>The frontend never receives private data.</li>
+</ul>
+
+<h2 id="next-implementation-steps">Next implementation steps</h2>
+<p>1) Create Cloud SQL + run <code class="language-plaintext highlighter-rouge">genealogy/sql/schema.sql</code>.
+2) Wire DB access in the API.
+3) Build a <strong>Gramps → Postgres</strong> importer (one-way sync).
+4) Add a minimal frontend UI (pick person A + B → show path; search notes; map view).</p>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Geef uw zoekterm in...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Geef uw zoekterm in..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+  <span>&copy; 2026 <a href="https://taliesinds.github.io/">Arthur Kortekaas</a>. Aangedreven door <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</span>
+  <span class="footer-links" style="margin-left:auto;">
+    <a href="/privacy/">Privacy Policy</a> | <a href="/accessibility/">Accessibility Statement</a> | <a href="/licensing/">License</a>
+  </span>
+</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Google Analytics gtag.js is loaded dynamically after cookie consent. See assets/js/cookie-consent.js -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CMXJSHVBGZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CMXJSHVBGZ', { 'anonymize_ip': false});
+</script>
+-->
+
+
+
+
+
+
+
+
+    <script src="/assets/js/lang-toggle.js"></script>
+    <script src="/assets/js/cookie-consent.js"></script>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#222;color:#fff;padding:1em;z-index:9999;display:none;justify-content:center;align-items:center;gap:1em;font-size:1em;">
+      <span>
+        This site uses cookies for analytics. See our <a href="/privacy" style="color:#ffd700;text-decoration:underline;">Privacy Policy</a>.
+      </span>
+      <button id="cookie-accept-btn" style="background:#4caf50;color:#fff;border:none;padding:0.5em 1em;border-radius:4px;cursor:pointer;">Accept</button>
+    </div>
+  </body>
+</html>

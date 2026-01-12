@@ -1,0 +1,1116 @@
+{
+  "db_path": "C:\\Users\\akortekaas\\AppData\\Roaming\\gramps\\grampsdb\\63b9ee58\\sqlite.db",
+  "generated_at": "2026-01-11T13:56:40Z",
+  "database_list": [
+    {
+      "seq": 0,
+      "name": "main",
+      "file": "C:\\Users\\akortekaas\\AppData\\Roaming\\gramps\\grampsdb\\63b9ee58\\sqlite.db"
+    }
+  ],
+  "sqlite_master": [
+    {
+      "name": "citation",
+      "type": "table",
+      "sql": "CREATE TABLE citation (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, gramps_id TEXT, page TEXT, confidence INTEGER, source_handle VARCHAR(50), change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "event",
+      "type": "table",
+      "sql": "CREATE TABLE event (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, gramps_id TEXT, description TEXT, place VARCHAR(50), change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "family",
+      "type": "table",
+      "sql": "CREATE TABLE family (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, gramps_id TEXT, father_handle VARCHAR(50), mother_handle VARCHAR(50), change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "gender_stats",
+      "type": "table",
+      "sql": "CREATE TABLE gender_stats (given_name TEXT, female INTEGER, male INTEGER, unknown INTEGER)"
+    },
+    {
+      "name": "media",
+      "type": "table",
+      "sql": "CREATE TABLE media (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, gramps_id TEXT, path TEXT, mime TEXT, desc TEXT, checksum TEXT, change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "metadata",
+      "type": "table",
+      "sql": "CREATE TABLE metadata (setting VARCHAR(50) PRIMARY KEY NOT NULL, value BLOB)"
+    },
+    {
+      "name": "name_group",
+      "type": "table",
+      "sql": "CREATE TABLE name_group (name VARCHAR(50) PRIMARY KEY NOT NULL, grouping TEXT)"
+    },
+    {
+      "name": "note",
+      "type": "table",
+      "sql": "CREATE TABLE note (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, gramps_id TEXT, format INTEGER, change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "person",
+      "type": "table",
+      "sql": "CREATE TABLE person (handle VARCHAR(50) PRIMARY KEY NOT NULL, given_name TEXT, surname TEXT, blob_data BLOB, gramps_id TEXT, gender INTEGER, death_ref_index INTEGER, birth_ref_index INTEGER, change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "place",
+      "type": "table",
+      "sql": "CREATE TABLE place (handle VARCHAR(50) PRIMARY KEY NOT NULL, enclosed_by VARCHAR(50), blob_data BLOB, gramps_id TEXT, title TEXT, long TEXT, lat TEXT, code TEXT, change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "reference",
+      "type": "table",
+      "sql": "CREATE TABLE reference (obj_handle VARCHAR(50), obj_class TEXT, ref_handle VARCHAR(50), ref_class TEXT)"
+    },
+    {
+      "name": "repository",
+      "type": "table",
+      "sql": "CREATE TABLE repository (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, gramps_id TEXT, name TEXT, change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "source",
+      "type": "table",
+      "sql": "CREATE TABLE source (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, gramps_id TEXT, title TEXT, author TEXT, pubinfo TEXT, abbrev TEXT, change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "tag",
+      "type": "table",
+      "sql": "CREATE TABLE tag (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, name TEXT, color VARCHAR(13), priority INTEGER, change INTEGER)"
+    }
+  ],
+  "tables": [
+    {
+      "name": "citation",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "handle",
+          "col_type": "VARCHAR(50)",
+          "notnull": true,
+          "default_value": null,
+          "is_pk": true
+        },
+        {
+          "cid": 1,
+          "name": "blob_data",
+          "col_type": "BLOB",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 2,
+          "name": "gramps_id",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 3,
+          "name": "page",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 4,
+          "name": "confidence",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 5,
+          "name": "source_handle",
+          "col_type": "VARCHAR(50)",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 6,
+          "name": "change",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 7,
+          "name": "private",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "citation_gramps_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "citation_page",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "sqlite_autoindex_citation_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false
+        }
+      ],
+      "create_sql": "CREATE TABLE citation (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, gramps_id TEXT, page TEXT, confidence INTEGER, source_handle VARCHAR(50), change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "event",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "handle",
+          "col_type": "VARCHAR(50)",
+          "notnull": true,
+          "default_value": null,
+          "is_pk": true
+        },
+        {
+          "cid": 1,
+          "name": "blob_data",
+          "col_type": "BLOB",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 2,
+          "name": "gramps_id",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 3,
+          "name": "description",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 4,
+          "name": "place",
+          "col_type": "VARCHAR(50)",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 5,
+          "name": "change",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 6,
+          "name": "private",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "event_gramps_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "sqlite_autoindex_event_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false
+        }
+      ],
+      "create_sql": "CREATE TABLE event (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, gramps_id TEXT, description TEXT, place VARCHAR(50), change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "family",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "handle",
+          "col_type": "VARCHAR(50)",
+          "notnull": true,
+          "default_value": null,
+          "is_pk": true
+        },
+        {
+          "cid": 1,
+          "name": "blob_data",
+          "col_type": "BLOB",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 2,
+          "name": "gramps_id",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 3,
+          "name": "father_handle",
+          "col_type": "VARCHAR(50)",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 4,
+          "name": "mother_handle",
+          "col_type": "VARCHAR(50)",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 5,
+          "name": "change",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 6,
+          "name": "private",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "family_gramps_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "sqlite_autoindex_family_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false
+        }
+      ],
+      "create_sql": "CREATE TABLE family (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, gramps_id TEXT, father_handle VARCHAR(50), mother_handle VARCHAR(50), change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "gender_stats",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "given_name",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 1,
+          "name": "female",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 2,
+          "name": "male",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 3,
+          "name": "unknown",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [],
+      "create_sql": "CREATE TABLE gender_stats (given_name TEXT, female INTEGER, male INTEGER, unknown INTEGER)"
+    },
+    {
+      "name": "media",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "handle",
+          "col_type": "VARCHAR(50)",
+          "notnull": true,
+          "default_value": null,
+          "is_pk": true
+        },
+        {
+          "cid": 1,
+          "name": "blob_data",
+          "col_type": "BLOB",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 2,
+          "name": "gramps_id",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 3,
+          "name": "path",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 4,
+          "name": "mime",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 5,
+          "name": "desc",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 6,
+          "name": "checksum",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 7,
+          "name": "change",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 8,
+          "name": "private",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "media_gramps_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "media_desc",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "sqlite_autoindex_media_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false
+        }
+      ],
+      "create_sql": "CREATE TABLE media (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, gramps_id TEXT, path TEXT, mime TEXT, desc TEXT, checksum TEXT, change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "metadata",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "setting",
+          "col_type": "VARCHAR(50)",
+          "notnull": true,
+          "default_value": null,
+          "is_pk": true
+        },
+        {
+          "cid": 1,
+          "name": "value",
+          "col_type": "BLOB",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_metadata_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false
+        }
+      ],
+      "create_sql": "CREATE TABLE metadata (setting VARCHAR(50) PRIMARY KEY NOT NULL, value BLOB)"
+    },
+    {
+      "name": "name_group",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "name",
+          "col_type": "VARCHAR(50)",
+          "notnull": true,
+          "default_value": null,
+          "is_pk": true
+        },
+        {
+          "cid": 1,
+          "name": "grouping",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_name_group_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false
+        }
+      ],
+      "create_sql": "CREATE TABLE name_group (name VARCHAR(50) PRIMARY KEY NOT NULL, grouping TEXT)"
+    },
+    {
+      "name": "note",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "handle",
+          "col_type": "VARCHAR(50)",
+          "notnull": true,
+          "default_value": null,
+          "is_pk": true
+        },
+        {
+          "cid": 1,
+          "name": "blob_data",
+          "col_type": "BLOB",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 2,
+          "name": "gramps_id",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 3,
+          "name": "format",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 4,
+          "name": "change",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 5,
+          "name": "private",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "note_gramps_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "sqlite_autoindex_note_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false
+        }
+      ],
+      "create_sql": "CREATE TABLE note (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, gramps_id TEXT, format INTEGER, change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "person",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "handle",
+          "col_type": "VARCHAR(50)",
+          "notnull": true,
+          "default_value": null,
+          "is_pk": true
+        },
+        {
+          "cid": 1,
+          "name": "given_name",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 2,
+          "name": "surname",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 3,
+          "name": "blob_data",
+          "col_type": "BLOB",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 4,
+          "name": "gramps_id",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 5,
+          "name": "gender",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 6,
+          "name": "death_ref_index",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 7,
+          "name": "birth_ref_index",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 8,
+          "name": "change",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 9,
+          "name": "private",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "person_given_name",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "person_surname",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "person_gramps_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "sqlite_autoindex_person_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false
+        }
+      ],
+      "create_sql": "CREATE TABLE person (handle VARCHAR(50) PRIMARY KEY NOT NULL, given_name TEXT, surname TEXT, blob_data BLOB, gramps_id TEXT, gender INTEGER, death_ref_index INTEGER, birth_ref_index INTEGER, change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "place",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "handle",
+          "col_type": "VARCHAR(50)",
+          "notnull": true,
+          "default_value": null,
+          "is_pk": true
+        },
+        {
+          "cid": 1,
+          "name": "enclosed_by",
+          "col_type": "VARCHAR(50)",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 2,
+          "name": "blob_data",
+          "col_type": "BLOB",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 3,
+          "name": "gramps_id",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 4,
+          "name": "title",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 5,
+          "name": "long",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 6,
+          "name": "lat",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 7,
+          "name": "code",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 8,
+          "name": "change",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 9,
+          "name": "private",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "place_gramps_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "place_enclosed_by",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "place_title",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "sqlite_autoindex_place_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false
+        }
+      ],
+      "create_sql": "CREATE TABLE place (handle VARCHAR(50) PRIMARY KEY NOT NULL, enclosed_by VARCHAR(50), blob_data BLOB, gramps_id TEXT, title TEXT, long TEXT, lat TEXT, code TEXT, change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "reference",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "obj_handle",
+          "col_type": "VARCHAR(50)",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 1,
+          "name": "obj_class",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 2,
+          "name": "ref_handle",
+          "col_type": "VARCHAR(50)",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 3,
+          "name": "ref_class",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "reference_obj_handle",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "reference_ref_handle",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        }
+      ],
+      "create_sql": "CREATE TABLE reference (obj_handle VARCHAR(50), obj_class TEXT, ref_handle VARCHAR(50), ref_class TEXT)"
+    },
+    {
+      "name": "repository",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "handle",
+          "col_type": "VARCHAR(50)",
+          "notnull": true,
+          "default_value": null,
+          "is_pk": true
+        },
+        {
+          "cid": 1,
+          "name": "blob_data",
+          "col_type": "BLOB",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 2,
+          "name": "gramps_id",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 3,
+          "name": "name",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 4,
+          "name": "change",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 5,
+          "name": "private",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "repository_gramps_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "sqlite_autoindex_repository_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false
+        }
+      ],
+      "create_sql": "CREATE TABLE repository (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, gramps_id TEXT, name TEXT, change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "source",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "handle",
+          "col_type": "VARCHAR(50)",
+          "notnull": true,
+          "default_value": null,
+          "is_pk": true
+        },
+        {
+          "cid": 1,
+          "name": "blob_data",
+          "col_type": "BLOB",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 2,
+          "name": "gramps_id",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 3,
+          "name": "title",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 4,
+          "name": "author",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 5,
+          "name": "pubinfo",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 6,
+          "name": "abbrev",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 7,
+          "name": "change",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 8,
+          "name": "private",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "source_gramps_id",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "source_title",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "sqlite_autoindex_source_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false
+        }
+      ],
+      "create_sql": "CREATE TABLE source (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, gramps_id TEXT, title TEXT, author TEXT, pubinfo TEXT, abbrev TEXT, change INTEGER, private INTEGER)"
+    },
+    {
+      "name": "tag",
+      "columns": [
+        {
+          "cid": 0,
+          "name": "handle",
+          "col_type": "VARCHAR(50)",
+          "notnull": true,
+          "default_value": null,
+          "is_pk": true
+        },
+        {
+          "cid": 1,
+          "name": "blob_data",
+          "col_type": "BLOB",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 2,
+          "name": "name",
+          "col_type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 3,
+          "name": "color",
+          "col_type": "VARCHAR(13)",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 4,
+          "name": "priority",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        },
+        {
+          "cid": 5,
+          "name": "change",
+          "col_type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "is_pk": false
+        }
+      ],
+      "foreign_keys": [],
+      "indexes": [
+        {
+          "name": "tag_name",
+          "unique": false,
+          "origin": "c",
+          "partial": false
+        },
+        {
+          "name": "sqlite_autoindex_tag_1",
+          "unique": true,
+          "origin": "pk",
+          "partial": false
+        }
+      ],
+      "create_sql": "CREATE TABLE tag (handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB, name TEXT, color VARCHAR(13), priority INTEGER, change INTEGER)"
+    }
+  ]
+}

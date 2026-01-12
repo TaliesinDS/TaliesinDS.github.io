@@ -1,0 +1,7 @@
+INFO:     127.0.0.1:43860 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43872 - "GET /demo/graph?v=revert_no_composites_20260112_0423&id=0d024529-e6da-4b78-9045-11ac7372fa12&vscodeBrowserReqId=1768188210358 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43872 - "GET /graph/neighborhood?id=I0001&depth=2&max_nodes=1000&layout=family HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43887 - "GET /demo/graph?v=revert_no_composites_20260112_0423 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43919 - "GET /demo/graph?v=revert_no_composites_20260112_0423 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43938 - "GET /demo/graph?v=revert_no_composites_20260112_0423 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43969 - "GET /graph/neighborhood?id=I0001&depth=2&max_nodes=1000&layout=family HTTP/1.1" 200 OK

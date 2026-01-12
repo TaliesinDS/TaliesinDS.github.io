@@ -10,7 +10,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Genealogy app (backend-first) - Portfolio</title>
+<!-- begin _includes/seo.html --><title>Genealogy project - Portfolio</title>
 <meta name="description" content="just a simple website to share some of the things i make">
 
 
@@ -21,7 +21,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nl_NL">
 <meta property="og:site_name" content="Portfolio">
-<meta property="og:title" content="Genealogy app (backend-first)">
+<meta property="og:title" content="Genealogy project">
 <meta property="og:url" content="https://taliesinds.github.io//genealogy/">
 
 
@@ -160,58 +160,13 @@
 
 
     <div class="initial-content">
-      <h1 id="genealogy-app-backend-first">Genealogy app (backend-first)</h1>
+      <h1 id="genealogy-project">Genealogy project</h1>
 
-<p>Quick resume doc (for future you / new chats): see <code class="language-plaintext highlighter-rouge">HANDOFF.md</code>.</p>
+<p>The genealogy project has been split out of this GitHub Pages/Jekyll site repo.</p>
 
-<p>This folder is an <strong>in-repo design + scaffold</strong> for a future genealogy web app.</p>
-
-<p>Goals (what you asked for)</p>
 <ul>
-  <li>Pick any <strong>two people</strong> → show the <strong>ancestry/relationship path</strong> between them.</li>
-  <li><strong>Search inside notes</strong>, and sort/filter by event description/content.</li>
-  <li>Use <strong>place/location</strong> data and show it on a <strong>map</strong>.</li>
-  <li>Enforce privacy: public site, but <strong>living people auto-private</strong>.</li>
-</ul>
-
-<p>Why this isn’t GitHub Pages-only</p>
-<ul>
-  <li>GitHub Pages is static hosting. The feature list implies <strong>querying</strong> (graph traversal, full-text search, map queries), which requires a <strong>backend + database</strong>.</li>
-</ul>
-
-<p>Suggested architecture (pragmatic)</p>
-<ul>
-  <li><strong>API</strong>: FastAPI (Python) on <strong>Cloud Run</strong>.</li>
-  <li><strong>DB</strong>: Postgres + PostGIS (Cloud SQL) for:
-    <ul>
-      <li>recursive queries / graph-ish traversal for relationship paths</li>
-      <li>full-text search (tsvector) for notes/events</li>
-      <li>geospatial indexing/queries for places</li>
-    </ul>
-  </li>
-  <li><strong>Frontend</strong>: keep your Jekyll site as-is; add a separate subdomain like <code class="language-plaintext highlighter-rouge">tree.arthurkortekaas.nl</code> for the app UI.</li>
-</ul>
-
-<p>Next steps
-1) Decide where the <strong>source-of-truth</strong> lives:</p>
-<ul>
-  <li>keep Gramps as authoring tool and <strong>export/sync</strong> into Postgres (recommended)</li>
-  <li>or move entirely to a web-native DB (bigger change)
-2) Agree on the privacy rule:</li>
-  <li>“living = no death date AND birth within N years” (common), plus manual override
-3) Build import pipeline from Gramps (SQLite) → Postgres</li>
-</ul>
-
-<p>Files</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">api/</code>: FastAPI stub (health + placeholder endpoints)</li>
-  <li><code class="language-plaintext highlighter-rouge">sql/schema.sql</code>: starter schema sketch</li>
-</ul>
-
-<p>Export tooling</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">export/inspect_gramps_sqlite.py</code>: schema discovery for your Gramps SQLite</li>
-  <li><code class="language-plaintext highlighter-rouge">export/export_gramps_sqlite.py</code>: (next) export + redaction pipeline</li>
+  <li>New repo: (fill in the GitHub URL once created)</li>
+  <li>This site repo now only keeps the website content.</li>
 </ul>
 
       

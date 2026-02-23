@@ -1,0 +1,182 @@
+/*
+  Main Body Typography Snapshot
+  - Intended as a portable snapshot of the site’s main body text rules.
+  - Source of truth remains the SCSS in the repo; this is a convenience artifact.
+*/
+
+/* Font faces (paths assume this file is served from site root) */
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/assets/fonts/EBGaramond-Regular.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramond-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/assets/fonts/EBGaramond-Italic.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramond-Italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/assets/fonts/EBGaramond-Medium.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramond-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/assets/fonts/EBGaramond-MediumItalic.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramond-MediumItalic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/assets/fonts/EBGaramond-SemiBold.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramond-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/assets/fonts/EBGaramond-SemiBoldItalic.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramond-SemiBoldItalic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/assets/fonts/EBGaramond-Bold.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramond-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/assets/fonts/EBGaramond-BoldItalic.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramond-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/assets/fonts/EBGaramond-ExtraBold.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramond-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('/assets/fonts/EBGaramond-ExtraBoldItalic.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramond-ExtraBoldItalic.woff') format('woff');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond SC 12';
+  src: url('/assets/fonts/EBGaramondSC12-Regular.woff2') format('woff2'),
+       url('/assets/fonts/EBGaramondSC12-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Body type (serif-first; this is the primary) */
+.prose p,
+.prose li,
+.prose dl,
+.page__content p,
+.page__content li,
+.page__content dl {
+  font-family: 'EB Garamond', Georgia, Times, serif;
+  color: inherit;
+}
+
+.prose,
+.page__content {
+  padding: 2em;
+}
+
+.prose p,
+.page__content p {
+  font-size: 0.95em;
+  font-weight: 450;
+  line-height: 1.474;
+  margin: 0 0 1.3em;
+}
+
+.prose li,
+.page__content li {
+  font-size: 1.1em;
+  font-weight: 450;
+  line-height: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1.5em 0 0.5em;
+  line-height: 1.2;
+  font-family: 'EB Garamond', Georgia, Times, serif;
+}
+
+h1 { margin-top: 0; font-size: 2em; font-weight: 600; }
+h2 { font-size: 1.6em; font-weight: 500; }
+h3 { font-size: 1.4em; font-weight: 400; }
+h4 { font-size: 1.25em; font-weight: 400; }
+h5 { font-size: 1.1em; font-weight: 400; }
+h6 { font-size: 1em; font-weight: 400; }
+
+small, .small { font-size: 0.75em; }
+
+/* Small caps helpers */
+.smallcaps,
+.sc {
+  font-family: 'EB Garamond SC 12', serif;
+  font-variant: small-caps;
+}
+
+.sc {
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+/* Intro paragraph helper */
+.intro-text {
+  font-size: 1.2em;
+  font-weight: 450;
+  font-family: 'EB Garamond', Georgia, Times, serif;
+  margin-top: 0.5em;
+}
+
+/* Inline SVG icon sizing */
+.search-icon svg,
+.icon-spinner svg,
+.icon-link svg,
+.icon-rss svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.icon-calendar svg,
+.icon-pdf svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: text-bottom;
+  display: inline-block;
+}

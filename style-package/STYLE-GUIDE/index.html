@@ -1,0 +1,580 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.1 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="nl-NL" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>TaliesinDS — Main Body Text Style Package - Portfolio</title>
+<meta name="description" content="just a simple website to share some of the things i make">
+
+
+  <meta name="author" content="Arthur Kortekaas">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:site_name" content="Portfolio">
+<meta property="og:title" content="TaliesinDS — Main Body Text Style Package">
+<meta property="og:url" content="https://taliesinds.github.io//style-package/STYLE-GUIDE/">
+
+
+  <meta property="og:description" content="just a simple website to share some of the things i make">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://taliesinds.github.io//style-package/STYLE-GUIDE/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!-- start custom head snippets -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    <!-- start custom head snippets -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--default" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logosmall.png" alt="Portfolio"></a>
+        
+        <a class="site-title" href="/">
+          Portfolio
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/soap/"
+                
+                
+              >Zeep</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/projects/"
+                
+                
+              >Andere projecten</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/autism/"
+                
+                
+              >Autisme</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Alle posts</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >Over mij</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <span class="search-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M416 208c0 114.9-93.1 208-208 208S0 322.9 0 208S93.1 0 208 0s208 93.1 208 208zm-48 0c0-88.2-71.8-160-160-160S48 119.8 48 208s71.8 160 160 160s160-71.8 160-160zM504.9 471l-99.7-99.7c-4.7-4.7-12.3-4.7-17 0l-28.3 28.3c-4.7 4.7-4.7 12.3 0 17l99.7 99.7c4.7 4.7 12.3 4.7 17 0l28.3-28.3c4.7-4.7 4.7-12.3 0-17z"/></svg>
+
+          </span>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Wissel Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      <h1 id="taliesinds--main-body-text-style-package">TaliesinDS — Main Body Text Style Package</h1>
+
+<p>Purpose: this is a <strong>complete, portable style guide</strong> for generating and editing the <em>main body of text</em> in a calm, long-form, serif-first layout. It is written so another LLM can follow it <strong>without seeing the site</strong>.</p>
+
+<p>Scope:</p>
+<ul>
+  <li><strong>In scope:</strong> prose inside the main content container (recommended class name: <code class="language-plaintext highlighter-rouge">.prose</code>), including headings, paragraphs, lists, quotes, inline emphasis, and inline icons.</li>
+  <li><strong>Out of scope:</strong> navigation, cards/teasers, comments UI, forms, and any “hero banner” title treatments.</li>
+</ul>
+
+<p>Do not invent new design tokens:</p>
+<ul>
+  <li>Use the existing <strong>typography, spacing, and semantics</strong> described here.</li>
+  <li>Do not add new colors, fonts, decorative rules, or new UI components.</li>
+</ul>
+
+<hr />
+
+<h2 id="editorial-principles">Editorial Principles</h2>
+
+<ol>
+  <li><strong>Clarity over cleverness</strong>
+    <ul>
+      <li>Prefer concrete nouns and verbs.</li>
+      <li>Avoid jargon unless you define it once, plainly.</li>
+    </ul>
+  </li>
+  <li><strong>Long-form readability</strong>
+    <ul>
+      <li>Write for scanning <em>and</em> for deep reading.</li>
+      <li>Use headings to create a clear outline.</li>
+    </ul>
+  </li>
+  <li><strong>Low-drama, high-signal voice</strong>
+    <ul>
+      <li>Calm, precise, and non-performative.</li>
+      <li>Avoid sensational framing, excessive intensifiers, and rhetorical yelling.</li>
+    </ul>
+  </li>
+  <li><strong>Human-first tone</strong>
+    <ul>
+      <li>Empathetic where appropriate.</li>
+      <li>When discussing sensitive topics, be careful and specific; do not generalize.</li>
+    </ul>
+  </li>
+  <li><strong>Strong structure, light ornament</strong>
+    <ul>
+      <li>Use typographic hierarchy (H2/H3/H4) rather than visual tricks.</li>
+      <li>Decorative dividers exist, but should be used sparingly.</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="tone--register">Tone &amp; Register</h2>
+
+<p>Target register:</p>
+<ul>
+  <li><strong>Thoughtful, essay-like, margin-friendly.</strong></li>
+  <li>Short sentences are fine, but do not make the whole piece staccato.</li>
+</ul>
+
+<p>Default voice rules:</p>
+<ul>
+  <li>Prefer <strong>active voice</strong> unless passive is clearer.</li>
+  <li>Use <strong>first person singular</strong> only when it adds accountability or narrative.</li>
+  <li>Use <strong>second person</strong> (“you”) sparingly; prefer neutral framing.</li>
+</ul>
+
+<hr />
+
+<h2 id="layout-assumptions-for-the-body">Layout Assumptions (for the body)</h2>
+
+<p>This style is built for <strong>long-form reading</strong> with generous margins.</p>
+
+<p>Recommended, plain-HTML layout model:</p>
+<ul>
+  <li>An outer wrapper that is centered and bounded: <code class="language-plaintext highlighter-rouge">max-width: 1280px</code>, <code class="language-plaintext highlighter-rouge">padding-inline: 1em</code>.</li>
+  <li>Optional sidebar on wide screens (classic, “old-fashioned CSS” is fine): reserve roughly <code class="language-plaintext highlighter-rouge">200px</code> for the sidebar and let the main text take the remaining width.</li>
+  <li>A main content container (<code class="language-plaintext highlighter-rouge">.prose</code>) that provides <strong>internal padding</strong>: <code class="language-plaintext highlighter-rouge">padding: 2em</code>.</li>
+</ul>
+
+<p>Practical implications for writing:</p>
+<ul>
+  <li>Avoid giant tables.</li>
+  <li>Avoid very long, unbroken code or URLs in paragraphs.</li>
+  <li>Prefer images that can scale fluidly.</li>
+</ul>
+
+<hr />
+
+<h2 id="typographic-system">Typographic System</h2>
+
+<h3 id="font-families-actual">Font families (actual)</h3>
+<p>Primary text face (body + headings):</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">EB Garamond</code> (self-hosted via <code class="language-plaintext highlighter-rouge">@font-face</code>), with serif fallbacks.</li>
+</ul>
+
+<p>Small caps face:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">EB Garamond SC 12</code> (self-hosted), used for small-caps styling.</li>
+</ul>
+
+<p>Monospace:</p>
+<ul>
+  <li>Use a normal monospace stack (e.g., <code class="language-plaintext highlighter-rouge">ui-monospace, Consolas, monospace</code>). Inline code inside the body should be visually small.</li>
+</ul>
+
+<h3 id="base-sizing">Base sizing</h3>
+<p>Assume the site base font size is:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">16px</code>.</li>
+</ul>
+
+<h3 id="main-hierarchy-as-rendered">Main hierarchy (as rendered)</h3>
+<p>Headings are set globally (overriding theme defaults):</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">h1</code>: <code class="language-plaintext highlighter-rouge">2em</code> (≈32px), weight <code class="language-plaintext highlighter-rouge">600</code>, line-height <code class="language-plaintext highlighter-rouge">1.2</code></li>
+  <li><code class="language-plaintext highlighter-rouge">h2</code>: <code class="language-plaintext highlighter-rouge">1.6em</code> (≈25.6px), weight <code class="language-plaintext highlighter-rouge">500</code>, line-height <code class="language-plaintext highlighter-rouge">1.2</code></li>
+  <li><code class="language-plaintext highlighter-rouge">h3</code>: <code class="language-plaintext highlighter-rouge">1.4em</code> (≈22.4px), weight <code class="language-plaintext highlighter-rouge">400</code>, line-height <code class="language-plaintext highlighter-rouge">1.2</code></li>
+  <li><code class="language-plaintext highlighter-rouge">h4</code>: <code class="language-plaintext highlighter-rouge">1.25em</code> (≈20px), weight <code class="language-plaintext highlighter-rouge">400</code>, line-height <code class="language-plaintext highlighter-rouge">1.2</code></li>
+  <li><code class="language-plaintext highlighter-rouge">h5</code>: <code class="language-plaintext highlighter-rouge">1.1em</code> (≈17.6px), weight <code class="language-plaintext highlighter-rouge">400</code>, line-height <code class="language-plaintext highlighter-rouge">1.2</code></li>
+  <li><code class="language-plaintext highlighter-rouge">h6</code>: <code class="language-plaintext highlighter-rouge">1em</code> (≈16px), weight <code class="language-plaintext highlighter-rouge">400</code>, line-height <code class="language-plaintext highlighter-rouge">1.2</code></li>
+</ul>
+
+<p>Body text inside the main content container (<code class="language-plaintext highlighter-rouge">.prose</code>):</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">p</code>: <code class="language-plaintext highlighter-rouge">0.95em</code> (≈15.2px), weight <code class="language-plaintext highlighter-rouge">450</code>, line-height <code class="language-plaintext highlighter-rouge">1.474</code></li>
+  <li>paragraph spacing: <code class="language-plaintext highlighter-rouge">margin-bottom: 1.3em</code> (and no top margin by default)</li>
+</ul>
+
+<p>Lists inside <code class="language-plaintext highlighter-rouge">.prose</code>:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">li</code>: <code class="language-plaintext highlighter-rouge">1.1em</code> (≈17.6px), weight <code class="language-plaintext highlighter-rouge">450</code>, line-height <code class="language-plaintext highlighter-rouge">1em</code></li>
+  <li>list item spacing: <code class="language-plaintext highlighter-rouge">margin-bottom: 0.5em</code></li>
+</ul>
+
+<p>Small text:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.small</code> / <code class="language-plaintext highlighter-rouge">small</code>: <code class="language-plaintext highlighter-rouge">0.75em</code> (≈12px)</li>
+</ul>
+
+<h3 id="semantics-and-heading-usage">Semantics and heading usage</h3>
+<p>Use headings to build a clean outline:</p>
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">##</code> (H2) for major sections.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">###</code> (H3) for subsections.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">####</code> (H4) only when you truly have 3+ subsections and need more structure.</li>
+</ul>
+
+<p>H1 usage rule:</p>
+<ul>
+  <li>Use <strong>one H1</strong> per page (the page title) <em>if</em> your page doesn’t already provide a separate title.</li>
+  <li>If your system already renders a page title elsewhere (header, template, CMS), start the body outline at <strong>H2</strong>.</li>
+</ul>
+
+<hr />
+
+<h2 id="rhythm--density-vertical-spacing">Rhythm &amp; Density (vertical spacing)</h2>
+
+<p>This site aims for a <strong>comfortable, essay-like rhythm</strong>:</p>
+<ul>
+  <li>Paragraphs have clear separation (<code class="language-plaintext highlighter-rouge">margin-bottom ≈ 1.3em</code>).</li>
+  <li>Line height for body paragraphs is intentionally roomy (<code class="language-plaintext highlighter-rouge">≈ 1.474</code>).</li>
+</ul>
+
+<p>Guidelines:</p>
+<ul>
+  <li>Keep paragraphs <strong>short to medium</strong> (2–6 lines on desktop) unless doing deliberate long-form.</li>
+  <li>Do not stack many one-line paragraphs; it reads choppy.</li>
+  <li>Lists are slightly larger and tighter line-height; keep each list item short.</li>
+</ul>
+
+<p>Dividers:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">hr</code> is rendered as centered <code class="language-plaintext highlighter-rouge">***</code> (not a line). Use sparingly to signal a true section break.</li>
+</ul>
+
+<hr />
+
+<h2 id="inline-semantics">Inline Semantics</h2>
+
+<p>Emphasis:</p>
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">*italic*</code> for gentle emphasis.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">**bold**</code> sparingly (names, key terms, warnings). Avoid bolding whole sentences.</li>
+</ul>
+
+<p>Quotes:</p>
+<ul>
+  <li>Use inline quotes with <code class="language-plaintext highlighter-rouge">"..."</code> or the HTML <code class="language-plaintext highlighter-rouge">q</code> element when needed; <code class="language-plaintext highlighter-rouge">q</code> is configured to render curly quotes.</li>
+  <li>Use blockquotes for longer quoted passages.</li>
+</ul>
+
+<p>Small caps:</p>
+<ul>
+  <li>Use the <code class="language-plaintext highlighter-rouge">.sc</code> class for small-caps callouts or label-like text.</li>
+  <li><code class="language-plaintext highlighter-rouge">.sc</code> uses <code class="language-plaintext highlighter-rouge">EB Garamond SC 12</code>, <code class="language-plaintext highlighter-rouge">font-variant: small-caps</code>, and is slightly smaller and heavier.</li>
+</ul>
+
+<p>Intro/lead paragraph:</p>
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">.intro-text</code> for an opening paragraph that needs a gentle lead-in (bigger than body).</li>
+</ul>
+
+<p>Centered italic:</p>
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">.center-italic</code> only for rare, deliberate “epigraph” moments.</li>
+</ul>
+
+<hr />
+
+<h2 id="links">Links</h2>
+
+<ul>
+  <li>Links should read naturally in running text.</li>
+  <li>Don’t paste raw URLs inline unless necessary; use descriptive link text.</li>
+  <li>Hover behavior underlines links (theme behavior).</li>
+</ul>
+
+<p>If you’re implementing this in plain CSS, keep link styling minimal: inline links should look like links, but should not visually dominate paragraphs.</p>
+
+<hr />
+
+<h2 id="images-and-figures-in-body">Images and Figures (in body)</h2>
+
+<ul>
+  <li>Prefer Markdown images that can scale fluidly.</li>
+  <li>When you need a caption, use a <code class="language-plaintext highlighter-rouge">figure</code> with <code class="language-plaintext highlighter-rouge">figcaption</code>.</li>
+  <li>Images are rounded (<code class="language-plaintext highlighter-rouge">border-radius: 4px</code>) by the theme.</li>
+</ul>
+
+<p>If you’re implementing this in plain CSS, you may keep the same <code class="language-plaintext highlighter-rouge">border-radius: 4px</code> for images to match the rest of the system.</p>
+
+<p>Avoid:</p>
+<ul>
+  <li>Very small images floated into text.</li>
+  <li>Dense image grids inside long essays.</li>
+</ul>
+
+<hr />
+
+<h2 id="icons-inline-svg">Icons (inline SVG)</h2>
+
+<p>Icons are used as <strong>inline SVG</strong> and styled to behave like text glyphs:</p>
+<ul>
+  <li>default sizing: <code class="language-plaintext highlighter-rouge">width: 1em; height: 1em; fill: currentColor; display: inline-block;</code></li>
+  <li>alignment:
+    <ul>
+      <li>most icons: <code class="language-plaintext highlighter-rouge">vertical-align: middle</code></li>
+      <li>calendar/pdf: <code class="language-plaintext highlighter-rouge">vertical-align: text-bottom</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Practical rule:</p>
+<ul>
+  <li>Treat icons as punctuation or short labels; don’t stack multiple decorative icons.</li>
+</ul>
+
+<hr />
+
+<h2 id="llm-rules-strict">“LLM Rules” (strict)</h2>
+
+<p>When generating new body content, do all of the following:</p>
+<ul>
+  <li>Use paragraphs with blank lines between them.</li>
+  <li>Prefer starting section headings at H2 (<code class="language-plaintext highlighter-rouge">##</code>) unless the page needs a visible H1 title.</li>
+  <li>Prefer 2–6 line paragraphs; use H3s to break long sections.</li>
+  <li>Use lists only when the content is genuinely list-like.</li>
+  <li>Do not introduce new CSS classes other than: <code class="language-plaintext highlighter-rouge">prose</code>, <code class="language-plaintext highlighter-rouge">sc</code>, <code class="language-plaintext highlighter-rouge">intro-text</code>, <code class="language-plaintext highlighter-rouge">center-italic</code>, <code class="language-plaintext highlighter-rouge">small</code> (and standard HTML elements).</li>
+  <li>Do not introduce new fonts or icons.</li>
+</ul>
+
+<hr />
+
+<h2 id="implementation-plain-htmlcss">Implementation (plain HTML/CSS)</h2>
+
+<p>The style package includes a convenience stylesheet you can drop into any static HTML page:</p>
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">main-body.css</code> as your baseline.</li>
+  <li>Wrap your article content in a container with class <code class="language-plaintext highlighter-rouge">.prose</code>.</li>
+</ul>
+
+<p>Minimal HTML skeleton (sidebar optional):</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"layout"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;aside</span> <span class="na">class=</span><span class="s">"sidebar"</span><span class="nt">&gt;</span>
+      <span class="c">&lt;!-- navigation / meta --&gt;</span>
+   <span class="nt">&lt;/aside&gt;</span>
+   <span class="nt">&lt;main</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"prose"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;h1&gt;</span>Page title (optional)<span class="nt">&lt;/h1&gt;</span>
+         <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"intro-text"</span><span class="nt">&gt;</span>Optional lead paragraph.<span class="nt">&lt;/p&gt;</span>
+         <span class="nt">&lt;h2&gt;</span>Section<span class="nt">&lt;/h2&gt;</span>
+         <span class="nt">&lt;p&gt;</span>Body paragraph…<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/article&gt;</span>
+   <span class="nt">&lt;/main&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>Notes:</p>
+<ul>
+  <li>Keep the sidebar visually quieter than the prose.</li>
+  <li>Do not add decorative UI inside the prose container.</li>
+</ul>
+
+<hr />
+
+<h2 id="assets-included-in-this-package">Assets included in this package</h2>
+
+<p>This folder also includes copies of:</p>
+<ul>
+  <li>Fonts (WOFF/WOFF2) used by <code class="language-plaintext highlighter-rouge">EB Garamond</code> and <code class="language-plaintext highlighter-rouge">EB Garamond SC 12</code></li>
+  <li>Font Awesome SVG icons currently present in the repo</li>
+</ul>
+
+<p>See the <code class="language-plaintext highlighter-rouge">assets/</code> subfolder.</p>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Geef uw zoekterm in...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Geef uw zoekterm in..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+  <span>&copy; 2026 <a href="https://taliesinds.github.io/">Arthur Kortekaas</a>. Aangedreven door <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</span>
+  <span class="footer-links" style="margin-left:auto;">
+    <a href="/privacy/">Privacy Policy</a> | <a href="/accessibility/">Accessibility Statement</a> | <a href="/licensing/">License</a>
+  </span>
+</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+  <!-- Google Analytics gtag.js is loaded dynamically after cookie consent. See assets/js/cookie-consent.js -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CMXJSHVBGZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CMXJSHVBGZ', { 'anonymize_ip': false});
+</script>
+-->
+
+
+
+
+
+
+
+
+    <script src="/assets/js/lang-toggle.js"></script>
+    <script src="/assets/js/cookie-consent.js"></script>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" style="position:fixed;bottom:0;left:0;width:100%;background:#222;color:#fff;padding:1em;z-index:9999;display:none;justify-content:center;align-items:center;gap:1em;font-size:1em;">
+      <span>
+        This site uses cookies for analytics. See our <a href="/privacy" style="color:#ffd700;text-decoration:underline;">Privacy Policy</a>.
+      </span>
+      <button id="cookie-accept-btn" style="background:#4caf50;color:#fff;border:none;padding:0.5em 1em;border-radius:4px;cursor:pointer;">Accept</button>
+    </div>
+  </body>
+</html>

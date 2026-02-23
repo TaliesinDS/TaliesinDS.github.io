@@ -45,5 +45,5 @@ var store = [{
         "excerpt":"Zorg ik voor Zorg ik voor biedt arbeidsmatige dagbesteding in Nunspeet voor volwassenen met een psychische kwetsbaarheid of een afstand tot de arbeidsmarkt. Een plek waar elke dag telt. Dit is onbetaalde reclame. Zorg ik voor Onbetaalde reclame. Ik ontvang geen vergoeding voor dit artikel. Ik deel dit omdat ik...","categories": [],
         "tags": ["dagbesteding","re-integratie","GGZ","reclame","autism"],
         "url": "/zorgikvoor/",
-        "teaser": "/assets/images/logosmall.png"
+        "teaser": "/assets/images/teaser/zorgikvoor.png"
       },,]

@@ -7,7 +7,7 @@ excerpt_separator: <!--more-->
 header:
     overlay_image: random
     overlay_filter: 0.3
-    teaser: 
+    teaser: /assets/images/teaser/zorgikvoor.png
 comments: true
 ---
 <div class="body-post-excerpt">
